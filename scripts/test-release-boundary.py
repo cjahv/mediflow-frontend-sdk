@@ -69,6 +69,18 @@ class ReleaseBoundary(unittest.TestCase):
         runner = module('run-private')
         with patch.dict(os.environ, {'PLATFORM_READ_TOKEN':'hidden','GITHUB_TOKEN':'hidden','ACTIONS_RUNTIME_TOKEN':'hidden','SDK_GIT_TOKEN':'hidden','PATH':'/bin'}, clear=True):
             self.assertEqual(runner.sanitized_env(), {'PATH':'/bin'})
+    def test_candidate_uses_reproducible_helper_and_keeps_smoke_gates(self):
+        runner = module('run-private')
+        import json
+        policy = json.loads((ROOT/'release/platform-source.json').read_text())
+        with patch.object(runner, 'materialize_sdks'), patch.object(runner, 'execute') as execute, patch.dict(os.environ, {'IMAGE_TAG': 'latest'}), patch('sys.argv', ['run-private.py', 'candidate']):
+            runner.main()
+        commands = [call.args[0] for call in execute.call_args_list]
+        self.assertEqual(commands[0], ['bash', 'scripts/build-image.sh', 'mediflow:ci', 'latest', policy['commit']])
+        self.assertIn(['bash', 'scripts/container-smoke.sh'], commands)
+        self.assertIn(['bash', 'scripts/compose-release-smoke.sh'], commands)
+        steps = self.flow['jobs']['candidate']['steps']
+        self.assertTrue(any(step.get('uses') == 'docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f' for step in steps))
     def test_no_package_write_in_build(self):
         self.flow['jobs']['candidate']['permissions'] = {'packages':'write'}
         with self.assertRaises(ValueError): audit(self.flow)
