@@ -207,6 +207,7 @@ jobs:
           docker push "ghcr.io/cjahv/mediflow:$tag"
           mkdir -p "$RUNNER_TEMP/digest"
           python3 scripts/registry.py digest "$tag" > "$RUNNER_TEMP/digest/$ARCH.txt"
+          python3 scripts/registry.py size "$tag" >> "$GITHUB_STEP_SUMMARY"
           cp "$RUNNER_TEMP/public-candidate/candidate.json" "$RUNNER_TEMP/digest/$ARCH.json"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

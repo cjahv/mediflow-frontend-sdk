@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Invoked only by run-private.py with captured output and no private-read token.
 set -euo pipefail
+# Publish only the failing line number of THIS PUBLIC script, never private output.
+trap 'printf "%s\n" "$LINENO" > "$RUNNER_TEMP/private-logs/stage"' ERR
 export PATH="$(go env GOPATH)/bin:$PATH"
 python3 -m pip install PyYAML==6.0.3
 python3 scripts/release/check-manifest.py

@@ -24,6 +24,10 @@ def execute(command, *, cwd=SOURCE, env=None):
     with (log_dir / 'output.log').open('ab') as log:
         result = subprocess.run(command, cwd=cwd, env=env or sanitized_env(), stdout=log, stderr=log)
     if result.returncode:
+        stage_path=log_dir/'stage'
+        stage=stage_path.read_text().strip() if stage_path.is_file() else ''
+        if stage.isdigit() and 0 < int(stage) < 200:
+            print('Private validation failed at public quality script line '+stage, flush=True)
         raise RuntimeError('Private validation failed; no private diagnostics are uploaded.')
 
 

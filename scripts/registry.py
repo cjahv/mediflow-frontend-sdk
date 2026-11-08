@@ -48,7 +48,11 @@ def check_index(tag, expected):
 
 
 if __name__ == '__main__':
-    p=argparse.ArgumentParser();p.add_argument('mode',choices=['destination','digest','index']);p.add_argument('reference');p.add_argument('--amd64');p.add_argument('--arm64');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['destination','digest','index','size']);p.add_argument('reference');p.add_argument('--amd64');p.add_argument('--arm64');a=p.parse_args()
     if a.mode=='destination': check_destination(a.reference)
     elif a.mode=='digest': print(manifest(a.reference)[0])
+    elif a.mode=='size':
+        digest, data = manifest(a.reference)
+        if 'layers' not in data: raise ValueError('per-architecture image digest required')
+        print(json.dumps({'digest':digest,'compressedLayerBytes':sum(x['size'] for x in data['layers']),'configBytes':data['config']['size']}))
     else: print(check_index(a.reference,{'amd64':a.amd64,'arm64':a.arm64}))

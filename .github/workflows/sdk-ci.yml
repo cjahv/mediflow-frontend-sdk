@@ -21,6 +21,7 @@ jobs:
       - run: python3 scripts/test-boundary.py
       - run: python3 scripts/test-release-boundary.py
       - run: python3 scripts/test-image-audit.py
+      - run: python3 scripts/test-registry.py
       - run: python3 scripts/check-boundary.py
   screen:
     runs-on: ubuntu-24.04
@@ -50,4 +51,4 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - working-directory: mediflow-backend-sdk
-        run: mvn --batch-mode --no-transfer-progress install && bash scripts/check-consumer.sh
+        run: mvn --batch-mode --no-transfer-progress install && mvn --batch-mode --no-transfer-progress -Pcentral-release -Dgpg.skip=true verify && bash scripts/check-consumer.sh
