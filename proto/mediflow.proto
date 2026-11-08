@@ -1,0 +1,61 @@
+syntax = "proto3";
+package mediflow.v4;
+option go_package = "mediflow/internal/pb";
+option java_package = "com.cjahv.mediflow.proto";
+option java_outer_classname = "Mediflow";
+// Wire v4: Packet is the management HTTP and binary WebSocket envelope.
+// Backend gRPC uses the business messages directly, not Packet.
+// Identifier/token bytes use the strict compact codec: 0=UTF-8, 1=UUID128, 2=hex192.
+// Each arm has a fixed business schema. No Struct/Value or JSON payload exists.
+message Person { optional bytes id=1; optional string name=2; optional double order=3; optional string displayNumber=4; }
+message Section { optional bytes id=1; optional string name=2; repeated Person persons=3; }
+message Queue { optional bytes id=1; optional string name=2; repeated Section sections=3; }
+message Template { repeated Queue queues=1; }
+message Snapshot { optional bytes epoch=1; optional bytes screenId=2; optional uint64 version=3; optional string templateVersion=4; Template data=5; }
+message Screen { optional bytes id=1; optional string name=2; optional bytes token=3; optional string createdAt=4; optional bool online=5; optional uint64 version=6; }
+message Call { optional bytes id=1; optional bytes queueId=2; optional bytes personId=3; optional string text=4; optional uint32 totalQuota=5; optional string expiresAt=6; optional bool active=7; repeated bytes targets=8; optional string createdAt=9; optional uint32 consumed=10; optional uint32 remaining=11; map<string,string> targetNames=12; }
+message Consumption { optional bytes requestId=1; optional bytes callId=2; optional bytes screenId=3; optional bool granted=4; optional uint32 remaining=5; optional string text=6; optional string consumedAt=7; optional string reason=8; optional string screenName=9; }
+message Audit { optional uint64 sequence=1; optional string actor=2; optional string outcome=3; optional bytes id=4; optional string time=5; optional string action=6; optional bytes screenId=7; optional bytes callId=8; optional bytes requestId=9; optional string detail=10; optional string screenName=11; }
+message Archive { optional string sha256=1; optional bytes id=2; optional string createdAt=3; optional uint64 eventCount=4; optional string from=5; optional string to=6; }
+message Target { optional bytes screenId=1; optional bytes callId=2; optional uint32 consumed=3; }
+message HistoryItem { optional string kind=1; optional string key=2; optional string time=3; optional string sha256=4; oneof record { Snapshot snapshot=10; Consumption consumption=11; Audit audit=12; Call call=13; Target target=14; PlaybackEvent playback=15; } }
+message CallPage { repeated Call items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message ScreenPage { repeated Screen items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message ConsumptionPage { repeated Consumption items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message AuditPage { repeated Audit items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message ArchivePage { repeated Archive items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message HistoryPage { repeated HistoryItem items=1; optional uint64 total=2; optional uint32 page=3; optional uint32 pageSize=4; }
+message ScreenDetail { Screen screen=1; Snapshot state=2; CallPage calls=3; }
+message Overview { optional uint64 screens=1; optional uint64 calls=2; optional uint64 consumptions=3; optional uint64 auditEvents=4; optional uint64 onlineScreens=5; }
+message ArchiveBundle { repeated Screen screens=1; map<string,Snapshot> states=2; map<string,Snapshot> snapshotHistory=3; map<string,Call> calls=4; map<string,Consumption> consumptions=5; repeated Audit audit=6; repeated Archive checkpoints=7; optional string from=8; optional string to=9; optional string formatVersion=10; optional bytes epoch=11; optional string exportedAt=12; }
+message Login { optional string username=1; optional string password=2; }
+message User { optional string username=1; }
+message Publish { optional bytes requestId=1; Template data=2; }
+message Consume { optional bytes requestId=1; optional bytes callId=2; }
+message Playback { optional bytes eventId=1; optional bytes requestId=2; optional bytes callId=3; optional string status=4; optional string error=5; }
+message PlaybackResult { optional bytes eventId=1; optional bytes requestId=2; optional bytes callId=3; optional string status=4; optional bool ok=5; }
+message Result { optional bool ok=1; }
+message Problem { optional string error=1; }
+message Health { optional string status=1; }
+message Retain { optional bool dryRun=1; }
+message Retained { optional string cutoff=1; optional bool dryRun=2; map<string,uint64> moved=3; optional bool hasMore=4; map<string,uint64> skipped=5; }
+message Auth { optional bytes token=1; }
+message Sync { optional uint32 page=1; optional uint32 pageSize=2; }
+message PendingSync { optional string cursor=1; optional bytes requestId=2; }
+message PendingCalls { repeated Call payload=1; optional string nextCursor=2; optional bytes requestId=3; optional bytes screenId=4; }
+message CallFrame { repeated Call payload=1; optional uint32 page=2; optional uint32 pageSize=3; optional uint64 total=4; }
+message Failure { optional bytes requestId=1; optional bytes eventId=2; optional string message=3; }
+message Empty {}
+message Frame { oneof body { Auth auth=1; Sync sync=2; Consume consume=3; Playback playback=4; PendingSync pendingSync=5; Empty ping=6; Snapshot snapshot=10; CallFrame calls=11; Consumption consumeResult=12; PlaybackResult playbackResult=13; PendingCalls pendingCalls=14; Failure error=15; Empty pong=16; } }
+message Packet { optional uint32 protocolVersion=1; oneof body { Frame frame=10; Snapshot snapshot=11; Screen screen=12; Call call=13; Consumption consumption=14; Audit audit=15; Archive archive=16; CallPage callPage=20; ScreenPage screenPage=21; ConsumptionPage consumptionPage=22; AuditPage auditPage=23; ArchivePage archivePage=24; HistoryPage historyPage=25; ScreenDetail screenDetail=26; Overview overview=27; ArchiveBundle archiveBundle=28; Login login=30; User user=31; Publish publish=32; Consume consume=33; Playback playback=34; PlaybackResult playbackResult=35; Result result=36; Problem problem=37; Health health=38; Retain retain=39; Retained retained=40; Empty empty=41; PendingCalls pendingCalls=42; } }
+
+message PlaybackEvent { optional bytes screenId=1; optional bytes eventId=2; optional bytes requestId=3; optional bytes callId=4; optional string status=5; optional string detail=6; optional string createdAt=7; }
+
+// Backend producer API. Each RPC is scoped by binary metadata mediflow-token-bin (compact token bytes).
+// Deadlines and status codes are part of the contract; see protocol/README.md.
+service BackendService {
+  rpc GetState(Empty) returns (Snapshot);
+  rpc Publish(.mediflow.v4.Publish) returns (Snapshot);
+  rpc CreateCall(Call) returns (Call);
+  rpc ListCalls(Sync) returns (CallPage);
+}
