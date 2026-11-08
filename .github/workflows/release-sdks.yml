@@ -1,0 +1,111 @@
+name: Release public SDK distributions
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        type: choice
+        options: [screen, java, both]
+        default: screen
+      publish:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: public-sdk-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.repository == 'cjahv/mediflow-frontend-sdk' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/sdk-ci.yml
+  screen:
+    if: inputs.target == 'screen' || inputs.target == 'both'
+    needs: verify
+    environment: platform-release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Build and audit public SDK distribution
+        run: |
+          npm ci --prefix mediflow-frontend-sdk
+          npm run test:package --prefix mediflow-frontend-sdk
+          python3 scripts/release/export-git-sdk.py "$RUNNER_TEMP/screen-distribution"
+      - name: Publish new immutable prebuilt Git tag only
+        if: inputs.publish
+        env:
+          SDK_GIT_TOKEN: ${{ github.token }}
+        run: python3 scripts/release/publish-git-sdk.py "$RUNNER_TEMP/screen-distribution"
+      - name: Verify anonymous fixed-version installation
+        if: inputs.publish
+        run: |
+          version=$(node -p "require('./mediflow-frontend-sdk/package.json').version")
+          consumer=$(mktemp -d)
+          cd "$consumer"
+          npm init -y >/dev/null
+          npm install --ignore-scripts --cache "$consumer/cache" "git+https://github.com/cjahv/mediflow-frontend-sdk.git#v$version"
+          node --input-type=module -e "import {ScreenClient} from '@cjahv/mediflow-screen-sdk'; if(typeof ScreenClient!=='function') throw Error('missing SDK')"
+  java:
+    if: inputs.target == 'java' || inputs.target == 'both'
+    needs: verify
+    environment: platform-release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Require existing Central namespace and credentials for publication
+        if: inputs.publish
+        env:
+          CENTRAL_NAMESPACE: ${{ vars.CENTRAL_NAMESPACE }}
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: |
+          test "$CENTRAL_NAMESPACE" = io.github.cjahv
+          test -n "$CENTRAL_USERNAME" && test -n "$CENTRAL_PASSWORD"
+          test -n "$MAVEN_GPG_PRIVATE_KEY" && test -n "$MAVEN_GPG_PASSPHRASE"
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+      - name: Validate unsigned public Java artifacts
+        if: ${{ !inputs.publish }}
+        working-directory: mediflow-backend-sdk
+        run: mvn -B -ntp -Pcentral-release -Dgpg.skip=true verify
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        if: inputs.publish
+        with:
+          distribution: temurin
+          java-version: '17'
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+      - name: Refuse existing Maven version
+        if: inputs.publish
+        run: python3 scripts/release/check-maven-version.py
+      - name: Sign and publish public Java SDK
+        if: inputs.publish
+        working-directory: mediflow-backend-sdk
+        env:
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: mvn -B -ntp -Pcentral-release deploy
+      - name: Verify anonymous Maven consumer
+        if: inputs.publish
+        run: bash mediflow-backend-sdk/scripts/check-consumer.sh -Dmaven.repo.local="$RUNNER_TEMP/anonymous-maven"

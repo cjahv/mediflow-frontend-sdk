@@ -15,9 +15,10 @@ class Boundary(unittest.TestCase):
  def test_platform_and_path_traversal_never_enter_sdk_inventory(self):
   for path in ['mediflow-platform/main.go','../secret','/tmp/secret','mediflow-frontend-sdk/.env']:
    with self.assertRaises(ValueError):boundary.allowed_paths({'files':{path:'x'}})
- def test_reviewed_source_policy_starts_disabled(self):
+ def test_reviewed_source_policy_is_immutable_when_enabled(self):
   policy=json.loads((ROOT/'release/platform-source.json').read_text())
-  self.assertFalse(policy['enabled']);self.assertIsNone(policy['commit'])
+  if policy['enabled']: self.assertEqual(source.validate(policy,self.context()),policy['commit'])
+  else: self.assertIsNone(policy['commit'])
  def context(self):
   return dict(GITHUB_REPOSITORY=source.PUBLIC,GITHUB_EVENT_NAME='workflow_dispatch',GITHUB_REF='refs/heads/main',GITHUB_WORKFLOW_REF=source.PUBLIC+'/.github/workflows/verify-private-source.yml@refs/heads/main')
  def policy(self):
@@ -36,6 +37,8 @@ class Boundary(unittest.TestCase):
   self.assertTrue(source.trusted_identity(repo,compare,SHA))
   for broken in [{'private':False,'full_name':source.PRIVATE},{'private':True,'full_name':'other/repo'}]:self.assertFalse(source.trusted_identity(broken,compare,SHA))
   compare['merge_base_commit']['sha']='2'*40;self.assertFalse(source.trusted_identity(repo,compare,SHA))
+  self.assertTrue(source.trusted_identity(repo,compare,SHA,require_main=False))
+  compare['base_commit']['sha']='3'*40;self.assertFalse(source.trusted_identity(repo,compare,SHA,require_main=False))
  def test_missing_extra_and_symlink_paths_rejected(self):
   import tempfile
   with tempfile.TemporaryDirectory() as d:

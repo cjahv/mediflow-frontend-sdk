@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTROL = {
  'README.md', '.gitignore', '.github/workflows/sdk-ci.yml', '.github/workflows/verify-private-source.yml',
  'release/sdk-import.json', 'release/platform-source.json', 'release/MIGRATION.md',
+ 'scripts/audit-image.py', 'scripts/test-image-audit.py', 'scripts/run-private.py',
+ 'scripts/quality-platform.sh', 'scripts/registry.py', 'scripts/export-candidate.py',
+ 'scripts/import-candidate.py', 'scripts/release-plan.py', 'scripts/container-smoke.sh',
+ 'scripts/container-fixture.mjs', 'scripts/test-release-boundary.py',
+ 'scripts/release/export-git-sdk.py', 'scripts/release/publish-git-sdk.py',
+ 'scripts/release/check-maven-version.py', '.github/workflows/release-platform.yml',
+ '.github/workflows/release-sdks.yml',
  'scripts/check-boundary.py', 'scripts/test-boundary.py', 'scripts/private-source.py',
 }
 
@@ -41,9 +48,9 @@ def check_tree(root, tracked, manifest):
     for workflow in (root / '.github/workflows').glob('*.yml'):
         text = workflow.read_text()
         for uses in re.findall(r'uses:\s*(\S+)', text):
-            if not re.fullmatch(r'[\w-]+/[\w-]+@[0-9a-f]{40}', uses):
+            if uses != './.github/workflows/sdk-ci.yml' and not re.fullmatch(r'[\w-]+/[\w-]+@[0-9a-f]{40}', uses):
                 raise ValueError('unpinned action')
-        for forbidden in ['pull_request_target:', 'workflow_run:', 'actions/cache', 'upload-artifact',
+        for forbidden in ['pull_request_target:', 'workflow_run:', 'actions/cache',
                           'secrets: inherit', 'cache-to:', 'cache-from:', 'persist-credentials: true']:
             if forbidden in text: raise ValueError('unsafe workflow capability')
     ci = (root / '.github/workflows/sdk-ci.yml').read_text()

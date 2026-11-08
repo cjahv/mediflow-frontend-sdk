@@ -4,7 +4,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: private-platform-release
+  group: platform-release
   cancel-in-progress: false
 jobs:
   preflight:
@@ -18,7 +18,7 @@ jobs:
       - run: python3 scripts/private-source.py
   verify:
     needs: preflight
-    environment: private-platform-release
+    environment: platform-release
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
