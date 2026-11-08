@@ -28,12 +28,12 @@ class LiveIntegrationTest {
         }
         try (var client = client(base, token)) {
         String id = "java-live-" + UUID.randomUUID();
-        var person = Mediflow.Person.newBuilder().setId("synthetic-p1").setName("合成测试人员").setDisplayNumber("A001").setOrder(1.5);
-        var queue = Mediflow.Queue.newBuilder().setId("general").setName("普通门诊")
-            .addSections(Mediflow.Section.newBuilder().setId("current").setName("当前叫号").addPersons(person))
-            .addSections(Mediflow.Section.newBuilder().setId("waiting").setName("等待叫号"));
+        var person = Mediflow.Person.newBuilder().setId(Identifiers.encode("synthetic-p1")).setName("合成测试人员").setDisplayNumber("A001").setOrder(1.5);
+        var queue = Mediflow.Queue.newBuilder().setId(Identifiers.encode("general")).setName("普通门诊")
+            .addSections(Mediflow.Section.newBuilder().setId(Identifiers.encode("current")).setName("当前叫号").addPersons(person))
+            .addSections(Mediflow.Section.newBuilder().setId(Identifiers.encode("waiting")).setName("等待叫号"));
         var template = Mediflow.Template.newBuilder().addQueues(queue)
-            .addQueues(Mediflow.Queue.newBuilder().setId("expert").setName("专家门诊").addSections(Mediflow.Section.newBuilder().setId("custom").setName("自定义分区"))).build();
+            .addQueues(Mediflow.Queue.newBuilder().setId(Identifiers.encode("expert")).setName("专家门诊").addSections(Mediflow.Section.newBuilder().setId(Identifiers.encode("custom")).setName("自定义分区"))).build();
         var first = client.publish(id, template);
         assertEquals(first.getVersion(), client.publish(id, template).getVersion(), "Same request ID must not increase version");
         assertEquals(template, client.state().getData());
@@ -44,16 +44,16 @@ class LiveIntegrationTest {
             for (var future : pool.invokeAll(jobs)) assertEquals(first.getVersion(), future.get());
         } finally { pool.shutdownNow(); }
         var definition = new CallRequest(id, "general", "synthetic-p1", "请 A001 到一号诊室", 2);
-        assertEquals(id, client.createCall(definition).getId());
-        assertEquals(id, client.createCall(definition).getId());
+        assertEquals(id, Identifiers.decode(client.createCall(definition).getId()));
+        assertEquals(id, Identifiers.decode(client.createCall(definition).getId()));
         var callsPool = java.util.concurrent.Executors.newFixedThreadPool(4);
         try {
             var jobs = new java.util.ArrayList<java.util.concurrent.Callable<String>>();
-            for (int i = 0; i < 8; i++) jobs.add(() -> client.createCall(definition).getId());
+            for (int i = 0; i < 8; i++) jobs.add(() -> Identifiers.decode(client.createCall(definition).getId()));
             for (var future : callsPool.invokeAll(jobs)) assertEquals(id, future.get());
         } finally { callsPool.shutdownNow(); }
         var page = client.callsPage(1, 100);
-        assertTrue(page.getItemsList().stream().anyMatch(c -> c.getId().equals(id) && c.getRemaining() == 2));
+        assertTrue(page.getItemsList().stream().anyMatch(c -> Identifiers.decode(c.getId()).equals(id) && c.getRemaining() == 2));
         assertThrows(ApiException.class, () -> client.publish(id, Mediflow.Template.getDefaultInstance()));
         assertThrows(ApiException.class, () -> client.createCall(new CallRequest(id,"general","synthetic-p1","conflict",2)));
         try (var invalid = client(base,"invalid-test-token")) {

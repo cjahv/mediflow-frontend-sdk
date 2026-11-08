@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.github.cjahv.mediflow</groupId><artifactId>mediflow-backend-sdk</artifactId><version>0.8.0-rc.1</version>
-  <name>Mediflow Java backend SDK</name><description>Typed Protobuf v3 producer SDK for Mediflow</description>
+  <groupId>io.github.cjahv.mediflow</groupId><artifactId>mediflow-backend-sdk</artifactId><version>0.9.0-rc.1</version>
+  <name>Mediflow Java backend SDK</name><description>Typed Protobuf v4 producer SDK for Mediflow</description>
   <url>https://github.com/cjahv/mediflow-frontend-sdk/tree/main/mediflow-backend-sdk</url>
   <licenses><license><name>MIT License</name><url>https://opensource.org/license/mit</url><distribution>repo</distribution></license></licenses>
   <developers><developer><id>cjahv</id><name>cjahv</name><url>https://github.com/cjahv</url></developer></developers>

@@ -1,6 +1,6 @@
 {
   "name": "@cjahv/mediflow-screen-sdk",
-  "version": "0.6.0-rc.1",
+  "version": "0.7.0-rc.1",
   "type": "module",
   "description": "橡树医序平台 screen WebSocket mirror and consumption SDK",
   "main": "./dist/index.js",

@@ -1,9 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { encode, decode } from "../src/protobuf.ts";
-test("v3 typed auth cross-language golden", () => {
+test("v4 typed auth cross-language golden", () => {
   const b = encode({ type: "auth", token: "abc" });
-  assert.equal(Buffer.from(b).toString("hex"), "080352070a050a03616263");
+  assert.equal(Buffer.from(b).toString("hex"), "080452080a060a0400616263");
   assert.deepEqual(decode(b), { type: "auth", token: "abc" });
 });
 test("typed business fields roundtrip and protobuf defaults", () => {
@@ -87,15 +87,15 @@ test("explicit page oneofs preserve empty and nonempty endpoint contracts", () =
     for (const items of [[], [item]]) {
       const page = { items, total: items.length, page: 1, pageSize: 20 };
       const bytes = encode(page, kind);
-      assert.equal(mediflow.v3.Packet.decode(bytes).body, kind);
+      assert.equal(mediflow.v4.Packet.decode(bytes).body, kind);
       if (items.length === 0) {
         const golden = {
-          callPage: "0803a20106100018012014",
-          screenPage: "0803aa0106100018012014",
-          consumptionPage: "0803b20106100018012014",
-          auditPage: "0803ba0106100018012014",
-          archivePage: "0803c20106100018012014",
-          historyPage: "0803ca0106100018012014",
+          callPage: "0804a20106100018012014",
+          screenPage: "0804aa0106100018012014",
+          consumptionPage: "0804b20106100018012014",
+          auditPage: "0804ba0106100018012014",
+          archivePage: "0804c20106100018012014",
+          historyPage: "0804ca0106100018012014",
         };
         assert.equal(Buffer.from(bytes).toString("hex"), golden[kind]);
       }

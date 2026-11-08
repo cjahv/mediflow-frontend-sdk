@@ -48,7 +48,7 @@ public final class MediflowClient implements AutoCloseable {
         this.channel = Objects.requireNonNull(channel, "channel");
         this.timeout = timeout;
         var headers = new Metadata();
-        headers.put(Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER), "Bearer " + token);
+        headers.put(Metadata.Key.of("mediflow-token-bin", Metadata.BINARY_BYTE_MARSHALLER), Identifiers.encode(token).toByteArray());
         this.stub = BackendServiceGrpc.newFutureStub(channel)
                 .withInterceptors(MetadataUtils.newAttachHeadersInterceptor(headers));
     }
@@ -135,7 +135,7 @@ public final class MediflowClient implements AutoCloseable {
     /** Replace the whole template; an empty queue list intentionally clears the screen. */
     public Mediflow.Snapshot publish(String requestId, Mediflow.Template template) throws IOException, InterruptedException {
         identifier(requestId, "requestId"); validateTemplate(Objects.requireNonNull(template, "template"));
-        var request = Mediflow.Publish.newBuilder().setRequestId(requestId).setData(template).build();
+        var request = Mediflow.Publish.newBuilder().setRequestId(Identifiers.encode(requestId)).setData(template).build();
         requestSize(request);
         var result = await(deadlineStub().publish(request)); validateSnapshot(result); return result;
     }
@@ -145,12 +145,12 @@ public final class MediflowClient implements AutoCloseable {
         required(input.text(), "text");
         if (input.text().getBytes(StandardCharsets.UTF_8).length > 16_384 || input.totalQuota() < 1 || input.totalQuota() > 100)
             throw new IllegalArgumentException("Call text must be <=16384 UTF-8 bytes and totalQuota must be 1..100");
-        var builder = Mediflow.Call.newBuilder().setId(input.id()).setQueueId(input.queueId())
-                .setPersonId(input.personId()).setText(input.text()).setTotalQuota(input.totalQuota());
+        var builder = Mediflow.Call.newBuilder().setId(Identifiers.encode(input.id())).setQueueId(Identifiers.encode(input.queueId()))
+                .setPersonId(Identifiers.encode(input.personId())).setText(input.text()).setTotalQuota(input.totalQuota());
         if (input.expiresAt() != null) builder.setExpiresAt(input.expiresAt().toInstant().toString());
         var request = builder.build(); requestSize(request);
         var result = await(deadlineStub().createCall(request)); validateCall(result, false);
-        if (!result.getId().equals(input.id())) throw new ProtocolException("Response call ID differs from request");
+        if (!Identifiers.decode(result.getId()).equals(input.id())) throw new ProtocolException("Response call ID differs from request");
         return result;
     }
     /** History only, not a playback queue. */
@@ -174,9 +174,13 @@ public final class MediflowClient implements AutoCloseable {
         catch (InterruptedException error) { channel.shutdownNow(); Thread.currentThread().interrupt(); }
     }
 
+    private static void validateIdentifiers(com.google.protobuf.Message message) throws ProtocolException {
+        try {Identifiers.validate(message);} catch(IllegalArgumentException e) {throw new ProtocolException("Invalid compact identifier",e);}
+    }
     private static void validateSnapshot(Mediflow.Snapshot value) throws ProtocolException {
+        validateIdentifiers(value);
         if (!value.hasVersion() || value.getVersion() < 0 || value.getVersion() > MAX_SAFE_INTEGER
-                || !value.hasScreenId() || value.getScreenId().isEmpty() || !value.hasEpoch() || value.getEpoch().isEmpty()
+                || !value.hasScreenId() || Identifiers.decode(value.getScreenId()).isEmpty() || !value.hasEpoch() || Identifiers.decode(value.getEpoch()).isEmpty()
                 || !value.hasTemplateVersion() || value.getTemplateVersion().isEmpty() || !value.hasData()) {
             throw new ProtocolException("Invalid snapshot metadata");
         }
@@ -185,11 +189,12 @@ public final class MediflowClient implements AutoCloseable {
     }
 
     private static void validateCall(Mediflow.Call call, boolean counters) throws ProtocolException {
-        if (!call.hasId() || call.getId().isEmpty() || !call.hasTotalQuota() || call.getTotalQuota() < 1
+        validateIdentifiers(call);
+        if (!call.hasId() || Identifiers.decode(call.getId()).isEmpty() || !call.hasTotalQuota() || call.getTotalQuota() < 1
                 || call.getTotalQuota() > 100 || !call.hasActive() || (counters && (!call.hasConsumed() || !call.hasRemaining()))
                 || call.getConsumed() < 0 || call.getRemaining() < 0 || call.getConsumed() > call.getTotalQuota()
                 || call.getRemaining() > call.getTotalQuota()
-                || !call.hasQueueId() || call.getQueueId().isEmpty() || !call.hasPersonId() || call.getPersonId().isEmpty()
+                || !call.hasQueueId() || Identifiers.decode(call.getQueueId()).isEmpty() || !call.hasPersonId() || Identifiers.decode(call.getPersonId()).isEmpty()
                 || !call.hasText() || call.getText().isEmpty()
                 || (counters && call.getRemaining() != call.getTotalQuota() - call.getConsumed())) throw new ProtocolException("Invalid call response");
     }
@@ -197,16 +202,16 @@ public final class MediflowClient implements AutoCloseable {
     private static void validateTemplate(Mediflow.Template template) {
         var queues = new HashSet<String>();
         for (var queue : template.getQueuesList()) {
-            required(queue.getId(), "queue.id"); required(queue.getName(), "queue.name");
-            if (!queues.add(queue.getId())) throw new IllegalArgumentException("Duplicate queue ID");
+            required(Identifiers.decode(queue.getId()), "queue.id"); required(queue.getName(), "queue.name");
+            if (!queues.add(Identifiers.decode(queue.getId()))) throw new IllegalArgumentException("Duplicate queue ID");
             var sections = new HashSet<String>();
             for (var section : queue.getSectionsList()) {
-                required(section.getId(), "section.id"); required(section.getName(), "section.name");
-                if (!sections.add(section.getId())) throw new IllegalArgumentException("Duplicate section ID");
+                required(Identifiers.decode(section.getId()), "section.id"); required(section.getName(), "section.name");
+                if (!sections.add(Identifiers.decode(section.getId()))) throw new IllegalArgumentException("Duplicate section ID");
                 var persons = new HashSet<String>();
                 for (var person : section.getPersonsList()) {
-                    required(person.getId(), "person.id"); required(person.getName(), "person.name"); required(person.getDisplayNumber(), "person.displayNumber");
-                    if (!persons.add(person.getId()) || !person.hasOrder() || !Double.isFinite(person.getOrder())) {
+                    required(Identifiers.decode(person.getId()), "person.id"); required(person.getName(), "person.name"); required(person.getDisplayNumber(), "person.displayNumber");
+                    if (!persons.add(Identifiers.decode(person.getId())) || !person.hasOrder() || !Double.isFinite(person.getOrder())) {
                         throw new IllegalArgumentException("Person ID must be unique and order must be finite");
                     }
                 }
