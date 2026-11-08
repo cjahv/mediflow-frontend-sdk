@@ -1,0 +1,44 @@
+{
+  "name": "@cjahv/mediflow-screen-sdk",
+  "version": "0.6.0-rc.1",
+  "type": "module",
+  "description": "橡树医序平台 screen WebSocket mirror and consumption SDK",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "proto",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-generated.mjs",
+    "test": "npm run build && node --test test/*.test.mjs && npm run test:examples",
+    "format": "prettier --write src examples test",
+    "format:check": "prettier --check src examples test",
+    "test:package": "npm run build && node test/package-install.mjs",
+    "test:examples": "tsc -p tsconfig.examples.json && node scripts/copy-example-generated.mjs && node --test test/screen-example.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "prettier": "3.6.2"
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "protobufjs": "8.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjahv/mediflow-frontend-sdk.git"
+  },
+  "homepage": "https://github.com/cjahv/mediflow-frontend-sdk"
+}

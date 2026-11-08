@@ -1,0 +1,31 @@
+name: Verify trusted private source
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: private-platform-release
+  cancel-in-progress: false
+jobs:
+  preflight:
+    if: github.repository == 'cjahv/mediflow-frontend-sdk' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: python3 scripts/private-source.py
+  verify:
+    needs: preflight
+    environment: private-platform-release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify fixed private SHA and immediately remove checkout
+        env:
+          PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+        run: python3 scripts/private-source.py --fetch

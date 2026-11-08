@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "repository": "cjahv/mediflow",
+  "commit": null,
+  "image": "ghcr.io/cjahv/mediflow",
+  "platforms": ["linux/amd64", "linux/arm64"]
+}
