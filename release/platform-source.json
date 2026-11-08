@@ -1,7 +1,7 @@
 {
   "enabled": true,
   "repository": "cjahv/mediflow",
-  "commit": "1e85ab122fabf0f9c6819dd31c34fbe086d0f800",
+  "commit": "f1d9c1a1a95f2bf3ea9c767e7ba4256f9a8a8eaf",
   "image": "ghcr.io/cjahv/mediflow",
   "platforms": [
     "linux/amd64",
