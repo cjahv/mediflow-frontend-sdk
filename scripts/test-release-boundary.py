@@ -81,6 +81,20 @@ class ReleaseBoundary(unittest.TestCase):
         self.assertIn(['bash', 'scripts/compose-release-smoke.sh'], commands)
         steps = self.flow['jobs']['candidate']['steps']
         self.assertTrue(any(step.get('uses') == 'docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f' for step in steps))
+    def test_scanner_installation_is_pinned_without_weakening_scan(self):
+        steps = self.flow['jobs']['candidate']['steps']
+        install = next(s for s in steps if s.get('name') == 'Install checksum-pinned Trivy from official release')
+        scan = next(s for s in steps if s.get('uses', '').startswith('aquasecurity/trivy-action@'))
+        self.assertLess(steps.index(install), steps.index(scan))
+        for required in ['sha256sum --check --strict', 'https://github.com/aquasecurity/trivy/releases/download/v0.70.0/', '8b4376d5d6befe5c24d503f10ff136d9e0c49f9127a4279fd110b727929a5aa9', '2f6bb988b553a1bbac6bdd1ce890f5e412439564e17522b88a4541b4f364fc8d', 'set -euo pipefail']:
+            self.assertIn(required, install['run'])
+        config = scan['with']
+        self.assertTrue(config['skip-setup-trivy'])
+        self.assertEqual(config['version'], 'v0.70.0')
+        self.assertEqual(config['severity'], 'HIGH,CRITICAL')
+        self.assertEqual(config['exit-code'], '1')
+        self.assertFalse(config['ignore-unfixed'])
+        self.assertFalse(config['cache'])
     def test_no_package_write_in_build(self):
         self.flow['jobs']['candidate']['permissions'] = {'packages':'write'}
         with self.assertRaises(ValueError): audit(self.flow)
