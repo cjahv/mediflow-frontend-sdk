@@ -10,6 +10,8 @@ python3 scripts/release/test-release-safety.py
 python3 scripts/test-bootstrap-sdks.py
 python3 scripts/test-sqlite-backup.py
 python3 scripts/test-release-container-policy.py
+python3 scripts/test-image-reproducibility.py
+python3 scripts/test-image-layers.py
 python3 scripts/release/test-sdk-version-free.py
 python3 scripts/release/test-sdk-privacy.py
 python3 scripts/release/test-git-sdk.py

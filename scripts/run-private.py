@@ -69,7 +69,7 @@ def main():
             version = os.environ['IMAGE_TAG']
             if version != 'latest' and json.loads((SOURCE / 'release/manifest.json').read_text())['platformVersion'] != version:
                 raise ValueError('RC version differs from source manifest')
-            execute(['docker', 'build', '--build-arg', 'VERSION=' + version, '--build-arg', 'REVISION=' + policy['commit'], '-t', 'mediflow:ci', '-f', 'mediflow-platform/Dockerfile', '.'])
+            execute(['bash', 'scripts/build-image.sh', 'mediflow:ci', version, policy['commit']])
         execute(['npm', 'ci', '--prefix', 'mediflow-platform/web', '--omit=dev'])
         execute(['bash', 'scripts/container-smoke.sh'])
         if args.mode == 'candidate': execute(['bash', 'scripts/compose-release-smoke.sh'])
