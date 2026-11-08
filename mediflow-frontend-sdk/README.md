@@ -101,10 +101,10 @@ SDK 自动连接 `/mediflow/ws/diagnostic`、鉴权和重连。该入口要求�
 
 ## 公开预发布包安装（准备中）
 
-发布准备版本为 `0.7.0-rc.1`，配置不代表该版本已经发布。发布成功后，任何人均可匿名安装固定版本，无需 GitHub/npm 账号或 token：
+发布准备版本为 `0.7.1-rc.1`，配置不代表该版本已经发布。发布成功后，任何人均可匿名安装固定版本，无需 GitHub/npm 账号或 token：
 
 ```sh
-npm install git+https://github.com/cjahv/mediflow-frontend-sdk.git#v0.7.0-rc.1
+npm install git+https://github.com/cjahv/mediflow-frontend-sdk.git#v0.7.1-rc.1
 ```
 
 包包含构建后的 JavaScript、类型声明和协议定义，消费项目不需要 protoc，源码仓库保持私有。发布后使用根目录 `node scripts/release/check-npm-consumer.mjs <版本>` 从独立目录、空配置和空缓存匿名检验下载与导入。
@@ -115,8 +115,12 @@ Git URL 安装不依赖 npm scope 所有权。跨仓库发布凭据和审批配�
 
 ## Protocol v4 upgrade (unreleased)
 
-Upgrade the platform, Java SDK 0.9.0-rc.1 and frontend SDK 0.7.0-rc.1 together. v3 clients are rejected; there is no JSON or v3 fallback. Existing stored IDs, tokens, request IDs and database schema remain unchanged. Regenerate direct Protobuf consumers: ID/token fields are now `bytes`, and the service namespace is `mediflow.v4`. Java generated setters require `Identifiers.encode(text)` and getters use `Identifiers.decode(bytes)`; high-level string APIs remain strings. Frontend SDK public models remain strings.
+Upgrade the platform, Java SDK 0.9.0-rc.1 and frontend SDK 0.7.1-rc.1 together. v3 clients are rejected; there is no JSON or v3 fallback. Existing stored IDs, tokens, request IDs and database schema remain unchanged. Regenerate direct Protobuf consumers: ID/token fields are now `bytes`, and the service namespace is `mediflow.v4`. Java generated setters require `Identifiers.encode(text)` and getters use `Identifiers.decode(bytes)`; high-level string APIs remain strings. Frontend SDK public models remain strings.
 
 Each ID/token byte field begins with a one-byte discriminator: 0 means the exact UTF-8 text; 1 means 16 UUID bytes (canonical lowercase hyphenated text); 2 means 24 random bytes (canonical lowercase 48-character hexadecimal text). Noncanonical encodings, malformed UTF-8, invalid fixed lengths and text exceeding 4096 UTF-8 bytes are rejected. Mixed case, leading zeros, Unicode and external business identifiers retain their original spelling. Arbitrary text costs one extra byte; canonical UUIDs save 19 bytes and platform random IDs/tokens save 23 bytes per field. No entropy is removed. Empty text is encoded as tag 0 only; absent optional fields remain absent.
 
 Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadata is rejected. HTTP/2 base64-encodes binary metadata and HPACK may compress repeated headers, so raw token savings are not a claim about total per-RPC network bytes. Management HTTP and WebSocket packets use protocolVersion 4; WebSocket frames remain binary Protobuf. Message size measurements exclude transport headers, TLS and compression.
+
+### Snapshot ordering
+
+`ScreenClient.snapshot` and `onSnapshot` return persons in ascending numeric `order` within each section. Equal values retain wire order. Queue/section order, IDs and original numeric order values are preserved. `orderedSnapshot(snapshot)` applies the same stable ordering to an independent copy. The admin editor renumbers its edited section to consecutive values when rows are moved, inserted or removed; external producers may continue to use arbitrary finite order values. Protocol v4 and Java APIs are unchanged.

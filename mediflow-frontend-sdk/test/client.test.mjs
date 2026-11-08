@@ -894,3 +894,39 @@ test("preview reconnect reauthenticates and replaces the last snapshot authorita
   );
   client.close();
 });
+
+test("snapshot callback and stored SDK state share stable business ordering", () => {
+  const { client, socket, states } = setup();
+  const snapshot = state(2);
+  snapshot.data.queues = [
+    {
+      id: "q",
+      name: "Q",
+      sections: [
+        {
+          id: "s",
+          name: "S",
+          persons: [
+            { id: "second", name: "Second", displayNumber: "02", order: 2 },
+            { id: "first", name: "First", displayNumber: "01", order: 1 },
+          ],
+        },
+      ],
+    },
+  ];
+  socket.frame({ type: "snapshot", payload: snapshot });
+  assert.deepEqual(
+    states.at(-1).data.queues[0].sections[0].persons.map((p) => p.id),
+    ["first", "second"],
+  );
+  assert.deepEqual(
+    client.snapshot.data.queues[0].sections[0].persons.map((p) => p.id),
+    ["first", "second"],
+  );
+  states.at(-1).data.queues[0].sections[0].persons.reverse();
+  assert.equal(
+    client.snapshot.data.queues[0].sections[0].persons[0].id,
+    "first",
+  );
+  client.close();
+});

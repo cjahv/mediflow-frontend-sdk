@@ -95,6 +95,7 @@ const template = {
           id: "calling",
           name: "当前叫号",
           persons: [
+            { id: "p2", name: "第二人", order: 2, displayNumber: "A002" },
             { id: "p1", name: "合成测试人员", order: 1, displayNumber: "A001" },
           ],
         },
@@ -152,6 +153,14 @@ try {
     () =>
       ca.snapshots.at(-1)?.version === published.version &&
       ca.snapshots.at(-1)?.data.queues.length === 2,
+  );
+  assert.deepEqual(
+    ca.client.snapshot.data.queues[0].sections[0].persons.map((p) => p.id),
+    ["p1", "p2"],
+  );
+  assert.deepEqual(
+    ca.snapshots.at(-1).data.queues[0].sections[0].persons.map((p) => p.order),
+    [1, 2],
   );
   const call = {
     id: "call-" + run,

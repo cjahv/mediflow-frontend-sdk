@@ -1,3 +1,5 @@
+import { orderedSnapshot } from "./ordering.js";
+export { orderedSnapshot } from "./ordering.js";
 import { PlaybackQueue } from "./playback.js";
 export type { PlaybackOptions, PlaybackState } from "./playback.js";
 export { encode, decode, PROTOBUF_CONTENT_TYPE } from "./protobuf.js";
@@ -233,7 +235,7 @@ export class ScreenClient {
           throw new Error("WebSocket frame exceeds 16 MiB");
         const message = decode(event.data);
         if (message.type === "snapshot") {
-          const state = validateSnapshot(message.payload);
+          const state = orderedSnapshot(validateSnapshot(message.payload));
           if (this.ready && this.last && state.screenId !== this.last.screenId)
             throw new Error("Snapshot changed authenticated screen");
           // First snapshot on a new connection is authoritative, including restored server data.
