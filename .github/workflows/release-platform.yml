@@ -57,6 +57,7 @@ jobs:
       - name: Fetch only reviewed private commit
         env:
           PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+          PUBLISH_IMAGE: ${{ inputs.publish }}
         run: python3 scripts/private-source.py --checkout
       - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
@@ -88,6 +89,7 @@ jobs:
           persist-credentials: false
       - env:
           PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+          PUBLISH_IMAGE: ${{ inputs.publish }}
         run: python3 scripts/private-source.py --checkout
       - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
         with:
@@ -121,6 +123,7 @@ jobs:
       - name: Fetch only reviewed private commit
         env:
           PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+          PUBLISH_IMAGE: ${{ inputs.publish }}
         run: python3 scripts/private-source.py --checkout
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:

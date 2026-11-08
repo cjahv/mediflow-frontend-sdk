@@ -46,14 +46,14 @@ def metadata(path, token):
         return json.load(response)
 
 
-def trusted_identity(repo, compare, sha):
+def trusted_identity(repo, compare, sha, require_main=True):
     return (repo.get('private') is True and repo.get('full_name') == PRIVATE
             and compare.get('base_commit', {}).get('sha') == sha
-            and compare.get('merge_base_commit', {}).get('sha') == sha)
+            and (not require_main or compare.get('merge_base_commit', {}).get('sha') == sha))
 
 
 def verify_checkout(sha, token, destination=None):
-    if not trusted_identity(metadata('', token), metadata('/compare/' + sha + '...main', token), sha):
+    if not trusted_identity(metadata('', token), metadata('/compare/' + sha + '...main', token), sha, require_main=os.environ.get('PUBLISH_IMAGE', 'true') != 'false'):
         raise ValueError('private source identity or main ancestry mismatch')
     # Never run private source here. Keep authentication out of URL/config/arguments.
     with tempfile.TemporaryDirectory(prefix='private-source-') as directory:

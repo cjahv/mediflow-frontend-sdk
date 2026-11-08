@@ -5,6 +5,7 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 python3 -m pip install PyYAML==6.0.3
 python3 scripts/release/check-manifest.py
 python3 scripts/release/test-release-safety.py
+python3 scripts/test-bootstrap-sdks.py
 python3 scripts/test-sqlite-backup.py
 python3 scripts/test-release-container-policy.py
 python3 scripts/release/test-sdk-version-free.py
@@ -40,6 +41,7 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.6.2
 npm ci --prefix protocol
 npm run generate --prefix protocol
+python3 scripts/bootstrap-sdks.py --check
 git diff --exit-code -- protocol mediflow-platform/internal/pb mediflow-platform/internal/wire mediflow-platform/proto mediflow-platform/web/src/api mediflow-backend-sdk/proto mediflow-frontend-sdk/src/protobuf.ts mediflow-frontend-sdk/src/generated mediflow-frontend-sdk/proto
 bash scripts/integration.sh
 (cd mediflow-platform/web && npx playwright install --with-deps chromium)
