@@ -83,7 +83,7 @@ const result = await operation.play(async text => {
 
 ## 类型与协议
 
-业务模型在 `src/types.ts`，协议契约以仓库 protocol/ 中的 v3 schema 和生成代码为准。SDK 对消费结果、屏幕身份、额度和内容再做运行时校验。代码中的对象是 SDK 内部模型，编码后才上网；不代表 JSON 协议。业务只使用 ScreenClient，无需手写消息。
+业务模型在 `src/types.ts`，协议契约以仓库 protocol/ 中的 v4 schema 和生成代码为准。SDK 对消费结果、屏幕身份、额度和内容再做运行时校验。代码中的对象是 SDK 内部模型，编码后才上网；不代表 JSON 协议。业务只使用 ScreenClient，无需手写消息。
 
 整数限制 ±(2^53−1)。包元数据、离线配置及测试日志可使用 JSON，与网络协议无关。
 
@@ -101,10 +101,10 @@ SDK 自动连接 `/mediflow/ws/diagnostic`、鉴权和重连。该入口要求�
 
 ## 公开预发布包安装（准备中）
 
-发布准备版本为 `0.6.0-rc.1`，配置不代表该版本已经发布。发布成功后，任何人均可匿名安装固定版本，无需 GitHub/npm 账号或 token：
+发布准备版本为 `0.7.0-rc.1`，配置不代表该版本已经发布。发布成功后，任何人均可匿名安装固定版本，无需 GitHub/npm 账号或 token：
 
 ```sh
-npm install git+https://github.com/cjahv/mediflow-frontend-sdk.git#v0.6.0-rc.1
+npm install git+https://github.com/cjahv/mediflow-frontend-sdk.git#v0.7.0-rc.1
 ```
 
 包包含构建后的 JavaScript、类型声明和协议定义，消费项目不需要 protoc，源码仓库保持私有。发布后使用根目录 `node scripts/release/check-npm-consumer.mjs <版本>` 从独立目录、空配置和空缓存匿名检验下载与导入。
@@ -112,3 +112,11 @@ npm install git+https://github.com/cjahv/mediflow-frontend-sdk.git#v0.6.0-rc.1
 Git URL 安装不依赖 npm scope 所有权。跨仓库发布凭据和审批配置见 [发布检查](../scripts/release/README.md)，消费方不需要这些配置。
 
 发行 Git 仓仅包含预编译产物，无安装构建脚本；无需 npmjs 账号。固定 tag 并提交 lockfile，以锁定实际 Git commit。版本尚未发布时安装命令不能作为发布成功证明。
+
+## Protocol v4 upgrade (unreleased)
+
+Upgrade the platform, Java SDK 0.9.0-rc.1 and frontend SDK 0.7.0-rc.1 together. v3 clients are rejected; there is no JSON or v3 fallback. Existing stored IDs, tokens, request IDs and database schema remain unchanged. Regenerate direct Protobuf consumers: ID/token fields are now `bytes`, and the service namespace is `mediflow.v4`. Java generated setters require `Identifiers.encode(text)` and getters use `Identifiers.decode(bytes)`; high-level string APIs remain strings. Frontend SDK public models remain strings.
+
+Each ID/token byte field begins with a one-byte discriminator: 0 means the exact UTF-8 text; 1 means 16 UUID bytes (canonical lowercase hyphenated text); 2 means 24 random bytes (canonical lowercase 48-character hexadecimal text). Noncanonical encodings, malformed UTF-8, invalid fixed lengths and text exceeding 4096 UTF-8 bytes are rejected. Mixed case, leading zeros, Unicode and external business identifiers retain their original spelling. Arbitrary text costs one extra byte; canonical UUIDs save 19 bytes and platform random IDs/tokens save 23 bytes per field. No entropy is removed. Empty text is encoded as tag 0 only; absent optional fields remain absent.
+
+Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadata is rejected. HTTP/2 base64-encodes binary metadata and HPACK may compress repeated headers, so raw token savings are not a claim about total per-RPC network bytes. Management HTTP and WebSocket packets use protocolVersion 4; WebSocket frames remain binary Protobuf. Message size measurements exclude transport headers, TLS and compression.

@@ -10,7 +10,7 @@ Java 17+ / Maven。仅面向后台业务系统，负责发布完整屏幕状态�
 <dependency>
   <groupId>io.github.cjahv.mediflow</groupId>
   <artifactId>mediflow-backend-sdk</artifactId>
-  <version>0.8.0-rc.1</version>
+  <version>0.9.0-rc.1</version>
 </dependency>
 ```
 
@@ -26,7 +26,7 @@ try (var client = new MediflowClient("grpcs://mediflow.example.com:9090", screen
 }
 ```
 
-完整示例：[examples/ProducerExample.java](examples/ProducerExample.java)，纳入 Maven 编译。SDK 自动附加 `authorization: Bearer ...`，调用生成的 `mediflow.v3.BackendService`，不手写请求字节、不使用 HTTP POST 或 Packet 包装。
+完整示例：[examples/ProducerExample.java](examples/ProducerExample.java)，纳入 Maven 编译。SDK 自动附加 `mediflow-token-bin: <compact token bytes>`，调用生成的 `mediflow.v4.BackendService`，不手写请求字节、不使用 HTTP POST 或 Packet 包装。
 
 - `state()`：当前屏幕的完整快照。
 - `publish(requestId, template)`：完整替换，包括空模板清屏。
@@ -86,8 +86,16 @@ MEDIFLOW_GRPC_URL=grpc://127.0.0.1:9090 MEDIFLOW_SCREEN_TOKEN=... \
 
 ## Maven Central 公开 RC（准备中）
 
-候选坐标为 `io.github.cjahv.mediflow:mediflow-backend-sdk:0.8.0-rc.1`。尚未发布，也尚未确认 Central namespace 验证完成；验证 `io.github.cjahv` 后才可使用该坐标发布。Java 包名仍为 `com.cjahv.mediflow`，无需改变业务 import。
+候选坐标为 `io.github.cjahv.mediflow:mediflow-backend-sdk:0.9.0-rc.1`。尚未发布，也尚未确认 Central namespace 验证完成；验证 `io.github.cjahv` 后才可使用该坐标发布。Java 包名仍为 `com.cjahv.mediflow`，无需改变业务 import。
 
 发布后 Maven 默认 Central 仓库即可匿名下载，无需 GitHub Token 或额外 repositories。JAR 包含生成后的 gRPC/Protobuf 类，不要求使用方安装 protoc。根目录 `scripts/release/check-maven-consumer.sh <版本>` 使用空 settings 和独立临时缓存下载并编译示例，不复用构建机安装的 SDK。
 
 仅 `central-release` profile 启用 Javadoc、GPG 签名和 Central Portal 发布插件；普通 verify/install 不上传。现有 Maven 坐标与版本不变。发布迁移与所需维护者配置见 [发布边界](../release/MIGRATION.md)；当前草稿不启用 Central 或平台镜像发布。
+
+## Protocol v4 upgrade (unreleased)
+
+Upgrade the platform, Java SDK 0.9.0-rc.1 and frontend SDK 0.7.0-rc.1 together. v3 clients are rejected; there is no JSON or v3 fallback. Existing stored IDs, tokens, request IDs and database schema remain unchanged. Regenerate direct Protobuf consumers: ID/token fields are now `bytes`, and the service namespace is `mediflow.v4`. Java generated setters require `Identifiers.encode(text)` and getters use `Identifiers.decode(bytes)`; high-level string APIs remain strings. Frontend SDK public models remain strings.
+
+Each ID/token byte field begins with a one-byte discriminator: 0 means the exact UTF-8 text; 1 means 16 UUID bytes (canonical lowercase hyphenated text); 2 means 24 random bytes (canonical lowercase 48-character hexadecimal text). Noncanonical encodings, malformed UTF-8, invalid fixed lengths and text exceeding 4096 UTF-8 bytes are rejected. Mixed case, leading zeros, Unicode and external business identifiers retain their original spelling. Arbitrary text costs one extra byte; canonical UUIDs save 19 bytes and platform random IDs/tokens save 23 bytes per field. No entropy is removed. Empty text is encoded as tag 0 only; absent optional fields remain absent.
+
+Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadata is rejected. HTTP/2 base64-encodes binary metadata and HPACK may compress repeated headers, so raw token savings are not a claim about total per-RPC network bytes. Management HTTP and WebSocket packets use protocolVersion 4; WebSocket frames remain binary Protobuf. Message size measurements exclude transport headers, TLS and compression.

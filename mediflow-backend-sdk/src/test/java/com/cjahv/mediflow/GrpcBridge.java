@@ -23,14 +23,14 @@ public final class GrpcBridge {
                     var client = clients.get(fields[1]);
                     if (client == null) { client = new MediflowClient(endpoint, fields[1]); clients.put(fields[1], client); }
                     var packet = Mediflow.Packet.parseFrom(Base64.getDecoder().decode(fields[2]));
-                    var output = Mediflow.Packet.newBuilder().setProtocolVersion(3);
+                    var output = Mediflow.Packet.newBuilder().setProtocolVersion(4);
                     String[] operation = fields[0].split(":");
                     switch (operation[0]) {
-                        case "publish" -> output.setSnapshot(client.publish(packet.getPublish().getRequestId(), packet.getPublish().getData()));
+                        case "publish" -> output.setSnapshot(client.publish(Identifiers.decode(packet.getPublish().getRequestId()), packet.getPublish().getData()));
                         case "state" -> output.setSnapshot(client.state());
                         case "call" -> {
                             var call = packet.getCall();
-                            output.setCall(client.createCall(new CallRequest(call.getId(), call.getQueueId(), call.getPersonId(), call.getText(), (int) call.getTotalQuota(), call.hasExpiresAt() ? OffsetDateTime.parse(call.getExpiresAt()) : null)));
+                            output.setCall(client.createCall(new CallRequest(Identifiers.decode(call.getId()), Identifiers.decode(call.getQueueId()), Identifiers.decode(call.getPersonId()), call.getText(), (int) call.getTotalQuota(), call.hasExpiresAt() ? OffsetDateTime.parse(call.getExpiresAt()) : null)));
                         }
                         case "calls" -> output.setCallPage(client.callsPage(Integer.parseInt(operation[1]), Integer.parseInt(operation[2])));
                         default -> throw new IllegalArgumentException("Invalid bridge operation");

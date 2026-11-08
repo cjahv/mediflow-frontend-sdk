@@ -27,7 +27,7 @@ class MediflowClientTest {
     private final AtomicReference<Context> requestContext = new AtomicReference<>();
 
     private static Mediflow.Snapshot snapshot() {
-        return Mediflow.Snapshot.newBuilder().setEpoch("epoch").setScreenId("screen")
+        return Mediflow.Snapshot.newBuilder().setEpoch(Identifiers.encode("epoch")).setScreenId(Identifiers.encode("screen"))
             .setVersion(1).setTemplateVersion("1").setData(Mediflow.Template.getDefaultInstance()).build();
     }
     @BeforeEach void start() throws Exception {
@@ -53,18 +53,18 @@ class MediflowClientTest {
         String name=InProcessServerBuilder.generateName();
         server=InProcessServerBuilder.forName(name).directExecutor().intercept(new ServerInterceptor() {
             public <ReqT,RespT> ServerCall.Listener<ReqT> interceptCall(ServerCall<ReqT,RespT> call, Metadata headers, ServerCallHandler<ReqT,RespT> next) {
-                auth.set(headers.get(Metadata.Key.of("authorization",Metadata.ASCII_STRING_MARSHALLER)));
+                auth.set(Identifiers.decode(com.google.protobuf.ByteString.copyFrom(headers.get(Metadata.Key.of("mediflow-token-bin",Metadata.BINARY_BYTE_MARSHALLER)))));
                 return next.startCall(call,headers);
             }
         }).addService(service).build().start();
         client=new MediflowClient(InProcessChannelBuilder.forName(name).directExecutor().build(),"test-token",Duration.ofMillis(100));
     }
     @AfterEach void stop() throws Exception { client.close(); server.shutdownNow(); server.awaitTermination(2,TimeUnit.SECONDS); }
-    @Test void authenticatesAndReturnsTypedState() throws Exception { assertEquals("screen",client.state().getScreenId()); assertEquals("Bearer test-token",auth.get()); }
+    @Test void authenticatesAndReturnsTypedState() throws Exception { assertEquals("screen",Identifiers.decode(client.state().getScreenId())); assertEquals("test-token",auth.get()); }
     @Test void completePublishAndCall() throws Exception {
         assertEquals(0,client.publish("request-id",Mediflow.Template.getDefaultInstance()).getData().getQueuesCount());
-        assertEquals("request-id",publication.getRequestId());
-        assertEquals("call",client.createCall(new CallRequest("call","queue","person","请到诊室",2)).getId());
+        assertEquals("request-id",Identifiers.decode(publication.getRequestId()));
+        assertEquals("call",Identifiers.decode(client.createCall(new CallRequest("call","queue","person","请到诊室",2)).getId()));
         assertEquals(0,definition.getTargetsCount());
     }
     @Test void historyIsBounded() throws Exception { assertEquals(0,client.callsPage(2,30).getTotal()); assertEquals(2,pagination.getPage()); assertEquals(30,pagination.getPageSize()); }
@@ -76,7 +76,7 @@ class MediflowClientTest {
         assertThrows(IllegalArgumentException.class,()->client.publish("x".repeat(257),Mediflow.Template.getDefaultInstance()));
         assertEquals(0,attempts.get());
     }
-    @Test void preservesIdForExplicitRetry() throws Exception { client.publish("same",Mediflow.Template.getDefaultInstance()); client.publish("same",Mediflow.Template.getDefaultInstance()); assertEquals(2,attempts.get()); assertEquals("same",publication.getRequestId()); }
+    @Test void preservesIdForExplicitRetry() throws Exception { client.publish("same",Mediflow.Template.getDefaultInstance()); client.publish("same",Mediflow.Template.getDefaultInstance()); assertEquals(2,attempts.get()); assertEquals("same",Identifiers.decode(publication.getRequestId())); }
     @Test void statusesAreStableAndDoNotLeakServerDetails() {
         failure=Status.UNAUTHENTICATED.withDescription("secret test-token");
         var error=assertThrows(ApiException.class,()->client.state());
@@ -100,7 +100,7 @@ class MediflowClientTest {
     @Test void closesOwnedChannel() { client.close(); assertThrows(IllegalStateException.class,()->client.state()); }
 
     @Test void realTransportRejectsOversizedResponse() throws Exception {
-        var huge = snapshot().toBuilder().setEpoch("x".repeat(16 * 1024 * 1024)).build();
+        var huge = snapshot().toBuilder().setEpoch(com.google.protobuf.ByteString.copyFromUtf8("\0" + "x".repeat(16 * 1024 * 1024))).build();
         var service = new BackendServiceGrpc.BackendServiceImplBase() {
             @Override public void getState(Mediflow.Empty request, StreamObserver<Mediflow.Snapshot> observer) {
                 observer.onNext(huge); observer.onCompleted();
@@ -114,7 +114,7 @@ class MediflowClientTest {
     }
     @Test void outboundLimitRejectsBeforeRpc() {
         var template = Mediflow.Template.newBuilder().addQueues(Mediflow.Queue.newBuilder()
-                .setId("q").setName("x".repeat(2 * 1024 * 1024))).build();
+                .setId(Identifiers.encode("q")).setName("x".repeat(2 * 1024 * 1024))).build();
         assertThrows(IllegalArgumentException.class, () -> client.publish("id", template));
         assertEquals(0, attempts.get());
     }

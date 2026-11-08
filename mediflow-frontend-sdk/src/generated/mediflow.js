@@ -3,7 +3,7 @@ import $protobuf from "protobufjs/minimal.js";
 
 // Common aliases
 const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
-const $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $TypeError = $util.global.TypeError, $String = $util.global.String, $Number = $util.global.Number, $isFinite = $util.global.isFinite, $Array = $util.global.Array, $parseInt = $util.global.parseInt, $BigInt = $util.global.BigInt, $Boolean = $util.global.Boolean;
+const $Object = $util.global.Object, $undefined = $util.global.undefined, $Error = $util.global.Error, $RangeError = $util.global.RangeError, $TypeError = $util.global.TypeError, $String = $util.global.String, $Number = $util.global.Number, $Array = $util.global.Array, $isFinite = $util.global.isFinite, $parseInt = $util.global.parseInt, $BigInt = $util.global.BigInt, $Boolean = $util.global.Boolean;
 
 // Exported root namespace
 const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
@@ -17,21 +17,21 @@ export const mediflow = $root.mediflow = (() => {
      */
     const mediflow = {};
 
-    mediflow.v3 = (function() {
+    mediflow.v4 = (function() {
 
         /**
-         * Namespace v3.
+         * Namespace v4.
          * @memberof mediflow
          * @namespace
          */
-        const v3 = {};
+        const v4 = {};
 
-        v3.Person = (function() {
+        v4.Person = (function() {
 
             /**
              * Properties of a Person.
-             * @typedef {Object} mediflow.v3.Person.$Properties
-             * @property {string|null} [id] Person id
+             * @typedef {Object} mediflow.v4.Person.$Properties
+             * @property {Uint8Array|null} [id] Person id
              * @property {string|null} [name] Person name
              * @property {number|null} [order] Person order
              * @property {string|null} [displayNumber] Person displayNumber
@@ -40,23 +40,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Person.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPerson
-             * @augments mediflow.v3.Person.$Properties
-             * @deprecated Use mediflow.v3.Person.$Properties instead.
+             * @augments mediflow.v4.Person.$Properties
+             * @deprecated Use mediflow.v4.Person.$Properties instead.
              */
 
             /**
              * Shape of a Person.
-             * @typedef {mediflow.v3.Person.$Properties} mediflow.v3.Person.$Shape
+             * @typedef {mediflow.v4.Person.$Properties} mediflow.v4.Person.$Shape
              */
 
             /**
              * Constructs a new Person.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Person.
              * @constructor
-             * @param {mediflow.v3.Person.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Person.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Person = function (properties) {
@@ -68,8 +68,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Person id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Person
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Person
              * @instance
              */
             Person.prototype.id = null;
@@ -77,7 +77,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Person name.
              * @member {string|null|undefined} name
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @instance
              */
             Person.prototype.name = null;
@@ -85,7 +85,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Person order.
              * @member {number|null|undefined} order
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @instance
              */
             Person.prototype.order = null;
@@ -93,7 +93,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Person displayNumber.
              * @member {string|null|undefined} displayNumber
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @instance
              */
             Person.prototype.displayNumber = null;
@@ -128,13 +128,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Person instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
-             * @param {mediflow.v3.Person.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Person} Person instance
+             * @param {mediflow.v4.Person.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Person} Person instance
              * @type {{
-             *   (properties: mediflow.v3.Person.$Shape): mediflow.v3.Person & mediflow.v3.Person.$Shape;
-             *   (properties?: mediflow.v3.Person.$Properties): mediflow.v3.Person;
+             *   (properties: mediflow.v4.Person.$Shape): mediflow.v4.Person & mediflow.v4.Person.$Shape;
+             *   (properties?: mediflow.v4.Person.$Properties): mediflow.v4.Person;
              * }}
              */
             Person.create = function(properties) {
@@ -142,11 +142,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Person message. Does not implicitly {@link mediflow.v3.Person.verify|verify} messages.
+             * Encodes the specified Person message. Does not implicitly {@link mediflow.v4.Person.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
-             * @param {mediflow.v3.Person.$Properties} message Person message or plain object to encode
+             * @param {mediflow.v4.Person.$Properties} message Person message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -158,7 +158,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.order != null && $Object.hasOwnProperty.call(message, "order"))
@@ -174,11 +174,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Person message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Person & mediflow.v3.Person.$Shape} Person
+             * @returns {mediflow.v4.Person & mediflow.v4.Person.$Shape} Person
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -199,7 +199,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Person();
+                message = _target || new $root.mediflow.v4.Person();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -212,7 +212,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -257,7 +257,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Person message.
              * @function verify
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -272,8 +272,8 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name")) {
                     properties._name = 1;
@@ -296,23 +296,26 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Person message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Person} Person
+             * @returns {mediflow.v4.Person} Person
              */
             Person.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Person)
+                if (object instanceof $root.mediflow.v4.Person)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Person: object expected");
+                    throw $TypeError(".mediflow.v4.Person: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Person();
+                let message = new $root.mediflow.v4.Person();
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.name != null)
                     message.name = $String(object.name);
                 if (object.order != null)
@@ -325,9 +328,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Person message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
-             * @param {mediflow.v3.Person} message Person
+             * @param {mediflow.v4.Person} message Person
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -340,7 +343,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     object.name = message.name;
                 if (message.order != null && $Object.hasOwnProperty.call(message, "order"))
@@ -353,7 +356,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Person to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -364,7 +367,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Person
              * @function getTypeUrl
-             * @memberof mediflow.v3.Person
+             * @memberof mediflow.v4.Person
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -372,42 +375,42 @@ export const mediflow = $root.mediflow = (() => {
             Person.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Person";
+                return prefix + "/mediflow.v4.Person";
             };
 
             return Person;
         })();
 
-        v3.Section = (function() {
+        v4.Section = (function() {
 
             /**
              * Properties of a Section.
-             * @typedef {Object} mediflow.v3.Section.$Properties
-             * @property {string|null} [id] Section id
+             * @typedef {Object} mediflow.v4.Section.$Properties
+             * @property {Uint8Array|null} [id] Section id
              * @property {string|null} [name] Section name
-             * @property {Array.<mediflow.v3.Person.$Properties>|null} [persons] Section persons
+             * @property {Array.<mediflow.v4.Person.$Properties>|null} [persons] Section persons
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Section.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ISection
-             * @augments mediflow.v3.Section.$Properties
-             * @deprecated Use mediflow.v3.Section.$Properties instead.
+             * @augments mediflow.v4.Section.$Properties
+             * @deprecated Use mediflow.v4.Section.$Properties instead.
              */
 
             /**
              * Shape of a Section.
-             * @typedef {mediflow.v3.Section.$Properties} mediflow.v3.Section.$Shape
+             * @typedef {mediflow.v4.Section.$Properties} mediflow.v4.Section.$Shape
              */
 
             /**
              * Constructs a new Section.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Section.
              * @constructor
-             * @param {mediflow.v3.Section.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Section.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Section = function (properties) {
@@ -420,8 +423,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Section id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Section
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Section
              * @instance
              */
             Section.prototype.id = null;
@@ -429,15 +432,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Section name.
              * @member {string|null|undefined} name
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @instance
              */
             Section.prototype.name = null;
 
             /**
              * Section persons.
-             * @member {Array.<mediflow.v3.Person.$Properties>} persons
-             * @memberof mediflow.v3.Section
+             * @member {Array.<mediflow.v4.Person.$Properties>} persons
+             * @memberof mediflow.v4.Section
              * @instance
              */
             Section.prototype.persons = $util.emptyArray;
@@ -460,13 +463,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Section instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
-             * @param {mediflow.v3.Section.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Section} Section instance
+             * @param {mediflow.v4.Section.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Section} Section instance
              * @type {{
-             *   (properties: mediflow.v3.Section.$Shape): mediflow.v3.Section & mediflow.v3.Section.$Shape;
-             *   (properties?: mediflow.v3.Section.$Properties): mediflow.v3.Section;
+             *   (properties: mediflow.v4.Section.$Shape): mediflow.v4.Section & mediflow.v4.Section.$Shape;
+             *   (properties?: mediflow.v4.Section.$Properties): mediflow.v4.Section;
              * }}
              */
             Section.create = function(properties) {
@@ -474,11 +477,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Section message. Does not implicitly {@link mediflow.v3.Section.verify|verify} messages.
+             * Encodes the specified Section message. Does not implicitly {@link mediflow.v4.Section.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
-             * @param {mediflow.v3.Section.$Properties} message Section message or plain object to encode
+             * @param {mediflow.v4.Section.$Properties} message Section message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -490,12 +493,12 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.persons != null && message.persons.length)
                     for (let i = 0; i < message.persons.length; ++i)
-                        $root.mediflow.v3.Person.encode(message.persons[i], writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Person.encode(message.persons[i], writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -505,11 +508,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Section message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Section & mediflow.v3.Section.$Shape} Section
+             * @returns {mediflow.v4.Section & mediflow.v4.Section.$Shape} Section
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -530,7 +533,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Section();
+                message = _target || new $root.mediflow.v4.Section();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -543,7 +546,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -559,7 +562,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.persons && message.persons.length))
                                 message.persons = [];
-                            message.persons.push($root.mediflow.v3.Person.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.persons.push($root.mediflow.v4.Person.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     }
@@ -582,7 +585,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Section message.
              * @function verify
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -597,8 +600,8 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name")) {
                     properties._name = 1;
@@ -609,7 +612,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.persons))
                         return "persons: array expected";
                     for (let i = 0; i < message.persons.length; ++i) {
-                        let error = $root.mediflow.v3.Person.verify(message.persons[i], _depth + 1);
+                        let error = $root.mediflow.v4.Person.verify(message.persons[i], _depth + 1);
                         if (error)
                             return "persons." + error;
                     }
@@ -620,33 +623,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Section message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Section} Section
+             * @returns {mediflow.v4.Section} Section
              */
             Section.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Section)
+                if (object instanceof $root.mediflow.v4.Section)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Section: object expected");
+                    throw $TypeError(".mediflow.v4.Section: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Section();
+                let message = new $root.mediflow.v4.Section();
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.name != null)
                     message.name = $String(object.name);
                 if (object.persons) {
                     if (!$Array.isArray(object.persons))
-                        throw $TypeError(".mediflow.v3.Section.persons: array expected");
+                        throw $TypeError(".mediflow.v4.Section.persons: array expected");
                     message.persons = $Array(object.persons.length);
                     for (let i = 0; i < object.persons.length; ++i) {
                         if (!$util.isObject(object.persons[i]))
-                            throw $TypeError(".mediflow.v3.Section.persons: object expected");
-                        message.persons[i] = $root.mediflow.v3.Person.fromObject(object.persons[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.Section.persons: object expected");
+                        message.persons[i] = $root.mediflow.v4.Person.fromObject(object.persons[i], _depth + 1);
                     }
                 }
                 return message;
@@ -655,9 +661,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Section message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
-             * @param {mediflow.v3.Section} message Section
+             * @param {mediflow.v4.Section} message Section
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -672,13 +678,13 @@ export const mediflow = $root.mediflow = (() => {
                 if (options.arrays || options.defaults)
                     object.persons = [];
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     object.name = message.name;
                 if (message.persons && message.persons.length) {
                     object.persons = $Array(message.persons.length);
                     for (let j = 0; j < message.persons.length; ++j)
-                        object.persons[j] = $root.mediflow.v3.Person.toObject(message.persons[j], options, _depth + 1);
+                        object.persons[j] = $root.mediflow.v4.Person.toObject(message.persons[j], options, _depth + 1);
                 }
                 return object;
             };
@@ -686,7 +692,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Section to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -697,7 +703,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Section
              * @function getTypeUrl
-             * @memberof mediflow.v3.Section
+             * @memberof mediflow.v4.Section
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -705,42 +711,42 @@ export const mediflow = $root.mediflow = (() => {
             Section.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Section";
+                return prefix + "/mediflow.v4.Section";
             };
 
             return Section;
         })();
 
-        v3.Queue = (function() {
+        v4.Queue = (function() {
 
             /**
              * Properties of a Queue.
-             * @typedef {Object} mediflow.v3.Queue.$Properties
-             * @property {string|null} [id] Queue id
+             * @typedef {Object} mediflow.v4.Queue.$Properties
+             * @property {Uint8Array|null} [id] Queue id
              * @property {string|null} [name] Queue name
-             * @property {Array.<mediflow.v3.Section.$Properties>|null} [sections] Queue sections
+             * @property {Array.<mediflow.v4.Section.$Properties>|null} [sections] Queue sections
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Queue.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IQueue
-             * @augments mediflow.v3.Queue.$Properties
-             * @deprecated Use mediflow.v3.Queue.$Properties instead.
+             * @augments mediflow.v4.Queue.$Properties
+             * @deprecated Use mediflow.v4.Queue.$Properties instead.
              */
 
             /**
              * Shape of a Queue.
-             * @typedef {mediflow.v3.Queue.$Properties} mediflow.v3.Queue.$Shape
+             * @typedef {mediflow.v4.Queue.$Properties} mediflow.v4.Queue.$Shape
              */
 
             /**
              * Constructs a new Queue.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Queue.
              * @constructor
-             * @param {mediflow.v3.Queue.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Queue.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Queue = function (properties) {
@@ -753,8 +759,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Queue id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Queue
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Queue
              * @instance
              */
             Queue.prototype.id = null;
@@ -762,15 +768,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Queue name.
              * @member {string|null|undefined} name
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @instance
              */
             Queue.prototype.name = null;
 
             /**
              * Queue sections.
-             * @member {Array.<mediflow.v3.Section.$Properties>} sections
-             * @memberof mediflow.v3.Queue
+             * @member {Array.<mediflow.v4.Section.$Properties>} sections
+             * @memberof mediflow.v4.Queue
              * @instance
              */
             Queue.prototype.sections = $util.emptyArray;
@@ -793,13 +799,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Queue instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
-             * @param {mediflow.v3.Queue.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Queue} Queue instance
+             * @param {mediflow.v4.Queue.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Queue} Queue instance
              * @type {{
-             *   (properties: mediflow.v3.Queue.$Shape): mediflow.v3.Queue & mediflow.v3.Queue.$Shape;
-             *   (properties?: mediflow.v3.Queue.$Properties): mediflow.v3.Queue;
+             *   (properties: mediflow.v4.Queue.$Shape): mediflow.v4.Queue & mediflow.v4.Queue.$Shape;
+             *   (properties?: mediflow.v4.Queue.$Properties): mediflow.v4.Queue;
              * }}
              */
             Queue.create = function(properties) {
@@ -807,11 +813,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Queue message. Does not implicitly {@link mediflow.v3.Queue.verify|verify} messages.
+             * Encodes the specified Queue message. Does not implicitly {@link mediflow.v4.Queue.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
-             * @param {mediflow.v3.Queue.$Properties} message Queue message or plain object to encode
+             * @param {mediflow.v4.Queue.$Properties} message Queue message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -823,12 +829,12 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.sections != null && message.sections.length)
                     for (let i = 0; i < message.sections.length; ++i)
-                        $root.mediflow.v3.Section.encode(message.sections[i], writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Section.encode(message.sections[i], writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -838,11 +844,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Queue message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Queue & mediflow.v3.Queue.$Shape} Queue
+             * @returns {mediflow.v4.Queue & mediflow.v4.Queue.$Shape} Queue
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -863,7 +869,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Queue();
+                message = _target || new $root.mediflow.v4.Queue();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -876,7 +882,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -892,7 +898,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.sections && message.sections.length))
                                 message.sections = [];
-                            message.sections.push($root.mediflow.v3.Section.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.sections.push($root.mediflow.v4.Section.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     }
@@ -915,7 +921,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Queue message.
              * @function verify
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -930,8 +936,8 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name")) {
                     properties._name = 1;
@@ -942,7 +948,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.sections))
                         return "sections: array expected";
                     for (let i = 0; i < message.sections.length; ++i) {
-                        let error = $root.mediflow.v3.Section.verify(message.sections[i], _depth + 1);
+                        let error = $root.mediflow.v4.Section.verify(message.sections[i], _depth + 1);
                         if (error)
                             return "sections." + error;
                     }
@@ -953,33 +959,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Queue message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Queue} Queue
+             * @returns {mediflow.v4.Queue} Queue
              */
             Queue.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Queue)
+                if (object instanceof $root.mediflow.v4.Queue)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Queue: object expected");
+                    throw $TypeError(".mediflow.v4.Queue: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Queue();
+                let message = new $root.mediflow.v4.Queue();
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.name != null)
                     message.name = $String(object.name);
                 if (object.sections) {
                     if (!$Array.isArray(object.sections))
-                        throw $TypeError(".mediflow.v3.Queue.sections: array expected");
+                        throw $TypeError(".mediflow.v4.Queue.sections: array expected");
                     message.sections = $Array(object.sections.length);
                     for (let i = 0; i < object.sections.length; ++i) {
                         if (!$util.isObject(object.sections[i]))
-                            throw $TypeError(".mediflow.v3.Queue.sections: object expected");
-                        message.sections[i] = $root.mediflow.v3.Section.fromObject(object.sections[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.Queue.sections: object expected");
+                        message.sections[i] = $root.mediflow.v4.Section.fromObject(object.sections[i], _depth + 1);
                     }
                 }
                 return message;
@@ -988,9 +997,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Queue message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
-             * @param {mediflow.v3.Queue} message Queue
+             * @param {mediflow.v4.Queue} message Queue
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -1005,13 +1014,13 @@ export const mediflow = $root.mediflow = (() => {
                 if (options.arrays || options.defaults)
                     object.sections = [];
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     object.name = message.name;
                 if (message.sections && message.sections.length) {
                     object.sections = $Array(message.sections.length);
                     for (let j = 0; j < message.sections.length; ++j)
-                        object.sections[j] = $root.mediflow.v3.Section.toObject(message.sections[j], options, _depth + 1);
+                        object.sections[j] = $root.mediflow.v4.Section.toObject(message.sections[j], options, _depth + 1);
                 }
                 return object;
             };
@@ -1019,7 +1028,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Queue to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -1030,7 +1039,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Queue
              * @function getTypeUrl
-             * @memberof mediflow.v3.Queue
+             * @memberof mediflow.v4.Queue
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -1038,40 +1047,40 @@ export const mediflow = $root.mediflow = (() => {
             Queue.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Queue";
+                return prefix + "/mediflow.v4.Queue";
             };
 
             return Queue;
         })();
 
-        v3.Template = (function() {
+        v4.Template = (function() {
 
             /**
              * Properties of a Template.
-             * @typedef {Object} mediflow.v3.Template.$Properties
-             * @property {Array.<mediflow.v3.Queue.$Properties>|null} [queues] Template queues
+             * @typedef {Object} mediflow.v4.Template.$Properties
+             * @property {Array.<mediflow.v4.Queue.$Properties>|null} [queues] Template queues
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Template.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ITemplate
-             * @augments mediflow.v3.Template.$Properties
-             * @deprecated Use mediflow.v3.Template.$Properties instead.
+             * @augments mediflow.v4.Template.$Properties
+             * @deprecated Use mediflow.v4.Template.$Properties instead.
              */
 
             /**
              * Shape of a Template.
-             * @typedef {mediflow.v3.Template.$Properties} mediflow.v3.Template.$Shape
+             * @typedef {mediflow.v4.Template.$Properties} mediflow.v4.Template.$Shape
              */
 
             /**
              * Constructs a new Template.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Template.
              * @constructor
-             * @param {mediflow.v3.Template.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Template.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Template = function (properties) {
@@ -1084,8 +1093,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Template queues.
-             * @member {Array.<mediflow.v3.Queue.$Properties>} queues
-             * @memberof mediflow.v3.Template
+             * @member {Array.<mediflow.v4.Queue.$Properties>} queues
+             * @memberof mediflow.v4.Template
              * @instance
              */
             Template.prototype.queues = $util.emptyArray;
@@ -1093,13 +1102,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Template instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
-             * @param {mediflow.v3.Template.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Template} Template instance
+             * @param {mediflow.v4.Template.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Template} Template instance
              * @type {{
-             *   (properties: mediflow.v3.Template.$Shape): mediflow.v3.Template & mediflow.v3.Template.$Shape;
-             *   (properties?: mediflow.v3.Template.$Properties): mediflow.v3.Template;
+             *   (properties: mediflow.v4.Template.$Shape): mediflow.v4.Template & mediflow.v4.Template.$Shape;
+             *   (properties?: mediflow.v4.Template.$Properties): mediflow.v4.Template;
              * }}
              */
             Template.create = function(properties) {
@@ -1107,11 +1116,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Template message. Does not implicitly {@link mediflow.v3.Template.verify|verify} messages.
+             * Encodes the specified Template message. Does not implicitly {@link mediflow.v4.Template.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
-             * @param {mediflow.v3.Template.$Properties} message Template message or plain object to encode
+             * @param {mediflow.v4.Template.$Properties} message Template message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -1124,7 +1133,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.queues != null && message.queues.length)
                     for (let i = 0; i < message.queues.length; ++i)
-                        $root.mediflow.v3.Queue.encode(message.queues[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Queue.encode(message.queues[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -1134,11 +1143,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Template message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Template & mediflow.v3.Template.$Shape} Template
+             * @returns {mediflow.v4.Template & mediflow.v4.Template.$Shape} Template
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -1159,7 +1168,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Template();
+                message = _target || new $root.mediflow.v4.Template();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -1174,7 +1183,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.queues && message.queues.length))
                                 message.queues = [];
-                            message.queues.push($root.mediflow.v3.Queue.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.queues.push($root.mediflow.v4.Queue.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     }
@@ -1197,7 +1206,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Template message.
              * @function verify
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1213,7 +1222,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.queues))
                         return "queues: array expected";
                     for (let i = 0; i < message.queues.length; ++i) {
-                        let error = $root.mediflow.v3.Queue.verify(message.queues[i], _depth + 1);
+                        let error = $root.mediflow.v4.Queue.verify(message.queues[i], _depth + 1);
                         if (error)
                             return "queues." + error;
                     }
@@ -1224,29 +1233,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Template message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Template} Template
+             * @returns {mediflow.v4.Template} Template
              */
             Template.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Template)
+                if (object instanceof $root.mediflow.v4.Template)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Template: object expected");
+                    throw $TypeError(".mediflow.v4.Template: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Template();
+                let message = new $root.mediflow.v4.Template();
                 if (object.queues) {
                     if (!$Array.isArray(object.queues))
-                        throw $TypeError(".mediflow.v3.Template.queues: array expected");
+                        throw $TypeError(".mediflow.v4.Template.queues: array expected");
                     message.queues = $Array(object.queues.length);
                     for (let i = 0; i < object.queues.length; ++i) {
                         if (!$util.isObject(object.queues[i]))
-                            throw $TypeError(".mediflow.v3.Template.queues: object expected");
-                        message.queues[i] = $root.mediflow.v3.Queue.fromObject(object.queues[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.Template.queues: object expected");
+                        message.queues[i] = $root.mediflow.v4.Queue.fromObject(object.queues[i], _depth + 1);
                     }
                 }
                 return message;
@@ -1255,9 +1264,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Template message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
-             * @param {mediflow.v3.Template} message Template
+             * @param {mediflow.v4.Template} message Template
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -1274,7 +1283,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.queues && message.queues.length) {
                     object.queues = $Array(message.queues.length);
                     for (let j = 0; j < message.queues.length; ++j)
-                        object.queues[j] = $root.mediflow.v3.Queue.toObject(message.queues[j], options, _depth + 1);
+                        object.queues[j] = $root.mediflow.v4.Queue.toObject(message.queues[j], options, _depth + 1);
                 }
                 return object;
             };
@@ -1282,7 +1291,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Template to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -1293,7 +1302,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Template
              * @function getTypeUrl
-             * @memberof mediflow.v3.Template
+             * @memberof mediflow.v4.Template
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -1301,44 +1310,44 @@ export const mediflow = $root.mediflow = (() => {
             Template.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Template";
+                return prefix + "/mediflow.v4.Template";
             };
 
             return Template;
         })();
 
-        v3.Snapshot = (function() {
+        v4.Snapshot = (function() {
 
             /**
              * Properties of a Snapshot.
-             * @typedef {Object} mediflow.v3.Snapshot.$Properties
-             * @property {string|null} [epoch] Snapshot epoch
-             * @property {string|null} [screenId] Snapshot screenId
+             * @typedef {Object} mediflow.v4.Snapshot.$Properties
+             * @property {Uint8Array|null} [epoch] Snapshot epoch
+             * @property {Uint8Array|null} [screenId] Snapshot screenId
              * @property {number|Long|null} [version] Snapshot version
              * @property {string|null} [templateVersion] Snapshot templateVersion
-             * @property {mediflow.v3.Template.$Properties|null} [data] Snapshot data
+             * @property {mediflow.v4.Template.$Properties|null} [data] Snapshot data
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Snapshot.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ISnapshot
-             * @augments mediflow.v3.Snapshot.$Properties
-             * @deprecated Use mediflow.v3.Snapshot.$Properties instead.
+             * @augments mediflow.v4.Snapshot.$Properties
+             * @deprecated Use mediflow.v4.Snapshot.$Properties instead.
              */
 
             /**
              * Shape of a Snapshot.
-             * @typedef {mediflow.v3.Snapshot.$Properties} mediflow.v3.Snapshot.$Shape
+             * @typedef {mediflow.v4.Snapshot.$Properties} mediflow.v4.Snapshot.$Shape
              */
 
             /**
              * Constructs a new Snapshot.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Snapshot.
              * @constructor
-             * @param {mediflow.v3.Snapshot.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Snapshot.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Snapshot = function (properties) {
@@ -1350,16 +1359,16 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Snapshot epoch.
-             * @member {string|null|undefined} epoch
-             * @memberof mediflow.v3.Snapshot
+             * @member {Uint8Array|null|undefined} epoch
+             * @memberof mediflow.v4.Snapshot
              * @instance
              */
             Snapshot.prototype.epoch = null;
 
             /**
              * Snapshot screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.Snapshot
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.Snapshot
              * @instance
              */
             Snapshot.prototype.screenId = null;
@@ -1367,7 +1376,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Snapshot version.
              * @member {number|Long|null|undefined} version
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @instance
              */
             Snapshot.prototype.version = null;
@@ -1375,15 +1384,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Snapshot templateVersion.
              * @member {string|null|undefined} templateVersion
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @instance
              */
             Snapshot.prototype.templateVersion = null;
 
             /**
              * Snapshot data.
-             * @member {mediflow.v3.Template.$Properties|null|undefined} data
-             * @memberof mediflow.v3.Snapshot
+             * @member {mediflow.v4.Template.$Properties|null|undefined} data
+             * @memberof mediflow.v4.Snapshot
              * @instance
              */
             Snapshot.prototype.data = null;
@@ -1418,13 +1427,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Snapshot instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
-             * @param {mediflow.v3.Snapshot.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Snapshot} Snapshot instance
+             * @param {mediflow.v4.Snapshot.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Snapshot} Snapshot instance
              * @type {{
-             *   (properties: mediflow.v3.Snapshot.$Shape): mediflow.v3.Snapshot & mediflow.v3.Snapshot.$Shape;
-             *   (properties?: mediflow.v3.Snapshot.$Properties): mediflow.v3.Snapshot;
+             *   (properties: mediflow.v4.Snapshot.$Shape): mediflow.v4.Snapshot & mediflow.v4.Snapshot.$Shape;
+             *   (properties?: mediflow.v4.Snapshot.$Properties): mediflow.v4.Snapshot;
              * }}
              */
             Snapshot.create = function(properties) {
@@ -1432,11 +1441,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Snapshot message. Does not implicitly {@link mediflow.v3.Snapshot.verify|verify} messages.
+             * Encodes the specified Snapshot message. Does not implicitly {@link mediflow.v4.Snapshot.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
-             * @param {mediflow.v3.Snapshot.$Properties} message Snapshot message or plain object to encode
+             * @param {mediflow.v4.Snapshot.$Properties} message Snapshot message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -1448,15 +1457,15 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.epoch);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.epoch);
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.screenId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.screenId);
                 if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.version);
                 if (message.templateVersion != null && $Object.hasOwnProperty.call(message, "templateVersion"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.templateVersion);
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
-                    $root.mediflow.v3.Template.encode(message.data, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Template.encode(message.data, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -1466,11 +1475,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Snapshot message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Snapshot & mediflow.v3.Snapshot.$Shape} Snapshot
+             * @returns {mediflow.v4.Snapshot & mediflow.v4.Snapshot.$Shape} Snapshot
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -1491,7 +1500,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Snapshot();
+                message = _target || new $root.mediflow.v4.Snapshot();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -1504,14 +1513,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.epoch = reader.stringVerify();
+                            message.epoch = reader.bytes();
                             message._epoch = "epoch";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
@@ -1532,7 +1541,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 5: {
                             if (wireType !== 2)
                                 break;
-                            message.data = $root.mediflow.v3.Template.decode(reader, reader.size(), $undefined, _depth + 1, message.data);
+                            message.data = $root.mediflow.v4.Template.decode(reader, reader.size(), $undefined, _depth + 1, message.data);
                             continue;
                         }
                     }
@@ -1555,7 +1564,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Snapshot message.
              * @function verify
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1570,13 +1579,13 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch")) {
                     properties._epoch = 1;
-                    if (!$util.isString(message.epoch))
-                        return "epoch: string expected";
+                    if (!(message.epoch && typeof message.epoch.length === "number" || $util.isString(message.epoch)))
+                        return "epoch: buffer expected";
                 }
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 if (message.version != null && $Object.hasOwnProperty.call(message, "version")) {
                     properties._version = 1;
@@ -1589,7 +1598,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "templateVersion: string expected";
                 }
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data")) {
-                    let error = $root.mediflow.v3.Template.verify(message.data, _depth + 1);
+                    let error = $root.mediflow.v4.Template.verify(message.data, _depth + 1);
                     if (error)
                         return "data." + error;
                 }
@@ -1599,25 +1608,31 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Snapshot message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Snapshot} Snapshot
+             * @returns {mediflow.v4.Snapshot} Snapshot
              */
             Snapshot.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Snapshot)
+                if (object instanceof $root.mediflow.v4.Snapshot)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Snapshot: object expected");
+                    throw $TypeError(".mediflow.v4.Snapshot: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Snapshot();
+                let message = new $root.mediflow.v4.Snapshot();
                 if (object.epoch != null)
-                    message.epoch = $String(object.epoch);
+                    if (typeof object.epoch === "string")
+                        $util.base64.decode(object.epoch, message.epoch = $util.newBuffer($util.base64.length(object.epoch)), 0);
+                    else if (object.epoch.length >= 0)
+                        message.epoch = object.epoch;
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 if (object.version != null)
                     if ($util.Long)
                         message.version = $util.Long.fromValue(object.version, true);
@@ -1631,8 +1646,8 @@ export const mediflow = $root.mediflow = (() => {
                     message.templateVersion = $String(object.templateVersion);
                 if (object.data != null) {
                     if (!$util.isObject(object.data))
-                        throw $TypeError(".mediflow.v3.Snapshot.data: object expected");
-                    message.data = $root.mediflow.v3.Template.fromObject(object.data, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Snapshot.data: object expected");
+                    message.data = $root.mediflow.v4.Template.fromObject(object.data, _depth + 1);
                 }
                 return message;
             };
@@ -1640,9 +1655,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Snapshot message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
-             * @param {mediflow.v3.Snapshot} message Snapshot
+             * @param {mediflow.v4.Snapshot} message Snapshot
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -1657,9 +1672,9 @@ export const mediflow = $root.mediflow = (() => {
                 if (options.defaults)
                     object.data = null;
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch"))
-                    object.epoch = message.epoch;
+                    object.epoch = options.bytes === $String ? $util.base64.encode(message.epoch, 0, message.epoch.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.epoch) : message.epoch;
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 if (message.version != null && $Object.hasOwnProperty.call(message, "version"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
                         object.version = typeof message.version === "number" ? $BigInt(message.version) : $util.Long.fromBits(message.version.low >>> 0, message.version.high >>> 0, true).toBigInt();
@@ -1670,14 +1685,14 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.templateVersion != null && $Object.hasOwnProperty.call(message, "templateVersion"))
                     object.templateVersion = message.templateVersion;
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
-                    object.data = $root.mediflow.v3.Template.toObject(message.data, options, _depth + 1);
+                    object.data = $root.mediflow.v4.Template.toObject(message.data, options, _depth + 1);
                 return object;
             };
 
             /**
              * Converts this Snapshot to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -1688,7 +1703,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Snapshot
              * @function getTypeUrl
-             * @memberof mediflow.v3.Snapshot
+             * @memberof mediflow.v4.Snapshot
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -1696,20 +1711,20 @@ export const mediflow = $root.mediflow = (() => {
             Snapshot.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Snapshot";
+                return prefix + "/mediflow.v4.Snapshot";
             };
 
             return Snapshot;
         })();
 
-        v3.Screen = (function() {
+        v4.Screen = (function() {
 
             /**
              * Properties of a Screen.
-             * @typedef {Object} mediflow.v3.Screen.$Properties
-             * @property {string|null} [id] Screen id
+             * @typedef {Object} mediflow.v4.Screen.$Properties
+             * @property {Uint8Array|null} [id] Screen id
              * @property {string|null} [name] Screen name
-             * @property {string|null} [token] Screen token
+             * @property {Uint8Array|null} [token] Screen token
              * @property {string|null} [createdAt] Screen createdAt
              * @property {boolean|null} [online] Screen online
              * @property {number|Long|null} [version] Screen version
@@ -1718,23 +1733,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Screen.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IScreen
-             * @augments mediflow.v3.Screen.$Properties
-             * @deprecated Use mediflow.v3.Screen.$Properties instead.
+             * @augments mediflow.v4.Screen.$Properties
+             * @deprecated Use mediflow.v4.Screen.$Properties instead.
              */
 
             /**
              * Shape of a Screen.
-             * @typedef {mediflow.v3.Screen.$Properties} mediflow.v3.Screen.$Shape
+             * @typedef {mediflow.v4.Screen.$Properties} mediflow.v4.Screen.$Shape
              */
 
             /**
              * Constructs a new Screen.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Screen.
              * @constructor
-             * @param {mediflow.v3.Screen.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Screen.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Screen = function (properties) {
@@ -1746,8 +1761,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Screen id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Screen
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.id = null;
@@ -1755,15 +1770,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Screen name.
              * @member {string|null|undefined} name
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.name = null;
 
             /**
              * Screen token.
-             * @member {string|null|undefined} token
-             * @memberof mediflow.v3.Screen
+             * @member {Uint8Array|null|undefined} token
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.token = null;
@@ -1771,7 +1786,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Screen createdAt.
              * @member {string|null|undefined} createdAt
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.createdAt = null;
@@ -1779,7 +1794,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Screen online.
              * @member {boolean|null|undefined} online
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.online = null;
@@ -1787,7 +1802,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Screen version.
              * @member {number|Long|null|undefined} version
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @instance
              */
             Screen.prototype.version = null;
@@ -1834,13 +1849,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Screen instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
-             * @param {mediflow.v3.Screen.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Screen} Screen instance
+             * @param {mediflow.v4.Screen.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Screen} Screen instance
              * @type {{
-             *   (properties: mediflow.v3.Screen.$Shape): mediflow.v3.Screen & mediflow.v3.Screen.$Shape;
-             *   (properties?: mediflow.v3.Screen.$Properties): mediflow.v3.Screen;
+             *   (properties: mediflow.v4.Screen.$Shape): mediflow.v4.Screen & mediflow.v4.Screen.$Shape;
+             *   (properties?: mediflow.v4.Screen.$Properties): mediflow.v4.Screen;
              * }}
              */
             Screen.create = function(properties) {
@@ -1848,11 +1863,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Screen message. Does not implicitly {@link mediflow.v3.Screen.verify|verify} messages.
+             * Encodes the specified Screen message. Does not implicitly {@link mediflow.v4.Screen.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
-             * @param {mediflow.v3.Screen.$Properties} message Screen message or plain object to encode
+             * @param {mediflow.v4.Screen.$Properties} message Screen message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -1864,11 +1879,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.token);
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.createdAt);
                 if (message.online != null && $Object.hasOwnProperty.call(message, "online"))
@@ -1884,11 +1899,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Screen message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Screen & mediflow.v3.Screen.$Shape} Screen
+             * @returns {mediflow.v4.Screen & mediflow.v4.Screen.$Shape} Screen
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -1909,7 +1924,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Screen();
+                message = _target || new $root.mediflow.v4.Screen();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -1922,7 +1937,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -1936,7 +1951,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.token = reader.stringVerify();
+                            message.token = reader.bytes();
                             message._token = "token";
                             continue;
                         }
@@ -1981,7 +1996,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Screen message.
              * @function verify
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1996,8 +2011,8 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name")) {
                     properties._name = 1;
@@ -2006,8 +2021,8 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token")) {
                     properties._token = 1;
-                    if (!$util.isString(message.token))
-                        return "token: string expected";
+                    if (!(message.token && typeof message.token.length === "number" || $util.isString(message.token)))
+                        return "token: buffer expected";
                 }
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt")) {
                     properties._createdAt = 1;
@@ -2030,27 +2045,33 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Screen message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Screen} Screen
+             * @returns {mediflow.v4.Screen} Screen
              */
             Screen.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Screen)
+                if (object instanceof $root.mediflow.v4.Screen)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Screen: object expected");
+                    throw $TypeError(".mediflow.v4.Screen: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Screen();
+                let message = new $root.mediflow.v4.Screen();
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.name != null)
                     message.name = $String(object.name);
                 if (object.token != null)
-                    message.token = $String(object.token);
+                    if (typeof object.token === "string")
+                        $util.base64.decode(object.token, message.token = $util.newBuffer($util.base64.length(object.token)), 0);
+                    else if (object.token.length >= 0)
+                        message.token = object.token;
                 if (object.createdAt != null)
                     message.createdAt = $String(object.createdAt);
                 if (object.online != null)
@@ -2070,9 +2091,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Screen message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
-             * @param {mediflow.v3.Screen} message Screen
+             * @param {mediflow.v4.Screen} message Screen
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -2085,11 +2106,11 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.name != null && $Object.hasOwnProperty.call(message, "name"))
                     object.name = message.name;
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
-                    object.token = message.token;
+                    object.token = options.bytes === $String ? $util.base64.encode(message.token, 0, message.token.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.token) : message.token;
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     object.createdAt = message.createdAt;
                 if (message.online != null && $Object.hasOwnProperty.call(message, "online"))
@@ -2107,7 +2128,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Screen to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -2118,7 +2139,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Screen
              * @function getTypeUrl
-             * @memberof mediflow.v3.Screen
+             * @memberof mediflow.v4.Screen
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -2126,25 +2147,25 @@ export const mediflow = $root.mediflow = (() => {
             Screen.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Screen";
+                return prefix + "/mediflow.v4.Screen";
             };
 
             return Screen;
         })();
 
-        v3.Call = (function() {
+        v4.Call = (function() {
 
             /**
              * Properties of a Call.
-             * @typedef {Object} mediflow.v3.Call.$Properties
-             * @property {string|null} [id] Call id
-             * @property {string|null} [queueId] Call queueId
-             * @property {string|null} [personId] Call personId
+             * @typedef {Object} mediflow.v4.Call.$Properties
+             * @property {Uint8Array|null} [id] Call id
+             * @property {Uint8Array|null} [queueId] Call queueId
+             * @property {Uint8Array|null} [personId] Call personId
              * @property {string|null} [text] Call text
              * @property {number|null} [totalQuota] Call totalQuota
              * @property {string|null} [expiresAt] Call expiresAt
              * @property {boolean|null} [active] Call active
-             * @property {Array.<string>|null} [targets] Call targets
+             * @property {Array.<Uint8Array>|null} [targets] Call targets
              * @property {string|null} [createdAt] Call createdAt
              * @property {number|null} [consumed] Call consumed
              * @property {number|null} [remaining] Call remaining
@@ -2154,23 +2175,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Call.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ICall
-             * @augments mediflow.v3.Call.$Properties
-             * @deprecated Use mediflow.v3.Call.$Properties instead.
+             * @augments mediflow.v4.Call.$Properties
+             * @deprecated Use mediflow.v4.Call.$Properties instead.
              */
 
             /**
              * Shape of a Call.
-             * @typedef {mediflow.v3.Call.$Properties} mediflow.v3.Call.$Shape
+             * @typedef {mediflow.v4.Call.$Properties} mediflow.v4.Call.$Shape
              */
 
             /**
              * Constructs a new Call.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Call.
              * @constructor
-             * @param {mediflow.v3.Call.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Call.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Call = function (properties) {
@@ -2184,24 +2205,24 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Call id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Call
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.id = null;
 
             /**
              * Call queueId.
-             * @member {string|null|undefined} queueId
-             * @memberof mediflow.v3.Call
+             * @member {Uint8Array|null|undefined} queueId
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.queueId = null;
 
             /**
              * Call personId.
-             * @member {string|null|undefined} personId
-             * @memberof mediflow.v3.Call
+             * @member {Uint8Array|null|undefined} personId
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.personId = null;
@@ -2209,7 +2230,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call text.
              * @member {string|null|undefined} text
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.text = null;
@@ -2217,7 +2238,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call totalQuota.
              * @member {number|null|undefined} totalQuota
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.totalQuota = null;
@@ -2225,7 +2246,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call expiresAt.
              * @member {string|null|undefined} expiresAt
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.expiresAt = null;
@@ -2233,15 +2254,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call active.
              * @member {boolean|null|undefined} active
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.active = null;
 
             /**
              * Call targets.
-             * @member {Array.<string>} targets
-             * @memberof mediflow.v3.Call
+             * @member {Array.<Uint8Array>} targets
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.targets = $util.emptyArray;
@@ -2249,7 +2270,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call createdAt.
              * @member {string|null|undefined} createdAt
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.createdAt = null;
@@ -2257,7 +2278,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call consumed.
              * @member {number|null|undefined} consumed
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.consumed = null;
@@ -2265,7 +2286,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call remaining.
              * @member {number|null|undefined} remaining
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.remaining = null;
@@ -2273,7 +2294,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Call targetNames.
              * @member {Object.<string,string>} targetNames
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              */
             Call.prototype.targetNames = $util.emptyObject;
@@ -2344,13 +2365,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Call instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
-             * @param {mediflow.v3.Call.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Call} Call instance
+             * @param {mediflow.v4.Call.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Call} Call instance
              * @type {{
-             *   (properties: mediflow.v3.Call.$Shape): mediflow.v3.Call & mediflow.v3.Call.$Shape;
-             *   (properties?: mediflow.v3.Call.$Properties): mediflow.v3.Call;
+             *   (properties: mediflow.v4.Call.$Shape): mediflow.v4.Call & mediflow.v4.Call.$Shape;
+             *   (properties?: mediflow.v4.Call.$Properties): mediflow.v4.Call;
              * }}
              */
             Call.create = function(properties) {
@@ -2358,11 +2379,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Call message. Does not implicitly {@link mediflow.v3.Call.verify|verify} messages.
+             * Encodes the specified Call message. Does not implicitly {@link mediflow.v4.Call.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
-             * @param {mediflow.v3.Call.$Properties} message Call message or plain object to encode
+             * @param {mediflow.v4.Call.$Properties} message Call message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -2374,11 +2395,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.id);
                 if (message.queueId != null && $Object.hasOwnProperty.call(message, "queueId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.queueId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.queueId);
                 if (message.personId != null && $Object.hasOwnProperty.call(message, "personId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.personId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.personId);
                 if (message.text != null && $Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.text);
                 if (message.totalQuota != null && $Object.hasOwnProperty.call(message, "totalQuota"))
@@ -2389,7 +2410,7 @@ export const mediflow = $root.mediflow = (() => {
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.active);
                 if (message.targets != null && message.targets.length)
                     for (let i = 0; i < message.targets.length; ++i)
-                        writer.uint32(/* id 8, wireType 2 =*/66).string(message.targets[i]);
+                        writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.targets[i]);
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     writer.uint32(/* id 9, wireType 2 =*/74).string(message.createdAt);
                 if (message.consumed != null && $Object.hasOwnProperty.call(message, "consumed"))
@@ -2408,11 +2429,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Call message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Call & mediflow.v3.Call.$Shape} Call
+             * @returns {mediflow.v4.Call & mediflow.v4.Call.$Shape} Call
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -2433,7 +2454,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Call();
+                message = _target || new $root.mediflow.v4.Call();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -2446,21 +2467,21 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.queueId = reader.stringVerify();
+                            message.queueId = reader.bytes();
                             message._queueId = "queueId";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.personId = reader.stringVerify();
+                            message.personId = reader.bytes();
                             message._personId = "personId";
                             continue;
                         }
@@ -2497,7 +2518,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.targets && message.targets.length))
                                 message.targets = [];
-                            message.targets.push(reader.stringVerify());
+                            message.targets.push(reader.bytes());
                             continue;
                         }
                     case 9: {
@@ -2577,7 +2598,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Call message.
              * @function verify
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -2592,18 +2613,18 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.queueId != null && $Object.hasOwnProperty.call(message, "queueId")) {
                     properties._queueId = 1;
-                    if (!$util.isString(message.queueId))
-                        return "queueId: string expected";
+                    if (!(message.queueId && typeof message.queueId.length === "number" || $util.isString(message.queueId)))
+                        return "queueId: buffer expected";
                 }
                 if (message.personId != null && $Object.hasOwnProperty.call(message, "personId")) {
                     properties._personId = 1;
-                    if (!$util.isString(message.personId))
-                        return "personId: string expected";
+                    if (!(message.personId && typeof message.personId.length === "number" || $util.isString(message.personId)))
+                        return "personId: buffer expected";
                 }
                 if (message.text != null && $Object.hasOwnProperty.call(message, "text")) {
                     properties._text = 1;
@@ -2629,8 +2650,8 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.targets))
                         return "targets: array expected";
                     for (let i = 0; i < message.targets.length; ++i)
-                        if (!$util.isString(message.targets[i]))
-                            return "targets: string[] expected";
+                        if (!(message.targets[i] && typeof message.targets[i].length === "number" || $util.isString(message.targets[i])))
+                            return "targets: buffer[] expected";
                 }
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt")) {
                     properties._createdAt = 1;
@@ -2661,27 +2682,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Call message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Call} Call
+             * @returns {mediflow.v4.Call} Call
              */
             Call.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Call)
+                if (object instanceof $root.mediflow.v4.Call)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Call: object expected");
+                    throw $TypeError(".mediflow.v4.Call: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Call();
+                let message = new $root.mediflow.v4.Call();
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.queueId != null)
-                    message.queueId = $String(object.queueId);
+                    if (typeof object.queueId === "string")
+                        $util.base64.decode(object.queueId, message.queueId = $util.newBuffer($util.base64.length(object.queueId)), 0);
+                    else if (object.queueId.length >= 0)
+                        message.queueId = object.queueId;
                 if (object.personId != null)
-                    message.personId = $String(object.personId);
+                    if (typeof object.personId === "string")
+                        $util.base64.decode(object.personId, message.personId = $util.newBuffer($util.base64.length(object.personId)), 0);
+                    else if (object.personId.length >= 0)
+                        message.personId = object.personId;
                 if (object.text != null)
                     message.text = $String(object.text);
                 if (object.totalQuota != null)
@@ -2692,10 +2722,13 @@ export const mediflow = $root.mediflow = (() => {
                     message.active = $Boolean(object.active);
                 if (object.targets) {
                     if (!$Array.isArray(object.targets))
-                        throw $TypeError(".mediflow.v3.Call.targets: array expected");
+                        throw $TypeError(".mediflow.v4.Call.targets: array expected");
                     message.targets = $Array(object.targets.length);
                     for (let i = 0; i < object.targets.length; ++i)
-                        message.targets[i] = $String(object.targets[i]);
+                        if (typeof object.targets[i] === "string")
+                            $util.base64.decode(object.targets[i], message.targets[i] = $util.newBuffer($util.base64.length(object.targets[i])), 0);
+                        else if (object.targets[i].length >= 0)
+                            message.targets[i] = object.targets[i];
                 }
                 if (object.createdAt != null)
                     message.createdAt = $String(object.createdAt);
@@ -2705,7 +2738,7 @@ export const mediflow = $root.mediflow = (() => {
                     message.remaining = object.remaining >>> 0;
                 if (object.targetNames) {
                     if (!$util.isObject(object.targetNames))
-                        throw $TypeError(".mediflow.v3.Call.targetNames: object expected");
+                        throw $TypeError(".mediflow.v4.Call.targetNames: object expected");
                     message.targetNames = {};
                     for (let keys = $Object.keys(object.targetNames), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
@@ -2719,9 +2752,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Call message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
-             * @param {mediflow.v3.Call} message Call
+             * @param {mediflow.v4.Call} message Call
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -2738,11 +2771,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (options.objects || options.defaults)
                     object.targetNames = {};
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.queueId != null && $Object.hasOwnProperty.call(message, "queueId"))
-                    object.queueId = message.queueId;
+                    object.queueId = options.bytes === $String ? $util.base64.encode(message.queueId, 0, message.queueId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.queueId) : message.queueId;
                 if (message.personId != null && $Object.hasOwnProperty.call(message, "personId"))
-                    object.personId = message.personId;
+                    object.personId = options.bytes === $String ? $util.base64.encode(message.personId, 0, message.personId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.personId) : message.personId;
                 if (message.text != null && $Object.hasOwnProperty.call(message, "text"))
                     object.text = message.text;
                 if (message.totalQuota != null && $Object.hasOwnProperty.call(message, "totalQuota"))
@@ -2754,7 +2787,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.targets && message.targets.length) {
                     object.targets = $Array(message.targets.length);
                     for (let j = 0; j < message.targets.length; ++j)
-                        object.targets[j] = message.targets[j];
+                        object.targets[j] = options.bytes === $String ? $util.base64.encode(message.targets[j], 0, message.targets[j].length) : options.bytes === $Array ? $Array.prototype.slice.call(message.targets[j]) : message.targets[j];
                 }
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     object.createdAt = message.createdAt;
@@ -2777,7 +2810,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Call to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -2788,7 +2821,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Call
              * @function getTypeUrl
-             * @memberof mediflow.v3.Call
+             * @memberof mediflow.v4.Call
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -2796,20 +2829,20 @@ export const mediflow = $root.mediflow = (() => {
             Call.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Call";
+                return prefix + "/mediflow.v4.Call";
             };
 
             return Call;
         })();
 
-        v3.Consumption = (function() {
+        v4.Consumption = (function() {
 
             /**
              * Properties of a Consumption.
-             * @typedef {Object} mediflow.v3.Consumption.$Properties
-             * @property {string|null} [requestId] Consumption requestId
-             * @property {string|null} [callId] Consumption callId
-             * @property {string|null} [screenId] Consumption screenId
+             * @typedef {Object} mediflow.v4.Consumption.$Properties
+             * @property {Uint8Array|null} [requestId] Consumption requestId
+             * @property {Uint8Array|null} [callId] Consumption callId
+             * @property {Uint8Array|null} [screenId] Consumption screenId
              * @property {boolean|null} [granted] Consumption granted
              * @property {number|null} [remaining] Consumption remaining
              * @property {string|null} [text] Consumption text
@@ -2821,23 +2854,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Consumption.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IConsumption
-             * @augments mediflow.v3.Consumption.$Properties
-             * @deprecated Use mediflow.v3.Consumption.$Properties instead.
+             * @augments mediflow.v4.Consumption.$Properties
+             * @deprecated Use mediflow.v4.Consumption.$Properties instead.
              */
 
             /**
              * Shape of a Consumption.
-             * @typedef {mediflow.v3.Consumption.$Properties} mediflow.v3.Consumption.$Shape
+             * @typedef {mediflow.v4.Consumption.$Properties} mediflow.v4.Consumption.$Shape
              */
 
             /**
              * Constructs a new Consumption.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Consumption.
              * @constructor
-             * @param {mediflow.v3.Consumption.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Consumption.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Consumption = function (properties) {
@@ -2849,24 +2882,24 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Consumption requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Consumption
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.requestId = null;
 
             /**
              * Consumption callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.Consumption
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.callId = null;
 
             /**
              * Consumption screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.Consumption
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.screenId = null;
@@ -2874,7 +2907,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption granted.
              * @member {boolean|null|undefined} granted
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.granted = null;
@@ -2882,7 +2915,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption remaining.
              * @member {number|null|undefined} remaining
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.remaining = null;
@@ -2890,7 +2923,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption text.
              * @member {string|null|undefined} text
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.text = null;
@@ -2898,7 +2931,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption consumedAt.
              * @member {string|null|undefined} consumedAt
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.consumedAt = null;
@@ -2906,7 +2939,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption reason.
              * @member {string|null|undefined} reason
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.reason = null;
@@ -2914,7 +2947,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Consumption screenName.
              * @member {string|null|undefined} screenName
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              */
             Consumption.prototype.screenName = null;
@@ -2979,13 +3012,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Consumption instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
-             * @param {mediflow.v3.Consumption.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Consumption} Consumption instance
+             * @param {mediflow.v4.Consumption.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Consumption} Consumption instance
              * @type {{
-             *   (properties: mediflow.v3.Consumption.$Shape): mediflow.v3.Consumption & mediflow.v3.Consumption.$Shape;
-             *   (properties?: mediflow.v3.Consumption.$Properties): mediflow.v3.Consumption;
+             *   (properties: mediflow.v4.Consumption.$Shape): mediflow.v4.Consumption & mediflow.v4.Consumption.$Shape;
+             *   (properties?: mediflow.v4.Consumption.$Properties): mediflow.v4.Consumption;
              * }}
              */
             Consumption.create = function(properties) {
@@ -2993,11 +3026,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Consumption message. Does not implicitly {@link mediflow.v3.Consumption.verify|verify} messages.
+             * Encodes the specified Consumption message. Does not implicitly {@link mediflow.v4.Consumption.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
-             * @param {mediflow.v3.Consumption.$Properties} message Consumption message or plain object to encode
+             * @param {mediflow.v4.Consumption.$Properties} message Consumption message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3009,11 +3042,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.requestId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.callId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.callId);
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.screenId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.screenId);
                 if (message.granted != null && $Object.hasOwnProperty.call(message, "granted"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.granted);
                 if (message.remaining != null && $Object.hasOwnProperty.call(message, "remaining"))
@@ -3035,11 +3068,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Consumption message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Consumption & mediflow.v3.Consumption.$Shape} Consumption
+             * @returns {mediflow.v4.Consumption & mediflow.v4.Consumption.$Shape} Consumption
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3060,7 +3093,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Consumption();
+                message = _target || new $root.mediflow.v4.Consumption();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -3073,21 +3106,21 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
@@ -3153,7 +3186,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Consumption message.
              * @function verify
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3168,18 +3201,18 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 if (message.granted != null && $Object.hasOwnProperty.call(message, "granted")) {
                     properties._granted = 1;
@@ -3217,27 +3250,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Consumption message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Consumption} Consumption
+             * @returns {mediflow.v4.Consumption} Consumption
              */
             Consumption.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Consumption)
+                if (object instanceof $root.mediflow.v4.Consumption)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Consumption: object expected");
+                    throw $TypeError(".mediflow.v4.Consumption: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Consumption();
+                let message = new $root.mediflow.v4.Consumption();
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 if (object.granted != null)
                     message.granted = $Boolean(object.granted);
                 if (object.remaining != null)
@@ -3256,9 +3298,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Consumption message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
-             * @param {mediflow.v3.Consumption} message Consumption
+             * @param {mediflow.v4.Consumption} message Consumption
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3271,11 +3313,11 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 if (message.granted != null && $Object.hasOwnProperty.call(message, "granted"))
                     object.granted = message.granted;
                 if (message.remaining != null && $Object.hasOwnProperty.call(message, "remaining"))
@@ -3294,7 +3336,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Consumption to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3305,7 +3347,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Consumption
              * @function getTypeUrl
-             * @memberof mediflow.v3.Consumption
+             * @memberof mediflow.v4.Consumption
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -3313,26 +3355,26 @@ export const mediflow = $root.mediflow = (() => {
             Consumption.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Consumption";
+                return prefix + "/mediflow.v4.Consumption";
             };
 
             return Consumption;
         })();
 
-        v3.Audit = (function() {
+        v4.Audit = (function() {
 
             /**
              * Properties of an Audit.
-             * @typedef {Object} mediflow.v3.Audit.$Properties
+             * @typedef {Object} mediflow.v4.Audit.$Properties
              * @property {number|Long|null} [sequence] Audit sequence
              * @property {string|null} [actor] Audit actor
              * @property {string|null} [outcome] Audit outcome
-             * @property {string|null} [id] Audit id
+             * @property {Uint8Array|null} [id] Audit id
              * @property {string|null} [time] Audit time
              * @property {string|null} [action] Audit action
-             * @property {string|null} [screenId] Audit screenId
-             * @property {string|null} [callId] Audit callId
-             * @property {string|null} [requestId] Audit requestId
+             * @property {Uint8Array|null} [screenId] Audit screenId
+             * @property {Uint8Array|null} [callId] Audit callId
+             * @property {Uint8Array|null} [requestId] Audit requestId
              * @property {string|null} [detail] Audit detail
              * @property {string|null} [screenName] Audit screenName
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
@@ -3340,23 +3382,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of an Audit.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IAudit
-             * @augments mediflow.v3.Audit.$Properties
-             * @deprecated Use mediflow.v3.Audit.$Properties instead.
+             * @augments mediflow.v4.Audit.$Properties
+             * @deprecated Use mediflow.v4.Audit.$Properties instead.
              */
 
             /**
              * Shape of an Audit.
-             * @typedef {mediflow.v3.Audit.$Properties} mediflow.v3.Audit.$Shape
+             * @typedef {mediflow.v4.Audit.$Properties} mediflow.v4.Audit.$Shape
              */
 
             /**
              * Constructs a new Audit.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an Audit.
              * @constructor
-             * @param {mediflow.v3.Audit.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Audit.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Audit = function (properties) {
@@ -3369,7 +3411,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit sequence.
              * @member {number|Long|null|undefined} sequence
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.sequence = null;
@@ -3377,7 +3419,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit actor.
              * @member {string|null|undefined} actor
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.actor = null;
@@ -3385,15 +3427,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit outcome.
              * @member {string|null|undefined} outcome
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.outcome = null;
 
             /**
              * Audit id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Audit
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.id = null;
@@ -3401,7 +3443,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit time.
              * @member {string|null|undefined} time
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.time = null;
@@ -3409,31 +3451,31 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit action.
              * @member {string|null|undefined} action
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.action = null;
 
             /**
              * Audit screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.Audit
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.screenId = null;
 
             /**
              * Audit callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.Audit
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.callId = null;
 
             /**
              * Audit requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Audit
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.requestId = null;
@@ -3441,7 +3483,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit detail.
              * @member {string|null|undefined} detail
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.detail = null;
@@ -3449,7 +3491,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Audit screenName.
              * @member {string|null|undefined} screenName
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              */
             Audit.prototype.screenName = null;
@@ -3526,13 +3568,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Audit instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
-             * @param {mediflow.v3.Audit.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Audit} Audit instance
+             * @param {mediflow.v4.Audit.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Audit} Audit instance
              * @type {{
-             *   (properties: mediflow.v3.Audit.$Shape): mediflow.v3.Audit & mediflow.v3.Audit.$Shape;
-             *   (properties?: mediflow.v3.Audit.$Properties): mediflow.v3.Audit;
+             *   (properties: mediflow.v4.Audit.$Shape): mediflow.v4.Audit & mediflow.v4.Audit.$Shape;
+             *   (properties?: mediflow.v4.Audit.$Properties): mediflow.v4.Audit;
              * }}
              */
             Audit.create = function(properties) {
@@ -3540,11 +3582,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Audit message. Does not implicitly {@link mediflow.v3.Audit.verify|verify} messages.
+             * Encodes the specified Audit message. Does not implicitly {@link mediflow.v4.Audit.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
-             * @param {mediflow.v3.Audit.$Properties} message Audit message or plain object to encode
+             * @param {mediflow.v4.Audit.$Properties} message Audit message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3562,17 +3604,17 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.outcome != null && $Object.hasOwnProperty.call(message, "outcome"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.outcome);
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.id);
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.id);
                 if (message.time != null && $Object.hasOwnProperty.call(message, "time"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.time);
                 if (message.action != null && $Object.hasOwnProperty.call(message, "action"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.action);
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.screenId);
+                    writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.screenId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.callId);
+                    writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.callId);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.requestId);
+                    writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.requestId);
                 if (message.detail != null && $Object.hasOwnProperty.call(message, "detail"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.detail);
                 if (message.screenName != null && $Object.hasOwnProperty.call(message, "screenName"))
@@ -3586,11 +3628,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an Audit message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Audit & mediflow.v3.Audit.$Shape} Audit
+             * @returns {mediflow.v4.Audit & mediflow.v4.Audit.$Shape} Audit
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3611,7 +3653,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Audit();
+                message = _target || new $root.mediflow.v4.Audit();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -3645,7 +3687,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 4: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -3666,21 +3708,21 @@ export const mediflow = $root.mediflow = (() => {
                     case 7: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
                     case 8: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
                     case 9: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
@@ -3718,7 +3760,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an Audit message.
              * @function verify
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3748,8 +3790,8 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.time != null && $Object.hasOwnProperty.call(message, "time")) {
                     properties._time = 1;
@@ -3763,18 +3805,18 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.detail != null && $Object.hasOwnProperty.call(message, "detail")) {
                     properties._detail = 1;
@@ -3792,21 +3834,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an Audit message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Audit} Audit
+             * @returns {mediflow.v4.Audit} Audit
              */
             Audit.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Audit)
+                if (object instanceof $root.mediflow.v4.Audit)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Audit: object expected");
+                    throw $TypeError(".mediflow.v4.Audit: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Audit();
+                let message = new $root.mediflow.v4.Audit();
                 if (object.sequence != null)
                     if ($util.Long)
                         message.sequence = $util.Long.fromValue(object.sequence, true);
@@ -3821,17 +3863,29 @@ export const mediflow = $root.mediflow = (() => {
                 if (object.outcome != null)
                     message.outcome = $String(object.outcome);
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.time != null)
                     message.time = $String(object.time);
                 if (object.action != null)
                     message.action = $String(object.action);
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.detail != null)
                     message.detail = $String(object.detail);
                 if (object.screenName != null)
@@ -3842,9 +3896,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an Audit message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
-             * @param {mediflow.v3.Audit} message Audit
+             * @param {mediflow.v4.Audit} message Audit
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3868,17 +3922,17 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.outcome != null && $Object.hasOwnProperty.call(message, "outcome"))
                     object.outcome = message.outcome;
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.time != null && $Object.hasOwnProperty.call(message, "time"))
                     object.time = message.time;
                 if (message.action != null && $Object.hasOwnProperty.call(message, "action"))
                     object.action = message.action;
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.detail != null && $Object.hasOwnProperty.call(message, "detail"))
                     object.detail = message.detail;
                 if (message.screenName != null && $Object.hasOwnProperty.call(message, "screenName"))
@@ -3889,7 +3943,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Audit to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3900,7 +3954,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Audit
              * @function getTypeUrl
-             * @memberof mediflow.v3.Audit
+             * @memberof mediflow.v4.Audit
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -3908,19 +3962,19 @@ export const mediflow = $root.mediflow = (() => {
             Audit.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Audit";
+                return prefix + "/mediflow.v4.Audit";
             };
 
             return Audit;
         })();
 
-        v3.Archive = (function() {
+        v4.Archive = (function() {
 
             /**
              * Properties of an Archive.
-             * @typedef {Object} mediflow.v3.Archive.$Properties
+             * @typedef {Object} mediflow.v4.Archive.$Properties
              * @property {string|null} [sha256] Archive sha256
-             * @property {string|null} [id] Archive id
+             * @property {Uint8Array|null} [id] Archive id
              * @property {string|null} [createdAt] Archive createdAt
              * @property {number|Long|null} [eventCount] Archive eventCount
              * @property {string|null} [from] Archive from
@@ -3930,23 +3984,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of an Archive.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IArchive
-             * @augments mediflow.v3.Archive.$Properties
-             * @deprecated Use mediflow.v3.Archive.$Properties instead.
+             * @augments mediflow.v4.Archive.$Properties
+             * @deprecated Use mediflow.v4.Archive.$Properties instead.
              */
 
             /**
              * Shape of an Archive.
-             * @typedef {mediflow.v3.Archive.$Properties} mediflow.v3.Archive.$Shape
+             * @typedef {mediflow.v4.Archive.$Properties} mediflow.v4.Archive.$Shape
              */
 
             /**
              * Constructs a new Archive.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an Archive.
              * @constructor
-             * @param {mediflow.v3.Archive.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Archive.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Archive = function (properties) {
@@ -3959,15 +4013,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Archive sha256.
              * @member {string|null|undefined} sha256
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.sha256 = null;
 
             /**
              * Archive id.
-             * @member {string|null|undefined} id
-             * @memberof mediflow.v3.Archive
+             * @member {Uint8Array|null|undefined} id
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.id = null;
@@ -3975,7 +4029,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Archive createdAt.
              * @member {string|null|undefined} createdAt
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.createdAt = null;
@@ -3983,7 +4037,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Archive eventCount.
              * @member {number|Long|null|undefined} eventCount
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.eventCount = null;
@@ -3991,7 +4045,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Archive from.
              * @member {string|null|undefined} from
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.from = null;
@@ -3999,7 +4053,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Archive to.
              * @member {string|null|undefined} to
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              */
             Archive.prototype.to = null;
@@ -4046,13 +4100,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Archive instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
-             * @param {mediflow.v3.Archive.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Archive} Archive instance
+             * @param {mediflow.v4.Archive.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Archive} Archive instance
              * @type {{
-             *   (properties: mediflow.v3.Archive.$Shape): mediflow.v3.Archive & mediflow.v3.Archive.$Shape;
-             *   (properties?: mediflow.v3.Archive.$Properties): mediflow.v3.Archive;
+             *   (properties: mediflow.v4.Archive.$Shape): mediflow.v4.Archive & mediflow.v4.Archive.$Shape;
+             *   (properties?: mediflow.v4.Archive.$Properties): mediflow.v4.Archive;
              * }}
              */
             Archive.create = function(properties) {
@@ -4060,11 +4114,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Archive message. Does not implicitly {@link mediflow.v3.Archive.verify|verify} messages.
+             * Encodes the specified Archive message. Does not implicitly {@link mediflow.v4.Archive.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
-             * @param {mediflow.v3.Archive.$Properties} message Archive message or plain object to encode
+             * @param {mediflow.v4.Archive.$Properties} message Archive message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4078,7 +4132,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.sha256 != null && $Object.hasOwnProperty.call(message, "sha256"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.sha256);
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.id);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.id);
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.createdAt);
                 if (message.eventCount != null && $Object.hasOwnProperty.call(message, "eventCount"))
@@ -4096,11 +4150,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an Archive message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Archive & mediflow.v3.Archive.$Shape} Archive
+             * @returns {mediflow.v4.Archive & mediflow.v4.Archive.$Shape} Archive
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4121,7 +4175,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Archive();
+                message = _target || new $root.mediflow.v4.Archive();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -4141,7 +4195,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.id = reader.stringVerify();
+                            message.id = reader.bytes();
                             message._id = "id";
                             continue;
                         }
@@ -4193,7 +4247,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an Archive message.
              * @function verify
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4213,8 +4267,8 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id")) {
                     properties._id = 1;
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
+                    if (!(message.id && typeof message.id.length === "number" || $util.isString(message.id)))
+                        return "id: buffer expected";
                 }
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt")) {
                     properties._createdAt = 1;
@@ -4242,25 +4296,28 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an Archive message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Archive} Archive
+             * @returns {mediflow.v4.Archive} Archive
              */
             Archive.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Archive)
+                if (object instanceof $root.mediflow.v4.Archive)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Archive: object expected");
+                    throw $TypeError(".mediflow.v4.Archive: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Archive();
+                let message = new $root.mediflow.v4.Archive();
                 if (object.sha256 != null)
                     message.sha256 = $String(object.sha256);
                 if (object.id != null)
-                    message.id = $String(object.id);
+                    if (typeof object.id === "string")
+                        $util.base64.decode(object.id, message.id = $util.newBuffer($util.base64.length(object.id)), 0);
+                    else if (object.id.length >= 0)
+                        message.id = object.id;
                 if (object.createdAt != null)
                     message.createdAt = $String(object.createdAt);
                 if (object.eventCount != null)
@@ -4282,9 +4339,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an Archive message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
-             * @param {mediflow.v3.Archive} message Archive
+             * @param {mediflow.v4.Archive} message Archive
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4299,7 +4356,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.sha256 != null && $Object.hasOwnProperty.call(message, "sha256"))
                     object.sha256 = message.sha256;
                 if (message.id != null && $Object.hasOwnProperty.call(message, "id"))
-                    object.id = message.id;
+                    object.id = options.bytes === $String ? $util.base64.encode(message.id, 0, message.id.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.id) : message.id;
                 if (message.createdAt != null && $Object.hasOwnProperty.call(message, "createdAt"))
                     object.createdAt = message.createdAt;
                 if (message.eventCount != null && $Object.hasOwnProperty.call(message, "eventCount"))
@@ -4319,7 +4376,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Archive to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4330,7 +4387,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Archive
              * @function getTypeUrl
-             * @memberof mediflow.v3.Archive
+             * @memberof mediflow.v4.Archive
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -4338,42 +4395,42 @@ export const mediflow = $root.mediflow = (() => {
             Archive.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Archive";
+                return prefix + "/mediflow.v4.Archive";
             };
 
             return Archive;
         })();
 
-        v3.Target = (function() {
+        v4.Target = (function() {
 
             /**
              * Properties of a Target.
-             * @typedef {Object} mediflow.v3.Target.$Properties
-             * @property {string|null} [screenId] Target screenId
-             * @property {string|null} [callId] Target callId
+             * @typedef {Object} mediflow.v4.Target.$Properties
+             * @property {Uint8Array|null} [screenId] Target screenId
+             * @property {Uint8Array|null} [callId] Target callId
              * @property {number|null} [consumed] Target consumed
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Target.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ITarget
-             * @augments mediflow.v3.Target.$Properties
-             * @deprecated Use mediflow.v3.Target.$Properties instead.
+             * @augments mediflow.v4.Target.$Properties
+             * @deprecated Use mediflow.v4.Target.$Properties instead.
              */
 
             /**
              * Shape of a Target.
-             * @typedef {mediflow.v3.Target.$Properties} mediflow.v3.Target.$Shape
+             * @typedef {mediflow.v4.Target.$Properties} mediflow.v4.Target.$Shape
              */
 
             /**
              * Constructs a new Target.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Target.
              * @constructor
-             * @param {mediflow.v3.Target.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Target.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Target = function (properties) {
@@ -4385,16 +4442,16 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Target screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.Target
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.Target
              * @instance
              */
             Target.prototype.screenId = null;
 
             /**
              * Target callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.Target
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.Target
              * @instance
              */
             Target.prototype.callId = null;
@@ -4402,7 +4459,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Target consumed.
              * @member {number|null|undefined} consumed
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @instance
              */
             Target.prototype.consumed = null;
@@ -4431,13 +4488,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Target instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
-             * @param {mediflow.v3.Target.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Target} Target instance
+             * @param {mediflow.v4.Target.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Target} Target instance
              * @type {{
-             *   (properties: mediflow.v3.Target.$Shape): mediflow.v3.Target & mediflow.v3.Target.$Shape;
-             *   (properties?: mediflow.v3.Target.$Properties): mediflow.v3.Target;
+             *   (properties: mediflow.v4.Target.$Shape): mediflow.v4.Target & mediflow.v4.Target.$Shape;
+             *   (properties?: mediflow.v4.Target.$Properties): mediflow.v4.Target;
              * }}
              */
             Target.create = function(properties) {
@@ -4445,11 +4502,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Target message. Does not implicitly {@link mediflow.v3.Target.verify|verify} messages.
+             * Encodes the specified Target message. Does not implicitly {@link mediflow.v4.Target.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
-             * @param {mediflow.v3.Target.$Properties} message Target message or plain object to encode
+             * @param {mediflow.v4.Target.$Properties} message Target message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4461,9 +4518,9 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.screenId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.screenId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.callId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.callId);
                 if (message.consumed != null && $Object.hasOwnProperty.call(message, "consumed"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.consumed);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
@@ -4475,11 +4532,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Target message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Target & mediflow.v3.Target.$Shape} Target
+             * @returns {mediflow.v4.Target & mediflow.v4.Target.$Shape} Target
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4500,7 +4557,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Target();
+                message = _target || new $root.mediflow.v4.Target();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -4513,14 +4570,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
@@ -4551,7 +4608,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Target message.
              * @function verify
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4566,13 +4623,13 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.consumed != null && $Object.hasOwnProperty.call(message, "consumed")) {
                     properties._consumed = 1;
@@ -4585,25 +4642,31 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Target message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Target} Target
+             * @returns {mediflow.v4.Target} Target
              */
             Target.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Target)
+                if (object instanceof $root.mediflow.v4.Target)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Target: object expected");
+                    throw $TypeError(".mediflow.v4.Target: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Target();
+                let message = new $root.mediflow.v4.Target();
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.consumed != null)
                     message.consumed = object.consumed >>> 0;
                 return message;
@@ -4612,9 +4675,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Target message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
-             * @param {mediflow.v3.Target} message Target
+             * @param {mediflow.v4.Target} message Target
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4627,9 +4690,9 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.consumed != null && $Object.hasOwnProperty.call(message, "consumed"))
                     object.consumed = message.consumed;
                 return object;
@@ -4638,7 +4701,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Target to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4649,7 +4712,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Target
              * @function getTypeUrl
-             * @memberof mediflow.v3.Target
+             * @memberof mediflow.v4.Target
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -4657,37 +4720,37 @@ export const mediflow = $root.mediflow = (() => {
             Target.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Target";
+                return prefix + "/mediflow.v4.Target";
             };
 
             return Target;
         })();
 
-        v3.HistoryItem = (function() {
+        v4.HistoryItem = (function() {
 
             /**
              * Properties of a HistoryItem.
-             * @typedef {Object} mediflow.v3.HistoryItem.$Properties
+             * @typedef {Object} mediflow.v4.HistoryItem.$Properties
              * @property {string|null} [kind] HistoryItem kind
              * @property {string|null} [key] HistoryItem key
              * @property {string|null} [time] HistoryItem time
              * @property {string|null} [sha256] HistoryItem sha256
-             * @property {mediflow.v3.Snapshot.$Properties|null} [snapshot] HistoryItem snapshot
-             * @property {mediflow.v3.Consumption.$Properties|null} [consumption] HistoryItem consumption
-             * @property {mediflow.v3.Audit.$Properties|null} [audit] HistoryItem audit
-             * @property {mediflow.v3.Call.$Properties|null} [call] HistoryItem call
-             * @property {mediflow.v3.Target.$Properties|null} [target] HistoryItem target
-             * @property {mediflow.v3.PlaybackEvent.$Properties|null} [playback] HistoryItem playback
+             * @property {mediflow.v4.Snapshot.$Properties|null} [snapshot] HistoryItem snapshot
+             * @property {mediflow.v4.Consumption.$Properties|null} [consumption] HistoryItem consumption
+             * @property {mediflow.v4.Audit.$Properties|null} [audit] HistoryItem audit
+             * @property {mediflow.v4.Call.$Properties|null} [call] HistoryItem call
+             * @property {mediflow.v4.Target.$Properties|null} [target] HistoryItem target
+             * @property {mediflow.v4.PlaybackEvent.$Properties|null} [playback] HistoryItem playback
              * @property {"snapshot"|"consumption"|"audit"|"call"|"target"|"playback"} [record] HistoryItem record
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a HistoryItem.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IHistoryItem
-             * @augments mediflow.v3.HistoryItem.$Properties
-             * @deprecated Use mediflow.v3.HistoryItem.$Properties instead.
+             * @augments mediflow.v4.HistoryItem.$Properties
+             * @deprecated Use mediflow.v4.HistoryItem.$Properties instead.
              */
 
             /**
@@ -4697,24 +4760,24 @@ export const mediflow = $root.mediflow = (() => {
              *   key?: string|null;
              *   time?: string|null;
              *   sha256?: string|null;
-             *   snapshot?: mediflow.v3.Snapshot.$Shape|null;
-             *   consumption?: mediflow.v3.Consumption.$Shape|null;
-             *   audit?: mediflow.v3.Audit.$Shape|null;
-             *   call?: mediflow.v3.Call.$Shape|null;
-             *   target?: mediflow.v3.Target.$Shape|null;
-             *   playback?: mediflow.v3.PlaybackEvent.$Shape|null;
+             *   snapshot?: mediflow.v4.Snapshot.$Shape|null;
+             *   consumption?: mediflow.v4.Consumption.$Shape|null;
+             *   audit?: mediflow.v4.Audit.$Shape|null;
+             *   call?: mediflow.v4.Call.$Shape|null;
+             *   target?: mediflow.v4.Target.$Shape|null;
+             *   playback?: mediflow.v4.PlaybackEvent.$Shape|null;
              *   $unknowns?: Array.<Uint8Array>;
              * } & (
-             *   ({ record?: undefined; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "snapshot"; snapshot: mediflow.v3.Snapshot.$Shape; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "consumption"; snapshot?: null; consumption: mediflow.v3.Consumption.$Shape; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "audit"; snapshot?: null; consumption?: null; audit: mediflow.v3.Audit.$Shape; call?: null; target?: null; playback?: null }|{ record?: "call"; snapshot?: null; consumption?: null; audit?: null; call: mediflow.v3.Call.$Shape; target?: null; playback?: null }|{ record?: "target"; snapshot?: null; consumption?: null; audit?: null; call?: null; target: mediflow.v3.Target.$Shape; playback?: null }|{ record?: "playback"; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback: mediflow.v3.PlaybackEvent.$Shape })
-             * )} mediflow.v3.HistoryItem.$Shape
+             *   ({ record?: undefined; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "snapshot"; snapshot: mediflow.v4.Snapshot.$Shape; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "consumption"; snapshot?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "audit"; snapshot?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; call?: null; target?: null; playback?: null }|{ record?: "call"; snapshot?: null; consumption?: null; audit?: null; call: mediflow.v4.Call.$Shape; target?: null; playback?: null }|{ record?: "target"; snapshot?: null; consumption?: null; audit?: null; call?: null; target: mediflow.v4.Target.$Shape; playback?: null }|{ record?: "playback"; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback: mediflow.v4.PlaybackEvent.$Shape })
+             * )} mediflow.v4.HistoryItem.$Shape
              */
 
             /**
              * Constructs a new HistoryItem.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a HistoryItem.
              * @constructor
-             * @param {mediflow.v3.HistoryItem.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.HistoryItem.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const HistoryItem = function (properties) {
@@ -4727,7 +4790,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryItem kind.
              * @member {string|null|undefined} kind
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.kind = null;
@@ -4735,7 +4798,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryItem key.
              * @member {string|null|undefined} key
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.key = null;
@@ -4743,7 +4806,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryItem time.
              * @member {string|null|undefined} time
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.time = null;
@@ -4751,55 +4814,55 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryItem sha256.
              * @member {string|null|undefined} sha256
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.sha256 = null;
 
             /**
              * HistoryItem snapshot.
-             * @member {mediflow.v3.Snapshot.$Properties|null|undefined} snapshot
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.Snapshot.$Properties|null|undefined} snapshot
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.snapshot = null;
 
             /**
              * HistoryItem consumption.
-             * @member {mediflow.v3.Consumption.$Properties|null|undefined} consumption
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.Consumption.$Properties|null|undefined} consumption
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.consumption = null;
 
             /**
              * HistoryItem audit.
-             * @member {mediflow.v3.Audit.$Properties|null|undefined} audit
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.Audit.$Properties|null|undefined} audit
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.audit = null;
 
             /**
              * HistoryItem call.
-             * @member {mediflow.v3.Call.$Properties|null|undefined} call
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.Call.$Properties|null|undefined} call
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.call = null;
 
             /**
              * HistoryItem target.
-             * @member {mediflow.v3.Target.$Properties|null|undefined} target
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.Target.$Properties|null|undefined} target
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.target = null;
 
             /**
              * HistoryItem playback.
-             * @member {mediflow.v3.PlaybackEvent.$Properties|null|undefined} playback
-             * @memberof mediflow.v3.HistoryItem
+             * @member {mediflow.v4.PlaybackEvent.$Properties|null|undefined} playback
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             HistoryItem.prototype.playback = null;
@@ -4834,7 +4897,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryItem record.
              * @member {"snapshot"|"consumption"|"audit"|"call"|"target"|"playback"|undefined} record
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              */
             $Object.defineProperty(HistoryItem.prototype, "record", {
@@ -4845,13 +4908,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new HistoryItem instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
-             * @param {mediflow.v3.HistoryItem.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.HistoryItem} HistoryItem instance
+             * @param {mediflow.v4.HistoryItem.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.HistoryItem} HistoryItem instance
              * @type {{
-             *   (properties: mediflow.v3.HistoryItem.$Shape): mediflow.v3.HistoryItem & mediflow.v3.HistoryItem.$Shape;
-             *   (properties?: mediflow.v3.HistoryItem.$Properties): mediflow.v3.HistoryItem;
+             *   (properties: mediflow.v4.HistoryItem.$Shape): mediflow.v4.HistoryItem & mediflow.v4.HistoryItem.$Shape;
+             *   (properties?: mediflow.v4.HistoryItem.$Properties): mediflow.v4.HistoryItem;
              * }}
              */
             HistoryItem.create = function(properties) {
@@ -4859,11 +4922,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified HistoryItem message. Does not implicitly {@link mediflow.v3.HistoryItem.verify|verify} messages.
+             * Encodes the specified HistoryItem message. Does not implicitly {@link mediflow.v4.HistoryItem.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
-             * @param {mediflow.v3.HistoryItem.$Properties} message HistoryItem message or plain object to encode
+             * @param {mediflow.v4.HistoryItem.$Properties} message HistoryItem message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4883,17 +4946,17 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.sha256 != null && $Object.hasOwnProperty.call(message, "sha256"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.sha256);
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot"))
-                    $root.mediflow.v3.Snapshot.encode(message.snapshot, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Snapshot.encode(message.snapshot, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
                 if (message.consumption != null && $Object.hasOwnProperty.call(message, "consumption"))
-                    $root.mediflow.v3.Consumption.encode(message.consumption, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Consumption.encode(message.consumption, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
                 if (message.audit != null && $Object.hasOwnProperty.call(message, "audit"))
-                    $root.mediflow.v3.Audit.encode(message.audit, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Audit.encode(message.audit, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
                 if (message.call != null && $Object.hasOwnProperty.call(message, "call"))
-                    $root.mediflow.v3.Call.encode(message.call, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Call.encode(message.call, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
                 if (message.target != null && $Object.hasOwnProperty.call(message, "target"))
-                    $root.mediflow.v3.Target.encode(message.target, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Target.encode(message.target, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback"))
-                    $root.mediflow.v3.PlaybackEvent.encode(message.playback, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PlaybackEvent.encode(message.playback, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -4903,11 +4966,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a HistoryItem message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.HistoryItem & mediflow.v3.HistoryItem.$Shape} HistoryItem
+             * @returns {mediflow.v4.HistoryItem & mediflow.v4.HistoryItem.$Shape} HistoryItem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4928,7 +4991,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.HistoryItem();
+                message = _target || new $root.mediflow.v4.HistoryItem();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -4969,42 +5032,42 @@ export const mediflow = $root.mediflow = (() => {
                     case 10: {
                             if (wireType !== 2)
                                 break;
-                            message.snapshot = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
+                            message.snapshot = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
                             message.record = "snapshot";
                             continue;
                         }
                     case 11: {
                             if (wireType !== 2)
                                 break;
-                            message.consumption = $root.mediflow.v3.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumption);
+                            message.consumption = $root.mediflow.v4.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumption);
                             message.record = "consumption";
                             continue;
                         }
                     case 12: {
                             if (wireType !== 2)
                                 break;
-                            message.audit = $root.mediflow.v3.Audit.decode(reader, reader.size(), $undefined, _depth + 1, message.audit);
+                            message.audit = $root.mediflow.v4.Audit.decode(reader, reader.size(), $undefined, _depth + 1, message.audit);
                             message.record = "audit";
                             continue;
                         }
                     case 13: {
                             if (wireType !== 2)
                                 break;
-                            message.call = $root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1, message.call);
+                            message.call = $root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1, message.call);
                             message.record = "call";
                             continue;
                         }
                     case 14: {
                             if (wireType !== 2)
                                 break;
-                            message.target = $root.mediflow.v3.Target.decode(reader, reader.size(), $undefined, _depth + 1, message.target);
+                            message.target = $root.mediflow.v4.Target.decode(reader, reader.size(), $undefined, _depth + 1, message.target);
                             message.record = "target";
                             continue;
                         }
                     case 15: {
                             if (wireType !== 2)
                                 break;
-                            message.playback = $root.mediflow.v3.PlaybackEvent.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
+                            message.playback = $root.mediflow.v4.PlaybackEvent.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
                             message.record = "playback";
                             continue;
                         }
@@ -5028,7 +5091,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a HistoryItem message.
              * @function verify
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5064,7 +5127,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot")) {
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.Snapshot.verify(message.snapshot, _depth + 1);
+                        let error = $root.mediflow.v4.Snapshot.verify(message.snapshot, _depth + 1);
                         if (error)
                             return "snapshot." + error;
                     }
@@ -5074,7 +5137,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "record: multiple values";
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.Consumption.verify(message.consumption, _depth + 1);
+                        let error = $root.mediflow.v4.Consumption.verify(message.consumption, _depth + 1);
                         if (error)
                             return "consumption." + error;
                     }
@@ -5084,7 +5147,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "record: multiple values";
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.Audit.verify(message.audit, _depth + 1);
+                        let error = $root.mediflow.v4.Audit.verify(message.audit, _depth + 1);
                         if (error)
                             return "audit." + error;
                     }
@@ -5094,7 +5157,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "record: multiple values";
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.Call.verify(message.call, _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.call, _depth + 1);
                         if (error)
                             return "call." + error;
                     }
@@ -5104,7 +5167,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "record: multiple values";
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.Target.verify(message.target, _depth + 1);
+                        let error = $root.mediflow.v4.Target.verify(message.target, _depth + 1);
                         if (error)
                             return "target." + error;
                     }
@@ -5114,7 +5177,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "record: multiple values";
                     properties.record = 1;
                     {
-                        let error = $root.mediflow.v3.PlaybackEvent.verify(message.playback, _depth + 1);
+                        let error = $root.mediflow.v4.PlaybackEvent.verify(message.playback, _depth + 1);
                         if (error)
                             return "playback." + error;
                     }
@@ -5125,21 +5188,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a HistoryItem message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.HistoryItem} HistoryItem
+             * @returns {mediflow.v4.HistoryItem} HistoryItem
              */
             HistoryItem.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.HistoryItem)
+                if (object instanceof $root.mediflow.v4.HistoryItem)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.HistoryItem: object expected");
+                    throw $TypeError(".mediflow.v4.HistoryItem: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.HistoryItem();
+                let message = new $root.mediflow.v4.HistoryItem();
                 if (object.kind != null)
                     message.kind = $String(object.kind);
                 if (object.key != null)
@@ -5150,33 +5213,33 @@ export const mediflow = $root.mediflow = (() => {
                     message.sha256 = $String(object.sha256);
                 if (object.snapshot != null) {
                     if (!$util.isObject(object.snapshot))
-                        throw $TypeError(".mediflow.v3.HistoryItem.snapshot: object expected");
-                    message.snapshot = $root.mediflow.v3.Snapshot.fromObject(object.snapshot, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.snapshot: object expected");
+                    message.snapshot = $root.mediflow.v4.Snapshot.fromObject(object.snapshot, _depth + 1);
                 }
                 if (object.consumption != null) {
                     if (!$util.isObject(object.consumption))
-                        throw $TypeError(".mediflow.v3.HistoryItem.consumption: object expected");
-                    message.consumption = $root.mediflow.v3.Consumption.fromObject(object.consumption, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.consumption: object expected");
+                    message.consumption = $root.mediflow.v4.Consumption.fromObject(object.consumption, _depth + 1);
                 }
                 if (object.audit != null) {
                     if (!$util.isObject(object.audit))
-                        throw $TypeError(".mediflow.v3.HistoryItem.audit: object expected");
-                    message.audit = $root.mediflow.v3.Audit.fromObject(object.audit, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.audit: object expected");
+                    message.audit = $root.mediflow.v4.Audit.fromObject(object.audit, _depth + 1);
                 }
                 if (object.call != null) {
                     if (!$util.isObject(object.call))
-                        throw $TypeError(".mediflow.v3.HistoryItem.call: object expected");
-                    message.call = $root.mediflow.v3.Call.fromObject(object.call, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.call: object expected");
+                    message.call = $root.mediflow.v4.Call.fromObject(object.call, _depth + 1);
                 }
                 if (object.target != null) {
                     if (!$util.isObject(object.target))
-                        throw $TypeError(".mediflow.v3.HistoryItem.target: object expected");
-                    message.target = $root.mediflow.v3.Target.fromObject(object.target, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.target: object expected");
+                    message.target = $root.mediflow.v4.Target.fromObject(object.target, _depth + 1);
                 }
                 if (object.playback != null) {
                     if (!$util.isObject(object.playback))
-                        throw $TypeError(".mediflow.v3.HistoryItem.playback: object expected");
-                    message.playback = $root.mediflow.v3.PlaybackEvent.fromObject(object.playback, _depth + 1);
+                        throw $TypeError(".mediflow.v4.HistoryItem.playback: object expected");
+                    message.playback = $root.mediflow.v4.PlaybackEvent.fromObject(object.playback, _depth + 1);
                 }
                 return message;
             };
@@ -5184,9 +5247,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a HistoryItem message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
-             * @param {mediflow.v3.HistoryItem} message HistoryItem
+             * @param {mediflow.v4.HistoryItem} message HistoryItem
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5207,32 +5270,32 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.sha256 != null && $Object.hasOwnProperty.call(message, "sha256"))
                     object.sha256 = message.sha256;
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot")) {
-                    object.snapshot = $root.mediflow.v3.Snapshot.toObject(message.snapshot, options, _depth + 1);
+                    object.snapshot = $root.mediflow.v4.Snapshot.toObject(message.snapshot, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "snapshot";
                 }
                 if (message.consumption != null && $Object.hasOwnProperty.call(message, "consumption")) {
-                    object.consumption = $root.mediflow.v3.Consumption.toObject(message.consumption, options, _depth + 1);
+                    object.consumption = $root.mediflow.v4.Consumption.toObject(message.consumption, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "consumption";
                 }
                 if (message.audit != null && $Object.hasOwnProperty.call(message, "audit")) {
-                    object.audit = $root.mediflow.v3.Audit.toObject(message.audit, options, _depth + 1);
+                    object.audit = $root.mediflow.v4.Audit.toObject(message.audit, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "audit";
                 }
                 if (message.call != null && $Object.hasOwnProperty.call(message, "call")) {
-                    object.call = $root.mediflow.v3.Call.toObject(message.call, options, _depth + 1);
+                    object.call = $root.mediflow.v4.Call.toObject(message.call, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "call";
                 }
                 if (message.target != null && $Object.hasOwnProperty.call(message, "target")) {
-                    object.target = $root.mediflow.v3.Target.toObject(message.target, options, _depth + 1);
+                    object.target = $root.mediflow.v4.Target.toObject(message.target, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "target";
                 }
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback")) {
-                    object.playback = $root.mediflow.v3.PlaybackEvent.toObject(message.playback, options, _depth + 1);
+                    object.playback = $root.mediflow.v4.PlaybackEvent.toObject(message.playback, options, _depth + 1);
                     if (options.oneofs)
                         object.record = "playback";
                 }
@@ -5242,7 +5305,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this HistoryItem to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5253,7 +5316,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for HistoryItem
              * @function getTypeUrl
-             * @memberof mediflow.v3.HistoryItem
+             * @memberof mediflow.v4.HistoryItem
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -5261,18 +5324,18 @@ export const mediflow = $root.mediflow = (() => {
             HistoryItem.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.HistoryItem";
+                return prefix + "/mediflow.v4.HistoryItem";
             };
 
             return HistoryItem;
         })();
 
-        v3.CallPage = (function() {
+        v4.CallPage = (function() {
 
             /**
              * Properties of a CallPage.
-             * @typedef {Object} mediflow.v3.CallPage.$Properties
-             * @property {Array.<mediflow.v3.Call.$Properties>|null} [items] CallPage items
+             * @typedef {Object} mediflow.v4.CallPage.$Properties
+             * @property {Array.<mediflow.v4.Call.$Properties>|null} [items] CallPage items
              * @property {number|Long|null} [total] CallPage total
              * @property {number|null} [page] CallPage page
              * @property {number|null} [pageSize] CallPage pageSize
@@ -5281,23 +5344,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a CallPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ICallPage
-             * @augments mediflow.v3.CallPage.$Properties
-             * @deprecated Use mediflow.v3.CallPage.$Properties instead.
+             * @augments mediflow.v4.CallPage.$Properties
+             * @deprecated Use mediflow.v4.CallPage.$Properties instead.
              */
 
             /**
              * Shape of a CallPage.
-             * @typedef {mediflow.v3.CallPage.$Properties} mediflow.v3.CallPage.$Shape
+             * @typedef {mediflow.v4.CallPage.$Properties} mediflow.v4.CallPage.$Shape
              */
 
             /**
              * Constructs a new CallPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a CallPage.
              * @constructor
-             * @param {mediflow.v3.CallPage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.CallPage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const CallPage = function (properties) {
@@ -5310,8 +5373,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * CallPage items.
-             * @member {Array.<mediflow.v3.Call.$Properties>} items
-             * @memberof mediflow.v3.CallPage
+             * @member {Array.<mediflow.v4.Call.$Properties>} items
+             * @memberof mediflow.v4.CallPage
              * @instance
              */
             CallPage.prototype.items = $util.emptyArray;
@@ -5319,7 +5382,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallPage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @instance
              */
             CallPage.prototype.total = null;
@@ -5327,7 +5390,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallPage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @instance
              */
             CallPage.prototype.page = null;
@@ -5335,7 +5398,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallPage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @instance
              */
             CallPage.prototype.pageSize = null;
@@ -5364,13 +5427,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new CallPage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
-             * @param {mediflow.v3.CallPage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.CallPage} CallPage instance
+             * @param {mediflow.v4.CallPage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.CallPage} CallPage instance
              * @type {{
-             *   (properties: mediflow.v3.CallPage.$Shape): mediflow.v3.CallPage & mediflow.v3.CallPage.$Shape;
-             *   (properties?: mediflow.v3.CallPage.$Properties): mediflow.v3.CallPage;
+             *   (properties: mediflow.v4.CallPage.$Shape): mediflow.v4.CallPage & mediflow.v4.CallPage.$Shape;
+             *   (properties?: mediflow.v4.CallPage.$Properties): mediflow.v4.CallPage;
              * }}
              */
             CallPage.create = function(properties) {
@@ -5378,11 +5441,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified CallPage message. Does not implicitly {@link mediflow.v3.CallPage.verify|verify} messages.
+             * Encodes the specified CallPage message. Does not implicitly {@link mediflow.v4.CallPage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
-             * @param {mediflow.v3.CallPage.$Properties} message CallPage message or plain object to encode
+             * @param {mediflow.v4.CallPage.$Properties} message CallPage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5395,7 +5458,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.Call.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Call.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -5411,11 +5474,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a CallPage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.CallPage & mediflow.v3.CallPage.$Shape} CallPage
+             * @returns {mediflow.v4.CallPage & mediflow.v4.CallPage.$Shape} CallPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5436,7 +5499,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.CallPage();
+                message = _target || new $root.mediflow.v4.CallPage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -5451,7 +5514,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -5495,7 +5558,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a CallPage message.
              * @function verify
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5512,7 +5575,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.Call.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -5538,29 +5601,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a CallPage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.CallPage} CallPage
+             * @returns {mediflow.v4.CallPage} CallPage
              */
             CallPage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.CallPage)
+                if (object instanceof $root.mediflow.v4.CallPage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.CallPage: object expected");
+                    throw $TypeError(".mediflow.v4.CallPage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.CallPage();
+                let message = new $root.mediflow.v4.CallPage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.CallPage.items: array expected");
+                        throw $TypeError(".mediflow.v4.CallPage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.CallPage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.Call.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.CallPage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.Call.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -5582,9 +5645,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a CallPage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
-             * @param {mediflow.v3.CallPage} message CallPage
+             * @param {mediflow.v4.CallPage} message CallPage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5601,7 +5664,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.Call.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.Call.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -5620,7 +5683,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this CallPage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5631,7 +5694,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for CallPage
              * @function getTypeUrl
-             * @memberof mediflow.v3.CallPage
+             * @memberof mediflow.v4.CallPage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -5639,18 +5702,18 @@ export const mediflow = $root.mediflow = (() => {
             CallPage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.CallPage";
+                return prefix + "/mediflow.v4.CallPage";
             };
 
             return CallPage;
         })();
 
-        v3.ScreenPage = (function() {
+        v4.ScreenPage = (function() {
 
             /**
              * Properties of a ScreenPage.
-             * @typedef {Object} mediflow.v3.ScreenPage.$Properties
-             * @property {Array.<mediflow.v3.Screen.$Properties>|null} [items] ScreenPage items
+             * @typedef {Object} mediflow.v4.ScreenPage.$Properties
+             * @property {Array.<mediflow.v4.Screen.$Properties>|null} [items] ScreenPage items
              * @property {number|Long|null} [total] ScreenPage total
              * @property {number|null} [page] ScreenPage page
              * @property {number|null} [pageSize] ScreenPage pageSize
@@ -5659,23 +5722,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a ScreenPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IScreenPage
-             * @augments mediflow.v3.ScreenPage.$Properties
-             * @deprecated Use mediflow.v3.ScreenPage.$Properties instead.
+             * @augments mediflow.v4.ScreenPage.$Properties
+             * @deprecated Use mediflow.v4.ScreenPage.$Properties instead.
              */
 
             /**
              * Shape of a ScreenPage.
-             * @typedef {mediflow.v3.ScreenPage.$Properties} mediflow.v3.ScreenPage.$Shape
+             * @typedef {mediflow.v4.ScreenPage.$Properties} mediflow.v4.ScreenPage.$Shape
              */
 
             /**
              * Constructs a new ScreenPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a ScreenPage.
              * @constructor
-             * @param {mediflow.v3.ScreenPage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.ScreenPage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const ScreenPage = function (properties) {
@@ -5688,8 +5751,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * ScreenPage items.
-             * @member {Array.<mediflow.v3.Screen.$Properties>} items
-             * @memberof mediflow.v3.ScreenPage
+             * @member {Array.<mediflow.v4.Screen.$Properties>} items
+             * @memberof mediflow.v4.ScreenPage
              * @instance
              */
             ScreenPage.prototype.items = $util.emptyArray;
@@ -5697,7 +5760,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ScreenPage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @instance
              */
             ScreenPage.prototype.total = null;
@@ -5705,7 +5768,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ScreenPage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @instance
              */
             ScreenPage.prototype.page = null;
@@ -5713,7 +5776,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ScreenPage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @instance
              */
             ScreenPage.prototype.pageSize = null;
@@ -5742,13 +5805,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new ScreenPage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
-             * @param {mediflow.v3.ScreenPage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.ScreenPage} ScreenPage instance
+             * @param {mediflow.v4.ScreenPage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.ScreenPage} ScreenPage instance
              * @type {{
-             *   (properties: mediflow.v3.ScreenPage.$Shape): mediflow.v3.ScreenPage & mediflow.v3.ScreenPage.$Shape;
-             *   (properties?: mediflow.v3.ScreenPage.$Properties): mediflow.v3.ScreenPage;
+             *   (properties: mediflow.v4.ScreenPage.$Shape): mediflow.v4.ScreenPage & mediflow.v4.ScreenPage.$Shape;
+             *   (properties?: mediflow.v4.ScreenPage.$Properties): mediflow.v4.ScreenPage;
              * }}
              */
             ScreenPage.create = function(properties) {
@@ -5756,11 +5819,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified ScreenPage message. Does not implicitly {@link mediflow.v3.ScreenPage.verify|verify} messages.
+             * Encodes the specified ScreenPage message. Does not implicitly {@link mediflow.v4.ScreenPage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
-             * @param {mediflow.v3.ScreenPage.$Properties} message ScreenPage message or plain object to encode
+             * @param {mediflow.v4.ScreenPage.$Properties} message ScreenPage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5773,7 +5836,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.Screen.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Screen.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -5789,11 +5852,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a ScreenPage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.ScreenPage & mediflow.v3.ScreenPage.$Shape} ScreenPage
+             * @returns {mediflow.v4.ScreenPage & mediflow.v4.ScreenPage.$Shape} ScreenPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5814,7 +5877,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.ScreenPage();
+                message = _target || new $root.mediflow.v4.ScreenPage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -5829,7 +5892,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.Screen.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.Screen.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -5873,7 +5936,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a ScreenPage message.
              * @function verify
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5890,7 +5953,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.Screen.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.Screen.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -5916,29 +5979,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a ScreenPage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.ScreenPage} ScreenPage
+             * @returns {mediflow.v4.ScreenPage} ScreenPage
              */
             ScreenPage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.ScreenPage)
+                if (object instanceof $root.mediflow.v4.ScreenPage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.ScreenPage: object expected");
+                    throw $TypeError(".mediflow.v4.ScreenPage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.ScreenPage();
+                let message = new $root.mediflow.v4.ScreenPage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.ScreenPage.items: array expected");
+                        throw $TypeError(".mediflow.v4.ScreenPage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.ScreenPage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.Screen.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ScreenPage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.Screen.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -5960,9 +6023,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a ScreenPage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
-             * @param {mediflow.v3.ScreenPage} message ScreenPage
+             * @param {mediflow.v4.ScreenPage} message ScreenPage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5979,7 +6042,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.Screen.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.Screen.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -5998,7 +6061,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this ScreenPage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6009,7 +6072,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for ScreenPage
              * @function getTypeUrl
-             * @memberof mediflow.v3.ScreenPage
+             * @memberof mediflow.v4.ScreenPage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -6017,18 +6080,18 @@ export const mediflow = $root.mediflow = (() => {
             ScreenPage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.ScreenPage";
+                return prefix + "/mediflow.v4.ScreenPage";
             };
 
             return ScreenPage;
         })();
 
-        v3.ConsumptionPage = (function() {
+        v4.ConsumptionPage = (function() {
 
             /**
              * Properties of a ConsumptionPage.
-             * @typedef {Object} mediflow.v3.ConsumptionPage.$Properties
-             * @property {Array.<mediflow.v3.Consumption.$Properties>|null} [items] ConsumptionPage items
+             * @typedef {Object} mediflow.v4.ConsumptionPage.$Properties
+             * @property {Array.<mediflow.v4.Consumption.$Properties>|null} [items] ConsumptionPage items
              * @property {number|Long|null} [total] ConsumptionPage total
              * @property {number|null} [page] ConsumptionPage page
              * @property {number|null} [pageSize] ConsumptionPage pageSize
@@ -6037,23 +6100,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a ConsumptionPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IConsumptionPage
-             * @augments mediflow.v3.ConsumptionPage.$Properties
-             * @deprecated Use mediflow.v3.ConsumptionPage.$Properties instead.
+             * @augments mediflow.v4.ConsumptionPage.$Properties
+             * @deprecated Use mediflow.v4.ConsumptionPage.$Properties instead.
              */
 
             /**
              * Shape of a ConsumptionPage.
-             * @typedef {mediflow.v3.ConsumptionPage.$Properties} mediflow.v3.ConsumptionPage.$Shape
+             * @typedef {mediflow.v4.ConsumptionPage.$Properties} mediflow.v4.ConsumptionPage.$Shape
              */
 
             /**
              * Constructs a new ConsumptionPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a ConsumptionPage.
              * @constructor
-             * @param {mediflow.v3.ConsumptionPage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.ConsumptionPage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const ConsumptionPage = function (properties) {
@@ -6066,8 +6129,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * ConsumptionPage items.
-             * @member {Array.<mediflow.v3.Consumption.$Properties>} items
-             * @memberof mediflow.v3.ConsumptionPage
+             * @member {Array.<mediflow.v4.Consumption.$Properties>} items
+             * @memberof mediflow.v4.ConsumptionPage
              * @instance
              */
             ConsumptionPage.prototype.items = $util.emptyArray;
@@ -6075,7 +6138,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ConsumptionPage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @instance
              */
             ConsumptionPage.prototype.total = null;
@@ -6083,7 +6146,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ConsumptionPage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @instance
              */
             ConsumptionPage.prototype.page = null;
@@ -6091,7 +6154,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ConsumptionPage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @instance
              */
             ConsumptionPage.prototype.pageSize = null;
@@ -6120,13 +6183,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new ConsumptionPage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
-             * @param {mediflow.v3.ConsumptionPage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.ConsumptionPage} ConsumptionPage instance
+             * @param {mediflow.v4.ConsumptionPage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.ConsumptionPage} ConsumptionPage instance
              * @type {{
-             *   (properties: mediflow.v3.ConsumptionPage.$Shape): mediflow.v3.ConsumptionPage & mediflow.v3.ConsumptionPage.$Shape;
-             *   (properties?: mediflow.v3.ConsumptionPage.$Properties): mediflow.v3.ConsumptionPage;
+             *   (properties: mediflow.v4.ConsumptionPage.$Shape): mediflow.v4.ConsumptionPage & mediflow.v4.ConsumptionPage.$Shape;
+             *   (properties?: mediflow.v4.ConsumptionPage.$Properties): mediflow.v4.ConsumptionPage;
              * }}
              */
             ConsumptionPage.create = function(properties) {
@@ -6134,11 +6197,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified ConsumptionPage message. Does not implicitly {@link mediflow.v3.ConsumptionPage.verify|verify} messages.
+             * Encodes the specified ConsumptionPage message. Does not implicitly {@link mediflow.v4.ConsumptionPage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
-             * @param {mediflow.v3.ConsumptionPage.$Properties} message ConsumptionPage message or plain object to encode
+             * @param {mediflow.v4.ConsumptionPage.$Properties} message ConsumptionPage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6151,7 +6214,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.Consumption.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Consumption.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -6167,11 +6230,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a ConsumptionPage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.ConsumptionPage & mediflow.v3.ConsumptionPage.$Shape} ConsumptionPage
+             * @returns {mediflow.v4.ConsumptionPage & mediflow.v4.ConsumptionPage.$Shape} ConsumptionPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6192,7 +6255,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.ConsumptionPage();
+                message = _target || new $root.mediflow.v4.ConsumptionPage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -6207,7 +6270,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.Consumption.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.Consumption.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -6251,7 +6314,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a ConsumptionPage message.
              * @function verify
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6268,7 +6331,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.Consumption.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.Consumption.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -6294,29 +6357,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a ConsumptionPage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.ConsumptionPage} ConsumptionPage
+             * @returns {mediflow.v4.ConsumptionPage} ConsumptionPage
              */
             ConsumptionPage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.ConsumptionPage)
+                if (object instanceof $root.mediflow.v4.ConsumptionPage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.ConsumptionPage: object expected");
+                    throw $TypeError(".mediflow.v4.ConsumptionPage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.ConsumptionPage();
+                let message = new $root.mediflow.v4.ConsumptionPage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.ConsumptionPage.items: array expected");
+                        throw $TypeError(".mediflow.v4.ConsumptionPage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.ConsumptionPage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.Consumption.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ConsumptionPage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.Consumption.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -6338,9 +6401,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a ConsumptionPage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
-             * @param {mediflow.v3.ConsumptionPage} message ConsumptionPage
+             * @param {mediflow.v4.ConsumptionPage} message ConsumptionPage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6357,7 +6420,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.Consumption.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.Consumption.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -6376,7 +6439,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this ConsumptionPage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6387,7 +6450,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for ConsumptionPage
              * @function getTypeUrl
-             * @memberof mediflow.v3.ConsumptionPage
+             * @memberof mediflow.v4.ConsumptionPage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -6395,18 +6458,18 @@ export const mediflow = $root.mediflow = (() => {
             ConsumptionPage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.ConsumptionPage";
+                return prefix + "/mediflow.v4.ConsumptionPage";
             };
 
             return ConsumptionPage;
         })();
 
-        v3.AuditPage = (function() {
+        v4.AuditPage = (function() {
 
             /**
              * Properties of an AuditPage.
-             * @typedef {Object} mediflow.v3.AuditPage.$Properties
-             * @property {Array.<mediflow.v3.Audit.$Properties>|null} [items] AuditPage items
+             * @typedef {Object} mediflow.v4.AuditPage.$Properties
+             * @property {Array.<mediflow.v4.Audit.$Properties>|null} [items] AuditPage items
              * @property {number|Long|null} [total] AuditPage total
              * @property {number|null} [page] AuditPage page
              * @property {number|null} [pageSize] AuditPage pageSize
@@ -6415,23 +6478,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of an AuditPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IAuditPage
-             * @augments mediflow.v3.AuditPage.$Properties
-             * @deprecated Use mediflow.v3.AuditPage.$Properties instead.
+             * @augments mediflow.v4.AuditPage.$Properties
+             * @deprecated Use mediflow.v4.AuditPage.$Properties instead.
              */
 
             /**
              * Shape of an AuditPage.
-             * @typedef {mediflow.v3.AuditPage.$Properties} mediflow.v3.AuditPage.$Shape
+             * @typedef {mediflow.v4.AuditPage.$Properties} mediflow.v4.AuditPage.$Shape
              */
 
             /**
              * Constructs a new AuditPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an AuditPage.
              * @constructor
-             * @param {mediflow.v3.AuditPage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.AuditPage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const AuditPage = function (properties) {
@@ -6444,8 +6507,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * AuditPage items.
-             * @member {Array.<mediflow.v3.Audit.$Properties>} items
-             * @memberof mediflow.v3.AuditPage
+             * @member {Array.<mediflow.v4.Audit.$Properties>} items
+             * @memberof mediflow.v4.AuditPage
              * @instance
              */
             AuditPage.prototype.items = $util.emptyArray;
@@ -6453,7 +6516,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * AuditPage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @instance
              */
             AuditPage.prototype.total = null;
@@ -6461,7 +6524,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * AuditPage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @instance
              */
             AuditPage.prototype.page = null;
@@ -6469,7 +6532,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * AuditPage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @instance
              */
             AuditPage.prototype.pageSize = null;
@@ -6498,13 +6561,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new AuditPage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
-             * @param {mediflow.v3.AuditPage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.AuditPage} AuditPage instance
+             * @param {mediflow.v4.AuditPage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.AuditPage} AuditPage instance
              * @type {{
-             *   (properties: mediflow.v3.AuditPage.$Shape): mediflow.v3.AuditPage & mediflow.v3.AuditPage.$Shape;
-             *   (properties?: mediflow.v3.AuditPage.$Properties): mediflow.v3.AuditPage;
+             *   (properties: mediflow.v4.AuditPage.$Shape): mediflow.v4.AuditPage & mediflow.v4.AuditPage.$Shape;
+             *   (properties?: mediflow.v4.AuditPage.$Properties): mediflow.v4.AuditPage;
              * }}
              */
             AuditPage.create = function(properties) {
@@ -6512,11 +6575,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified AuditPage message. Does not implicitly {@link mediflow.v3.AuditPage.verify|verify} messages.
+             * Encodes the specified AuditPage message. Does not implicitly {@link mediflow.v4.AuditPage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
-             * @param {mediflow.v3.AuditPage.$Properties} message AuditPage message or plain object to encode
+             * @param {mediflow.v4.AuditPage.$Properties} message AuditPage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6529,7 +6592,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.Audit.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Audit.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -6545,11 +6608,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an AuditPage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.AuditPage & mediflow.v3.AuditPage.$Shape} AuditPage
+             * @returns {mediflow.v4.AuditPage & mediflow.v4.AuditPage.$Shape} AuditPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6570,7 +6633,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.AuditPage();
+                message = _target || new $root.mediflow.v4.AuditPage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -6585,7 +6648,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.Audit.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.Audit.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -6629,7 +6692,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an AuditPage message.
              * @function verify
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6646,7 +6709,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.Audit.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.Audit.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -6672,29 +6735,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an AuditPage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.AuditPage} AuditPage
+             * @returns {mediflow.v4.AuditPage} AuditPage
              */
             AuditPage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.AuditPage)
+                if (object instanceof $root.mediflow.v4.AuditPage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.AuditPage: object expected");
+                    throw $TypeError(".mediflow.v4.AuditPage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.AuditPage();
+                let message = new $root.mediflow.v4.AuditPage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.AuditPage.items: array expected");
+                        throw $TypeError(".mediflow.v4.AuditPage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.AuditPage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.Audit.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.AuditPage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.Audit.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -6716,9 +6779,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an AuditPage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
-             * @param {mediflow.v3.AuditPage} message AuditPage
+             * @param {mediflow.v4.AuditPage} message AuditPage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6735,7 +6798,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.Audit.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.Audit.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -6754,7 +6817,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this AuditPage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6765,7 +6828,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for AuditPage
              * @function getTypeUrl
-             * @memberof mediflow.v3.AuditPage
+             * @memberof mediflow.v4.AuditPage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -6773,18 +6836,18 @@ export const mediflow = $root.mediflow = (() => {
             AuditPage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.AuditPage";
+                return prefix + "/mediflow.v4.AuditPage";
             };
 
             return AuditPage;
         })();
 
-        v3.ArchivePage = (function() {
+        v4.ArchivePage = (function() {
 
             /**
              * Properties of an ArchivePage.
-             * @typedef {Object} mediflow.v3.ArchivePage.$Properties
-             * @property {Array.<mediflow.v3.Archive.$Properties>|null} [items] ArchivePage items
+             * @typedef {Object} mediflow.v4.ArchivePage.$Properties
+             * @property {Array.<mediflow.v4.Archive.$Properties>|null} [items] ArchivePage items
              * @property {number|Long|null} [total] ArchivePage total
              * @property {number|null} [page] ArchivePage page
              * @property {number|null} [pageSize] ArchivePage pageSize
@@ -6793,23 +6856,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of an ArchivePage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IArchivePage
-             * @augments mediflow.v3.ArchivePage.$Properties
-             * @deprecated Use mediflow.v3.ArchivePage.$Properties instead.
+             * @augments mediflow.v4.ArchivePage.$Properties
+             * @deprecated Use mediflow.v4.ArchivePage.$Properties instead.
              */
 
             /**
              * Shape of an ArchivePage.
-             * @typedef {mediflow.v3.ArchivePage.$Properties} mediflow.v3.ArchivePage.$Shape
+             * @typedef {mediflow.v4.ArchivePage.$Properties} mediflow.v4.ArchivePage.$Shape
              */
 
             /**
              * Constructs a new ArchivePage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an ArchivePage.
              * @constructor
-             * @param {mediflow.v3.ArchivePage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.ArchivePage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const ArchivePage = function (properties) {
@@ -6822,8 +6885,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * ArchivePage items.
-             * @member {Array.<mediflow.v3.Archive.$Properties>} items
-             * @memberof mediflow.v3.ArchivePage
+             * @member {Array.<mediflow.v4.Archive.$Properties>} items
+             * @memberof mediflow.v4.ArchivePage
              * @instance
              */
             ArchivePage.prototype.items = $util.emptyArray;
@@ -6831,7 +6894,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchivePage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @instance
              */
             ArchivePage.prototype.total = null;
@@ -6839,7 +6902,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchivePage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @instance
              */
             ArchivePage.prototype.page = null;
@@ -6847,7 +6910,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchivePage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @instance
              */
             ArchivePage.prototype.pageSize = null;
@@ -6876,13 +6939,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new ArchivePage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
-             * @param {mediflow.v3.ArchivePage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.ArchivePage} ArchivePage instance
+             * @param {mediflow.v4.ArchivePage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.ArchivePage} ArchivePage instance
              * @type {{
-             *   (properties: mediflow.v3.ArchivePage.$Shape): mediflow.v3.ArchivePage & mediflow.v3.ArchivePage.$Shape;
-             *   (properties?: mediflow.v3.ArchivePage.$Properties): mediflow.v3.ArchivePage;
+             *   (properties: mediflow.v4.ArchivePage.$Shape): mediflow.v4.ArchivePage & mediflow.v4.ArchivePage.$Shape;
+             *   (properties?: mediflow.v4.ArchivePage.$Properties): mediflow.v4.ArchivePage;
              * }}
              */
             ArchivePage.create = function(properties) {
@@ -6890,11 +6953,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified ArchivePage message. Does not implicitly {@link mediflow.v3.ArchivePage.verify|verify} messages.
+             * Encodes the specified ArchivePage message. Does not implicitly {@link mediflow.v4.ArchivePage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
-             * @param {mediflow.v3.ArchivePage.$Properties} message ArchivePage message or plain object to encode
+             * @param {mediflow.v4.ArchivePage.$Properties} message ArchivePage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6907,7 +6970,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.Archive.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Archive.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -6923,11 +6986,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an ArchivePage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.ArchivePage & mediflow.v3.ArchivePage.$Shape} ArchivePage
+             * @returns {mediflow.v4.ArchivePage & mediflow.v4.ArchivePage.$Shape} ArchivePage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6948,7 +7011,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.ArchivePage();
+                message = _target || new $root.mediflow.v4.ArchivePage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -6963,7 +7026,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.Archive.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.Archive.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -7007,7 +7070,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an ArchivePage message.
              * @function verify
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7024,7 +7087,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.Archive.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.Archive.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -7050,29 +7113,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an ArchivePage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.ArchivePage} ArchivePage
+             * @returns {mediflow.v4.ArchivePage} ArchivePage
              */
             ArchivePage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.ArchivePage)
+                if (object instanceof $root.mediflow.v4.ArchivePage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.ArchivePage: object expected");
+                    throw $TypeError(".mediflow.v4.ArchivePage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.ArchivePage();
+                let message = new $root.mediflow.v4.ArchivePage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.ArchivePage.items: array expected");
+                        throw $TypeError(".mediflow.v4.ArchivePage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.ArchivePage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.Archive.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchivePage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.Archive.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -7094,9 +7157,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an ArchivePage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
-             * @param {mediflow.v3.ArchivePage} message ArchivePage
+             * @param {mediflow.v4.ArchivePage} message ArchivePage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7113,7 +7176,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.Archive.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.Archive.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -7132,7 +7195,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this ArchivePage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7143,7 +7206,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for ArchivePage
              * @function getTypeUrl
-             * @memberof mediflow.v3.ArchivePage
+             * @memberof mediflow.v4.ArchivePage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -7151,18 +7214,18 @@ export const mediflow = $root.mediflow = (() => {
             ArchivePage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.ArchivePage";
+                return prefix + "/mediflow.v4.ArchivePage";
             };
 
             return ArchivePage;
         })();
 
-        v3.HistoryPage = (function() {
+        v4.HistoryPage = (function() {
 
             /**
              * Properties of a HistoryPage.
-             * @typedef {Object} mediflow.v3.HistoryPage.$Properties
-             * @property {Array.<mediflow.v3.HistoryItem.$Properties>|null} [items] HistoryPage items
+             * @typedef {Object} mediflow.v4.HistoryPage.$Properties
+             * @property {Array.<mediflow.v4.HistoryItem.$Properties>|null} [items] HistoryPage items
              * @property {number|Long|null} [total] HistoryPage total
              * @property {number|null} [page] HistoryPage page
              * @property {number|null} [pageSize] HistoryPage pageSize
@@ -7171,29 +7234,29 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a HistoryPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IHistoryPage
-             * @augments mediflow.v3.HistoryPage.$Properties
-             * @deprecated Use mediflow.v3.HistoryPage.$Properties instead.
+             * @augments mediflow.v4.HistoryPage.$Properties
+             * @deprecated Use mediflow.v4.HistoryPage.$Properties instead.
              */
 
             /**
              * Shape of a HistoryPage.
              * @typedef {{
-             *   items?: Array.<mediflow.v3.HistoryItem.$Shape>|null;
+             *   items?: Array.<mediflow.v4.HistoryItem.$Shape>|null;
              *   total?: number|Long|null;
              *   page?: number|null;
              *   pageSize?: number|null;
              *   $unknowns?: Array.<Uint8Array>;
-             * }} mediflow.v3.HistoryPage.$Shape
+             * }} mediflow.v4.HistoryPage.$Shape
              */
 
             /**
              * Constructs a new HistoryPage.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a HistoryPage.
              * @constructor
-             * @param {mediflow.v3.HistoryPage.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.HistoryPage.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const HistoryPage = function (properties) {
@@ -7206,8 +7269,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * HistoryPage items.
-             * @member {Array.<mediflow.v3.HistoryItem.$Properties>} items
-             * @memberof mediflow.v3.HistoryPage
+             * @member {Array.<mediflow.v4.HistoryItem.$Properties>} items
+             * @memberof mediflow.v4.HistoryPage
              * @instance
              */
             HistoryPage.prototype.items = $util.emptyArray;
@@ -7215,7 +7278,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryPage total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @instance
              */
             HistoryPage.prototype.total = null;
@@ -7223,7 +7286,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryPage page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @instance
              */
             HistoryPage.prototype.page = null;
@@ -7231,7 +7294,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * HistoryPage pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @instance
              */
             HistoryPage.prototype.pageSize = null;
@@ -7260,13 +7323,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new HistoryPage instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
-             * @param {mediflow.v3.HistoryPage.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.HistoryPage} HistoryPage instance
+             * @param {mediflow.v4.HistoryPage.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.HistoryPage} HistoryPage instance
              * @type {{
-             *   (properties: mediflow.v3.HistoryPage.$Shape): mediflow.v3.HistoryPage & mediflow.v3.HistoryPage.$Shape;
-             *   (properties?: mediflow.v3.HistoryPage.$Properties): mediflow.v3.HistoryPage;
+             *   (properties: mediflow.v4.HistoryPage.$Shape): mediflow.v4.HistoryPage & mediflow.v4.HistoryPage.$Shape;
+             *   (properties?: mediflow.v4.HistoryPage.$Properties): mediflow.v4.HistoryPage;
              * }}
              */
             HistoryPage.create = function(properties) {
@@ -7274,11 +7337,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified HistoryPage message. Does not implicitly {@link mediflow.v3.HistoryPage.verify|verify} messages.
+             * Encodes the specified HistoryPage message. Does not implicitly {@link mediflow.v4.HistoryPage.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
-             * @param {mediflow.v3.HistoryPage.$Properties} message HistoryPage message or plain object to encode
+             * @param {mediflow.v4.HistoryPage.$Properties} message HistoryPage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7291,7 +7354,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.items != null && message.items.length)
                     for (let i = 0; i < message.items.length; ++i)
-                        $root.mediflow.v3.HistoryItem.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.HistoryItem.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.total);
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
@@ -7307,11 +7370,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a HistoryPage message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.HistoryPage & mediflow.v3.HistoryPage.$Shape} HistoryPage
+             * @returns {mediflow.v4.HistoryPage & mediflow.v4.HistoryPage.$Shape} HistoryPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7332,7 +7395,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.HistoryPage();
+                message = _target || new $root.mediflow.v4.HistoryPage();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -7347,7 +7410,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.items && message.items.length))
                                 message.items = [];
-                            message.items.push($root.mediflow.v3.HistoryItem.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.items.push($root.mediflow.v4.HistoryItem.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -7391,7 +7454,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a HistoryPage message.
              * @function verify
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7408,7 +7471,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.items))
                         return "items: array expected";
                     for (let i = 0; i < message.items.length; ++i) {
-                        let error = $root.mediflow.v3.HistoryItem.verify(message.items[i], _depth + 1);
+                        let error = $root.mediflow.v4.HistoryItem.verify(message.items[i], _depth + 1);
                         if (error)
                             return "items." + error;
                     }
@@ -7434,29 +7497,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a HistoryPage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.HistoryPage} HistoryPage
+             * @returns {mediflow.v4.HistoryPage} HistoryPage
              */
             HistoryPage.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.HistoryPage)
+                if (object instanceof $root.mediflow.v4.HistoryPage)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.HistoryPage: object expected");
+                    throw $TypeError(".mediflow.v4.HistoryPage: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.HistoryPage();
+                let message = new $root.mediflow.v4.HistoryPage();
                 if (object.items) {
                     if (!$Array.isArray(object.items))
-                        throw $TypeError(".mediflow.v3.HistoryPage.items: array expected");
+                        throw $TypeError(".mediflow.v4.HistoryPage.items: array expected");
                     message.items = $Array(object.items.length);
                     for (let i = 0; i < object.items.length; ++i) {
                         if (!$util.isObject(object.items[i]))
-                            throw $TypeError(".mediflow.v3.HistoryPage.items: object expected");
-                        message.items[i] = $root.mediflow.v3.HistoryItem.fromObject(object.items[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.HistoryPage.items: object expected");
+                        message.items[i] = $root.mediflow.v4.HistoryItem.fromObject(object.items[i], _depth + 1);
                     }
                 }
                 if (object.total != null)
@@ -7478,9 +7541,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a HistoryPage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
-             * @param {mediflow.v3.HistoryPage} message HistoryPage
+             * @param {mediflow.v4.HistoryPage} message HistoryPage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7497,7 +7560,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.items && message.items.length) {
                     object.items = $Array(message.items.length);
                     for (let j = 0; j < message.items.length; ++j)
-                        object.items[j] = $root.mediflow.v3.HistoryItem.toObject(message.items[j], options, _depth + 1);
+                        object.items[j] = $root.mediflow.v4.HistoryItem.toObject(message.items[j], options, _depth + 1);
                 }
                 if (message.total != null && $Object.hasOwnProperty.call(message, "total"))
                     if (typeof $BigInt !== "undefined" && options.longs === $BigInt)
@@ -7516,7 +7579,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this HistoryPage to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7527,7 +7590,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for HistoryPage
              * @function getTypeUrl
-             * @memberof mediflow.v3.HistoryPage
+             * @memberof mediflow.v4.HistoryPage
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -7535,42 +7598,42 @@ export const mediflow = $root.mediflow = (() => {
             HistoryPage.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.HistoryPage";
+                return prefix + "/mediflow.v4.HistoryPage";
             };
 
             return HistoryPage;
         })();
 
-        v3.ScreenDetail = (function() {
+        v4.ScreenDetail = (function() {
 
             /**
              * Properties of a ScreenDetail.
-             * @typedef {Object} mediflow.v3.ScreenDetail.$Properties
-             * @property {mediflow.v3.Screen.$Properties|null} [screen] ScreenDetail screen
-             * @property {mediflow.v3.Snapshot.$Properties|null} [state] ScreenDetail state
-             * @property {mediflow.v3.CallPage.$Properties|null} [calls] ScreenDetail calls
+             * @typedef {Object} mediflow.v4.ScreenDetail.$Properties
+             * @property {mediflow.v4.Screen.$Properties|null} [screen] ScreenDetail screen
+             * @property {mediflow.v4.Snapshot.$Properties|null} [state] ScreenDetail state
+             * @property {mediflow.v4.CallPage.$Properties|null} [calls] ScreenDetail calls
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a ScreenDetail.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IScreenDetail
-             * @augments mediflow.v3.ScreenDetail.$Properties
-             * @deprecated Use mediflow.v3.ScreenDetail.$Properties instead.
+             * @augments mediflow.v4.ScreenDetail.$Properties
+             * @deprecated Use mediflow.v4.ScreenDetail.$Properties instead.
              */
 
             /**
              * Shape of a ScreenDetail.
-             * @typedef {mediflow.v3.ScreenDetail.$Properties} mediflow.v3.ScreenDetail.$Shape
+             * @typedef {mediflow.v4.ScreenDetail.$Properties} mediflow.v4.ScreenDetail.$Shape
              */
 
             /**
              * Constructs a new ScreenDetail.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a ScreenDetail.
              * @constructor
-             * @param {mediflow.v3.ScreenDetail.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.ScreenDetail.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const ScreenDetail = function (properties) {
@@ -7582,24 +7645,24 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * ScreenDetail screen.
-             * @member {mediflow.v3.Screen.$Properties|null|undefined} screen
-             * @memberof mediflow.v3.ScreenDetail
+             * @member {mediflow.v4.Screen.$Properties|null|undefined} screen
+             * @memberof mediflow.v4.ScreenDetail
              * @instance
              */
             ScreenDetail.prototype.screen = null;
 
             /**
              * ScreenDetail state.
-             * @member {mediflow.v3.Snapshot.$Properties|null|undefined} state
-             * @memberof mediflow.v3.ScreenDetail
+             * @member {mediflow.v4.Snapshot.$Properties|null|undefined} state
+             * @memberof mediflow.v4.ScreenDetail
              * @instance
              */
             ScreenDetail.prototype.state = null;
 
             /**
              * ScreenDetail calls.
-             * @member {mediflow.v3.CallPage.$Properties|null|undefined} calls
-             * @memberof mediflow.v3.ScreenDetail
+             * @member {mediflow.v4.CallPage.$Properties|null|undefined} calls
+             * @memberof mediflow.v4.ScreenDetail
              * @instance
              */
             ScreenDetail.prototype.calls = null;
@@ -7607,13 +7670,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new ScreenDetail instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
-             * @param {mediflow.v3.ScreenDetail.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.ScreenDetail} ScreenDetail instance
+             * @param {mediflow.v4.ScreenDetail.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.ScreenDetail} ScreenDetail instance
              * @type {{
-             *   (properties: mediflow.v3.ScreenDetail.$Shape): mediflow.v3.ScreenDetail & mediflow.v3.ScreenDetail.$Shape;
-             *   (properties?: mediflow.v3.ScreenDetail.$Properties): mediflow.v3.ScreenDetail;
+             *   (properties: mediflow.v4.ScreenDetail.$Shape): mediflow.v4.ScreenDetail & mediflow.v4.ScreenDetail.$Shape;
+             *   (properties?: mediflow.v4.ScreenDetail.$Properties): mediflow.v4.ScreenDetail;
              * }}
              */
             ScreenDetail.create = function(properties) {
@@ -7621,11 +7684,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified ScreenDetail message. Does not implicitly {@link mediflow.v3.ScreenDetail.verify|verify} messages.
+             * Encodes the specified ScreenDetail message. Does not implicitly {@link mediflow.v4.ScreenDetail.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
-             * @param {mediflow.v3.ScreenDetail.$Properties} message ScreenDetail message or plain object to encode
+             * @param {mediflow.v4.ScreenDetail.$Properties} message ScreenDetail message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7637,11 +7700,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.screen != null && $Object.hasOwnProperty.call(message, "screen"))
-                    $root.mediflow.v3.Screen.encode(message.screen, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Screen.encode(message.screen, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.state != null && $Object.hasOwnProperty.call(message, "state"))
-                    $root.mediflow.v3.Snapshot.encode(message.state, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Snapshot.encode(message.state, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls"))
-                    $root.mediflow.v3.CallPage.encode(message.calls, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.CallPage.encode(message.calls, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -7651,11 +7714,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a ScreenDetail message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.ScreenDetail & mediflow.v3.ScreenDetail.$Shape} ScreenDetail
+             * @returns {mediflow.v4.ScreenDetail & mediflow.v4.ScreenDetail.$Shape} ScreenDetail
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7676,7 +7739,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.ScreenDetail();
+                message = _target || new $root.mediflow.v4.ScreenDetail();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -7689,19 +7752,19 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.screen = $root.mediflow.v3.Screen.decode(reader, reader.size(), $undefined, _depth + 1, message.screen);
+                            message.screen = $root.mediflow.v4.Screen.decode(reader, reader.size(), $undefined, _depth + 1, message.screen);
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.state = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.state);
+                            message.state = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.state);
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.calls = $root.mediflow.v3.CallPage.decode(reader, reader.size(), $undefined, _depth + 1, message.calls);
+                            message.calls = $root.mediflow.v4.CallPage.decode(reader, reader.size(), $undefined, _depth + 1, message.calls);
                             continue;
                         }
                     }
@@ -7724,7 +7787,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a ScreenDetail message.
              * @function verify
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7737,17 +7800,17 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     return "max depth exceeded";
                 if (message.screen != null && $Object.hasOwnProperty.call(message, "screen")) {
-                    let error = $root.mediflow.v3.Screen.verify(message.screen, _depth + 1);
+                    let error = $root.mediflow.v4.Screen.verify(message.screen, _depth + 1);
                     if (error)
                         return "screen." + error;
                 }
                 if (message.state != null && $Object.hasOwnProperty.call(message, "state")) {
-                    let error = $root.mediflow.v3.Snapshot.verify(message.state, _depth + 1);
+                    let error = $root.mediflow.v4.Snapshot.verify(message.state, _depth + 1);
                     if (error)
                         return "state." + error;
                 }
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls")) {
-                    let error = $root.mediflow.v3.CallPage.verify(message.calls, _depth + 1);
+                    let error = $root.mediflow.v4.CallPage.verify(message.calls, _depth + 1);
                     if (error)
                         return "calls." + error;
                 }
@@ -7757,35 +7820,35 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a ScreenDetail message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.ScreenDetail} ScreenDetail
+             * @returns {mediflow.v4.ScreenDetail} ScreenDetail
              */
             ScreenDetail.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.ScreenDetail)
+                if (object instanceof $root.mediflow.v4.ScreenDetail)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.ScreenDetail: object expected");
+                    throw $TypeError(".mediflow.v4.ScreenDetail: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.ScreenDetail();
+                let message = new $root.mediflow.v4.ScreenDetail();
                 if (object.screen != null) {
                     if (!$util.isObject(object.screen))
-                        throw $TypeError(".mediflow.v3.ScreenDetail.screen: object expected");
-                    message.screen = $root.mediflow.v3.Screen.fromObject(object.screen, _depth + 1);
+                        throw $TypeError(".mediflow.v4.ScreenDetail.screen: object expected");
+                    message.screen = $root.mediflow.v4.Screen.fromObject(object.screen, _depth + 1);
                 }
                 if (object.state != null) {
                     if (!$util.isObject(object.state))
-                        throw $TypeError(".mediflow.v3.ScreenDetail.state: object expected");
-                    message.state = $root.mediflow.v3.Snapshot.fromObject(object.state, _depth + 1);
+                        throw $TypeError(".mediflow.v4.ScreenDetail.state: object expected");
+                    message.state = $root.mediflow.v4.Snapshot.fromObject(object.state, _depth + 1);
                 }
                 if (object.calls != null) {
                     if (!$util.isObject(object.calls))
-                        throw $TypeError(".mediflow.v3.ScreenDetail.calls: object expected");
-                    message.calls = $root.mediflow.v3.CallPage.fromObject(object.calls, _depth + 1);
+                        throw $TypeError(".mediflow.v4.ScreenDetail.calls: object expected");
+                    message.calls = $root.mediflow.v4.CallPage.fromObject(object.calls, _depth + 1);
                 }
                 return message;
             };
@@ -7793,9 +7856,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a ScreenDetail message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
-             * @param {mediflow.v3.ScreenDetail} message ScreenDetail
+             * @param {mediflow.v4.ScreenDetail} message ScreenDetail
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7813,18 +7876,18 @@ export const mediflow = $root.mediflow = (() => {
                     object.calls = null;
                 }
                 if (message.screen != null && $Object.hasOwnProperty.call(message, "screen"))
-                    object.screen = $root.mediflow.v3.Screen.toObject(message.screen, options, _depth + 1);
+                    object.screen = $root.mediflow.v4.Screen.toObject(message.screen, options, _depth + 1);
                 if (message.state != null && $Object.hasOwnProperty.call(message, "state"))
-                    object.state = $root.mediflow.v3.Snapshot.toObject(message.state, options, _depth + 1);
+                    object.state = $root.mediflow.v4.Snapshot.toObject(message.state, options, _depth + 1);
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls"))
-                    object.calls = $root.mediflow.v3.CallPage.toObject(message.calls, options, _depth + 1);
+                    object.calls = $root.mediflow.v4.CallPage.toObject(message.calls, options, _depth + 1);
                 return object;
             };
 
             /**
              * Converts this ScreenDetail to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7835,7 +7898,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for ScreenDetail
              * @function getTypeUrl
-             * @memberof mediflow.v3.ScreenDetail
+             * @memberof mediflow.v4.ScreenDetail
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -7843,17 +7906,17 @@ export const mediflow = $root.mediflow = (() => {
             ScreenDetail.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.ScreenDetail";
+                return prefix + "/mediflow.v4.ScreenDetail";
             };
 
             return ScreenDetail;
         })();
 
-        v3.Overview = (function() {
+        v4.Overview = (function() {
 
             /**
              * Properties of an Overview.
-             * @typedef {Object} mediflow.v3.Overview.$Properties
+             * @typedef {Object} mediflow.v4.Overview.$Properties
              * @property {number|Long|null} [screens] Overview screens
              * @property {number|Long|null} [calls] Overview calls
              * @property {number|Long|null} [consumptions] Overview consumptions
@@ -7864,23 +7927,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of an Overview.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IOverview
-             * @augments mediflow.v3.Overview.$Properties
-             * @deprecated Use mediflow.v3.Overview.$Properties instead.
+             * @augments mediflow.v4.Overview.$Properties
+             * @deprecated Use mediflow.v4.Overview.$Properties instead.
              */
 
             /**
              * Shape of an Overview.
-             * @typedef {mediflow.v3.Overview.$Properties} mediflow.v3.Overview.$Shape
+             * @typedef {mediflow.v4.Overview.$Properties} mediflow.v4.Overview.$Shape
              */
 
             /**
              * Constructs a new Overview.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an Overview.
              * @constructor
-             * @param {mediflow.v3.Overview.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Overview.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Overview = function (properties) {
@@ -7893,7 +7956,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Overview screens.
              * @member {number|Long|null|undefined} screens
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              */
             Overview.prototype.screens = null;
@@ -7901,7 +7964,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Overview calls.
              * @member {number|Long|null|undefined} calls
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              */
             Overview.prototype.calls = null;
@@ -7909,7 +7972,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Overview consumptions.
              * @member {number|Long|null|undefined} consumptions
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              */
             Overview.prototype.consumptions = null;
@@ -7917,7 +7980,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Overview auditEvents.
              * @member {number|Long|null|undefined} auditEvents
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              */
             Overview.prototype.auditEvents = null;
@@ -7925,7 +7988,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Overview onlineScreens.
              * @member {number|Long|null|undefined} onlineScreens
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              */
             Overview.prototype.onlineScreens = null;
@@ -7966,13 +8029,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Overview instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
-             * @param {mediflow.v3.Overview.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Overview} Overview instance
+             * @param {mediflow.v4.Overview.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Overview} Overview instance
              * @type {{
-             *   (properties: mediflow.v3.Overview.$Shape): mediflow.v3.Overview & mediflow.v3.Overview.$Shape;
-             *   (properties?: mediflow.v3.Overview.$Properties): mediflow.v3.Overview;
+             *   (properties: mediflow.v4.Overview.$Shape): mediflow.v4.Overview & mediflow.v4.Overview.$Shape;
+             *   (properties?: mediflow.v4.Overview.$Properties): mediflow.v4.Overview;
              * }}
              */
             Overview.create = function(properties) {
@@ -7980,11 +8043,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Overview message. Does not implicitly {@link mediflow.v3.Overview.verify|verify} messages.
+             * Encodes the specified Overview message. Does not implicitly {@link mediflow.v4.Overview.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
-             * @param {mediflow.v3.Overview.$Properties} message Overview message or plain object to encode
+             * @param {mediflow.v4.Overview.$Properties} message Overview message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8014,11 +8077,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an Overview message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Overview & mediflow.v3.Overview.$Shape} Overview
+             * @returns {mediflow.v4.Overview & mediflow.v4.Overview.$Shape} Overview
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8039,7 +8102,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Overview();
+                message = _target || new $root.mediflow.v4.Overview();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -8104,7 +8167,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an Overview message.
              * @function verify
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8148,21 +8211,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an Overview message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Overview} Overview
+             * @returns {mediflow.v4.Overview} Overview
              */
             Overview.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Overview)
+                if (object instanceof $root.mediflow.v4.Overview)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Overview: object expected");
+                    throw $TypeError(".mediflow.v4.Overview: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Overview();
+                let message = new $root.mediflow.v4.Overview();
                 if (object.screens != null)
                     if ($util.Long)
                         message.screens = $util.Long.fromValue(object.screens, true);
@@ -8214,9 +8277,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an Overview message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
-             * @param {mediflow.v3.Overview} message Overview
+             * @param {mediflow.v4.Overview} message Overview
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8269,7 +8332,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Overview to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8280,7 +8343,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Overview
              * @function getTypeUrl
-             * @memberof mediflow.v3.Overview
+             * @memberof mediflow.v4.Overview
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -8288,51 +8351,51 @@ export const mediflow = $root.mediflow = (() => {
             Overview.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Overview";
+                return prefix + "/mediflow.v4.Overview";
             };
 
             return Overview;
         })();
 
-        v3.ArchiveBundle = (function() {
+        v4.ArchiveBundle = (function() {
 
             /**
              * Properties of an ArchiveBundle.
-             * @typedef {Object} mediflow.v3.ArchiveBundle.$Properties
-             * @property {Array.<mediflow.v3.Screen.$Properties>|null} [screens] ArchiveBundle screens
-             * @property {Object.<string,mediflow.v3.Snapshot.$Properties>|null} [states] ArchiveBundle states
-             * @property {Object.<string,mediflow.v3.Snapshot.$Properties>|null} [snapshotHistory] ArchiveBundle snapshotHistory
-             * @property {Object.<string,mediflow.v3.Call.$Properties>|null} [calls] ArchiveBundle calls
-             * @property {Object.<string,mediflow.v3.Consumption.$Properties>|null} [consumptions] ArchiveBundle consumptions
-             * @property {Array.<mediflow.v3.Audit.$Properties>|null} [audit] ArchiveBundle audit
-             * @property {Array.<mediflow.v3.Archive.$Properties>|null} [checkpoints] ArchiveBundle checkpoints
+             * @typedef {Object} mediflow.v4.ArchiveBundle.$Properties
+             * @property {Array.<mediflow.v4.Screen.$Properties>|null} [screens] ArchiveBundle screens
+             * @property {Object.<string,mediflow.v4.Snapshot.$Properties>|null} [states] ArchiveBundle states
+             * @property {Object.<string,mediflow.v4.Snapshot.$Properties>|null} [snapshotHistory] ArchiveBundle snapshotHistory
+             * @property {Object.<string,mediflow.v4.Call.$Properties>|null} [calls] ArchiveBundle calls
+             * @property {Object.<string,mediflow.v4.Consumption.$Properties>|null} [consumptions] ArchiveBundle consumptions
+             * @property {Array.<mediflow.v4.Audit.$Properties>|null} [audit] ArchiveBundle audit
+             * @property {Array.<mediflow.v4.Archive.$Properties>|null} [checkpoints] ArchiveBundle checkpoints
              * @property {string|null} [from] ArchiveBundle from
              * @property {string|null} [to] ArchiveBundle to
              * @property {string|null} [formatVersion] ArchiveBundle formatVersion
-             * @property {string|null} [epoch] ArchiveBundle epoch
+             * @property {Uint8Array|null} [epoch] ArchiveBundle epoch
              * @property {string|null} [exportedAt] ArchiveBundle exportedAt
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of an ArchiveBundle.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IArchiveBundle
-             * @augments mediflow.v3.ArchiveBundle.$Properties
-             * @deprecated Use mediflow.v3.ArchiveBundle.$Properties instead.
+             * @augments mediflow.v4.ArchiveBundle.$Properties
+             * @deprecated Use mediflow.v4.ArchiveBundle.$Properties instead.
              */
 
             /**
              * Shape of an ArchiveBundle.
-             * @typedef {mediflow.v3.ArchiveBundle.$Properties} mediflow.v3.ArchiveBundle.$Shape
+             * @typedef {mediflow.v4.ArchiveBundle.$Properties} mediflow.v4.ArchiveBundle.$Shape
              */
 
             /**
              * Constructs a new ArchiveBundle.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an ArchiveBundle.
              * @constructor
-             * @param {mediflow.v3.ArchiveBundle.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.ArchiveBundle.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const ArchiveBundle = function (properties) {
@@ -8351,56 +8414,56 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * ArchiveBundle screens.
-             * @member {Array.<mediflow.v3.Screen.$Properties>} screens
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Array.<mediflow.v4.Screen.$Properties>} screens
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.screens = $util.emptyArray;
 
             /**
              * ArchiveBundle states.
-             * @member {Object.<string,mediflow.v3.Snapshot.$Properties>} states
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Object.<string,mediflow.v4.Snapshot.$Properties>} states
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.states = $util.emptyObject;
 
             /**
              * ArchiveBundle snapshotHistory.
-             * @member {Object.<string,mediflow.v3.Snapshot.$Properties>} snapshotHistory
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Object.<string,mediflow.v4.Snapshot.$Properties>} snapshotHistory
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.snapshotHistory = $util.emptyObject;
 
             /**
              * ArchiveBundle calls.
-             * @member {Object.<string,mediflow.v3.Call.$Properties>} calls
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Object.<string,mediflow.v4.Call.$Properties>} calls
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.calls = $util.emptyObject;
 
             /**
              * ArchiveBundle consumptions.
-             * @member {Object.<string,mediflow.v3.Consumption.$Properties>} consumptions
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Object.<string,mediflow.v4.Consumption.$Properties>} consumptions
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.consumptions = $util.emptyObject;
 
             /**
              * ArchiveBundle audit.
-             * @member {Array.<mediflow.v3.Audit.$Properties>} audit
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Array.<mediflow.v4.Audit.$Properties>} audit
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.audit = $util.emptyArray;
 
             /**
              * ArchiveBundle checkpoints.
-             * @member {Array.<mediflow.v3.Archive.$Properties>} checkpoints
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Array.<mediflow.v4.Archive.$Properties>} checkpoints
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.checkpoints = $util.emptyArray;
@@ -8408,7 +8471,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchiveBundle from.
              * @member {string|null|undefined} from
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.from = null;
@@ -8416,7 +8479,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchiveBundle to.
              * @member {string|null|undefined} to
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.to = null;
@@ -8424,15 +8487,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchiveBundle formatVersion.
              * @member {string|null|undefined} formatVersion
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.formatVersion = null;
 
             /**
              * ArchiveBundle epoch.
-             * @member {string|null|undefined} epoch
-             * @memberof mediflow.v3.ArchiveBundle
+             * @member {Uint8Array|null|undefined} epoch
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.epoch = null;
@@ -8440,7 +8503,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * ArchiveBundle exportedAt.
              * @member {string|null|undefined} exportedAt
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              */
             ArchiveBundle.prototype.exportedAt = null;
@@ -8481,13 +8544,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new ArchiveBundle instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
-             * @param {mediflow.v3.ArchiveBundle.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.ArchiveBundle} ArchiveBundle instance
+             * @param {mediflow.v4.ArchiveBundle.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.ArchiveBundle} ArchiveBundle instance
              * @type {{
-             *   (properties: mediflow.v3.ArchiveBundle.$Shape): mediflow.v3.ArchiveBundle & mediflow.v3.ArchiveBundle.$Shape;
-             *   (properties?: mediflow.v3.ArchiveBundle.$Properties): mediflow.v3.ArchiveBundle;
+             *   (properties: mediflow.v4.ArchiveBundle.$Shape): mediflow.v4.ArchiveBundle & mediflow.v4.ArchiveBundle.$Shape;
+             *   (properties?: mediflow.v4.ArchiveBundle.$Properties): mediflow.v4.ArchiveBundle;
              * }}
              */
             ArchiveBundle.create = function(properties) {
@@ -8495,11 +8558,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified ArchiveBundle message. Does not implicitly {@link mediflow.v3.ArchiveBundle.verify|verify} messages.
+             * Encodes the specified ArchiveBundle message. Does not implicitly {@link mediflow.v4.ArchiveBundle.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
-             * @param {mediflow.v3.ArchiveBundle.$Properties} message ArchiveBundle message or plain object to encode
+             * @param {mediflow.v4.ArchiveBundle.$Properties} message ArchiveBundle message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8512,33 +8575,33 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.screens != null && message.screens.length)
                     for (let i = 0; i < message.screens.length; ++i)
-                        $root.mediflow.v3.Screen.encode(message.screens[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Screen.encode(message.screens[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.states != null && $Object.hasOwnProperty.call(message, "states"))
                     for (let keys = $Object.keys(message.states), i = 0; i < keys.length; ++i) {
                         writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.mediflow.v3.Snapshot.encode(message.states[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
+                        $root.mediflow.v4.Snapshot.encode(message.states[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
                     }
                 if (message.snapshotHistory != null && $Object.hasOwnProperty.call(message, "snapshotHistory"))
                     for (let keys = $Object.keys(message.snapshotHistory), i = 0; i < keys.length; ++i) {
                         writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.mediflow.v3.Snapshot.encode(message.snapshotHistory[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
+                        $root.mediflow.v4.Snapshot.encode(message.snapshotHistory[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
                     }
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls"))
                     for (let keys = $Object.keys(message.calls), i = 0; i < keys.length; ++i) {
                         writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.mediflow.v3.Call.encode(message.calls[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
+                        $root.mediflow.v4.Call.encode(message.calls[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
                     }
                 if (message.consumptions != null && $Object.hasOwnProperty.call(message, "consumptions"))
                     for (let keys = $Object.keys(message.consumptions), i = 0; i < keys.length; ++i) {
                         writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.mediflow.v3.Consumption.encode(message.consumptions[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
+                        $root.mediflow.v4.Consumption.encode(message.consumptions[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim().ldelim();
                     }
                 if (message.audit != null && message.audit.length)
                     for (let i = 0; i < message.audit.length; ++i)
-                        $root.mediflow.v3.Audit.encode(message.audit[i], writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Audit.encode(message.audit[i], writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
                 if (message.checkpoints != null && message.checkpoints.length)
                     for (let i = 0; i < message.checkpoints.length; ++i)
-                        $root.mediflow.v3.Archive.encode(message.checkpoints[i], writer.uint32(/* id 7, wireType 2 =*/58).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Archive.encode(message.checkpoints[i], writer.uint32(/* id 7, wireType 2 =*/58).fork(), _depth + 1).ldelim();
                 if (message.from != null && $Object.hasOwnProperty.call(message, "from"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.from);
                 if (message.to != null && $Object.hasOwnProperty.call(message, "to"))
@@ -8546,7 +8609,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.formatVersion != null && $Object.hasOwnProperty.call(message, "formatVersion"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.formatVersion);
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch"))
-                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.epoch);
+                    writer.uint32(/* id 11, wireType 2 =*/90).bytes(message.epoch);
                 if (message.exportedAt != null && $Object.hasOwnProperty.call(message, "exportedAt"))
                     writer.uint32(/* id 12, wireType 2 =*/98).string(message.exportedAt);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
@@ -8558,11 +8621,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an ArchiveBundle message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.ArchiveBundle & mediflow.v3.ArchiveBundle.$Shape} ArchiveBundle
+             * @returns {mediflow.v4.ArchiveBundle & mediflow.v4.ArchiveBundle.$Shape} ArchiveBundle
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8583,7 +8646,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.ArchiveBundle();
+                message = _target || new $root.mediflow.v4.ArchiveBundle();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -8598,7 +8661,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.screens && message.screens.length))
                                 message.screens = [];
-                            message.screens.push($root.mediflow.v3.Screen.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.screens.push($root.mediflow.v4.Screen.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -8624,7 +8687,7 @@ export const mediflow = $root.mediflow = (() => {
                                 case 2:
                                     if (wireType !== 2)
                                         break;
-                                    value = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, value);
+                                    value = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, value);
                                     continue;
                                 }
                                 reader.skipType(wireType, _depth, tag2);
@@ -8634,7 +8697,7 @@ export const mediflow = $root.mediflow = (() => {
                             reader.len = end;
                             if (key === "__proto__")
                                 $util.makeProp(message.states, key);
-                            message.states[key] = value || new $root.mediflow.v3.Snapshot();
+                            message.states[key] = value || new $root.mediflow.v4.Snapshot();
                             continue;
                         }
                     case 3: {
@@ -8660,7 +8723,7 @@ export const mediflow = $root.mediflow = (() => {
                                 case 2:
                                     if (wireType !== 2)
                                         break;
-                                    value = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, value);
+                                    value = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, value);
                                     continue;
                                 }
                                 reader.skipType(wireType, _depth, tag2);
@@ -8670,7 +8733,7 @@ export const mediflow = $root.mediflow = (() => {
                             reader.len = end;
                             if (key === "__proto__")
                                 $util.makeProp(message.snapshotHistory, key);
-                            message.snapshotHistory[key] = value || new $root.mediflow.v3.Snapshot();
+                            message.snapshotHistory[key] = value || new $root.mediflow.v4.Snapshot();
                             continue;
                         }
                     case 4: {
@@ -8696,7 +8759,7 @@ export const mediflow = $root.mediflow = (() => {
                                 case 2:
                                     if (wireType !== 2)
                                         break;
-                                    value = $root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1, value);
+                                    value = $root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1, value);
                                     continue;
                                 }
                                 reader.skipType(wireType, _depth, tag2);
@@ -8706,7 +8769,7 @@ export const mediflow = $root.mediflow = (() => {
                             reader.len = end;
                             if (key === "__proto__")
                                 $util.makeProp(message.calls, key);
-                            message.calls[key] = value || new $root.mediflow.v3.Call();
+                            message.calls[key] = value || new $root.mediflow.v4.Call();
                             continue;
                         }
                     case 5: {
@@ -8732,7 +8795,7 @@ export const mediflow = $root.mediflow = (() => {
                                 case 2:
                                     if (wireType !== 2)
                                         break;
-                                    value = $root.mediflow.v3.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, value);
+                                    value = $root.mediflow.v4.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, value);
                                     continue;
                                 }
                                 reader.skipType(wireType, _depth, tag2);
@@ -8742,7 +8805,7 @@ export const mediflow = $root.mediflow = (() => {
                             reader.len = end;
                             if (key === "__proto__")
                                 $util.makeProp(message.consumptions, key);
-                            message.consumptions[key] = value || new $root.mediflow.v3.Consumption();
+                            message.consumptions[key] = value || new $root.mediflow.v4.Consumption();
                             continue;
                         }
                     case 6: {
@@ -8750,7 +8813,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.audit && message.audit.length))
                                 message.audit = [];
-                            message.audit.push($root.mediflow.v3.Audit.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.audit.push($root.mediflow.v4.Audit.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 7: {
@@ -8758,7 +8821,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.checkpoints && message.checkpoints.length))
                                 message.checkpoints = [];
-                            message.checkpoints.push($root.mediflow.v3.Archive.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.checkpoints.push($root.mediflow.v4.Archive.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 8: {
@@ -8785,7 +8848,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 11: {
                             if (wireType !== 2)
                                 break;
-                            message.epoch = reader.stringVerify();
+                            message.epoch = reader.bytes();
                             message._epoch = "epoch";
                             continue;
                         }
@@ -8816,7 +8879,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an ArchiveBundle message.
              * @function verify
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8833,7 +8896,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.screens))
                         return "screens: array expected";
                     for (let i = 0; i < message.screens.length; ++i) {
-                        let error = $root.mediflow.v3.Screen.verify(message.screens[i], _depth + 1);
+                        let error = $root.mediflow.v4.Screen.verify(message.screens[i], _depth + 1);
                         if (error)
                             return "screens." + error;
                     }
@@ -8843,7 +8906,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "states: object expected";
                     let key = $Object.keys(message.states);
                     for (let i = 0; i < key.length; ++i) {
-                        let error = $root.mediflow.v3.Snapshot.verify(message.states[key[i]], _depth + 1);
+                        let error = $root.mediflow.v4.Snapshot.verify(message.states[key[i]], _depth + 1);
                         if (error)
                             return "states." + error;
                     }
@@ -8853,7 +8916,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "snapshotHistory: object expected";
                     let key = $Object.keys(message.snapshotHistory);
                     for (let i = 0; i < key.length; ++i) {
-                        let error = $root.mediflow.v3.Snapshot.verify(message.snapshotHistory[key[i]], _depth + 1);
+                        let error = $root.mediflow.v4.Snapshot.verify(message.snapshotHistory[key[i]], _depth + 1);
                         if (error)
                             return "snapshotHistory." + error;
                     }
@@ -8863,7 +8926,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "calls: object expected";
                     let key = $Object.keys(message.calls);
                     for (let i = 0; i < key.length; ++i) {
-                        let error = $root.mediflow.v3.Call.verify(message.calls[key[i]], _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.calls[key[i]], _depth + 1);
                         if (error)
                             return "calls." + error;
                     }
@@ -8873,7 +8936,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "consumptions: object expected";
                     let key = $Object.keys(message.consumptions);
                     for (let i = 0; i < key.length; ++i) {
-                        let error = $root.mediflow.v3.Consumption.verify(message.consumptions[key[i]], _depth + 1);
+                        let error = $root.mediflow.v4.Consumption.verify(message.consumptions[key[i]], _depth + 1);
                         if (error)
                             return "consumptions." + error;
                     }
@@ -8882,7 +8945,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.audit))
                         return "audit: array expected";
                     for (let i = 0; i < message.audit.length; ++i) {
-                        let error = $root.mediflow.v3.Audit.verify(message.audit[i], _depth + 1);
+                        let error = $root.mediflow.v4.Audit.verify(message.audit[i], _depth + 1);
                         if (error)
                             return "audit." + error;
                     }
@@ -8891,7 +8954,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.checkpoints))
                         return "checkpoints: array expected";
                     for (let i = 0; i < message.checkpoints.length; ++i) {
-                        let error = $root.mediflow.v3.Archive.verify(message.checkpoints[i], _depth + 1);
+                        let error = $root.mediflow.v4.Archive.verify(message.checkpoints[i], _depth + 1);
                         if (error)
                             return "checkpoints." + error;
                     }
@@ -8913,8 +8976,8 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch")) {
                     properties._epoch = 1;
-                    if (!$util.isString(message.epoch))
-                        return "epoch: string expected";
+                    if (!(message.epoch && typeof message.epoch.length === "number" || $util.isString(message.epoch)))
+                        return "epoch: buffer expected";
                 }
                 if (message.exportedAt != null && $Object.hasOwnProperty.call(message, "exportedAt")) {
                     properties._exportedAt = 1;
@@ -8927,97 +8990,97 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an ArchiveBundle message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.ArchiveBundle} ArchiveBundle
+             * @returns {mediflow.v4.ArchiveBundle} ArchiveBundle
              */
             ArchiveBundle.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.ArchiveBundle)
+                if (object instanceof $root.mediflow.v4.ArchiveBundle)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.ArchiveBundle: object expected");
+                    throw $TypeError(".mediflow.v4.ArchiveBundle: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.ArchiveBundle();
+                let message = new $root.mediflow.v4.ArchiveBundle();
                 if (object.screens) {
                     if (!$Array.isArray(object.screens))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.screens: array expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.screens: array expected");
                     message.screens = $Array(object.screens.length);
                     for (let i = 0; i < object.screens.length; ++i) {
                         if (!$util.isObject(object.screens[i]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.screens: object expected");
-                        message.screens[i] = $root.mediflow.v3.Screen.fromObject(object.screens[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.screens: object expected");
+                        message.screens[i] = $root.mediflow.v4.Screen.fromObject(object.screens[i], _depth + 1);
                     }
                 }
                 if (object.states) {
                     if (!$util.isObject(object.states))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.states: object expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.states: object expected");
                     message.states = {};
                     for (let keys = $Object.keys(object.states), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
                             $util.makeProp(message.states, keys[i]);
                         if (!$util.isObject(object.states[keys[i]]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.states: object expected");
-                        message.states[keys[i]] = $root.mediflow.v3.Snapshot.fromObject(object.states[keys[i]], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.states: object expected");
+                        message.states[keys[i]] = $root.mediflow.v4.Snapshot.fromObject(object.states[keys[i]], _depth + 1);
                     }
                 }
                 if (object.snapshotHistory) {
                     if (!$util.isObject(object.snapshotHistory))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.snapshotHistory: object expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.snapshotHistory: object expected");
                     message.snapshotHistory = {};
                     for (let keys = $Object.keys(object.snapshotHistory), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
                             $util.makeProp(message.snapshotHistory, keys[i]);
                         if (!$util.isObject(object.snapshotHistory[keys[i]]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.snapshotHistory: object expected");
-                        message.snapshotHistory[keys[i]] = $root.mediflow.v3.Snapshot.fromObject(object.snapshotHistory[keys[i]], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.snapshotHistory: object expected");
+                        message.snapshotHistory[keys[i]] = $root.mediflow.v4.Snapshot.fromObject(object.snapshotHistory[keys[i]], _depth + 1);
                     }
                 }
                 if (object.calls) {
                     if (!$util.isObject(object.calls))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.calls: object expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.calls: object expected");
                     message.calls = {};
                     for (let keys = $Object.keys(object.calls), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
                             $util.makeProp(message.calls, keys[i]);
                         if (!$util.isObject(object.calls[keys[i]]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.calls: object expected");
-                        message.calls[keys[i]] = $root.mediflow.v3.Call.fromObject(object.calls[keys[i]], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.calls: object expected");
+                        message.calls[keys[i]] = $root.mediflow.v4.Call.fromObject(object.calls[keys[i]], _depth + 1);
                     }
                 }
                 if (object.consumptions) {
                     if (!$util.isObject(object.consumptions))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.consumptions: object expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.consumptions: object expected");
                     message.consumptions = {};
                     for (let keys = $Object.keys(object.consumptions), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
                             $util.makeProp(message.consumptions, keys[i]);
                         if (!$util.isObject(object.consumptions[keys[i]]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.consumptions: object expected");
-                        message.consumptions[keys[i]] = $root.mediflow.v3.Consumption.fromObject(object.consumptions[keys[i]], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.consumptions: object expected");
+                        message.consumptions[keys[i]] = $root.mediflow.v4.Consumption.fromObject(object.consumptions[keys[i]], _depth + 1);
                     }
                 }
                 if (object.audit) {
                     if (!$Array.isArray(object.audit))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.audit: array expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.audit: array expected");
                     message.audit = $Array(object.audit.length);
                     for (let i = 0; i < object.audit.length; ++i) {
                         if (!$util.isObject(object.audit[i]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.audit: object expected");
-                        message.audit[i] = $root.mediflow.v3.Audit.fromObject(object.audit[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.audit: object expected");
+                        message.audit[i] = $root.mediflow.v4.Audit.fromObject(object.audit[i], _depth + 1);
                     }
                 }
                 if (object.checkpoints) {
                     if (!$Array.isArray(object.checkpoints))
-                        throw $TypeError(".mediflow.v3.ArchiveBundle.checkpoints: array expected");
+                        throw $TypeError(".mediflow.v4.ArchiveBundle.checkpoints: array expected");
                     message.checkpoints = $Array(object.checkpoints.length);
                     for (let i = 0; i < object.checkpoints.length; ++i) {
                         if (!$util.isObject(object.checkpoints[i]))
-                            throw $TypeError(".mediflow.v3.ArchiveBundle.checkpoints: object expected");
-                        message.checkpoints[i] = $root.mediflow.v3.Archive.fromObject(object.checkpoints[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.ArchiveBundle.checkpoints: object expected");
+                        message.checkpoints[i] = $root.mediflow.v4.Archive.fromObject(object.checkpoints[i], _depth + 1);
                     }
                 }
                 if (object.from != null)
@@ -9027,7 +9090,10 @@ export const mediflow = $root.mediflow = (() => {
                 if (object.formatVersion != null)
                     message.formatVersion = $String(object.formatVersion);
                 if (object.epoch != null)
-                    message.epoch = $String(object.epoch);
+                    if (typeof object.epoch === "string")
+                        $util.base64.decode(object.epoch, message.epoch = $util.newBuffer($util.base64.length(object.epoch)), 0);
+                    else if (object.epoch.length >= 0)
+                        message.epoch = object.epoch;
                 if (object.exportedAt != null)
                     message.exportedAt = $String(object.exportedAt);
                 return message;
@@ -9036,9 +9102,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from an ArchiveBundle message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
-             * @param {mediflow.v3.ArchiveBundle} message ArchiveBundle
+             * @param {mediflow.v4.ArchiveBundle} message ArchiveBundle
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9064,7 +9130,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.screens && message.screens.length) {
                     object.screens = $Array(message.screens.length);
                     for (let j = 0; j < message.screens.length; ++j)
-                        object.screens[j] = $root.mediflow.v3.Screen.toObject(message.screens[j], options, _depth + 1);
+                        object.screens[j] = $root.mediflow.v4.Screen.toObject(message.screens[j], options, _depth + 1);
                 }
                 let keys2;
                 if (message.states && (keys2 = $Object.keys(message.states)).length) {
@@ -9072,7 +9138,7 @@ export const mediflow = $root.mediflow = (() => {
                     for (let j = 0; j < keys2.length; ++j) {
                         if (keys2[j] === "__proto__")
                             $util.makeProp(object.states, keys2[j]);
-                        object.states[keys2[j]] = $root.mediflow.v3.Snapshot.toObject(message.states[keys2[j]], options, _depth + 1);
+                        object.states[keys2[j]] = $root.mediflow.v4.Snapshot.toObject(message.states[keys2[j]], options, _depth + 1);
                     }
                 }
                 if (message.snapshotHistory && (keys2 = $Object.keys(message.snapshotHistory)).length) {
@@ -9080,7 +9146,7 @@ export const mediflow = $root.mediflow = (() => {
                     for (let j = 0; j < keys2.length; ++j) {
                         if (keys2[j] === "__proto__")
                             $util.makeProp(object.snapshotHistory, keys2[j]);
-                        object.snapshotHistory[keys2[j]] = $root.mediflow.v3.Snapshot.toObject(message.snapshotHistory[keys2[j]], options, _depth + 1);
+                        object.snapshotHistory[keys2[j]] = $root.mediflow.v4.Snapshot.toObject(message.snapshotHistory[keys2[j]], options, _depth + 1);
                     }
                 }
                 if (message.calls && (keys2 = $Object.keys(message.calls)).length) {
@@ -9088,7 +9154,7 @@ export const mediflow = $root.mediflow = (() => {
                     for (let j = 0; j < keys2.length; ++j) {
                         if (keys2[j] === "__proto__")
                             $util.makeProp(object.calls, keys2[j]);
-                        object.calls[keys2[j]] = $root.mediflow.v3.Call.toObject(message.calls[keys2[j]], options, _depth + 1);
+                        object.calls[keys2[j]] = $root.mediflow.v4.Call.toObject(message.calls[keys2[j]], options, _depth + 1);
                     }
                 }
                 if (message.consumptions && (keys2 = $Object.keys(message.consumptions)).length) {
@@ -9096,18 +9162,18 @@ export const mediflow = $root.mediflow = (() => {
                     for (let j = 0; j < keys2.length; ++j) {
                         if (keys2[j] === "__proto__")
                             $util.makeProp(object.consumptions, keys2[j]);
-                        object.consumptions[keys2[j]] = $root.mediflow.v3.Consumption.toObject(message.consumptions[keys2[j]], options, _depth + 1);
+                        object.consumptions[keys2[j]] = $root.mediflow.v4.Consumption.toObject(message.consumptions[keys2[j]], options, _depth + 1);
                     }
                 }
                 if (message.audit && message.audit.length) {
                     object.audit = $Array(message.audit.length);
                     for (let j = 0; j < message.audit.length; ++j)
-                        object.audit[j] = $root.mediflow.v3.Audit.toObject(message.audit[j], options, _depth + 1);
+                        object.audit[j] = $root.mediflow.v4.Audit.toObject(message.audit[j], options, _depth + 1);
                 }
                 if (message.checkpoints && message.checkpoints.length) {
                     object.checkpoints = $Array(message.checkpoints.length);
                     for (let j = 0; j < message.checkpoints.length; ++j)
-                        object.checkpoints[j] = $root.mediflow.v3.Archive.toObject(message.checkpoints[j], options, _depth + 1);
+                        object.checkpoints[j] = $root.mediflow.v4.Archive.toObject(message.checkpoints[j], options, _depth + 1);
                 }
                 if (message.from != null && $Object.hasOwnProperty.call(message, "from"))
                     object.from = message.from;
@@ -9116,7 +9182,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.formatVersion != null && $Object.hasOwnProperty.call(message, "formatVersion"))
                     object.formatVersion = message.formatVersion;
                 if (message.epoch != null && $Object.hasOwnProperty.call(message, "epoch"))
-                    object.epoch = message.epoch;
+                    object.epoch = options.bytes === $String ? $util.base64.encode(message.epoch, 0, message.epoch.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.epoch) : message.epoch;
                 if (message.exportedAt != null && $Object.hasOwnProperty.call(message, "exportedAt"))
                     object.exportedAt = message.exportedAt;
                 return object;
@@ -9125,7 +9191,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this ArchiveBundle to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9136,7 +9202,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for ArchiveBundle
              * @function getTypeUrl
-             * @memberof mediflow.v3.ArchiveBundle
+             * @memberof mediflow.v4.ArchiveBundle
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -9144,17 +9210,17 @@ export const mediflow = $root.mediflow = (() => {
             ArchiveBundle.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.ArchiveBundle";
+                return prefix + "/mediflow.v4.ArchiveBundle";
             };
 
             return ArchiveBundle;
         })();
 
-        v3.Login = (function() {
+        v4.Login = (function() {
 
             /**
              * Properties of a Login.
-             * @typedef {Object} mediflow.v3.Login.$Properties
+             * @typedef {Object} mediflow.v4.Login.$Properties
              * @property {string|null} [username] Login username
              * @property {string|null} [password] Login password
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
@@ -9162,23 +9228,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Login.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ILogin
-             * @augments mediflow.v3.Login.$Properties
-             * @deprecated Use mediflow.v3.Login.$Properties instead.
+             * @augments mediflow.v4.Login.$Properties
+             * @deprecated Use mediflow.v4.Login.$Properties instead.
              */
 
             /**
              * Shape of a Login.
-             * @typedef {mediflow.v3.Login.$Properties} mediflow.v3.Login.$Shape
+             * @typedef {mediflow.v4.Login.$Properties} mediflow.v4.Login.$Shape
              */
 
             /**
              * Constructs a new Login.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Login.
              * @constructor
-             * @param {mediflow.v3.Login.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Login.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Login = function (properties) {
@@ -9191,7 +9257,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Login username.
              * @member {string|null|undefined} username
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @instance
              */
             Login.prototype.username = null;
@@ -9199,7 +9265,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Login password.
              * @member {string|null|undefined} password
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @instance
              */
             Login.prototype.password = null;
@@ -9222,13 +9288,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Login instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
-             * @param {mediflow.v3.Login.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Login} Login instance
+             * @param {mediflow.v4.Login.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Login} Login instance
              * @type {{
-             *   (properties: mediflow.v3.Login.$Shape): mediflow.v3.Login & mediflow.v3.Login.$Shape;
-             *   (properties?: mediflow.v3.Login.$Properties): mediflow.v3.Login;
+             *   (properties: mediflow.v4.Login.$Shape): mediflow.v4.Login & mediflow.v4.Login.$Shape;
+             *   (properties?: mediflow.v4.Login.$Properties): mediflow.v4.Login;
              * }}
              */
             Login.create = function(properties) {
@@ -9236,11 +9302,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Login message. Does not implicitly {@link mediflow.v3.Login.verify|verify} messages.
+             * Encodes the specified Login message. Does not implicitly {@link mediflow.v4.Login.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
-             * @param {mediflow.v3.Login.$Properties} message Login message or plain object to encode
+             * @param {mediflow.v4.Login.$Properties} message Login message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9264,11 +9330,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Login message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Login & mediflow.v3.Login.$Shape} Login
+             * @returns {mediflow.v4.Login & mediflow.v4.Login.$Shape} Login
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9289,7 +9355,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Login();
+                message = _target || new $root.mediflow.v4.Login();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -9333,7 +9399,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Login message.
              * @function verify
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9362,21 +9428,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Login message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Login} Login
+             * @returns {mediflow.v4.Login} Login
              */
             Login.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Login)
+                if (object instanceof $root.mediflow.v4.Login)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Login: object expected");
+                    throw $TypeError(".mediflow.v4.Login: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Login();
+                let message = new $root.mediflow.v4.Login();
                 if (object.username != null)
                     message.username = $String(object.username);
                 if (object.password != null)
@@ -9387,9 +9453,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Login message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
-             * @param {mediflow.v3.Login} message Login
+             * @param {mediflow.v4.Login} message Login
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9411,7 +9477,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Login to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9422,7 +9488,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Login
              * @function getTypeUrl
-             * @memberof mediflow.v3.Login
+             * @memberof mediflow.v4.Login
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -9430,40 +9496,40 @@ export const mediflow = $root.mediflow = (() => {
             Login.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Login";
+                return prefix + "/mediflow.v4.Login";
             };
 
             return Login;
         })();
 
-        v3.User = (function() {
+        v4.User = (function() {
 
             /**
              * Properties of a User.
-             * @typedef {Object} mediflow.v3.User.$Properties
+             * @typedef {Object} mediflow.v4.User.$Properties
              * @property {string|null} [username] User username
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a User.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IUser
-             * @augments mediflow.v3.User.$Properties
-             * @deprecated Use mediflow.v3.User.$Properties instead.
+             * @augments mediflow.v4.User.$Properties
+             * @deprecated Use mediflow.v4.User.$Properties instead.
              */
 
             /**
              * Shape of a User.
-             * @typedef {mediflow.v3.User.$Properties} mediflow.v3.User.$Shape
+             * @typedef {mediflow.v4.User.$Properties} mediflow.v4.User.$Shape
              */
 
             /**
              * Constructs a new User.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a User.
              * @constructor
-             * @param {mediflow.v3.User.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.User.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const User = function (properties) {
@@ -9476,7 +9542,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * User username.
              * @member {string|null|undefined} username
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @instance
              */
             User.prototype.username = null;
@@ -9493,13 +9559,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new User instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
-             * @param {mediflow.v3.User.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.User} User instance
+             * @param {mediflow.v4.User.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.User} User instance
              * @type {{
-             *   (properties: mediflow.v3.User.$Shape): mediflow.v3.User & mediflow.v3.User.$Shape;
-             *   (properties?: mediflow.v3.User.$Properties): mediflow.v3.User;
+             *   (properties: mediflow.v4.User.$Shape): mediflow.v4.User & mediflow.v4.User.$Shape;
+             *   (properties?: mediflow.v4.User.$Properties): mediflow.v4.User;
              * }}
              */
             User.create = function(properties) {
@@ -9507,11 +9573,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified User message. Does not implicitly {@link mediflow.v3.User.verify|verify} messages.
+             * Encodes the specified User message. Does not implicitly {@link mediflow.v4.User.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
-             * @param {mediflow.v3.User.$Properties} message User message or plain object to encode
+             * @param {mediflow.v4.User.$Properties} message User message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9533,11 +9599,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a User message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.User & mediflow.v3.User.$Shape} User
+             * @returns {mediflow.v4.User & mediflow.v4.User.$Shape} User
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9558,7 +9624,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.User();
+                message = _target || new $root.mediflow.v4.User();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -9595,7 +9661,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a User message.
              * @function verify
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9619,21 +9685,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a User message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.User} User
+             * @returns {mediflow.v4.User} User
              */
             User.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.User)
+                if (object instanceof $root.mediflow.v4.User)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.User: object expected");
+                    throw $TypeError(".mediflow.v4.User: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.User();
+                let message = new $root.mediflow.v4.User();
                 if (object.username != null)
                     message.username = $String(object.username);
                 return message;
@@ -9642,9 +9708,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a User message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
-             * @param {mediflow.v3.User} message User
+             * @param {mediflow.v4.User} message User
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9664,7 +9730,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this User to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9675,7 +9741,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for User
              * @function getTypeUrl
-             * @memberof mediflow.v3.User
+             * @memberof mediflow.v4.User
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -9683,41 +9749,41 @@ export const mediflow = $root.mediflow = (() => {
             User.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.User";
+                return prefix + "/mediflow.v4.User";
             };
 
             return User;
         })();
 
-        v3.Publish = (function() {
+        v4.Publish = (function() {
 
             /**
              * Properties of a Publish.
-             * @typedef {Object} mediflow.v3.Publish.$Properties
-             * @property {string|null} [requestId] Publish requestId
-             * @property {mediflow.v3.Template.$Properties|null} [data] Publish data
+             * @typedef {Object} mediflow.v4.Publish.$Properties
+             * @property {Uint8Array|null} [requestId] Publish requestId
+             * @property {mediflow.v4.Template.$Properties|null} [data] Publish data
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Publish.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPublish
-             * @augments mediflow.v3.Publish.$Properties
-             * @deprecated Use mediflow.v3.Publish.$Properties instead.
+             * @augments mediflow.v4.Publish.$Properties
+             * @deprecated Use mediflow.v4.Publish.$Properties instead.
              */
 
             /**
              * Shape of a Publish.
-             * @typedef {mediflow.v3.Publish.$Properties} mediflow.v3.Publish.$Shape
+             * @typedef {mediflow.v4.Publish.$Properties} mediflow.v4.Publish.$Shape
              */
 
             /**
              * Constructs a new Publish.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Publish.
              * @constructor
-             * @param {mediflow.v3.Publish.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Publish.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Publish = function (properties) {
@@ -9729,16 +9795,16 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Publish requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Publish
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Publish
              * @instance
              */
             Publish.prototype.requestId = null;
 
             /**
              * Publish data.
-             * @member {mediflow.v3.Template.$Properties|null|undefined} data
-             * @memberof mediflow.v3.Publish
+             * @member {mediflow.v4.Template.$Properties|null|undefined} data
+             * @memberof mediflow.v4.Publish
              * @instance
              */
             Publish.prototype.data = null;
@@ -9755,13 +9821,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Publish instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
-             * @param {mediflow.v3.Publish.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Publish} Publish instance
+             * @param {mediflow.v4.Publish.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Publish} Publish instance
              * @type {{
-             *   (properties: mediflow.v3.Publish.$Shape): mediflow.v3.Publish & mediflow.v3.Publish.$Shape;
-             *   (properties?: mediflow.v3.Publish.$Properties): mediflow.v3.Publish;
+             *   (properties: mediflow.v4.Publish.$Shape): mediflow.v4.Publish & mediflow.v4.Publish.$Shape;
+             *   (properties?: mediflow.v4.Publish.$Properties): mediflow.v4.Publish;
              * }}
              */
             Publish.create = function(properties) {
@@ -9769,11 +9835,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Publish message. Does not implicitly {@link mediflow.v3.Publish.verify|verify} messages.
+             * Encodes the specified Publish message. Does not implicitly {@link mediflow.v4.Publish.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
-             * @param {mediflow.v3.Publish.$Properties} message Publish message or plain object to encode
+             * @param {mediflow.v4.Publish.$Properties} message Publish message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9785,9 +9851,9 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.requestId);
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
-                    $root.mediflow.v3.Template.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Template.encode(message.data, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -9797,11 +9863,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Publish message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Publish & mediflow.v3.Publish.$Shape} Publish
+             * @returns {mediflow.v4.Publish & mediflow.v4.Publish.$Shape} Publish
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9822,7 +9888,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Publish();
+                message = _target || new $root.mediflow.v4.Publish();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -9835,14 +9901,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.data = $root.mediflow.v3.Template.decode(reader, reader.size(), $undefined, _depth + 1, message.data);
+                            message.data = $root.mediflow.v4.Template.decode(reader, reader.size(), $undefined, _depth + 1, message.data);
                             continue;
                         }
                     }
@@ -9865,7 +9931,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Publish message.
              * @function verify
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9880,11 +9946,11 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data")) {
-                    let error = $root.mediflow.v3.Template.verify(message.data, _depth + 1);
+                    let error = $root.mediflow.v4.Template.verify(message.data, _depth + 1);
                     if (error)
                         return "data." + error;
                 }
@@ -9894,27 +9960,30 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Publish message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Publish} Publish
+             * @returns {mediflow.v4.Publish} Publish
              */
             Publish.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Publish)
+                if (object instanceof $root.mediflow.v4.Publish)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Publish: object expected");
+                    throw $TypeError(".mediflow.v4.Publish: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Publish();
+                let message = new $root.mediflow.v4.Publish();
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.data != null) {
                     if (!$util.isObject(object.data))
-                        throw $TypeError(".mediflow.v3.Publish.data: object expected");
-                    message.data = $root.mediflow.v3.Template.fromObject(object.data, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Publish.data: object expected");
+                    message.data = $root.mediflow.v4.Template.fromObject(object.data, _depth + 1);
                 }
                 return message;
             };
@@ -9922,9 +9991,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Publish message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
-             * @param {mediflow.v3.Publish} message Publish
+             * @param {mediflow.v4.Publish} message Publish
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9939,16 +10008,16 @@ export const mediflow = $root.mediflow = (() => {
                 if (options.defaults)
                     object.data = null;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
-                    object.data = $root.mediflow.v3.Template.toObject(message.data, options, _depth + 1);
+                    object.data = $root.mediflow.v4.Template.toObject(message.data, options, _depth + 1);
                 return object;
             };
 
             /**
              * Converts this Publish to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9959,7 +10028,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Publish
              * @function getTypeUrl
-             * @memberof mediflow.v3.Publish
+             * @memberof mediflow.v4.Publish
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -9967,41 +10036,41 @@ export const mediflow = $root.mediflow = (() => {
             Publish.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Publish";
+                return prefix + "/mediflow.v4.Publish";
             };
 
             return Publish;
         })();
 
-        v3.Consume = (function() {
+        v4.Consume = (function() {
 
             /**
              * Properties of a Consume.
-             * @typedef {Object} mediflow.v3.Consume.$Properties
-             * @property {string|null} [requestId] Consume requestId
-             * @property {string|null} [callId] Consume callId
+             * @typedef {Object} mediflow.v4.Consume.$Properties
+             * @property {Uint8Array|null} [requestId] Consume requestId
+             * @property {Uint8Array|null} [callId] Consume callId
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Consume.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IConsume
-             * @augments mediflow.v3.Consume.$Properties
-             * @deprecated Use mediflow.v3.Consume.$Properties instead.
+             * @augments mediflow.v4.Consume.$Properties
+             * @deprecated Use mediflow.v4.Consume.$Properties instead.
              */
 
             /**
              * Shape of a Consume.
-             * @typedef {mediflow.v3.Consume.$Properties} mediflow.v3.Consume.$Shape
+             * @typedef {mediflow.v4.Consume.$Properties} mediflow.v4.Consume.$Shape
              */
 
             /**
              * Constructs a new Consume.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Consume.
              * @constructor
-             * @param {mediflow.v3.Consume.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Consume.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Consume = function (properties) {
@@ -10013,16 +10082,16 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Consume requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Consume
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Consume
              * @instance
              */
             Consume.prototype.requestId = null;
 
             /**
              * Consume callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.Consume
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.Consume
              * @instance
              */
             Consume.prototype.callId = null;
@@ -10045,13 +10114,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Consume instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
-             * @param {mediflow.v3.Consume.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Consume} Consume instance
+             * @param {mediflow.v4.Consume.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Consume} Consume instance
              * @type {{
-             *   (properties: mediflow.v3.Consume.$Shape): mediflow.v3.Consume & mediflow.v3.Consume.$Shape;
-             *   (properties?: mediflow.v3.Consume.$Properties): mediflow.v3.Consume;
+             *   (properties: mediflow.v4.Consume.$Shape): mediflow.v4.Consume & mediflow.v4.Consume.$Shape;
+             *   (properties?: mediflow.v4.Consume.$Properties): mediflow.v4.Consume;
              * }}
              */
             Consume.create = function(properties) {
@@ -10059,11 +10128,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Consume message. Does not implicitly {@link mediflow.v3.Consume.verify|verify} messages.
+             * Encodes the specified Consume message. Does not implicitly {@link mediflow.v4.Consume.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
-             * @param {mediflow.v3.Consume.$Properties} message Consume message or plain object to encode
+             * @param {mediflow.v4.Consume.$Properties} message Consume message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10075,9 +10144,9 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.requestId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.callId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.callId);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -10087,11 +10156,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Consume message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Consume & mediflow.v3.Consume.$Shape} Consume
+             * @returns {mediflow.v4.Consume & mediflow.v4.Consume.$Shape} Consume
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10112,7 +10181,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Consume();
+                message = _target || new $root.mediflow.v4.Consume();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -10125,14 +10194,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
@@ -10156,7 +10225,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Consume message.
              * @function verify
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10171,13 +10240,13 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 return null;
             };
@@ -10185,34 +10254,40 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Consume message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Consume} Consume
+             * @returns {mediflow.v4.Consume} Consume
              */
             Consume.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Consume)
+                if (object instanceof $root.mediflow.v4.Consume)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Consume: object expected");
+                    throw $TypeError(".mediflow.v4.Consume: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Consume();
+                let message = new $root.mediflow.v4.Consume();
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 return message;
             };
 
             /**
              * Creates a plain object from a Consume message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
-             * @param {mediflow.v3.Consume} message Consume
+             * @param {mediflow.v4.Consume} message Consume
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10225,16 +10300,16 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 return object;
             };
 
             /**
              * Converts this Consume to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10245,7 +10320,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Consume
              * @function getTypeUrl
-             * @memberof mediflow.v3.Consume
+             * @memberof mediflow.v4.Consume
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -10253,20 +10328,20 @@ export const mediflow = $root.mediflow = (() => {
             Consume.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Consume";
+                return prefix + "/mediflow.v4.Consume";
             };
 
             return Consume;
         })();
 
-        v3.Playback = (function() {
+        v4.Playback = (function() {
 
             /**
              * Properties of a Playback.
-             * @typedef {Object} mediflow.v3.Playback.$Properties
-             * @property {string|null} [eventId] Playback eventId
-             * @property {string|null} [requestId] Playback requestId
-             * @property {string|null} [callId] Playback callId
+             * @typedef {Object} mediflow.v4.Playback.$Properties
+             * @property {Uint8Array|null} [eventId] Playback eventId
+             * @property {Uint8Array|null} [requestId] Playback requestId
+             * @property {Uint8Array|null} [callId] Playback callId
              * @property {string|null} [status] Playback status
              * @property {string|null} [error] Playback error
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
@@ -10274,23 +10349,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Playback.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPlayback
-             * @augments mediflow.v3.Playback.$Properties
-             * @deprecated Use mediflow.v3.Playback.$Properties instead.
+             * @augments mediflow.v4.Playback.$Properties
+             * @deprecated Use mediflow.v4.Playback.$Properties instead.
              */
 
             /**
              * Shape of a Playback.
-             * @typedef {mediflow.v3.Playback.$Properties} mediflow.v3.Playback.$Shape
+             * @typedef {mediflow.v4.Playback.$Properties} mediflow.v4.Playback.$Shape
              */
 
             /**
              * Constructs a new Playback.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Playback.
              * @constructor
-             * @param {mediflow.v3.Playback.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Playback.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Playback = function (properties) {
@@ -10302,24 +10377,24 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Playback eventId.
-             * @member {string|null|undefined} eventId
-             * @memberof mediflow.v3.Playback
+             * @member {Uint8Array|null|undefined} eventId
+             * @memberof mediflow.v4.Playback
              * @instance
              */
             Playback.prototype.eventId = null;
 
             /**
              * Playback requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Playback
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Playback
              * @instance
              */
             Playback.prototype.requestId = null;
 
             /**
              * Playback callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.Playback
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.Playback
              * @instance
              */
             Playback.prototype.callId = null;
@@ -10327,7 +10402,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Playback status.
              * @member {string|null|undefined} status
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @instance
              */
             Playback.prototype.status = null;
@@ -10335,7 +10410,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Playback error.
              * @member {string|null|undefined} error
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @instance
              */
             Playback.prototype.error = null;
@@ -10376,13 +10451,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Playback instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
-             * @param {mediflow.v3.Playback.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Playback} Playback instance
+             * @param {mediflow.v4.Playback.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Playback} Playback instance
              * @type {{
-             *   (properties: mediflow.v3.Playback.$Shape): mediflow.v3.Playback & mediflow.v3.Playback.$Shape;
-             *   (properties?: mediflow.v3.Playback.$Properties): mediflow.v3.Playback;
+             *   (properties: mediflow.v4.Playback.$Shape): mediflow.v4.Playback & mediflow.v4.Playback.$Shape;
+             *   (properties?: mediflow.v4.Playback.$Properties): mediflow.v4.Playback;
              * }}
              */
             Playback.create = function(properties) {
@@ -10390,11 +10465,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Playback message. Does not implicitly {@link mediflow.v3.Playback.verify|verify} messages.
+             * Encodes the specified Playback message. Does not implicitly {@link mediflow.v4.Playback.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
-             * @param {mediflow.v3.Playback.$Properties} message Playback message or plain object to encode
+             * @param {mediflow.v4.Playback.$Properties} message Playback message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10406,11 +10481,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.eventId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.eventId);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.requestId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.requestId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.callId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.callId);
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.status);
                 if (message.error != null && $Object.hasOwnProperty.call(message, "error"))
@@ -10424,11 +10499,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Playback message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Playback & mediflow.v3.Playback.$Shape} Playback
+             * @returns {mediflow.v4.Playback & mediflow.v4.Playback.$Shape} Playback
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10449,7 +10524,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Playback();
+                message = _target || new $root.mediflow.v4.Playback();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -10462,21 +10537,21 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.eventId = reader.stringVerify();
+                            message.eventId = reader.bytes();
                             message._eventId = "eventId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
@@ -10514,7 +10589,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Playback message.
              * @function verify
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10529,18 +10604,18 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId")) {
                     properties._eventId = 1;
-                    if (!$util.isString(message.eventId))
-                        return "eventId: string expected";
+                    if (!(message.eventId && typeof message.eventId.length === "number" || $util.isString(message.eventId)))
+                        return "eventId: buffer expected";
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status")) {
                     properties._status = 1;
@@ -10558,27 +10633,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Playback message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Playback} Playback
+             * @returns {mediflow.v4.Playback} Playback
              */
             Playback.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Playback)
+                if (object instanceof $root.mediflow.v4.Playback)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Playback: object expected");
+                    throw $TypeError(".mediflow.v4.Playback: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Playback();
+                let message = new $root.mediflow.v4.Playback();
                 if (object.eventId != null)
-                    message.eventId = $String(object.eventId);
+                    if (typeof object.eventId === "string")
+                        $util.base64.decode(object.eventId, message.eventId = $util.newBuffer($util.base64.length(object.eventId)), 0);
+                    else if (object.eventId.length >= 0)
+                        message.eventId = object.eventId;
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.status != null)
                     message.status = $String(object.status);
                 if (object.error != null)
@@ -10589,9 +10673,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Playback message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
-             * @param {mediflow.v3.Playback} message Playback
+             * @param {mediflow.v4.Playback} message Playback
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10604,11 +10688,11 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    object.eventId = message.eventId;
+                    object.eventId = options.bytes === $String ? $util.base64.encode(message.eventId, 0, message.eventId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eventId) : message.eventId;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     object.status = message.status;
                 if (message.error != null && $Object.hasOwnProperty.call(message, "error"))
@@ -10619,7 +10703,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Playback to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10630,7 +10714,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Playback
              * @function getTypeUrl
-             * @memberof mediflow.v3.Playback
+             * @memberof mediflow.v4.Playback
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -10638,20 +10722,20 @@ export const mediflow = $root.mediflow = (() => {
             Playback.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Playback";
+                return prefix + "/mediflow.v4.Playback";
             };
 
             return Playback;
         })();
 
-        v3.PlaybackResult = (function() {
+        v4.PlaybackResult = (function() {
 
             /**
              * Properties of a PlaybackResult.
-             * @typedef {Object} mediflow.v3.PlaybackResult.$Properties
-             * @property {string|null} [eventId] PlaybackResult eventId
-             * @property {string|null} [requestId] PlaybackResult requestId
-             * @property {string|null} [callId] PlaybackResult callId
+             * @typedef {Object} mediflow.v4.PlaybackResult.$Properties
+             * @property {Uint8Array|null} [eventId] PlaybackResult eventId
+             * @property {Uint8Array|null} [requestId] PlaybackResult requestId
+             * @property {Uint8Array|null} [callId] PlaybackResult callId
              * @property {string|null} [status] PlaybackResult status
              * @property {boolean|null} [ok] PlaybackResult ok
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
@@ -10659,23 +10743,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a PlaybackResult.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPlaybackResult
-             * @augments mediflow.v3.PlaybackResult.$Properties
-             * @deprecated Use mediflow.v3.PlaybackResult.$Properties instead.
+             * @augments mediflow.v4.PlaybackResult.$Properties
+             * @deprecated Use mediflow.v4.PlaybackResult.$Properties instead.
              */
 
             /**
              * Shape of a PlaybackResult.
-             * @typedef {mediflow.v3.PlaybackResult.$Properties} mediflow.v3.PlaybackResult.$Shape
+             * @typedef {mediflow.v4.PlaybackResult.$Properties} mediflow.v4.PlaybackResult.$Shape
              */
 
             /**
              * Constructs a new PlaybackResult.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a PlaybackResult.
              * @constructor
-             * @param {mediflow.v3.PlaybackResult.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.PlaybackResult.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const PlaybackResult = function (properties) {
@@ -10687,24 +10771,24 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * PlaybackResult eventId.
-             * @member {string|null|undefined} eventId
-             * @memberof mediflow.v3.PlaybackResult
+             * @member {Uint8Array|null|undefined} eventId
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              */
             PlaybackResult.prototype.eventId = null;
 
             /**
              * PlaybackResult requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.PlaybackResult
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              */
             PlaybackResult.prototype.requestId = null;
 
             /**
              * PlaybackResult callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.PlaybackResult
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              */
             PlaybackResult.prototype.callId = null;
@@ -10712,7 +10796,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PlaybackResult status.
              * @member {string|null|undefined} status
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              */
             PlaybackResult.prototype.status = null;
@@ -10720,7 +10804,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PlaybackResult ok.
              * @member {boolean|null|undefined} ok
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              */
             PlaybackResult.prototype.ok = null;
@@ -10761,13 +10845,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new PlaybackResult instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
-             * @param {mediflow.v3.PlaybackResult.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.PlaybackResult} PlaybackResult instance
+             * @param {mediflow.v4.PlaybackResult.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.PlaybackResult} PlaybackResult instance
              * @type {{
-             *   (properties: mediflow.v3.PlaybackResult.$Shape): mediflow.v3.PlaybackResult & mediflow.v3.PlaybackResult.$Shape;
-             *   (properties?: mediflow.v3.PlaybackResult.$Properties): mediflow.v3.PlaybackResult;
+             *   (properties: mediflow.v4.PlaybackResult.$Shape): mediflow.v4.PlaybackResult & mediflow.v4.PlaybackResult.$Shape;
+             *   (properties?: mediflow.v4.PlaybackResult.$Properties): mediflow.v4.PlaybackResult;
              * }}
              */
             PlaybackResult.create = function(properties) {
@@ -10775,11 +10859,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified PlaybackResult message. Does not implicitly {@link mediflow.v3.PlaybackResult.verify|verify} messages.
+             * Encodes the specified PlaybackResult message. Does not implicitly {@link mediflow.v4.PlaybackResult.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
-             * @param {mediflow.v3.PlaybackResult.$Properties} message PlaybackResult message or plain object to encode
+             * @param {mediflow.v4.PlaybackResult.$Properties} message PlaybackResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10791,11 +10875,11 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.eventId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.eventId);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.requestId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.requestId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.callId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.callId);
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.status);
                 if (message.ok != null && $Object.hasOwnProperty.call(message, "ok"))
@@ -10809,11 +10893,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a PlaybackResult message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.PlaybackResult & mediflow.v3.PlaybackResult.$Shape} PlaybackResult
+             * @returns {mediflow.v4.PlaybackResult & mediflow.v4.PlaybackResult.$Shape} PlaybackResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10834,7 +10918,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.PlaybackResult();
+                message = _target || new $root.mediflow.v4.PlaybackResult();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -10847,21 +10931,21 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.eventId = reader.stringVerify();
+                            message.eventId = reader.bytes();
                             message._eventId = "eventId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
@@ -10899,7 +10983,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a PlaybackResult message.
              * @function verify
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10914,18 +10998,18 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId")) {
                     properties._eventId = 1;
-                    if (!$util.isString(message.eventId))
-                        return "eventId: string expected";
+                    if (!(message.eventId && typeof message.eventId.length === "number" || $util.isString(message.eventId)))
+                        return "eventId: buffer expected";
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status")) {
                     properties._status = 1;
@@ -10943,27 +11027,36 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a PlaybackResult message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.PlaybackResult} PlaybackResult
+             * @returns {mediflow.v4.PlaybackResult} PlaybackResult
              */
             PlaybackResult.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.PlaybackResult)
+                if (object instanceof $root.mediflow.v4.PlaybackResult)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.PlaybackResult: object expected");
+                    throw $TypeError(".mediflow.v4.PlaybackResult: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.PlaybackResult();
+                let message = new $root.mediflow.v4.PlaybackResult();
                 if (object.eventId != null)
-                    message.eventId = $String(object.eventId);
+                    if (typeof object.eventId === "string")
+                        $util.base64.decode(object.eventId, message.eventId = $util.newBuffer($util.base64.length(object.eventId)), 0);
+                    else if (object.eventId.length >= 0)
+                        message.eventId = object.eventId;
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.status != null)
                     message.status = $String(object.status);
                 if (object.ok != null)
@@ -10974,9 +11067,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a PlaybackResult message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
-             * @param {mediflow.v3.PlaybackResult} message PlaybackResult
+             * @param {mediflow.v4.PlaybackResult} message PlaybackResult
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10989,11 +11082,11 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    object.eventId = message.eventId;
+                    object.eventId = options.bytes === $String ? $util.base64.encode(message.eventId, 0, message.eventId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eventId) : message.eventId;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     object.status = message.status;
                 if (message.ok != null && $Object.hasOwnProperty.call(message, "ok"))
@@ -11004,7 +11097,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this PlaybackResult to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11015,7 +11108,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for PlaybackResult
              * @function getTypeUrl
-             * @memberof mediflow.v3.PlaybackResult
+             * @memberof mediflow.v4.PlaybackResult
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -11023,40 +11116,40 @@ export const mediflow = $root.mediflow = (() => {
             PlaybackResult.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.PlaybackResult";
+                return prefix + "/mediflow.v4.PlaybackResult";
             };
 
             return PlaybackResult;
         })();
 
-        v3.Result = (function() {
+        v4.Result = (function() {
 
             /**
              * Properties of a Result.
-             * @typedef {Object} mediflow.v3.Result.$Properties
+             * @typedef {Object} mediflow.v4.Result.$Properties
              * @property {boolean|null} [ok] Result ok
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Result.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IResult
-             * @augments mediflow.v3.Result.$Properties
-             * @deprecated Use mediflow.v3.Result.$Properties instead.
+             * @augments mediflow.v4.Result.$Properties
+             * @deprecated Use mediflow.v4.Result.$Properties instead.
              */
 
             /**
              * Shape of a Result.
-             * @typedef {mediflow.v3.Result.$Properties} mediflow.v3.Result.$Shape
+             * @typedef {mediflow.v4.Result.$Properties} mediflow.v4.Result.$Shape
              */
 
             /**
              * Constructs a new Result.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Result.
              * @constructor
-             * @param {mediflow.v3.Result.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Result.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Result = function (properties) {
@@ -11069,7 +11162,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Result ok.
              * @member {boolean|null|undefined} ok
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @instance
              */
             Result.prototype.ok = null;
@@ -11086,13 +11179,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Result instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
-             * @param {mediflow.v3.Result.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Result} Result instance
+             * @param {mediflow.v4.Result.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Result} Result instance
              * @type {{
-             *   (properties: mediflow.v3.Result.$Shape): mediflow.v3.Result & mediflow.v3.Result.$Shape;
-             *   (properties?: mediflow.v3.Result.$Properties): mediflow.v3.Result;
+             *   (properties: mediflow.v4.Result.$Shape): mediflow.v4.Result & mediflow.v4.Result.$Shape;
+             *   (properties?: mediflow.v4.Result.$Properties): mediflow.v4.Result;
              * }}
              */
             Result.create = function(properties) {
@@ -11100,11 +11193,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Result message. Does not implicitly {@link mediflow.v3.Result.verify|verify} messages.
+             * Encodes the specified Result message. Does not implicitly {@link mediflow.v4.Result.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
-             * @param {mediflow.v3.Result.$Properties} message Result message or plain object to encode
+             * @param {mediflow.v4.Result.$Properties} message Result message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11126,11 +11219,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Result message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Result & mediflow.v3.Result.$Shape} Result
+             * @returns {mediflow.v4.Result & mediflow.v4.Result.$Shape} Result
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11151,7 +11244,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Result();
+                message = _target || new $root.mediflow.v4.Result();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -11188,7 +11281,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Result message.
              * @function verify
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11212,21 +11305,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Result message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Result} Result
+             * @returns {mediflow.v4.Result} Result
              */
             Result.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Result)
+                if (object instanceof $root.mediflow.v4.Result)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Result: object expected");
+                    throw $TypeError(".mediflow.v4.Result: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Result();
+                let message = new $root.mediflow.v4.Result();
                 if (object.ok != null)
                     message.ok = $Boolean(object.ok);
                 return message;
@@ -11235,9 +11328,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Result message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
-             * @param {mediflow.v3.Result} message Result
+             * @param {mediflow.v4.Result} message Result
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11257,7 +11350,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Result to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11268,7 +11361,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Result
              * @function getTypeUrl
-             * @memberof mediflow.v3.Result
+             * @memberof mediflow.v4.Result
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -11276,40 +11369,40 @@ export const mediflow = $root.mediflow = (() => {
             Result.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Result";
+                return prefix + "/mediflow.v4.Result";
             };
 
             return Result;
         })();
 
-        v3.Problem = (function() {
+        v4.Problem = (function() {
 
             /**
              * Properties of a Problem.
-             * @typedef {Object} mediflow.v3.Problem.$Properties
+             * @typedef {Object} mediflow.v4.Problem.$Properties
              * @property {string|null} [error] Problem error
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Problem.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IProblem
-             * @augments mediflow.v3.Problem.$Properties
-             * @deprecated Use mediflow.v3.Problem.$Properties instead.
+             * @augments mediflow.v4.Problem.$Properties
+             * @deprecated Use mediflow.v4.Problem.$Properties instead.
              */
 
             /**
              * Shape of a Problem.
-             * @typedef {mediflow.v3.Problem.$Properties} mediflow.v3.Problem.$Shape
+             * @typedef {mediflow.v4.Problem.$Properties} mediflow.v4.Problem.$Shape
              */
 
             /**
              * Constructs a new Problem.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Problem.
              * @constructor
-             * @param {mediflow.v3.Problem.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Problem.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Problem = function (properties) {
@@ -11322,7 +11415,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Problem error.
              * @member {string|null|undefined} error
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @instance
              */
             Problem.prototype.error = null;
@@ -11339,13 +11432,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Problem instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
-             * @param {mediflow.v3.Problem.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Problem} Problem instance
+             * @param {mediflow.v4.Problem.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Problem} Problem instance
              * @type {{
-             *   (properties: mediflow.v3.Problem.$Shape): mediflow.v3.Problem & mediflow.v3.Problem.$Shape;
-             *   (properties?: mediflow.v3.Problem.$Properties): mediflow.v3.Problem;
+             *   (properties: mediflow.v4.Problem.$Shape): mediflow.v4.Problem & mediflow.v4.Problem.$Shape;
+             *   (properties?: mediflow.v4.Problem.$Properties): mediflow.v4.Problem;
              * }}
              */
             Problem.create = function(properties) {
@@ -11353,11 +11446,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Problem message. Does not implicitly {@link mediflow.v3.Problem.verify|verify} messages.
+             * Encodes the specified Problem message. Does not implicitly {@link mediflow.v4.Problem.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
-             * @param {mediflow.v3.Problem.$Properties} message Problem message or plain object to encode
+             * @param {mediflow.v4.Problem.$Properties} message Problem message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11379,11 +11472,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Problem message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Problem & mediflow.v3.Problem.$Shape} Problem
+             * @returns {mediflow.v4.Problem & mediflow.v4.Problem.$Shape} Problem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11404,7 +11497,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Problem();
+                message = _target || new $root.mediflow.v4.Problem();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -11441,7 +11534,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Problem message.
              * @function verify
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11465,21 +11558,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Problem message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Problem} Problem
+             * @returns {mediflow.v4.Problem} Problem
              */
             Problem.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Problem)
+                if (object instanceof $root.mediflow.v4.Problem)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Problem: object expected");
+                    throw $TypeError(".mediflow.v4.Problem: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Problem();
+                let message = new $root.mediflow.v4.Problem();
                 if (object.error != null)
                     message.error = $String(object.error);
                 return message;
@@ -11488,9 +11581,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Problem message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
-             * @param {mediflow.v3.Problem} message Problem
+             * @param {mediflow.v4.Problem} message Problem
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11510,7 +11603,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Problem to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11521,7 +11614,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Problem
              * @function getTypeUrl
-             * @memberof mediflow.v3.Problem
+             * @memberof mediflow.v4.Problem
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -11529,40 +11622,40 @@ export const mediflow = $root.mediflow = (() => {
             Problem.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Problem";
+                return prefix + "/mediflow.v4.Problem";
             };
 
             return Problem;
         })();
 
-        v3.Health = (function() {
+        v4.Health = (function() {
 
             /**
              * Properties of a Health.
-             * @typedef {Object} mediflow.v3.Health.$Properties
+             * @typedef {Object} mediflow.v4.Health.$Properties
              * @property {string|null} [status] Health status
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Health.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IHealth
-             * @augments mediflow.v3.Health.$Properties
-             * @deprecated Use mediflow.v3.Health.$Properties instead.
+             * @augments mediflow.v4.Health.$Properties
+             * @deprecated Use mediflow.v4.Health.$Properties instead.
              */
 
             /**
              * Shape of a Health.
-             * @typedef {mediflow.v3.Health.$Properties} mediflow.v3.Health.$Shape
+             * @typedef {mediflow.v4.Health.$Properties} mediflow.v4.Health.$Shape
              */
 
             /**
              * Constructs a new Health.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Health.
              * @constructor
-             * @param {mediflow.v3.Health.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Health.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Health = function (properties) {
@@ -11575,7 +11668,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Health status.
              * @member {string|null|undefined} status
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @instance
              */
             Health.prototype.status = null;
@@ -11592,13 +11685,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Health instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
-             * @param {mediflow.v3.Health.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Health} Health instance
+             * @param {mediflow.v4.Health.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Health} Health instance
              * @type {{
-             *   (properties: mediflow.v3.Health.$Shape): mediflow.v3.Health & mediflow.v3.Health.$Shape;
-             *   (properties?: mediflow.v3.Health.$Properties): mediflow.v3.Health;
+             *   (properties: mediflow.v4.Health.$Shape): mediflow.v4.Health & mediflow.v4.Health.$Shape;
+             *   (properties?: mediflow.v4.Health.$Properties): mediflow.v4.Health;
              * }}
              */
             Health.create = function(properties) {
@@ -11606,11 +11699,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Health message. Does not implicitly {@link mediflow.v3.Health.verify|verify} messages.
+             * Encodes the specified Health message. Does not implicitly {@link mediflow.v4.Health.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
-             * @param {mediflow.v3.Health.$Properties} message Health message or plain object to encode
+             * @param {mediflow.v4.Health.$Properties} message Health message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11632,11 +11725,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Health message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Health & mediflow.v3.Health.$Shape} Health
+             * @returns {mediflow.v4.Health & mediflow.v4.Health.$Shape} Health
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11657,7 +11750,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Health();
+                message = _target || new $root.mediflow.v4.Health();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -11694,7 +11787,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Health message.
              * @function verify
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11718,21 +11811,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Health message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Health} Health
+             * @returns {mediflow.v4.Health} Health
              */
             Health.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Health)
+                if (object instanceof $root.mediflow.v4.Health)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Health: object expected");
+                    throw $TypeError(".mediflow.v4.Health: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Health();
+                let message = new $root.mediflow.v4.Health();
                 if (object.status != null)
                     message.status = $String(object.status);
                 return message;
@@ -11741,9 +11834,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Health message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
-             * @param {mediflow.v3.Health} message Health
+             * @param {mediflow.v4.Health} message Health
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11763,7 +11856,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Health to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11774,7 +11867,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Health
              * @function getTypeUrl
-             * @memberof mediflow.v3.Health
+             * @memberof mediflow.v4.Health
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -11782,40 +11875,40 @@ export const mediflow = $root.mediflow = (() => {
             Health.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Health";
+                return prefix + "/mediflow.v4.Health";
             };
 
             return Health;
         })();
 
-        v3.Retain = (function() {
+        v4.Retain = (function() {
 
             /**
              * Properties of a Retain.
-             * @typedef {Object} mediflow.v3.Retain.$Properties
+             * @typedef {Object} mediflow.v4.Retain.$Properties
              * @property {boolean|null} [dryRun] Retain dryRun
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Retain.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IRetain
-             * @augments mediflow.v3.Retain.$Properties
-             * @deprecated Use mediflow.v3.Retain.$Properties instead.
+             * @augments mediflow.v4.Retain.$Properties
+             * @deprecated Use mediflow.v4.Retain.$Properties instead.
              */
 
             /**
              * Shape of a Retain.
-             * @typedef {mediflow.v3.Retain.$Properties} mediflow.v3.Retain.$Shape
+             * @typedef {mediflow.v4.Retain.$Properties} mediflow.v4.Retain.$Shape
              */
 
             /**
              * Constructs a new Retain.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Retain.
              * @constructor
-             * @param {mediflow.v3.Retain.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Retain.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Retain = function (properties) {
@@ -11828,7 +11921,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retain dryRun.
              * @member {boolean|null|undefined} dryRun
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @instance
              */
             Retain.prototype.dryRun = null;
@@ -11845,13 +11938,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Retain instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
-             * @param {mediflow.v3.Retain.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Retain} Retain instance
+             * @param {mediflow.v4.Retain.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Retain} Retain instance
              * @type {{
-             *   (properties: mediflow.v3.Retain.$Shape): mediflow.v3.Retain & mediflow.v3.Retain.$Shape;
-             *   (properties?: mediflow.v3.Retain.$Properties): mediflow.v3.Retain;
+             *   (properties: mediflow.v4.Retain.$Shape): mediflow.v4.Retain & mediflow.v4.Retain.$Shape;
+             *   (properties?: mediflow.v4.Retain.$Properties): mediflow.v4.Retain;
              * }}
              */
             Retain.create = function(properties) {
@@ -11859,11 +11952,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Retain message. Does not implicitly {@link mediflow.v3.Retain.verify|verify} messages.
+             * Encodes the specified Retain message. Does not implicitly {@link mediflow.v4.Retain.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
-             * @param {mediflow.v3.Retain.$Properties} message Retain message or plain object to encode
+             * @param {mediflow.v4.Retain.$Properties} message Retain message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11885,11 +11978,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Retain message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Retain & mediflow.v3.Retain.$Shape} Retain
+             * @returns {mediflow.v4.Retain & mediflow.v4.Retain.$Shape} Retain
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11910,7 +12003,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Retain();
+                message = _target || new $root.mediflow.v4.Retain();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -11947,7 +12040,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Retain message.
              * @function verify
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11971,21 +12064,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Retain message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Retain} Retain
+             * @returns {mediflow.v4.Retain} Retain
              */
             Retain.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Retain)
+                if (object instanceof $root.mediflow.v4.Retain)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Retain: object expected");
+                    throw $TypeError(".mediflow.v4.Retain: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Retain();
+                let message = new $root.mediflow.v4.Retain();
                 if (object.dryRun != null)
                     message.dryRun = $Boolean(object.dryRun);
                 return message;
@@ -11994,9 +12087,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Retain message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
-             * @param {mediflow.v3.Retain} message Retain
+             * @param {mediflow.v4.Retain} message Retain
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12016,7 +12109,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Retain to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12027,7 +12120,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Retain
              * @function getTypeUrl
-             * @memberof mediflow.v3.Retain
+             * @memberof mediflow.v4.Retain
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -12035,17 +12128,17 @@ export const mediflow = $root.mediflow = (() => {
             Retain.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Retain";
+                return prefix + "/mediflow.v4.Retain";
             };
 
             return Retain;
         })();
 
-        v3.Retained = (function() {
+        v4.Retained = (function() {
 
             /**
              * Properties of a Retained.
-             * @typedef {Object} mediflow.v3.Retained.$Properties
+             * @typedef {Object} mediflow.v4.Retained.$Properties
              * @property {string|null} [cutoff] Retained cutoff
              * @property {boolean|null} [dryRun] Retained dryRun
              * @property {Object.<string,number|Long>|null} [moved] Retained moved
@@ -12056,23 +12149,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Retained.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IRetained
-             * @augments mediflow.v3.Retained.$Properties
-             * @deprecated Use mediflow.v3.Retained.$Properties instead.
+             * @augments mediflow.v4.Retained.$Properties
+             * @deprecated Use mediflow.v4.Retained.$Properties instead.
              */
 
             /**
              * Shape of a Retained.
-             * @typedef {mediflow.v3.Retained.$Properties} mediflow.v3.Retained.$Shape
+             * @typedef {mediflow.v4.Retained.$Properties} mediflow.v4.Retained.$Shape
              */
 
             /**
              * Constructs a new Retained.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Retained.
              * @constructor
-             * @param {mediflow.v3.Retained.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Retained.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Retained = function (properties) {
@@ -12087,7 +12180,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retained cutoff.
              * @member {string|null|undefined} cutoff
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              */
             Retained.prototype.cutoff = null;
@@ -12095,7 +12188,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retained dryRun.
              * @member {boolean|null|undefined} dryRun
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              */
             Retained.prototype.dryRun = null;
@@ -12103,7 +12196,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retained moved.
              * @member {Object.<string,number|Long>} moved
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              */
             Retained.prototype.moved = $util.emptyObject;
@@ -12111,7 +12204,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retained hasMore.
              * @member {boolean|null|undefined} hasMore
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              */
             Retained.prototype.hasMore = null;
@@ -12119,7 +12212,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Retained skipped.
              * @member {Object.<string,number|Long>} skipped
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              */
             Retained.prototype.skipped = $util.emptyObject;
@@ -12148,13 +12241,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Retained instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
-             * @param {mediflow.v3.Retained.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Retained} Retained instance
+             * @param {mediflow.v4.Retained.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Retained} Retained instance
              * @type {{
-             *   (properties: mediflow.v3.Retained.$Shape): mediflow.v3.Retained & mediflow.v3.Retained.$Shape;
-             *   (properties?: mediflow.v3.Retained.$Properties): mediflow.v3.Retained;
+             *   (properties: mediflow.v4.Retained.$Shape): mediflow.v4.Retained & mediflow.v4.Retained.$Shape;
+             *   (properties?: mediflow.v4.Retained.$Properties): mediflow.v4.Retained;
              * }}
              */
             Retained.create = function(properties) {
@@ -12162,11 +12255,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Retained message. Does not implicitly {@link mediflow.v3.Retained.verify|verify} messages.
+             * Encodes the specified Retained message. Does not implicitly {@link mediflow.v4.Retained.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
-             * @param {mediflow.v3.Retained.$Properties} message Retained message or plain object to encode
+             * @param {mediflow.v4.Retained.$Properties} message Retained message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12198,11 +12291,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Retained message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Retained & mediflow.v3.Retained.$Shape} Retained
+             * @returns {mediflow.v4.Retained & mediflow.v4.Retained.$Shape} Retained
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12223,7 +12316,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Retained();
+                message = _target || new $root.mediflow.v4.Retained();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -12346,7 +12439,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Retained message.
              * @function verify
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12396,28 +12489,28 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Retained message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Retained} Retained
+             * @returns {mediflow.v4.Retained} Retained
              */
             Retained.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Retained)
+                if (object instanceof $root.mediflow.v4.Retained)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Retained: object expected");
+                    throw $TypeError(".mediflow.v4.Retained: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Retained();
+                let message = new $root.mediflow.v4.Retained();
                 if (object.cutoff != null)
                     message.cutoff = $String(object.cutoff);
                 if (object.dryRun != null)
                     message.dryRun = $Boolean(object.dryRun);
                 if (object.moved) {
                     if (!$util.isObject(object.moved))
-                        throw $TypeError(".mediflow.v3.Retained.moved: object expected");
+                        throw $TypeError(".mediflow.v4.Retained.moved: object expected");
                     message.moved = {};
                     for (let keys = $Object.keys(object.moved), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
@@ -12436,7 +12529,7 @@ export const mediflow = $root.mediflow = (() => {
                     message.hasMore = $Boolean(object.hasMore);
                 if (object.skipped) {
                     if (!$util.isObject(object.skipped))
-                        throw $TypeError(".mediflow.v3.Retained.skipped: object expected");
+                        throw $TypeError(".mediflow.v4.Retained.skipped: object expected");
                     message.skipped = {};
                     for (let keys = $Object.keys(object.skipped), i = 0; i < keys.length; ++i) {
                         if (keys[i] === "__proto__")
@@ -12457,9 +12550,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Retained message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
-             * @param {mediflow.v3.Retained} message Retained
+             * @param {mediflow.v4.Retained} message Retained
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12514,7 +12607,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Retained to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12525,7 +12618,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Retained
              * @function getTypeUrl
-             * @memberof mediflow.v3.Retained
+             * @memberof mediflow.v4.Retained
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -12533,40 +12626,40 @@ export const mediflow = $root.mediflow = (() => {
             Retained.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Retained";
+                return prefix + "/mediflow.v4.Retained";
             };
 
             return Retained;
         })();
 
-        v3.Auth = (function() {
+        v4.Auth = (function() {
 
             /**
              * Properties of an Auth.
-             * @typedef {Object} mediflow.v3.Auth.$Properties
-             * @property {string|null} [token] Auth token
+             * @typedef {Object} mediflow.v4.Auth.$Properties
+             * @property {Uint8Array|null} [token] Auth token
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of an Auth.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IAuth
-             * @augments mediflow.v3.Auth.$Properties
-             * @deprecated Use mediflow.v3.Auth.$Properties instead.
+             * @augments mediflow.v4.Auth.$Properties
+             * @deprecated Use mediflow.v4.Auth.$Properties instead.
              */
 
             /**
              * Shape of an Auth.
-             * @typedef {mediflow.v3.Auth.$Properties} mediflow.v3.Auth.$Shape
+             * @typedef {mediflow.v4.Auth.$Properties} mediflow.v4.Auth.$Shape
              */
 
             /**
              * Constructs a new Auth.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an Auth.
              * @constructor
-             * @param {mediflow.v3.Auth.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Auth.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Auth = function (properties) {
@@ -12578,8 +12671,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Auth token.
-             * @member {string|null|undefined} token
-             * @memberof mediflow.v3.Auth
+             * @member {Uint8Array|null|undefined} token
+             * @memberof mediflow.v4.Auth
              * @instance
              */
             Auth.prototype.token = null;
@@ -12596,13 +12689,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Auth instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
-             * @param {mediflow.v3.Auth.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Auth} Auth instance
+             * @param {mediflow.v4.Auth.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Auth} Auth instance
              * @type {{
-             *   (properties: mediflow.v3.Auth.$Shape): mediflow.v3.Auth & mediflow.v3.Auth.$Shape;
-             *   (properties?: mediflow.v3.Auth.$Properties): mediflow.v3.Auth;
+             *   (properties: mediflow.v4.Auth.$Shape): mediflow.v4.Auth & mediflow.v4.Auth.$Shape;
+             *   (properties?: mediflow.v4.Auth.$Properties): mediflow.v4.Auth;
              * }}
              */
             Auth.create = function(properties) {
@@ -12610,11 +12703,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Auth message. Does not implicitly {@link mediflow.v3.Auth.verify|verify} messages.
+             * Encodes the specified Auth message. Does not implicitly {@link mediflow.v4.Auth.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
-             * @param {mediflow.v3.Auth.$Properties} message Auth message or plain object to encode
+             * @param {mediflow.v4.Auth.$Properties} message Auth message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12626,7 +12719,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.token);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -12636,11 +12729,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an Auth message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Auth & mediflow.v3.Auth.$Shape} Auth
+             * @returns {mediflow.v4.Auth & mediflow.v4.Auth.$Shape} Auth
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12661,7 +12754,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Auth();
+                message = _target || new $root.mediflow.v4.Auth();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -12674,7 +12767,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.token = reader.stringVerify();
+                            message.token = reader.bytes();
                             message._token = "token";
                             continue;
                         }
@@ -12698,7 +12791,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an Auth message.
              * @function verify
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12713,8 +12806,8 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token")) {
                     properties._token = 1;
-                    if (!$util.isString(message.token))
-                        return "token: string expected";
+                    if (!(message.token && typeof message.token.length === "number" || $util.isString(message.token)))
+                        return "token: buffer expected";
                 }
                 return null;
             };
@@ -12722,32 +12815,35 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an Auth message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Auth} Auth
+             * @returns {mediflow.v4.Auth} Auth
              */
             Auth.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Auth)
+                if (object instanceof $root.mediflow.v4.Auth)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Auth: object expected");
+                    throw $TypeError(".mediflow.v4.Auth: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Auth();
+                let message = new $root.mediflow.v4.Auth();
                 if (object.token != null)
-                    message.token = $String(object.token);
+                    if (typeof object.token === "string")
+                        $util.base64.decode(object.token, message.token = $util.newBuffer($util.base64.length(object.token)), 0);
+                    else if (object.token.length >= 0)
+                        message.token = object.token;
                 return message;
             };
 
             /**
              * Creates a plain object from an Auth message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
-             * @param {mediflow.v3.Auth} message Auth
+             * @param {mediflow.v4.Auth} message Auth
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12760,14 +12856,14 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.token != null && $Object.hasOwnProperty.call(message, "token"))
-                    object.token = message.token;
+                    object.token = options.bytes === $String ? $util.base64.encode(message.token, 0, message.token.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.token) : message.token;
                 return object;
             };
 
             /**
              * Converts this Auth to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12778,7 +12874,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Auth
              * @function getTypeUrl
-             * @memberof mediflow.v3.Auth
+             * @memberof mediflow.v4.Auth
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -12786,17 +12882,17 @@ export const mediflow = $root.mediflow = (() => {
             Auth.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Auth";
+                return prefix + "/mediflow.v4.Auth";
             };
 
             return Auth;
         })();
 
-        v3.Sync = (function() {
+        v4.Sync = (function() {
 
             /**
              * Properties of a Sync.
-             * @typedef {Object} mediflow.v3.Sync.$Properties
+             * @typedef {Object} mediflow.v4.Sync.$Properties
              * @property {number|null} [page] Sync page
              * @property {number|null} [pageSize] Sync pageSize
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
@@ -12804,23 +12900,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a Sync.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ISync
-             * @augments mediflow.v3.Sync.$Properties
-             * @deprecated Use mediflow.v3.Sync.$Properties instead.
+             * @augments mediflow.v4.Sync.$Properties
+             * @deprecated Use mediflow.v4.Sync.$Properties instead.
              */
 
             /**
              * Shape of a Sync.
-             * @typedef {mediflow.v3.Sync.$Properties} mediflow.v3.Sync.$Shape
+             * @typedef {mediflow.v4.Sync.$Properties} mediflow.v4.Sync.$Shape
              */
 
             /**
              * Constructs a new Sync.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Sync.
              * @constructor
-             * @param {mediflow.v3.Sync.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Sync.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Sync = function (properties) {
@@ -12833,7 +12929,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Sync page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @instance
              */
             Sync.prototype.page = null;
@@ -12841,7 +12937,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Sync pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @instance
              */
             Sync.prototype.pageSize = null;
@@ -12864,13 +12960,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Sync instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
-             * @param {mediflow.v3.Sync.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Sync} Sync instance
+             * @param {mediflow.v4.Sync.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Sync} Sync instance
              * @type {{
-             *   (properties: mediflow.v3.Sync.$Shape): mediflow.v3.Sync & mediflow.v3.Sync.$Shape;
-             *   (properties?: mediflow.v3.Sync.$Properties): mediflow.v3.Sync;
+             *   (properties: mediflow.v4.Sync.$Shape): mediflow.v4.Sync & mediflow.v4.Sync.$Shape;
+             *   (properties?: mediflow.v4.Sync.$Properties): mediflow.v4.Sync;
              * }}
              */
             Sync.create = function(properties) {
@@ -12878,11 +12974,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Sync message. Does not implicitly {@link mediflow.v3.Sync.verify|verify} messages.
+             * Encodes the specified Sync message. Does not implicitly {@link mediflow.v4.Sync.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
-             * @param {mediflow.v3.Sync.$Properties} message Sync message or plain object to encode
+             * @param {mediflow.v4.Sync.$Properties} message Sync message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12906,11 +13002,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Sync message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Sync & mediflow.v3.Sync.$Shape} Sync
+             * @returns {mediflow.v4.Sync & mediflow.v4.Sync.$Shape} Sync
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12931,7 +13027,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Sync();
+                message = _target || new $root.mediflow.v4.Sync();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -12975,7 +13071,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Sync message.
              * @function verify
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13004,21 +13100,21 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Sync message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Sync} Sync
+             * @returns {mediflow.v4.Sync} Sync
              */
             Sync.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Sync)
+                if (object instanceof $root.mediflow.v4.Sync)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Sync: object expected");
+                    throw $TypeError(".mediflow.v4.Sync: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Sync();
+                let message = new $root.mediflow.v4.Sync();
                 if (object.page != null)
                     message.page = object.page >>> 0;
                 if (object.pageSize != null)
@@ -13029,9 +13125,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Sync message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
-             * @param {mediflow.v3.Sync} message Sync
+             * @param {mediflow.v4.Sync} message Sync
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13053,7 +13149,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Sync to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13064,7 +13160,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Sync
              * @function getTypeUrl
-             * @memberof mediflow.v3.Sync
+             * @memberof mediflow.v4.Sync
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -13072,41 +13168,41 @@ export const mediflow = $root.mediflow = (() => {
             Sync.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Sync";
+                return prefix + "/mediflow.v4.Sync";
             };
 
             return Sync;
         })();
 
-        v3.PendingSync = (function() {
+        v4.PendingSync = (function() {
 
             /**
              * Properties of a PendingSync.
-             * @typedef {Object} mediflow.v3.PendingSync.$Properties
+             * @typedef {Object} mediflow.v4.PendingSync.$Properties
              * @property {string|null} [cursor] PendingSync cursor
-             * @property {string|null} [requestId] PendingSync requestId
+             * @property {Uint8Array|null} [requestId] PendingSync requestId
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a PendingSync.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPendingSync
-             * @augments mediflow.v3.PendingSync.$Properties
-             * @deprecated Use mediflow.v3.PendingSync.$Properties instead.
+             * @augments mediflow.v4.PendingSync.$Properties
+             * @deprecated Use mediflow.v4.PendingSync.$Properties instead.
              */
 
             /**
              * Shape of a PendingSync.
-             * @typedef {mediflow.v3.PendingSync.$Properties} mediflow.v3.PendingSync.$Shape
+             * @typedef {mediflow.v4.PendingSync.$Properties} mediflow.v4.PendingSync.$Shape
              */
 
             /**
              * Constructs a new PendingSync.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a PendingSync.
              * @constructor
-             * @param {mediflow.v3.PendingSync.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.PendingSync.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const PendingSync = function (properties) {
@@ -13119,15 +13215,15 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PendingSync cursor.
              * @member {string|null|undefined} cursor
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @instance
              */
             PendingSync.prototype.cursor = null;
 
             /**
              * PendingSync requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.PendingSync
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.PendingSync
              * @instance
              */
             PendingSync.prototype.requestId = null;
@@ -13150,13 +13246,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new PendingSync instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
-             * @param {mediflow.v3.PendingSync.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.PendingSync} PendingSync instance
+             * @param {mediflow.v4.PendingSync.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.PendingSync} PendingSync instance
              * @type {{
-             *   (properties: mediflow.v3.PendingSync.$Shape): mediflow.v3.PendingSync & mediflow.v3.PendingSync.$Shape;
-             *   (properties?: mediflow.v3.PendingSync.$Properties): mediflow.v3.PendingSync;
+             *   (properties: mediflow.v4.PendingSync.$Shape): mediflow.v4.PendingSync & mediflow.v4.PendingSync.$Shape;
+             *   (properties?: mediflow.v4.PendingSync.$Properties): mediflow.v4.PendingSync;
              * }}
              */
             PendingSync.create = function(properties) {
@@ -13164,11 +13260,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified PendingSync message. Does not implicitly {@link mediflow.v3.PendingSync.verify|verify} messages.
+             * Encodes the specified PendingSync message. Does not implicitly {@link mediflow.v4.PendingSync.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
-             * @param {mediflow.v3.PendingSync.$Properties} message PendingSync message or plain object to encode
+             * @param {mediflow.v4.PendingSync.$Properties} message PendingSync message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13182,7 +13278,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.cursor != null && $Object.hasOwnProperty.call(message, "cursor"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.cursor);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.requestId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.requestId);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -13192,11 +13288,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a PendingSync message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.PendingSync & mediflow.v3.PendingSync.$Shape} PendingSync
+             * @returns {mediflow.v4.PendingSync & mediflow.v4.PendingSync.$Shape} PendingSync
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13217,7 +13313,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.PendingSync();
+                message = _target || new $root.mediflow.v4.PendingSync();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -13237,7 +13333,7 @@ export const mediflow = $root.mediflow = (() => {
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
@@ -13261,7 +13357,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a PendingSync message.
              * @function verify
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13281,8 +13377,8 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 return null;
             };
@@ -13290,34 +13386,37 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a PendingSync message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.PendingSync} PendingSync
+             * @returns {mediflow.v4.PendingSync} PendingSync
              */
             PendingSync.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.PendingSync)
+                if (object instanceof $root.mediflow.v4.PendingSync)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.PendingSync: object expected");
+                    throw $TypeError(".mediflow.v4.PendingSync: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.PendingSync();
+                let message = new $root.mediflow.v4.PendingSync();
                 if (object.cursor != null)
                     message.cursor = $String(object.cursor);
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 return message;
             };
 
             /**
              * Creates a plain object from a PendingSync message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
-             * @param {mediflow.v3.PendingSync} message PendingSync
+             * @param {mediflow.v4.PendingSync} message PendingSync
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13332,14 +13431,14 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.cursor != null && $Object.hasOwnProperty.call(message, "cursor"))
                     object.cursor = message.cursor;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 return object;
             };
 
             /**
              * Converts this PendingSync to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13350,7 +13449,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for PendingSync
              * @function getTypeUrl
-             * @memberof mediflow.v3.PendingSync
+             * @memberof mediflow.v4.PendingSync
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -13358,43 +13457,43 @@ export const mediflow = $root.mediflow = (() => {
             PendingSync.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.PendingSync";
+                return prefix + "/mediflow.v4.PendingSync";
             };
 
             return PendingSync;
         })();
 
-        v3.PendingCalls = (function() {
+        v4.PendingCalls = (function() {
 
             /**
              * Properties of a PendingCalls.
-             * @typedef {Object} mediflow.v3.PendingCalls.$Properties
-             * @property {Array.<mediflow.v3.Call.$Properties>|null} [payload] PendingCalls payload
+             * @typedef {Object} mediflow.v4.PendingCalls.$Properties
+             * @property {Array.<mediflow.v4.Call.$Properties>|null} [payload] PendingCalls payload
              * @property {string|null} [nextCursor] PendingCalls nextCursor
-             * @property {string|null} [requestId] PendingCalls requestId
-             * @property {string|null} [screenId] PendingCalls screenId
+             * @property {Uint8Array|null} [requestId] PendingCalls requestId
+             * @property {Uint8Array|null} [screenId] PendingCalls screenId
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a PendingCalls.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPendingCalls
-             * @augments mediflow.v3.PendingCalls.$Properties
-             * @deprecated Use mediflow.v3.PendingCalls.$Properties instead.
+             * @augments mediflow.v4.PendingCalls.$Properties
+             * @deprecated Use mediflow.v4.PendingCalls.$Properties instead.
              */
 
             /**
              * Shape of a PendingCalls.
-             * @typedef {mediflow.v3.PendingCalls.$Properties} mediflow.v3.PendingCalls.$Shape
+             * @typedef {mediflow.v4.PendingCalls.$Properties} mediflow.v4.PendingCalls.$Shape
              */
 
             /**
              * Constructs a new PendingCalls.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a PendingCalls.
              * @constructor
-             * @param {mediflow.v3.PendingCalls.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.PendingCalls.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const PendingCalls = function (properties) {
@@ -13407,8 +13506,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * PendingCalls payload.
-             * @member {Array.<mediflow.v3.Call.$Properties>} payload
-             * @memberof mediflow.v3.PendingCalls
+             * @member {Array.<mediflow.v4.Call.$Properties>} payload
+             * @memberof mediflow.v4.PendingCalls
              * @instance
              */
             PendingCalls.prototype.payload = $util.emptyArray;
@@ -13416,23 +13515,23 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PendingCalls nextCursor.
              * @member {string|null|undefined} nextCursor
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @instance
              */
             PendingCalls.prototype.nextCursor = null;
 
             /**
              * PendingCalls requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.PendingCalls
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.PendingCalls
              * @instance
              */
             PendingCalls.prototype.requestId = null;
 
             /**
              * PendingCalls screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.PendingCalls
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.PendingCalls
              * @instance
              */
             PendingCalls.prototype.screenId = null;
@@ -13461,13 +13560,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new PendingCalls instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
-             * @param {mediflow.v3.PendingCalls.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.PendingCalls} PendingCalls instance
+             * @param {mediflow.v4.PendingCalls.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.PendingCalls} PendingCalls instance
              * @type {{
-             *   (properties: mediflow.v3.PendingCalls.$Shape): mediflow.v3.PendingCalls & mediflow.v3.PendingCalls.$Shape;
-             *   (properties?: mediflow.v3.PendingCalls.$Properties): mediflow.v3.PendingCalls;
+             *   (properties: mediflow.v4.PendingCalls.$Shape): mediflow.v4.PendingCalls & mediflow.v4.PendingCalls.$Shape;
+             *   (properties?: mediflow.v4.PendingCalls.$Properties): mediflow.v4.PendingCalls;
              * }}
              */
             PendingCalls.create = function(properties) {
@@ -13475,11 +13574,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified PendingCalls message. Does not implicitly {@link mediflow.v3.PendingCalls.verify|verify} messages.
+             * Encodes the specified PendingCalls message. Does not implicitly {@link mediflow.v4.PendingCalls.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
-             * @param {mediflow.v3.PendingCalls.$Properties} message PendingCalls message or plain object to encode
+             * @param {mediflow.v4.PendingCalls.$Properties} message PendingCalls message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13492,13 +13591,13 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.payload != null && message.payload.length)
                     for (let i = 0; i < message.payload.length; ++i)
-                        $root.mediflow.v3.Call.encode(message.payload[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Call.encode(message.payload[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.nextCursor != null && $Object.hasOwnProperty.call(message, "nextCursor"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.nextCursor);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.requestId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.requestId);
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.screenId);
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.screenId);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -13508,11 +13607,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a PendingCalls message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.PendingCalls & mediflow.v3.PendingCalls.$Shape} PendingCalls
+             * @returns {mediflow.v4.PendingCalls & mediflow.v4.PendingCalls.$Shape} PendingCalls
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13533,7 +13632,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.PendingCalls();
+                message = _target || new $root.mediflow.v4.PendingCalls();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -13548,7 +13647,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.payload && message.payload.length))
                                 message.payload = [];
-                            message.payload.push($root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.payload.push($root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -13561,14 +13660,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 4: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
@@ -13592,7 +13691,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a PendingCalls message.
              * @function verify
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13609,7 +13708,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.payload))
                         return "payload: array expected";
                     for (let i = 0; i < message.payload.length; ++i) {
-                        let error = $root.mediflow.v3.Call.verify(message.payload[i], _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.payload[i], _depth + 1);
                         if (error)
                             return "payload." + error;
                     }
@@ -13621,13 +13720,13 @@ export const mediflow = $root.mediflow = (() => {
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 return null;
             };
@@ -13635,46 +13734,52 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a PendingCalls message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.PendingCalls} PendingCalls
+             * @returns {mediflow.v4.PendingCalls} PendingCalls
              */
             PendingCalls.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.PendingCalls)
+                if (object instanceof $root.mediflow.v4.PendingCalls)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.PendingCalls: object expected");
+                    throw $TypeError(".mediflow.v4.PendingCalls: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.PendingCalls();
+                let message = new $root.mediflow.v4.PendingCalls();
                 if (object.payload) {
                     if (!$Array.isArray(object.payload))
-                        throw $TypeError(".mediflow.v3.PendingCalls.payload: array expected");
+                        throw $TypeError(".mediflow.v4.PendingCalls.payload: array expected");
                     message.payload = $Array(object.payload.length);
                     for (let i = 0; i < object.payload.length; ++i) {
                         if (!$util.isObject(object.payload[i]))
-                            throw $TypeError(".mediflow.v3.PendingCalls.payload: object expected");
-                        message.payload[i] = $root.mediflow.v3.Call.fromObject(object.payload[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.PendingCalls.payload: object expected");
+                        message.payload[i] = $root.mediflow.v4.Call.fromObject(object.payload[i], _depth + 1);
                     }
                 }
                 if (object.nextCursor != null)
                     message.nextCursor = $String(object.nextCursor);
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 return message;
             };
 
             /**
              * Creates a plain object from a PendingCalls message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
-             * @param {mediflow.v3.PendingCalls} message PendingCalls
+             * @param {mediflow.v4.PendingCalls} message PendingCalls
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13691,21 +13796,21 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.payload && message.payload.length) {
                     object.payload = $Array(message.payload.length);
                     for (let j = 0; j < message.payload.length; ++j)
-                        object.payload[j] = $root.mediflow.v3.Call.toObject(message.payload[j], options, _depth + 1);
+                        object.payload[j] = $root.mediflow.v4.Call.toObject(message.payload[j], options, _depth + 1);
                 }
                 if (message.nextCursor != null && $Object.hasOwnProperty.call(message, "nextCursor"))
                     object.nextCursor = message.nextCursor;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 return object;
             };
 
             /**
              * Converts this PendingCalls to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13716,7 +13821,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for PendingCalls
              * @function getTypeUrl
-             * @memberof mediflow.v3.PendingCalls
+             * @memberof mediflow.v4.PendingCalls
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -13724,18 +13829,18 @@ export const mediflow = $root.mediflow = (() => {
             PendingCalls.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.PendingCalls";
+                return prefix + "/mediflow.v4.PendingCalls";
             };
 
             return PendingCalls;
         })();
 
-        v3.CallFrame = (function() {
+        v4.CallFrame = (function() {
 
             /**
              * Properties of a CallFrame.
-             * @typedef {Object} mediflow.v3.CallFrame.$Properties
-             * @property {Array.<mediflow.v3.Call.$Properties>|null} [payload] CallFrame payload
+             * @typedef {Object} mediflow.v4.CallFrame.$Properties
+             * @property {Array.<mediflow.v4.Call.$Properties>|null} [payload] CallFrame payload
              * @property {number|null} [page] CallFrame page
              * @property {number|null} [pageSize] CallFrame pageSize
              * @property {number|Long|null} [total] CallFrame total
@@ -13744,23 +13849,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a CallFrame.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface ICallFrame
-             * @augments mediflow.v3.CallFrame.$Properties
-             * @deprecated Use mediflow.v3.CallFrame.$Properties instead.
+             * @augments mediflow.v4.CallFrame.$Properties
+             * @deprecated Use mediflow.v4.CallFrame.$Properties instead.
              */
 
             /**
              * Shape of a CallFrame.
-             * @typedef {mediflow.v3.CallFrame.$Properties} mediflow.v3.CallFrame.$Shape
+             * @typedef {mediflow.v4.CallFrame.$Properties} mediflow.v4.CallFrame.$Shape
              */
 
             /**
              * Constructs a new CallFrame.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a CallFrame.
              * @constructor
-             * @param {mediflow.v3.CallFrame.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.CallFrame.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const CallFrame = function (properties) {
@@ -13773,8 +13878,8 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * CallFrame payload.
-             * @member {Array.<mediflow.v3.Call.$Properties>} payload
-             * @memberof mediflow.v3.CallFrame
+             * @member {Array.<mediflow.v4.Call.$Properties>} payload
+             * @memberof mediflow.v4.CallFrame
              * @instance
              */
             CallFrame.prototype.payload = $util.emptyArray;
@@ -13782,7 +13887,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallFrame page.
              * @member {number|null|undefined} page
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @instance
              */
             CallFrame.prototype.page = null;
@@ -13790,7 +13895,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallFrame pageSize.
              * @member {number|null|undefined} pageSize
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @instance
              */
             CallFrame.prototype.pageSize = null;
@@ -13798,7 +13903,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * CallFrame total.
              * @member {number|Long|null|undefined} total
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @instance
              */
             CallFrame.prototype.total = null;
@@ -13827,13 +13932,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new CallFrame instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
-             * @param {mediflow.v3.CallFrame.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.CallFrame} CallFrame instance
+             * @param {mediflow.v4.CallFrame.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.CallFrame} CallFrame instance
              * @type {{
-             *   (properties: mediflow.v3.CallFrame.$Shape): mediflow.v3.CallFrame & mediflow.v3.CallFrame.$Shape;
-             *   (properties?: mediflow.v3.CallFrame.$Properties): mediflow.v3.CallFrame;
+             *   (properties: mediflow.v4.CallFrame.$Shape): mediflow.v4.CallFrame & mediflow.v4.CallFrame.$Shape;
+             *   (properties?: mediflow.v4.CallFrame.$Properties): mediflow.v4.CallFrame;
              * }}
              */
             CallFrame.create = function(properties) {
@@ -13841,11 +13946,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified CallFrame message. Does not implicitly {@link mediflow.v3.CallFrame.verify|verify} messages.
+             * Encodes the specified CallFrame message. Does not implicitly {@link mediflow.v4.CallFrame.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
-             * @param {mediflow.v3.CallFrame.$Properties} message CallFrame message or plain object to encode
+             * @param {mediflow.v4.CallFrame.$Properties} message CallFrame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13858,7 +13963,7 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 if (message.payload != null && message.payload.length)
                     for (let i = 0; i < message.payload.length; ++i)
-                        $root.mediflow.v3.Call.encode(message.payload[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                        $root.mediflow.v4.Call.encode(message.payload[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.page);
                 if (message.pageSize != null && $Object.hasOwnProperty.call(message, "pageSize"))
@@ -13874,11 +13979,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a CallFrame message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.CallFrame & mediflow.v3.CallFrame.$Shape} CallFrame
+             * @returns {mediflow.v4.CallFrame & mediflow.v4.CallFrame.$Shape} CallFrame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13899,7 +14004,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.CallFrame();
+                message = _target || new $root.mediflow.v4.CallFrame();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -13914,7 +14019,7 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             if (!(message.payload && message.payload.length))
                                 message.payload = [];
-                            message.payload.push($root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1));
+                            message.payload.push($root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
                     case 2: {
@@ -13958,7 +14063,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a CallFrame message.
              * @function verify
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13975,7 +14080,7 @@ export const mediflow = $root.mediflow = (() => {
                     if (!$Array.isArray(message.payload))
                         return "payload: array expected";
                     for (let i = 0; i < message.payload.length; ++i) {
-                        let error = $root.mediflow.v3.Call.verify(message.payload[i], _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.payload[i], _depth + 1);
                         if (error)
                             return "payload." + error;
                     }
@@ -14001,29 +14106,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a CallFrame message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.CallFrame} CallFrame
+             * @returns {mediflow.v4.CallFrame} CallFrame
              */
             CallFrame.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.CallFrame)
+                if (object instanceof $root.mediflow.v4.CallFrame)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.CallFrame: object expected");
+                    throw $TypeError(".mediflow.v4.CallFrame: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.CallFrame();
+                let message = new $root.mediflow.v4.CallFrame();
                 if (object.payload) {
                     if (!$Array.isArray(object.payload))
-                        throw $TypeError(".mediflow.v3.CallFrame.payload: array expected");
+                        throw $TypeError(".mediflow.v4.CallFrame.payload: array expected");
                     message.payload = $Array(object.payload.length);
                     for (let i = 0; i < object.payload.length; ++i) {
                         if (!$util.isObject(object.payload[i]))
-                            throw $TypeError(".mediflow.v3.CallFrame.payload: object expected");
-                        message.payload[i] = $root.mediflow.v3.Call.fromObject(object.payload[i], _depth + 1);
+                            throw $TypeError(".mediflow.v4.CallFrame.payload: object expected");
+                        message.payload[i] = $root.mediflow.v4.Call.fromObject(object.payload[i], _depth + 1);
                     }
                 }
                 if (object.page != null)
@@ -14045,9 +14150,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a CallFrame message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
-             * @param {mediflow.v3.CallFrame} message CallFrame
+             * @param {mediflow.v4.CallFrame} message CallFrame
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14064,7 +14169,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.payload && message.payload.length) {
                     object.payload = $Array(message.payload.length);
                     for (let j = 0; j < message.payload.length; ++j)
-                        object.payload[j] = $root.mediflow.v3.Call.toObject(message.payload[j], options, _depth + 1);
+                        object.payload[j] = $root.mediflow.v4.Call.toObject(message.payload[j], options, _depth + 1);
                 }
                 if (message.page != null && $Object.hasOwnProperty.call(message, "page"))
                     object.page = message.page;
@@ -14083,7 +14188,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this CallFrame to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14094,7 +14199,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for CallFrame
              * @function getTypeUrl
-             * @memberof mediflow.v3.CallFrame
+             * @memberof mediflow.v4.CallFrame
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -14102,42 +14207,42 @@ export const mediflow = $root.mediflow = (() => {
             CallFrame.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.CallFrame";
+                return prefix + "/mediflow.v4.CallFrame";
             };
 
             return CallFrame;
         })();
 
-        v3.Failure = (function() {
+        v4.Failure = (function() {
 
             /**
              * Properties of a Failure.
-             * @typedef {Object} mediflow.v3.Failure.$Properties
-             * @property {string|null} [requestId] Failure requestId
-             * @property {string|null} [eventId] Failure eventId
+             * @typedef {Object} mediflow.v4.Failure.$Properties
+             * @property {Uint8Array|null} [requestId] Failure requestId
+             * @property {Uint8Array|null} [eventId] Failure eventId
              * @property {string|null} [message] Failure message
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Failure.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IFailure
-             * @augments mediflow.v3.Failure.$Properties
-             * @deprecated Use mediflow.v3.Failure.$Properties instead.
+             * @augments mediflow.v4.Failure.$Properties
+             * @deprecated Use mediflow.v4.Failure.$Properties instead.
              */
 
             /**
              * Shape of a Failure.
-             * @typedef {mediflow.v3.Failure.$Properties} mediflow.v3.Failure.$Shape
+             * @typedef {mediflow.v4.Failure.$Properties} mediflow.v4.Failure.$Shape
              */
 
             /**
              * Constructs a new Failure.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Failure.
              * @constructor
-             * @param {mediflow.v3.Failure.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Failure.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Failure = function (properties) {
@@ -14149,16 +14254,16 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Failure requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.Failure
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.Failure
              * @instance
              */
             Failure.prototype.requestId = null;
 
             /**
              * Failure eventId.
-             * @member {string|null|undefined} eventId
-             * @memberof mediflow.v3.Failure
+             * @member {Uint8Array|null|undefined} eventId
+             * @memberof mediflow.v4.Failure
              * @instance
              */
             Failure.prototype.eventId = null;
@@ -14166,7 +14271,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Failure message.
              * @member {string|null|undefined} message
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @instance
              */
             Failure.prototype.message = null;
@@ -14195,13 +14300,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Failure instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
-             * @param {mediflow.v3.Failure.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Failure} Failure instance
+             * @param {mediflow.v4.Failure.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Failure} Failure instance
              * @type {{
-             *   (properties: mediflow.v3.Failure.$Shape): mediflow.v3.Failure & mediflow.v3.Failure.$Shape;
-             *   (properties?: mediflow.v3.Failure.$Properties): mediflow.v3.Failure;
+             *   (properties: mediflow.v4.Failure.$Shape): mediflow.v4.Failure & mediflow.v4.Failure.$Shape;
+             *   (properties?: mediflow.v4.Failure.$Properties): mediflow.v4.Failure;
              * }}
              */
             Failure.create = function(properties) {
@@ -14209,11 +14314,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Failure message. Does not implicitly {@link mediflow.v3.Failure.verify|verify} messages.
+             * Encodes the specified Failure message. Does not implicitly {@link mediflow.v4.Failure.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
-             * @param {mediflow.v3.Failure.$Properties} message Failure message or plain object to encode
+             * @param {mediflow.v4.Failure.$Properties} message Failure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14225,9 +14330,9 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.requestId);
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.eventId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.eventId);
                 if (message.message != null && $Object.hasOwnProperty.call(message, "message"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.message);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
@@ -14239,11 +14344,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Failure message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Failure & mediflow.v3.Failure.$Shape} Failure
+             * @returns {mediflow.v4.Failure & mediflow.v4.Failure.$Shape} Failure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14264,7 +14369,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Failure();
+                message = _target || new $root.mediflow.v4.Failure();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -14277,14 +14382,14 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.eventId = reader.stringVerify();
+                            message.eventId = reader.bytes();
                             message._eventId = "eventId";
                             continue;
                         }
@@ -14315,7 +14420,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Failure message.
              * @function verify
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14330,13 +14435,13 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId")) {
                     properties._eventId = 1;
-                    if (!$util.isString(message.eventId))
-                        return "eventId: string expected";
+                    if (!(message.eventId && typeof message.eventId.length === "number" || $util.isString(message.eventId)))
+                        return "eventId: buffer expected";
                 }
                 if (message.message != null && $Object.hasOwnProperty.call(message, "message")) {
                     properties._message = 1;
@@ -14349,25 +14454,31 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Failure message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Failure} Failure
+             * @returns {mediflow.v4.Failure} Failure
              */
             Failure.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Failure)
+                if (object instanceof $root.mediflow.v4.Failure)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Failure: object expected");
+                    throw $TypeError(".mediflow.v4.Failure: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Failure();
+                let message = new $root.mediflow.v4.Failure();
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.eventId != null)
-                    message.eventId = $String(object.eventId);
+                    if (typeof object.eventId === "string")
+                        $util.base64.decode(object.eventId, message.eventId = $util.newBuffer($util.base64.length(object.eventId)), 0);
+                    else if (object.eventId.length >= 0)
+                        message.eventId = object.eventId;
                 if (object.message != null)
                     message.message = $String(object.message);
                 return message;
@@ -14376,9 +14487,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Failure message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
-             * @param {mediflow.v3.Failure} message Failure
+             * @param {mediflow.v4.Failure} message Failure
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14391,9 +14502,9 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    object.eventId = message.eventId;
+                    object.eventId = options.bytes === $String ? $util.base64.encode(message.eventId, 0, message.eventId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eventId) : message.eventId;
                 if (message.message != null && $Object.hasOwnProperty.call(message, "message"))
                     object.message = message.message;
                 return object;
@@ -14402,7 +14513,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Failure to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14413,7 +14524,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Failure
              * @function getTypeUrl
-             * @memberof mediflow.v3.Failure
+             * @memberof mediflow.v4.Failure
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -14421,39 +14532,39 @@ export const mediflow = $root.mediflow = (() => {
             Failure.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Failure";
+                return prefix + "/mediflow.v4.Failure";
             };
 
             return Failure;
         })();
 
-        v3.Empty = (function() {
+        v4.Empty = (function() {
 
             /**
              * Properties of an Empty.
-             * @typedef {Object} mediflow.v3.Empty.$Properties
+             * @typedef {Object} mediflow.v4.Empty.$Properties
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of an Empty.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IEmpty
-             * @augments mediflow.v3.Empty.$Properties
-             * @deprecated Use mediflow.v3.Empty.$Properties instead.
+             * @augments mediflow.v4.Empty.$Properties
+             * @deprecated Use mediflow.v4.Empty.$Properties instead.
              */
 
             /**
              * Shape of an Empty.
-             * @typedef {mediflow.v3.Empty.$Properties} mediflow.v3.Empty.$Shape
+             * @typedef {mediflow.v4.Empty.$Properties} mediflow.v4.Empty.$Shape
              */
 
             /**
              * Constructs a new Empty.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents an Empty.
              * @constructor
-             * @param {mediflow.v3.Empty.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Empty.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Empty = function (properties) {
@@ -14466,13 +14577,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Empty instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
-             * @param {mediflow.v3.Empty.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Empty} Empty instance
+             * @param {mediflow.v4.Empty.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Empty} Empty instance
              * @type {{
-             *   (properties: mediflow.v3.Empty.$Shape): mediflow.v3.Empty & mediflow.v3.Empty.$Shape;
-             *   (properties?: mediflow.v3.Empty.$Properties): mediflow.v3.Empty;
+             *   (properties: mediflow.v4.Empty.$Shape): mediflow.v4.Empty & mediflow.v4.Empty.$Shape;
+             *   (properties?: mediflow.v4.Empty.$Properties): mediflow.v4.Empty;
              * }}
              */
             Empty.create = function(properties) {
@@ -14480,11 +14591,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Empty message. Does not implicitly {@link mediflow.v3.Empty.verify|verify} messages.
+             * Encodes the specified Empty message. Does not implicitly {@link mediflow.v4.Empty.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
-             * @param {mediflow.v3.Empty.$Properties} message Empty message or plain object to encode
+             * @param {mediflow.v4.Empty.$Properties} message Empty message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14504,11 +14615,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes an Empty message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Empty & mediflow.v3.Empty.$Shape} Empty
+             * @returns {mediflow.v4.Empty & mediflow.v4.Empty.$Shape} Empty
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14529,7 +14640,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Empty();
+                message = _target || new $root.mediflow.v4.Empty();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -14556,7 +14667,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies an Empty message.
              * @function verify
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14574,29 +14685,29 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates an Empty message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Empty} Empty
+             * @returns {mediflow.v4.Empty} Empty
              */
             Empty.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Empty)
+                if (object instanceof $root.mediflow.v4.Empty)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Empty: object expected");
+                    throw $TypeError(".mediflow.v4.Empty: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                return new $root.mediflow.v3.Empty();
+                return new $root.mediflow.v4.Empty();
             };
 
             /**
              * Creates a plain object from an Empty message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
-             * @param {mediflow.v3.Empty} message Empty
+             * @param {mediflow.v4.Empty} message Empty
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14607,7 +14718,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Empty to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14618,7 +14729,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Empty
              * @function getTypeUrl
-             * @memberof mediflow.v3.Empty
+             * @memberof mediflow.v4.Empty
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -14626,70 +14737,70 @@ export const mediflow = $root.mediflow = (() => {
             Empty.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Empty";
+                return prefix + "/mediflow.v4.Empty";
             };
 
             return Empty;
         })();
 
-        v3.Frame = (function() {
+        v4.Frame = (function() {
 
             /**
              * Properties of a Frame.
-             * @typedef {Object} mediflow.v3.Frame.$Properties
-             * @property {mediflow.v3.Auth.$Properties|null} [auth] Frame auth
-             * @property {mediflow.v3.Sync.$Properties|null} [sync] Frame sync
-             * @property {mediflow.v3.Consume.$Properties|null} [consume] Frame consume
-             * @property {mediflow.v3.Playback.$Properties|null} [playback] Frame playback
-             * @property {mediflow.v3.PendingSync.$Properties|null} [pendingSync] Frame pendingSync
-             * @property {mediflow.v3.Empty.$Properties|null} [ping] Frame ping
-             * @property {mediflow.v3.Snapshot.$Properties|null} [snapshot] Frame snapshot
-             * @property {mediflow.v3.CallFrame.$Properties|null} [calls] Frame calls
-             * @property {mediflow.v3.Consumption.$Properties|null} [consumeResult] Frame consumeResult
-             * @property {mediflow.v3.PlaybackResult.$Properties|null} [playbackResult] Frame playbackResult
-             * @property {mediflow.v3.PendingCalls.$Properties|null} [pendingCalls] Frame pendingCalls
-             * @property {mediflow.v3.Failure.$Properties|null} [error] Frame error
-             * @property {mediflow.v3.Empty.$Properties|null} [pong] Frame pong
+             * @typedef {Object} mediflow.v4.Frame.$Properties
+             * @property {mediflow.v4.Auth.$Properties|null} [auth] Frame auth
+             * @property {mediflow.v4.Sync.$Properties|null} [sync] Frame sync
+             * @property {mediflow.v4.Consume.$Properties|null} [consume] Frame consume
+             * @property {mediflow.v4.Playback.$Properties|null} [playback] Frame playback
+             * @property {mediflow.v4.PendingSync.$Properties|null} [pendingSync] Frame pendingSync
+             * @property {mediflow.v4.Empty.$Properties|null} [ping] Frame ping
+             * @property {mediflow.v4.Snapshot.$Properties|null} [snapshot] Frame snapshot
+             * @property {mediflow.v4.CallFrame.$Properties|null} [calls] Frame calls
+             * @property {mediflow.v4.Consumption.$Properties|null} [consumeResult] Frame consumeResult
+             * @property {mediflow.v4.PlaybackResult.$Properties|null} [playbackResult] Frame playbackResult
+             * @property {mediflow.v4.PendingCalls.$Properties|null} [pendingCalls] Frame pendingCalls
+             * @property {mediflow.v4.Failure.$Properties|null} [error] Frame error
+             * @property {mediflow.v4.Empty.$Properties|null} [pong] Frame pong
              * @property {"auth"|"sync"|"consume"|"playback"|"pendingSync"|"ping"|"snapshot"|"calls"|"consumeResult"|"playbackResult"|"pendingCalls"|"error"|"pong"} [body] Frame body
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Frame.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IFrame
-             * @augments mediflow.v3.Frame.$Properties
-             * @deprecated Use mediflow.v3.Frame.$Properties instead.
+             * @augments mediflow.v4.Frame.$Properties
+             * @deprecated Use mediflow.v4.Frame.$Properties instead.
              */
 
             /**
              * Narrowed shape of a Frame.
              * @typedef {{
-             *   auth?: mediflow.v3.Auth.$Shape|null;
-             *   sync?: mediflow.v3.Sync.$Shape|null;
-             *   consume?: mediflow.v3.Consume.$Shape|null;
-             *   playback?: mediflow.v3.Playback.$Shape|null;
-             *   pendingSync?: mediflow.v3.PendingSync.$Shape|null;
-             *   ping?: mediflow.v3.Empty.$Shape|null;
-             *   snapshot?: mediflow.v3.Snapshot.$Shape|null;
-             *   calls?: mediflow.v3.CallFrame.$Shape|null;
-             *   consumeResult?: mediflow.v3.Consumption.$Shape|null;
-             *   playbackResult?: mediflow.v3.PlaybackResult.$Shape|null;
-             *   pendingCalls?: mediflow.v3.PendingCalls.$Shape|null;
-             *   error?: mediflow.v3.Failure.$Shape|null;
-             *   pong?: mediflow.v3.Empty.$Shape|null;
+             *   auth?: mediflow.v4.Auth.$Shape|null;
+             *   sync?: mediflow.v4.Sync.$Shape|null;
+             *   consume?: mediflow.v4.Consume.$Shape|null;
+             *   playback?: mediflow.v4.Playback.$Shape|null;
+             *   pendingSync?: mediflow.v4.PendingSync.$Shape|null;
+             *   ping?: mediflow.v4.Empty.$Shape|null;
+             *   snapshot?: mediflow.v4.Snapshot.$Shape|null;
+             *   calls?: mediflow.v4.CallFrame.$Shape|null;
+             *   consumeResult?: mediflow.v4.Consumption.$Shape|null;
+             *   playbackResult?: mediflow.v4.PlaybackResult.$Shape|null;
+             *   pendingCalls?: mediflow.v4.PendingCalls.$Shape|null;
+             *   error?: mediflow.v4.Failure.$Shape|null;
+             *   pong?: mediflow.v4.Empty.$Shape|null;
              *   $unknowns?: Array.<Uint8Array>;
              * } & (
-             *   ({ body?: undefined; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "auth"; auth: mediflow.v3.Auth.$Shape; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "sync"; auth?: null; sync: mediflow.v3.Sync.$Shape; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consume"; auth?: null; sync?: null; consume: mediflow.v3.Consume.$Shape; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playback"; auth?: null; sync?: null; consume?: null; playback: mediflow.v3.Playback.$Shape; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingSync"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync: mediflow.v3.PendingSync.$Shape; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "ping"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping: mediflow.v3.Empty.$Shape; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "snapshot"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot: mediflow.v3.Snapshot.$Shape; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "calls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls: mediflow.v3.CallFrame.$Shape; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consumeResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult: mediflow.v3.Consumption.$Shape; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playbackResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult: mediflow.v3.PlaybackResult.$Shape; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingCalls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls: mediflow.v3.PendingCalls.$Shape; error?: null; pong?: null }|{ body?: "error"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error: mediflow.v3.Failure.$Shape; pong?: null }|{ body?: "pong"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong: mediflow.v3.Empty.$Shape })
-             * )} mediflow.v3.Frame.$Shape
+             *   ({ body?: undefined; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "auth"; auth: mediflow.v4.Auth.$Shape; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "sync"; auth?: null; sync: mediflow.v4.Sync.$Shape; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consume"; auth?: null; sync?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playback"; auth?: null; sync?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingSync"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync: mediflow.v4.PendingSync.$Shape; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "ping"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping: mediflow.v4.Empty.$Shape; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "snapshot"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot: mediflow.v4.Snapshot.$Shape; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "calls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls: mediflow.v4.CallFrame.$Shape; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consumeResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult: mediflow.v4.Consumption.$Shape; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playbackResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingCalls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape; error?: null; pong?: null }|{ body?: "error"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error: mediflow.v4.Failure.$Shape; pong?: null }|{ body?: "pong"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong: mediflow.v4.Empty.$Shape })
+             * )} mediflow.v4.Frame.$Shape
              */
 
             /**
              * Constructs a new Frame.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Frame.
              * @constructor
-             * @param {mediflow.v3.Frame.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Frame.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Frame = function (properties) {
@@ -14701,104 +14812,104 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Frame auth.
-             * @member {mediflow.v3.Auth.$Properties|null|undefined} auth
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Auth.$Properties|null|undefined} auth
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.auth = null;
 
             /**
              * Frame sync.
-             * @member {mediflow.v3.Sync.$Properties|null|undefined} sync
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Sync.$Properties|null|undefined} sync
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.sync = null;
 
             /**
              * Frame consume.
-             * @member {mediflow.v3.Consume.$Properties|null|undefined} consume
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Consume.$Properties|null|undefined} consume
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.consume = null;
 
             /**
              * Frame playback.
-             * @member {mediflow.v3.Playback.$Properties|null|undefined} playback
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Playback.$Properties|null|undefined} playback
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.playback = null;
 
             /**
              * Frame pendingSync.
-             * @member {mediflow.v3.PendingSync.$Properties|null|undefined} pendingSync
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.PendingSync.$Properties|null|undefined} pendingSync
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.pendingSync = null;
 
             /**
              * Frame ping.
-             * @member {mediflow.v3.Empty.$Properties|null|undefined} ping
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Empty.$Properties|null|undefined} ping
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.ping = null;
 
             /**
              * Frame snapshot.
-             * @member {mediflow.v3.Snapshot.$Properties|null|undefined} snapshot
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Snapshot.$Properties|null|undefined} snapshot
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.snapshot = null;
 
             /**
              * Frame calls.
-             * @member {mediflow.v3.CallFrame.$Properties|null|undefined} calls
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.CallFrame.$Properties|null|undefined} calls
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.calls = null;
 
             /**
              * Frame consumeResult.
-             * @member {mediflow.v3.Consumption.$Properties|null|undefined} consumeResult
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Consumption.$Properties|null|undefined} consumeResult
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.consumeResult = null;
 
             /**
              * Frame playbackResult.
-             * @member {mediflow.v3.PlaybackResult.$Properties|null|undefined} playbackResult
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.PlaybackResult.$Properties|null|undefined} playbackResult
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.playbackResult = null;
 
             /**
              * Frame pendingCalls.
-             * @member {mediflow.v3.PendingCalls.$Properties|null|undefined} pendingCalls
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.PendingCalls.$Properties|null|undefined} pendingCalls
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.pendingCalls = null;
 
             /**
              * Frame error.
-             * @member {mediflow.v3.Failure.$Properties|null|undefined} error
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Failure.$Properties|null|undefined} error
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.error = null;
 
             /**
              * Frame pong.
-             * @member {mediflow.v3.Empty.$Properties|null|undefined} pong
-             * @memberof mediflow.v3.Frame
+             * @member {mediflow.v4.Empty.$Properties|null|undefined} pong
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             Frame.prototype.pong = null;
@@ -14809,7 +14920,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Frame body.
              * @member {"auth"|"sync"|"consume"|"playback"|"pendingSync"|"ping"|"snapshot"|"calls"|"consumeResult"|"playbackResult"|"pendingCalls"|"error"|"pong"|undefined} body
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @instance
              */
             $Object.defineProperty(Frame.prototype, "body", {
@@ -14820,13 +14931,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Frame instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
-             * @param {mediflow.v3.Frame.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Frame} Frame instance
+             * @param {mediflow.v4.Frame.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Frame} Frame instance
              * @type {{
-             *   (properties: mediflow.v3.Frame.$Shape): mediflow.v3.Frame & mediflow.v3.Frame.$Shape;
-             *   (properties?: mediflow.v3.Frame.$Properties): mediflow.v3.Frame;
+             *   (properties: mediflow.v4.Frame.$Shape): mediflow.v4.Frame & mediflow.v4.Frame.$Shape;
+             *   (properties?: mediflow.v4.Frame.$Properties): mediflow.v4.Frame;
              * }}
              */
             Frame.create = function(properties) {
@@ -14834,11 +14945,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Frame message. Does not implicitly {@link mediflow.v3.Frame.verify|verify} messages.
+             * Encodes the specified Frame message. Does not implicitly {@link mediflow.v4.Frame.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
-             * @param {mediflow.v3.Frame.$Properties} message Frame message or plain object to encode
+             * @param {mediflow.v4.Frame.$Properties} message Frame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14850,31 +14961,31 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.auth != null && $Object.hasOwnProperty.call(message, "auth"))
-                    $root.mediflow.v3.Auth.encode(message.auth, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Auth.encode(message.auth, writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
                 if (message.sync != null && $Object.hasOwnProperty.call(message, "sync"))
-                    $root.mediflow.v3.Sync.encode(message.sync, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Sync.encode(message.sync, writer.uint32(/* id 2, wireType 2 =*/18).fork(), _depth + 1).ldelim();
                 if (message.consume != null && $Object.hasOwnProperty.call(message, "consume"))
-                    $root.mediflow.v3.Consume.encode(message.consume, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Consume.encode(message.consume, writer.uint32(/* id 3, wireType 2 =*/26).fork(), _depth + 1).ldelim();
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback"))
-                    $root.mediflow.v3.Playback.encode(message.playback, writer.uint32(/* id 4, wireType 2 =*/34).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Playback.encode(message.playback, writer.uint32(/* id 4, wireType 2 =*/34).fork(), _depth + 1).ldelim();
                 if (message.pendingSync != null && $Object.hasOwnProperty.call(message, "pendingSync"))
-                    $root.mediflow.v3.PendingSync.encode(message.pendingSync, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PendingSync.encode(message.pendingSync, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
                 if (message.ping != null && $Object.hasOwnProperty.call(message, "ping"))
-                    $root.mediflow.v3.Empty.encode(message.ping, writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Empty.encode(message.ping, writer.uint32(/* id 6, wireType 2 =*/50).fork(), _depth + 1).ldelim();
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot"))
-                    $root.mediflow.v3.Snapshot.encode(message.snapshot, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Snapshot.encode(message.snapshot, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls"))
-                    $root.mediflow.v3.CallFrame.encode(message.calls, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.CallFrame.encode(message.calls, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
                 if (message.consumeResult != null && $Object.hasOwnProperty.call(message, "consumeResult"))
-                    $root.mediflow.v3.Consumption.encode(message.consumeResult, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Consumption.encode(message.consumeResult, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
                 if (message.playbackResult != null && $Object.hasOwnProperty.call(message, "playbackResult"))
-                    $root.mediflow.v3.PlaybackResult.encode(message.playbackResult, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PlaybackResult.encode(message.playbackResult, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
                 if (message.pendingCalls != null && $Object.hasOwnProperty.call(message, "pendingCalls"))
-                    $root.mediflow.v3.PendingCalls.encode(message.pendingCalls, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PendingCalls.encode(message.pendingCalls, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
                 if (message.error != null && $Object.hasOwnProperty.call(message, "error"))
-                    $root.mediflow.v3.Failure.encode(message.error, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Failure.encode(message.error, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
                 if (message.pong != null && $Object.hasOwnProperty.call(message, "pong"))
-                    $root.mediflow.v3.Empty.encode(message.pong, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Empty.encode(message.pong, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -14884,11 +14995,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Frame message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Frame & mediflow.v3.Frame.$Shape} Frame
+             * @returns {mediflow.v4.Frame & mediflow.v4.Frame.$Shape} Frame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14909,7 +15020,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Frame();
+                message = _target || new $root.mediflow.v4.Frame();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -14922,91 +15033,91 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.auth = $root.mediflow.v3.Auth.decode(reader, reader.size(), $undefined, _depth + 1, message.auth);
+                            message.auth = $root.mediflow.v4.Auth.decode(reader, reader.size(), $undefined, _depth + 1, message.auth);
                             message.body = "auth";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.sync = $root.mediflow.v3.Sync.decode(reader, reader.size(), $undefined, _depth + 1, message.sync);
+                            message.sync = $root.mediflow.v4.Sync.decode(reader, reader.size(), $undefined, _depth + 1, message.sync);
                             message.body = "sync";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.consume = $root.mediflow.v3.Consume.decode(reader, reader.size(), $undefined, _depth + 1, message.consume);
+                            message.consume = $root.mediflow.v4.Consume.decode(reader, reader.size(), $undefined, _depth + 1, message.consume);
                             message.body = "consume";
                             continue;
                         }
                     case 4: {
                             if (wireType !== 2)
                                 break;
-                            message.playback = $root.mediflow.v3.Playback.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
+                            message.playback = $root.mediflow.v4.Playback.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
                             message.body = "playback";
                             continue;
                         }
                     case 5: {
                             if (wireType !== 2)
                                 break;
-                            message.pendingSync = $root.mediflow.v3.PendingSync.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingSync);
+                            message.pendingSync = $root.mediflow.v4.PendingSync.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingSync);
                             message.body = "pendingSync";
                             continue;
                         }
                     case 6: {
                             if (wireType !== 2)
                                 break;
-                            message.ping = $root.mediflow.v3.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.ping);
+                            message.ping = $root.mediflow.v4.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.ping);
                             message.body = "ping";
                             continue;
                         }
                     case 10: {
                             if (wireType !== 2)
                                 break;
-                            message.snapshot = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
+                            message.snapshot = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
                             message.body = "snapshot";
                             continue;
                         }
                     case 11: {
                             if (wireType !== 2)
                                 break;
-                            message.calls = $root.mediflow.v3.CallFrame.decode(reader, reader.size(), $undefined, _depth + 1, message.calls);
+                            message.calls = $root.mediflow.v4.CallFrame.decode(reader, reader.size(), $undefined, _depth + 1, message.calls);
                             message.body = "calls";
                             continue;
                         }
                     case 12: {
                             if (wireType !== 2)
                                 break;
-                            message.consumeResult = $root.mediflow.v3.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumeResult);
+                            message.consumeResult = $root.mediflow.v4.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumeResult);
                             message.body = "consumeResult";
                             continue;
                         }
                     case 13: {
                             if (wireType !== 2)
                                 break;
-                            message.playbackResult = $root.mediflow.v3.PlaybackResult.decode(reader, reader.size(), $undefined, _depth + 1, message.playbackResult);
+                            message.playbackResult = $root.mediflow.v4.PlaybackResult.decode(reader, reader.size(), $undefined, _depth + 1, message.playbackResult);
                             message.body = "playbackResult";
                             continue;
                         }
                     case 14: {
                             if (wireType !== 2)
                                 break;
-                            message.pendingCalls = $root.mediflow.v3.PendingCalls.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingCalls);
+                            message.pendingCalls = $root.mediflow.v4.PendingCalls.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingCalls);
                             message.body = "pendingCalls";
                             continue;
                         }
                     case 15: {
                             if (wireType !== 2)
                                 break;
-                            message.error = $root.mediflow.v3.Failure.decode(reader, reader.size(), $undefined, _depth + 1, message.error);
+                            message.error = $root.mediflow.v4.Failure.decode(reader, reader.size(), $undefined, _depth + 1, message.error);
                             message.body = "error";
                             continue;
                         }
                     case 16: {
                             if (wireType !== 2)
                                 break;
-                            message.pong = $root.mediflow.v3.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.pong);
+                            message.pong = $root.mediflow.v4.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.pong);
                             message.body = "pong";
                             continue;
                         }
@@ -15030,7 +15141,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Frame message.
              * @function verify
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -15046,7 +15157,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.auth != null && $Object.hasOwnProperty.call(message, "auth")) {
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Auth.verify(message.auth, _depth + 1);
+                        let error = $root.mediflow.v4.Auth.verify(message.auth, _depth + 1);
                         if (error)
                             return "auth." + error;
                     }
@@ -15056,7 +15167,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Sync.verify(message.sync, _depth + 1);
+                        let error = $root.mediflow.v4.Sync.verify(message.sync, _depth + 1);
                         if (error)
                             return "sync." + error;
                     }
@@ -15066,7 +15177,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Consume.verify(message.consume, _depth + 1);
+                        let error = $root.mediflow.v4.Consume.verify(message.consume, _depth + 1);
                         if (error)
                             return "consume." + error;
                     }
@@ -15076,7 +15187,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Playback.verify(message.playback, _depth + 1);
+                        let error = $root.mediflow.v4.Playback.verify(message.playback, _depth + 1);
                         if (error)
                             return "playback." + error;
                     }
@@ -15086,7 +15197,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.PendingSync.verify(message.pendingSync, _depth + 1);
+                        let error = $root.mediflow.v4.PendingSync.verify(message.pendingSync, _depth + 1);
                         if (error)
                             return "pendingSync." + error;
                     }
@@ -15096,7 +15207,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Empty.verify(message.ping, _depth + 1);
+                        let error = $root.mediflow.v4.Empty.verify(message.ping, _depth + 1);
                         if (error)
                             return "ping." + error;
                     }
@@ -15106,7 +15217,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Snapshot.verify(message.snapshot, _depth + 1);
+                        let error = $root.mediflow.v4.Snapshot.verify(message.snapshot, _depth + 1);
                         if (error)
                             return "snapshot." + error;
                     }
@@ -15116,7 +15227,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.CallFrame.verify(message.calls, _depth + 1);
+                        let error = $root.mediflow.v4.CallFrame.verify(message.calls, _depth + 1);
                         if (error)
                             return "calls." + error;
                     }
@@ -15126,7 +15237,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Consumption.verify(message.consumeResult, _depth + 1);
+                        let error = $root.mediflow.v4.Consumption.verify(message.consumeResult, _depth + 1);
                         if (error)
                             return "consumeResult." + error;
                     }
@@ -15136,7 +15247,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.PlaybackResult.verify(message.playbackResult, _depth + 1);
+                        let error = $root.mediflow.v4.PlaybackResult.verify(message.playbackResult, _depth + 1);
                         if (error)
                             return "playbackResult." + error;
                     }
@@ -15146,7 +15257,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.PendingCalls.verify(message.pendingCalls, _depth + 1);
+                        let error = $root.mediflow.v4.PendingCalls.verify(message.pendingCalls, _depth + 1);
                         if (error)
                             return "pendingCalls." + error;
                     }
@@ -15156,7 +15267,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Failure.verify(message.error, _depth + 1);
+                        let error = $root.mediflow.v4.Failure.verify(message.error, _depth + 1);
                         if (error)
                             return "error." + error;
                     }
@@ -15166,7 +15277,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Empty.verify(message.pong, _depth + 1);
+                        let error = $root.mediflow.v4.Empty.verify(message.pong, _depth + 1);
                         if (error)
                             return "pong." + error;
                     }
@@ -15177,85 +15288,85 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Frame message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Frame} Frame
+             * @returns {mediflow.v4.Frame} Frame
              */
             Frame.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Frame)
+                if (object instanceof $root.mediflow.v4.Frame)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Frame: object expected");
+                    throw $TypeError(".mediflow.v4.Frame: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Frame();
+                let message = new $root.mediflow.v4.Frame();
                 if (object.auth != null) {
                     if (!$util.isObject(object.auth))
-                        throw $TypeError(".mediflow.v3.Frame.auth: object expected");
-                    message.auth = $root.mediflow.v3.Auth.fromObject(object.auth, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.auth: object expected");
+                    message.auth = $root.mediflow.v4.Auth.fromObject(object.auth, _depth + 1);
                 }
                 if (object.sync != null) {
                     if (!$util.isObject(object.sync))
-                        throw $TypeError(".mediflow.v3.Frame.sync: object expected");
-                    message.sync = $root.mediflow.v3.Sync.fromObject(object.sync, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.sync: object expected");
+                    message.sync = $root.mediflow.v4.Sync.fromObject(object.sync, _depth + 1);
                 }
                 if (object.consume != null) {
                     if (!$util.isObject(object.consume))
-                        throw $TypeError(".mediflow.v3.Frame.consume: object expected");
-                    message.consume = $root.mediflow.v3.Consume.fromObject(object.consume, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.consume: object expected");
+                    message.consume = $root.mediflow.v4.Consume.fromObject(object.consume, _depth + 1);
                 }
                 if (object.playback != null) {
                     if (!$util.isObject(object.playback))
-                        throw $TypeError(".mediflow.v3.Frame.playback: object expected");
-                    message.playback = $root.mediflow.v3.Playback.fromObject(object.playback, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.playback: object expected");
+                    message.playback = $root.mediflow.v4.Playback.fromObject(object.playback, _depth + 1);
                 }
                 if (object.pendingSync != null) {
                     if (!$util.isObject(object.pendingSync))
-                        throw $TypeError(".mediflow.v3.Frame.pendingSync: object expected");
-                    message.pendingSync = $root.mediflow.v3.PendingSync.fromObject(object.pendingSync, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.pendingSync: object expected");
+                    message.pendingSync = $root.mediflow.v4.PendingSync.fromObject(object.pendingSync, _depth + 1);
                 }
                 if (object.ping != null) {
                     if (!$util.isObject(object.ping))
-                        throw $TypeError(".mediflow.v3.Frame.ping: object expected");
-                    message.ping = $root.mediflow.v3.Empty.fromObject(object.ping, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.ping: object expected");
+                    message.ping = $root.mediflow.v4.Empty.fromObject(object.ping, _depth + 1);
                 }
                 if (object.snapshot != null) {
                     if (!$util.isObject(object.snapshot))
-                        throw $TypeError(".mediflow.v3.Frame.snapshot: object expected");
-                    message.snapshot = $root.mediflow.v3.Snapshot.fromObject(object.snapshot, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.snapshot: object expected");
+                    message.snapshot = $root.mediflow.v4.Snapshot.fromObject(object.snapshot, _depth + 1);
                 }
                 if (object.calls != null) {
                     if (!$util.isObject(object.calls))
-                        throw $TypeError(".mediflow.v3.Frame.calls: object expected");
-                    message.calls = $root.mediflow.v3.CallFrame.fromObject(object.calls, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.calls: object expected");
+                    message.calls = $root.mediflow.v4.CallFrame.fromObject(object.calls, _depth + 1);
                 }
                 if (object.consumeResult != null) {
                     if (!$util.isObject(object.consumeResult))
-                        throw $TypeError(".mediflow.v3.Frame.consumeResult: object expected");
-                    message.consumeResult = $root.mediflow.v3.Consumption.fromObject(object.consumeResult, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.consumeResult: object expected");
+                    message.consumeResult = $root.mediflow.v4.Consumption.fromObject(object.consumeResult, _depth + 1);
                 }
                 if (object.playbackResult != null) {
                     if (!$util.isObject(object.playbackResult))
-                        throw $TypeError(".mediflow.v3.Frame.playbackResult: object expected");
-                    message.playbackResult = $root.mediflow.v3.PlaybackResult.fromObject(object.playbackResult, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.playbackResult: object expected");
+                    message.playbackResult = $root.mediflow.v4.PlaybackResult.fromObject(object.playbackResult, _depth + 1);
                 }
                 if (object.pendingCalls != null) {
                     if (!$util.isObject(object.pendingCalls))
-                        throw $TypeError(".mediflow.v3.Frame.pendingCalls: object expected");
-                    message.pendingCalls = $root.mediflow.v3.PendingCalls.fromObject(object.pendingCalls, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.pendingCalls: object expected");
+                    message.pendingCalls = $root.mediflow.v4.PendingCalls.fromObject(object.pendingCalls, _depth + 1);
                 }
                 if (object.error != null) {
                     if (!$util.isObject(object.error))
-                        throw $TypeError(".mediflow.v3.Frame.error: object expected");
-                    message.error = $root.mediflow.v3.Failure.fromObject(object.error, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.error: object expected");
+                    message.error = $root.mediflow.v4.Failure.fromObject(object.error, _depth + 1);
                 }
                 if (object.pong != null) {
                     if (!$util.isObject(object.pong))
-                        throw $TypeError(".mediflow.v3.Frame.pong: object expected");
-                    message.pong = $root.mediflow.v3.Empty.fromObject(object.pong, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Frame.pong: object expected");
+                    message.pong = $root.mediflow.v4.Empty.fromObject(object.pong, _depth + 1);
                 }
                 return message;
             };
@@ -15263,9 +15374,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Frame message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
-             * @param {mediflow.v3.Frame} message Frame
+             * @param {mediflow.v4.Frame} message Frame
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -15278,67 +15389,67 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.auth != null && $Object.hasOwnProperty.call(message, "auth")) {
-                    object.auth = $root.mediflow.v3.Auth.toObject(message.auth, options, _depth + 1);
+                    object.auth = $root.mediflow.v4.Auth.toObject(message.auth, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "auth";
                 }
                 if (message.sync != null && $Object.hasOwnProperty.call(message, "sync")) {
-                    object.sync = $root.mediflow.v3.Sync.toObject(message.sync, options, _depth + 1);
+                    object.sync = $root.mediflow.v4.Sync.toObject(message.sync, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "sync";
                 }
                 if (message.consume != null && $Object.hasOwnProperty.call(message, "consume")) {
-                    object.consume = $root.mediflow.v3.Consume.toObject(message.consume, options, _depth + 1);
+                    object.consume = $root.mediflow.v4.Consume.toObject(message.consume, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "consume";
                 }
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback")) {
-                    object.playback = $root.mediflow.v3.Playback.toObject(message.playback, options, _depth + 1);
+                    object.playback = $root.mediflow.v4.Playback.toObject(message.playback, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "playback";
                 }
                 if (message.pendingSync != null && $Object.hasOwnProperty.call(message, "pendingSync")) {
-                    object.pendingSync = $root.mediflow.v3.PendingSync.toObject(message.pendingSync, options, _depth + 1);
+                    object.pendingSync = $root.mediflow.v4.PendingSync.toObject(message.pendingSync, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "pendingSync";
                 }
                 if (message.ping != null && $Object.hasOwnProperty.call(message, "ping")) {
-                    object.ping = $root.mediflow.v3.Empty.toObject(message.ping, options, _depth + 1);
+                    object.ping = $root.mediflow.v4.Empty.toObject(message.ping, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "ping";
                 }
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot")) {
-                    object.snapshot = $root.mediflow.v3.Snapshot.toObject(message.snapshot, options, _depth + 1);
+                    object.snapshot = $root.mediflow.v4.Snapshot.toObject(message.snapshot, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "snapshot";
                 }
                 if (message.calls != null && $Object.hasOwnProperty.call(message, "calls")) {
-                    object.calls = $root.mediflow.v3.CallFrame.toObject(message.calls, options, _depth + 1);
+                    object.calls = $root.mediflow.v4.CallFrame.toObject(message.calls, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "calls";
                 }
                 if (message.consumeResult != null && $Object.hasOwnProperty.call(message, "consumeResult")) {
-                    object.consumeResult = $root.mediflow.v3.Consumption.toObject(message.consumeResult, options, _depth + 1);
+                    object.consumeResult = $root.mediflow.v4.Consumption.toObject(message.consumeResult, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "consumeResult";
                 }
                 if (message.playbackResult != null && $Object.hasOwnProperty.call(message, "playbackResult")) {
-                    object.playbackResult = $root.mediflow.v3.PlaybackResult.toObject(message.playbackResult, options, _depth + 1);
+                    object.playbackResult = $root.mediflow.v4.PlaybackResult.toObject(message.playbackResult, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "playbackResult";
                 }
                 if (message.pendingCalls != null && $Object.hasOwnProperty.call(message, "pendingCalls")) {
-                    object.pendingCalls = $root.mediflow.v3.PendingCalls.toObject(message.pendingCalls, options, _depth + 1);
+                    object.pendingCalls = $root.mediflow.v4.PendingCalls.toObject(message.pendingCalls, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "pendingCalls";
                 }
                 if (message.error != null && $Object.hasOwnProperty.call(message, "error")) {
-                    object.error = $root.mediflow.v3.Failure.toObject(message.error, options, _depth + 1);
+                    object.error = $root.mediflow.v4.Failure.toObject(message.error, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "error";
                 }
                 if (message.pong != null && $Object.hasOwnProperty.call(message, "pong")) {
-                    object.pong = $root.mediflow.v3.Empty.toObject(message.pong, options, _depth + 1);
+                    object.pong = $root.mediflow.v4.Empty.toObject(message.pong, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "pong";
                 }
@@ -15348,7 +15459,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Frame to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -15359,7 +15470,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Frame
              * @function getTypeUrl
-             * @memberof mediflow.v3.Frame
+             * @memberof mediflow.v4.Frame
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -15367,104 +15478,104 @@ export const mediflow = $root.mediflow = (() => {
             Frame.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Frame";
+                return prefix + "/mediflow.v4.Frame";
             };
 
             return Frame;
         })();
 
-        v3.Packet = (function() {
+        v4.Packet = (function() {
 
             /**
              * Properties of a Packet.
-             * @typedef {Object} mediflow.v3.Packet.$Properties
+             * @typedef {Object} mediflow.v4.Packet.$Properties
              * @property {number|null} [protocolVersion] Packet protocolVersion
-             * @property {mediflow.v3.Frame.$Properties|null} [frame] Packet frame
-             * @property {mediflow.v3.Snapshot.$Properties|null} [snapshot] Packet snapshot
-             * @property {mediflow.v3.Screen.$Properties|null} [screen] Packet screen
-             * @property {mediflow.v3.Call.$Properties|null} [call] Packet call
-             * @property {mediflow.v3.Consumption.$Properties|null} [consumption] Packet consumption
-             * @property {mediflow.v3.Audit.$Properties|null} [audit] Packet audit
-             * @property {mediflow.v3.Archive.$Properties|null} [archive] Packet archive
-             * @property {mediflow.v3.CallPage.$Properties|null} [callPage] Packet callPage
-             * @property {mediflow.v3.ScreenPage.$Properties|null} [screenPage] Packet screenPage
-             * @property {mediflow.v3.ConsumptionPage.$Properties|null} [consumptionPage] Packet consumptionPage
-             * @property {mediflow.v3.AuditPage.$Properties|null} [auditPage] Packet auditPage
-             * @property {mediflow.v3.ArchivePage.$Properties|null} [archivePage] Packet archivePage
-             * @property {mediflow.v3.HistoryPage.$Properties|null} [historyPage] Packet historyPage
-             * @property {mediflow.v3.ScreenDetail.$Properties|null} [screenDetail] Packet screenDetail
-             * @property {mediflow.v3.Overview.$Properties|null} [overview] Packet overview
-             * @property {mediflow.v3.ArchiveBundle.$Properties|null} [archiveBundle] Packet archiveBundle
-             * @property {mediflow.v3.Login.$Properties|null} [login] Packet login
-             * @property {mediflow.v3.User.$Properties|null} [user] Packet user
-             * @property {mediflow.v3.Publish.$Properties|null} [publish] Packet publish
-             * @property {mediflow.v3.Consume.$Properties|null} [consume] Packet consume
-             * @property {mediflow.v3.Playback.$Properties|null} [playback] Packet playback
-             * @property {mediflow.v3.PlaybackResult.$Properties|null} [playbackResult] Packet playbackResult
-             * @property {mediflow.v3.Result.$Properties|null} [result] Packet result
-             * @property {mediflow.v3.Problem.$Properties|null} [problem] Packet problem
-             * @property {mediflow.v3.Health.$Properties|null} [health] Packet health
-             * @property {mediflow.v3.Retain.$Properties|null} [retain] Packet retain
-             * @property {mediflow.v3.Retained.$Properties|null} [retained] Packet retained
-             * @property {mediflow.v3.Empty.$Properties|null} [empty] Packet empty
-             * @property {mediflow.v3.PendingCalls.$Properties|null} [pendingCalls] Packet pendingCalls
+             * @property {mediflow.v4.Frame.$Properties|null} [frame] Packet frame
+             * @property {mediflow.v4.Snapshot.$Properties|null} [snapshot] Packet snapshot
+             * @property {mediflow.v4.Screen.$Properties|null} [screen] Packet screen
+             * @property {mediflow.v4.Call.$Properties|null} [call] Packet call
+             * @property {mediflow.v4.Consumption.$Properties|null} [consumption] Packet consumption
+             * @property {mediflow.v4.Audit.$Properties|null} [audit] Packet audit
+             * @property {mediflow.v4.Archive.$Properties|null} [archive] Packet archive
+             * @property {mediflow.v4.CallPage.$Properties|null} [callPage] Packet callPage
+             * @property {mediflow.v4.ScreenPage.$Properties|null} [screenPage] Packet screenPage
+             * @property {mediflow.v4.ConsumptionPage.$Properties|null} [consumptionPage] Packet consumptionPage
+             * @property {mediflow.v4.AuditPage.$Properties|null} [auditPage] Packet auditPage
+             * @property {mediflow.v4.ArchivePage.$Properties|null} [archivePage] Packet archivePage
+             * @property {mediflow.v4.HistoryPage.$Properties|null} [historyPage] Packet historyPage
+             * @property {mediflow.v4.ScreenDetail.$Properties|null} [screenDetail] Packet screenDetail
+             * @property {mediflow.v4.Overview.$Properties|null} [overview] Packet overview
+             * @property {mediflow.v4.ArchiveBundle.$Properties|null} [archiveBundle] Packet archiveBundle
+             * @property {mediflow.v4.Login.$Properties|null} [login] Packet login
+             * @property {mediflow.v4.User.$Properties|null} [user] Packet user
+             * @property {mediflow.v4.Publish.$Properties|null} [publish] Packet publish
+             * @property {mediflow.v4.Consume.$Properties|null} [consume] Packet consume
+             * @property {mediflow.v4.Playback.$Properties|null} [playback] Packet playback
+             * @property {mediflow.v4.PlaybackResult.$Properties|null} [playbackResult] Packet playbackResult
+             * @property {mediflow.v4.Result.$Properties|null} [result] Packet result
+             * @property {mediflow.v4.Problem.$Properties|null} [problem] Packet problem
+             * @property {mediflow.v4.Health.$Properties|null} [health] Packet health
+             * @property {mediflow.v4.Retain.$Properties|null} [retain] Packet retain
+             * @property {mediflow.v4.Retained.$Properties|null} [retained] Packet retained
+             * @property {mediflow.v4.Empty.$Properties|null} [empty] Packet empty
+             * @property {mediflow.v4.PendingCalls.$Properties|null} [pendingCalls] Packet pendingCalls
              * @property {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"} [body] Packet body
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
             /**
              * Properties of a Packet.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPacket
-             * @augments mediflow.v3.Packet.$Properties
-             * @deprecated Use mediflow.v3.Packet.$Properties instead.
+             * @augments mediflow.v4.Packet.$Properties
+             * @deprecated Use mediflow.v4.Packet.$Properties instead.
              */
 
             /**
              * Narrowed shape of a Packet.
              * @typedef {{
              *   protocolVersion?: number|null;
-             *   frame?: mediflow.v3.Frame.$Shape|null;
-             *   snapshot?: mediflow.v3.Snapshot.$Shape|null;
-             *   screen?: mediflow.v3.Screen.$Shape|null;
-             *   call?: mediflow.v3.Call.$Shape|null;
-             *   consumption?: mediflow.v3.Consumption.$Shape|null;
-             *   audit?: mediflow.v3.Audit.$Shape|null;
-             *   archive?: mediflow.v3.Archive.$Shape|null;
-             *   callPage?: mediflow.v3.CallPage.$Shape|null;
-             *   screenPage?: mediflow.v3.ScreenPage.$Shape|null;
-             *   consumptionPage?: mediflow.v3.ConsumptionPage.$Shape|null;
-             *   auditPage?: mediflow.v3.AuditPage.$Shape|null;
-             *   archivePage?: mediflow.v3.ArchivePage.$Shape|null;
-             *   historyPage?: mediflow.v3.HistoryPage.$Shape|null;
-             *   screenDetail?: mediflow.v3.ScreenDetail.$Shape|null;
-             *   overview?: mediflow.v3.Overview.$Shape|null;
-             *   archiveBundle?: mediflow.v3.ArchiveBundle.$Shape|null;
-             *   login?: mediflow.v3.Login.$Shape|null;
-             *   user?: mediflow.v3.User.$Shape|null;
-             *   publish?: mediflow.v3.Publish.$Shape|null;
-             *   consume?: mediflow.v3.Consume.$Shape|null;
-             *   playback?: mediflow.v3.Playback.$Shape|null;
-             *   playbackResult?: mediflow.v3.PlaybackResult.$Shape|null;
-             *   result?: mediflow.v3.Result.$Shape|null;
-             *   problem?: mediflow.v3.Problem.$Shape|null;
-             *   health?: mediflow.v3.Health.$Shape|null;
-             *   retain?: mediflow.v3.Retain.$Shape|null;
-             *   retained?: mediflow.v3.Retained.$Shape|null;
-             *   empty?: mediflow.v3.Empty.$Shape|null;
-             *   pendingCalls?: mediflow.v3.PendingCalls.$Shape|null;
+             *   frame?: mediflow.v4.Frame.$Shape|null;
+             *   snapshot?: mediflow.v4.Snapshot.$Shape|null;
+             *   screen?: mediflow.v4.Screen.$Shape|null;
+             *   call?: mediflow.v4.Call.$Shape|null;
+             *   consumption?: mediflow.v4.Consumption.$Shape|null;
+             *   audit?: mediflow.v4.Audit.$Shape|null;
+             *   archive?: mediflow.v4.Archive.$Shape|null;
+             *   callPage?: mediflow.v4.CallPage.$Shape|null;
+             *   screenPage?: mediflow.v4.ScreenPage.$Shape|null;
+             *   consumptionPage?: mediflow.v4.ConsumptionPage.$Shape|null;
+             *   auditPage?: mediflow.v4.AuditPage.$Shape|null;
+             *   archivePage?: mediflow.v4.ArchivePage.$Shape|null;
+             *   historyPage?: mediflow.v4.HistoryPage.$Shape|null;
+             *   screenDetail?: mediflow.v4.ScreenDetail.$Shape|null;
+             *   overview?: mediflow.v4.Overview.$Shape|null;
+             *   archiveBundle?: mediflow.v4.ArchiveBundle.$Shape|null;
+             *   login?: mediflow.v4.Login.$Shape|null;
+             *   user?: mediflow.v4.User.$Shape|null;
+             *   publish?: mediflow.v4.Publish.$Shape|null;
+             *   consume?: mediflow.v4.Consume.$Shape|null;
+             *   playback?: mediflow.v4.Playback.$Shape|null;
+             *   playbackResult?: mediflow.v4.PlaybackResult.$Shape|null;
+             *   result?: mediflow.v4.Result.$Shape|null;
+             *   problem?: mediflow.v4.Problem.$Shape|null;
+             *   health?: mediflow.v4.Health.$Shape|null;
+             *   retain?: mediflow.v4.Retain.$Shape|null;
+             *   retained?: mediflow.v4.Retained.$Shape|null;
+             *   empty?: mediflow.v4.Empty.$Shape|null;
+             *   pendingCalls?: mediflow.v4.PendingCalls.$Shape|null;
              *   $unknowns?: Array.<Uint8Array>;
              * } & (
-             *   ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "frame"; frame: mediflow.v3.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v3.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v3.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v3.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v3.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v3.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v3.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v3.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v3.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v3.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v3.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v3.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v3.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v3.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v3.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v3.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v3.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v3.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v3.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v3.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v3.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v3.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v3.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v3.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v3.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v3.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v3.Retained.$Shape; empty?: null; pendingCalls?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v3.Empty.$Shape; pendingCalls?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v3.PendingCalls.$Shape })
-             * )} mediflow.v3.Packet.$Shape
+             *   ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "frame"; frame: mediflow.v4.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v4.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v4.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v4.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v4.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v4.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v4.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v4.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v4.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v4.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v4.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v4.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v4.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v4.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v4.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v4.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v4.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v4.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v4.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v4.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v4.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v4.Retained.$Shape; empty?: null; pendingCalls?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v4.Empty.$Shape; pendingCalls?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape })
+             * )} mediflow.v4.Packet.$Shape
              */
 
             /**
              * Constructs a new Packet.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a Packet.
              * @constructor
-             * @param {mediflow.v3.Packet.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.Packet.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const Packet = function (properties) {
@@ -15477,239 +15588,239 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Packet protocolVersion.
              * @member {number|null|undefined} protocolVersion
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.protocolVersion = null;
 
             /**
              * Packet frame.
-             * @member {mediflow.v3.Frame.$Properties|null|undefined} frame
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Frame.$Properties|null|undefined} frame
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.frame = null;
 
             /**
              * Packet snapshot.
-             * @member {mediflow.v3.Snapshot.$Properties|null|undefined} snapshot
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Snapshot.$Properties|null|undefined} snapshot
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.snapshot = null;
 
             /**
              * Packet screen.
-             * @member {mediflow.v3.Screen.$Properties|null|undefined} screen
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Screen.$Properties|null|undefined} screen
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.screen = null;
 
             /**
              * Packet call.
-             * @member {mediflow.v3.Call.$Properties|null|undefined} call
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Call.$Properties|null|undefined} call
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.call = null;
 
             /**
              * Packet consumption.
-             * @member {mediflow.v3.Consumption.$Properties|null|undefined} consumption
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Consumption.$Properties|null|undefined} consumption
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.consumption = null;
 
             /**
              * Packet audit.
-             * @member {mediflow.v3.Audit.$Properties|null|undefined} audit
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Audit.$Properties|null|undefined} audit
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.audit = null;
 
             /**
              * Packet archive.
-             * @member {mediflow.v3.Archive.$Properties|null|undefined} archive
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Archive.$Properties|null|undefined} archive
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.archive = null;
 
             /**
              * Packet callPage.
-             * @member {mediflow.v3.CallPage.$Properties|null|undefined} callPage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.CallPage.$Properties|null|undefined} callPage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.callPage = null;
 
             /**
              * Packet screenPage.
-             * @member {mediflow.v3.ScreenPage.$Properties|null|undefined} screenPage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.ScreenPage.$Properties|null|undefined} screenPage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.screenPage = null;
 
             /**
              * Packet consumptionPage.
-             * @member {mediflow.v3.ConsumptionPage.$Properties|null|undefined} consumptionPage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.ConsumptionPage.$Properties|null|undefined} consumptionPage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.consumptionPage = null;
 
             /**
              * Packet auditPage.
-             * @member {mediflow.v3.AuditPage.$Properties|null|undefined} auditPage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.AuditPage.$Properties|null|undefined} auditPage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.auditPage = null;
 
             /**
              * Packet archivePage.
-             * @member {mediflow.v3.ArchivePage.$Properties|null|undefined} archivePage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.ArchivePage.$Properties|null|undefined} archivePage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.archivePage = null;
 
             /**
              * Packet historyPage.
-             * @member {mediflow.v3.HistoryPage.$Properties|null|undefined} historyPage
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.HistoryPage.$Properties|null|undefined} historyPage
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.historyPage = null;
 
             /**
              * Packet screenDetail.
-             * @member {mediflow.v3.ScreenDetail.$Properties|null|undefined} screenDetail
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.ScreenDetail.$Properties|null|undefined} screenDetail
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.screenDetail = null;
 
             /**
              * Packet overview.
-             * @member {mediflow.v3.Overview.$Properties|null|undefined} overview
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Overview.$Properties|null|undefined} overview
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.overview = null;
 
             /**
              * Packet archiveBundle.
-             * @member {mediflow.v3.ArchiveBundle.$Properties|null|undefined} archiveBundle
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.ArchiveBundle.$Properties|null|undefined} archiveBundle
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.archiveBundle = null;
 
             /**
              * Packet login.
-             * @member {mediflow.v3.Login.$Properties|null|undefined} login
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Login.$Properties|null|undefined} login
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.login = null;
 
             /**
              * Packet user.
-             * @member {mediflow.v3.User.$Properties|null|undefined} user
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.User.$Properties|null|undefined} user
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.user = null;
 
             /**
              * Packet publish.
-             * @member {mediflow.v3.Publish.$Properties|null|undefined} publish
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Publish.$Properties|null|undefined} publish
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.publish = null;
 
             /**
              * Packet consume.
-             * @member {mediflow.v3.Consume.$Properties|null|undefined} consume
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Consume.$Properties|null|undefined} consume
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.consume = null;
 
             /**
              * Packet playback.
-             * @member {mediflow.v3.Playback.$Properties|null|undefined} playback
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Playback.$Properties|null|undefined} playback
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.playback = null;
 
             /**
              * Packet playbackResult.
-             * @member {mediflow.v3.PlaybackResult.$Properties|null|undefined} playbackResult
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.PlaybackResult.$Properties|null|undefined} playbackResult
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.playbackResult = null;
 
             /**
              * Packet result.
-             * @member {mediflow.v3.Result.$Properties|null|undefined} result
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Result.$Properties|null|undefined} result
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.result = null;
 
             /**
              * Packet problem.
-             * @member {mediflow.v3.Problem.$Properties|null|undefined} problem
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Problem.$Properties|null|undefined} problem
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.problem = null;
 
             /**
              * Packet health.
-             * @member {mediflow.v3.Health.$Properties|null|undefined} health
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Health.$Properties|null|undefined} health
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.health = null;
 
             /**
              * Packet retain.
-             * @member {mediflow.v3.Retain.$Properties|null|undefined} retain
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Retain.$Properties|null|undefined} retain
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.retain = null;
 
             /**
              * Packet retained.
-             * @member {mediflow.v3.Retained.$Properties|null|undefined} retained
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Retained.$Properties|null|undefined} retained
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.retained = null;
 
             /**
              * Packet empty.
-             * @member {mediflow.v3.Empty.$Properties|null|undefined} empty
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.Empty.$Properties|null|undefined} empty
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.empty = null;
 
             /**
              * Packet pendingCalls.
-             * @member {mediflow.v3.PendingCalls.$Properties|null|undefined} pendingCalls
-             * @memberof mediflow.v3.Packet
+             * @member {mediflow.v4.PendingCalls.$Properties|null|undefined} pendingCalls
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             Packet.prototype.pendingCalls = null;
@@ -15726,7 +15837,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Packet body.
              * @member {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"|undefined} body
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @instance
              */
             $Object.defineProperty(Packet.prototype, "body", {
@@ -15737,13 +15848,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new Packet instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
-             * @param {mediflow.v3.Packet.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.Packet} Packet instance
+             * @param {mediflow.v4.Packet.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.Packet} Packet instance
              * @type {{
-             *   (properties: mediflow.v3.Packet.$Shape): mediflow.v3.Packet & mediflow.v3.Packet.$Shape;
-             *   (properties?: mediflow.v3.Packet.$Properties): mediflow.v3.Packet;
+             *   (properties: mediflow.v4.Packet.$Shape): mediflow.v4.Packet & mediflow.v4.Packet.$Shape;
+             *   (properties?: mediflow.v4.Packet.$Properties): mediflow.v4.Packet;
              * }}
              */
             Packet.create = function(properties) {
@@ -15751,11 +15862,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified Packet message. Does not implicitly {@link mediflow.v3.Packet.verify|verify} messages.
+             * Encodes the specified Packet message. Does not implicitly {@link mediflow.v4.Packet.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
-             * @param {mediflow.v3.Packet.$Properties} message Packet message or plain object to encode
+             * @param {mediflow.v4.Packet.$Properties} message Packet message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15769,63 +15880,63 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.protocolVersion != null && $Object.hasOwnProperty.call(message, "protocolVersion"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.protocolVersion);
                 if (message.frame != null && $Object.hasOwnProperty.call(message, "frame"))
-                    $root.mediflow.v3.Frame.encode(message.frame, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Frame.encode(message.frame, writer.uint32(/* id 10, wireType 2 =*/82).fork(), _depth + 1).ldelim();
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot"))
-                    $root.mediflow.v3.Snapshot.encode(message.snapshot, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Snapshot.encode(message.snapshot, writer.uint32(/* id 11, wireType 2 =*/90).fork(), _depth + 1).ldelim();
                 if (message.screen != null && $Object.hasOwnProperty.call(message, "screen"))
-                    $root.mediflow.v3.Screen.encode(message.screen, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Screen.encode(message.screen, writer.uint32(/* id 12, wireType 2 =*/98).fork(), _depth + 1).ldelim();
                 if (message.call != null && $Object.hasOwnProperty.call(message, "call"))
-                    $root.mediflow.v3.Call.encode(message.call, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Call.encode(message.call, writer.uint32(/* id 13, wireType 2 =*/106).fork(), _depth + 1).ldelim();
                 if (message.consumption != null && $Object.hasOwnProperty.call(message, "consumption"))
-                    $root.mediflow.v3.Consumption.encode(message.consumption, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Consumption.encode(message.consumption, writer.uint32(/* id 14, wireType 2 =*/114).fork(), _depth + 1).ldelim();
                 if (message.audit != null && $Object.hasOwnProperty.call(message, "audit"))
-                    $root.mediflow.v3.Audit.encode(message.audit, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Audit.encode(message.audit, writer.uint32(/* id 15, wireType 2 =*/122).fork(), _depth + 1).ldelim();
                 if (message.archive != null && $Object.hasOwnProperty.call(message, "archive"))
-                    $root.mediflow.v3.Archive.encode(message.archive, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Archive.encode(message.archive, writer.uint32(/* id 16, wireType 2 =*/130).fork(), _depth + 1).ldelim();
                 if (message.callPage != null && $Object.hasOwnProperty.call(message, "callPage"))
-                    $root.mediflow.v3.CallPage.encode(message.callPage, writer.uint32(/* id 20, wireType 2 =*/162).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.CallPage.encode(message.callPage, writer.uint32(/* id 20, wireType 2 =*/162).fork(), _depth + 1).ldelim();
                 if (message.screenPage != null && $Object.hasOwnProperty.call(message, "screenPage"))
-                    $root.mediflow.v3.ScreenPage.encode(message.screenPage, writer.uint32(/* id 21, wireType 2 =*/170).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.ScreenPage.encode(message.screenPage, writer.uint32(/* id 21, wireType 2 =*/170).fork(), _depth + 1).ldelim();
                 if (message.consumptionPage != null && $Object.hasOwnProperty.call(message, "consumptionPage"))
-                    $root.mediflow.v3.ConsumptionPage.encode(message.consumptionPage, writer.uint32(/* id 22, wireType 2 =*/178).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.ConsumptionPage.encode(message.consumptionPage, writer.uint32(/* id 22, wireType 2 =*/178).fork(), _depth + 1).ldelim();
                 if (message.auditPage != null && $Object.hasOwnProperty.call(message, "auditPage"))
-                    $root.mediflow.v3.AuditPage.encode(message.auditPage, writer.uint32(/* id 23, wireType 2 =*/186).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.AuditPage.encode(message.auditPage, writer.uint32(/* id 23, wireType 2 =*/186).fork(), _depth + 1).ldelim();
                 if (message.archivePage != null && $Object.hasOwnProperty.call(message, "archivePage"))
-                    $root.mediflow.v3.ArchivePage.encode(message.archivePage, writer.uint32(/* id 24, wireType 2 =*/194).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.ArchivePage.encode(message.archivePage, writer.uint32(/* id 24, wireType 2 =*/194).fork(), _depth + 1).ldelim();
                 if (message.historyPage != null && $Object.hasOwnProperty.call(message, "historyPage"))
-                    $root.mediflow.v3.HistoryPage.encode(message.historyPage, writer.uint32(/* id 25, wireType 2 =*/202).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.HistoryPage.encode(message.historyPage, writer.uint32(/* id 25, wireType 2 =*/202).fork(), _depth + 1).ldelim();
                 if (message.screenDetail != null && $Object.hasOwnProperty.call(message, "screenDetail"))
-                    $root.mediflow.v3.ScreenDetail.encode(message.screenDetail, writer.uint32(/* id 26, wireType 2 =*/210).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.ScreenDetail.encode(message.screenDetail, writer.uint32(/* id 26, wireType 2 =*/210).fork(), _depth + 1).ldelim();
                 if (message.overview != null && $Object.hasOwnProperty.call(message, "overview"))
-                    $root.mediflow.v3.Overview.encode(message.overview, writer.uint32(/* id 27, wireType 2 =*/218).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Overview.encode(message.overview, writer.uint32(/* id 27, wireType 2 =*/218).fork(), _depth + 1).ldelim();
                 if (message.archiveBundle != null && $Object.hasOwnProperty.call(message, "archiveBundle"))
-                    $root.mediflow.v3.ArchiveBundle.encode(message.archiveBundle, writer.uint32(/* id 28, wireType 2 =*/226).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.ArchiveBundle.encode(message.archiveBundle, writer.uint32(/* id 28, wireType 2 =*/226).fork(), _depth + 1).ldelim();
                 if (message.login != null && $Object.hasOwnProperty.call(message, "login"))
-                    $root.mediflow.v3.Login.encode(message.login, writer.uint32(/* id 30, wireType 2 =*/242).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Login.encode(message.login, writer.uint32(/* id 30, wireType 2 =*/242).fork(), _depth + 1).ldelim();
                 if (message.user != null && $Object.hasOwnProperty.call(message, "user"))
-                    $root.mediflow.v3.User.encode(message.user, writer.uint32(/* id 31, wireType 2 =*/250).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.User.encode(message.user, writer.uint32(/* id 31, wireType 2 =*/250).fork(), _depth + 1).ldelim();
                 if (message.publish != null && $Object.hasOwnProperty.call(message, "publish"))
-                    $root.mediflow.v3.Publish.encode(message.publish, writer.uint32(/* id 32, wireType 2 =*/258).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Publish.encode(message.publish, writer.uint32(/* id 32, wireType 2 =*/258).fork(), _depth + 1).ldelim();
                 if (message.consume != null && $Object.hasOwnProperty.call(message, "consume"))
-                    $root.mediflow.v3.Consume.encode(message.consume, writer.uint32(/* id 33, wireType 2 =*/266).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Consume.encode(message.consume, writer.uint32(/* id 33, wireType 2 =*/266).fork(), _depth + 1).ldelim();
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback"))
-                    $root.mediflow.v3.Playback.encode(message.playback, writer.uint32(/* id 34, wireType 2 =*/274).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Playback.encode(message.playback, writer.uint32(/* id 34, wireType 2 =*/274).fork(), _depth + 1).ldelim();
                 if (message.playbackResult != null && $Object.hasOwnProperty.call(message, "playbackResult"))
-                    $root.mediflow.v3.PlaybackResult.encode(message.playbackResult, writer.uint32(/* id 35, wireType 2 =*/282).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PlaybackResult.encode(message.playbackResult, writer.uint32(/* id 35, wireType 2 =*/282).fork(), _depth + 1).ldelim();
                 if (message.result != null && $Object.hasOwnProperty.call(message, "result"))
-                    $root.mediflow.v3.Result.encode(message.result, writer.uint32(/* id 36, wireType 2 =*/290).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Result.encode(message.result, writer.uint32(/* id 36, wireType 2 =*/290).fork(), _depth + 1).ldelim();
                 if (message.problem != null && $Object.hasOwnProperty.call(message, "problem"))
-                    $root.mediflow.v3.Problem.encode(message.problem, writer.uint32(/* id 37, wireType 2 =*/298).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Problem.encode(message.problem, writer.uint32(/* id 37, wireType 2 =*/298).fork(), _depth + 1).ldelim();
                 if (message.health != null && $Object.hasOwnProperty.call(message, "health"))
-                    $root.mediflow.v3.Health.encode(message.health, writer.uint32(/* id 38, wireType 2 =*/306).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Health.encode(message.health, writer.uint32(/* id 38, wireType 2 =*/306).fork(), _depth + 1).ldelim();
                 if (message.retain != null && $Object.hasOwnProperty.call(message, "retain"))
-                    $root.mediflow.v3.Retain.encode(message.retain, writer.uint32(/* id 39, wireType 2 =*/314).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Retain.encode(message.retain, writer.uint32(/* id 39, wireType 2 =*/314).fork(), _depth + 1).ldelim();
                 if (message.retained != null && $Object.hasOwnProperty.call(message, "retained"))
-                    $root.mediflow.v3.Retained.encode(message.retained, writer.uint32(/* id 40, wireType 2 =*/322).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Retained.encode(message.retained, writer.uint32(/* id 40, wireType 2 =*/322).fork(), _depth + 1).ldelim();
                 if (message.empty != null && $Object.hasOwnProperty.call(message, "empty"))
-                    $root.mediflow.v3.Empty.encode(message.empty, writer.uint32(/* id 41, wireType 2 =*/330).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.Empty.encode(message.empty, writer.uint32(/* id 41, wireType 2 =*/330).fork(), _depth + 1).ldelim();
                 if (message.pendingCalls != null && $Object.hasOwnProperty.call(message, "pendingCalls"))
-                    $root.mediflow.v3.PendingCalls.encode(message.pendingCalls, writer.uint32(/* id 42, wireType 2 =*/338).fork(), _depth + 1).ldelim();
+                    $root.mediflow.v4.PendingCalls.encode(message.pendingCalls, writer.uint32(/* id 42, wireType 2 =*/338).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -15835,11 +15946,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a Packet message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.Packet & mediflow.v3.Packet.$Shape} Packet
+             * @returns {mediflow.v4.Packet & mediflow.v4.Packet.$Shape} Packet
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -15860,7 +15971,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.Packet();
+                message = _target || new $root.mediflow.v4.Packet();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -15880,203 +15991,203 @@ export const mediflow = $root.mediflow = (() => {
                     case 10: {
                             if (wireType !== 2)
                                 break;
-                            message.frame = $root.mediflow.v3.Frame.decode(reader, reader.size(), $undefined, _depth + 1, message.frame);
+                            message.frame = $root.mediflow.v4.Frame.decode(reader, reader.size(), $undefined, _depth + 1, message.frame);
                             message.body = "frame";
                             continue;
                         }
                     case 11: {
                             if (wireType !== 2)
                                 break;
-                            message.snapshot = $root.mediflow.v3.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
+                            message.snapshot = $root.mediflow.v4.Snapshot.decode(reader, reader.size(), $undefined, _depth + 1, message.snapshot);
                             message.body = "snapshot";
                             continue;
                         }
                     case 12: {
                             if (wireType !== 2)
                                 break;
-                            message.screen = $root.mediflow.v3.Screen.decode(reader, reader.size(), $undefined, _depth + 1, message.screen);
+                            message.screen = $root.mediflow.v4.Screen.decode(reader, reader.size(), $undefined, _depth + 1, message.screen);
                             message.body = "screen";
                             continue;
                         }
                     case 13: {
                             if (wireType !== 2)
                                 break;
-                            message.call = $root.mediflow.v3.Call.decode(reader, reader.size(), $undefined, _depth + 1, message.call);
+                            message.call = $root.mediflow.v4.Call.decode(reader, reader.size(), $undefined, _depth + 1, message.call);
                             message.body = "call";
                             continue;
                         }
                     case 14: {
                             if (wireType !== 2)
                                 break;
-                            message.consumption = $root.mediflow.v3.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumption);
+                            message.consumption = $root.mediflow.v4.Consumption.decode(reader, reader.size(), $undefined, _depth + 1, message.consumption);
                             message.body = "consumption";
                             continue;
                         }
                     case 15: {
                             if (wireType !== 2)
                                 break;
-                            message.audit = $root.mediflow.v3.Audit.decode(reader, reader.size(), $undefined, _depth + 1, message.audit);
+                            message.audit = $root.mediflow.v4.Audit.decode(reader, reader.size(), $undefined, _depth + 1, message.audit);
                             message.body = "audit";
                             continue;
                         }
                     case 16: {
                             if (wireType !== 2)
                                 break;
-                            message.archive = $root.mediflow.v3.Archive.decode(reader, reader.size(), $undefined, _depth + 1, message.archive);
+                            message.archive = $root.mediflow.v4.Archive.decode(reader, reader.size(), $undefined, _depth + 1, message.archive);
                             message.body = "archive";
                             continue;
                         }
                     case 20: {
                             if (wireType !== 2)
                                 break;
-                            message.callPage = $root.mediflow.v3.CallPage.decode(reader, reader.size(), $undefined, _depth + 1, message.callPage);
+                            message.callPage = $root.mediflow.v4.CallPage.decode(reader, reader.size(), $undefined, _depth + 1, message.callPage);
                             message.body = "callPage";
                             continue;
                         }
                     case 21: {
                             if (wireType !== 2)
                                 break;
-                            message.screenPage = $root.mediflow.v3.ScreenPage.decode(reader, reader.size(), $undefined, _depth + 1, message.screenPage);
+                            message.screenPage = $root.mediflow.v4.ScreenPage.decode(reader, reader.size(), $undefined, _depth + 1, message.screenPage);
                             message.body = "screenPage";
                             continue;
                         }
                     case 22: {
                             if (wireType !== 2)
                                 break;
-                            message.consumptionPage = $root.mediflow.v3.ConsumptionPage.decode(reader, reader.size(), $undefined, _depth + 1, message.consumptionPage);
+                            message.consumptionPage = $root.mediflow.v4.ConsumptionPage.decode(reader, reader.size(), $undefined, _depth + 1, message.consumptionPage);
                             message.body = "consumptionPage";
                             continue;
                         }
                     case 23: {
                             if (wireType !== 2)
                                 break;
-                            message.auditPage = $root.mediflow.v3.AuditPage.decode(reader, reader.size(), $undefined, _depth + 1, message.auditPage);
+                            message.auditPage = $root.mediflow.v4.AuditPage.decode(reader, reader.size(), $undefined, _depth + 1, message.auditPage);
                             message.body = "auditPage";
                             continue;
                         }
                     case 24: {
                             if (wireType !== 2)
                                 break;
-                            message.archivePage = $root.mediflow.v3.ArchivePage.decode(reader, reader.size(), $undefined, _depth + 1, message.archivePage);
+                            message.archivePage = $root.mediflow.v4.ArchivePage.decode(reader, reader.size(), $undefined, _depth + 1, message.archivePage);
                             message.body = "archivePage";
                             continue;
                         }
                     case 25: {
                             if (wireType !== 2)
                                 break;
-                            message.historyPage = $root.mediflow.v3.HistoryPage.decode(reader, reader.size(), $undefined, _depth + 1, message.historyPage);
+                            message.historyPage = $root.mediflow.v4.HistoryPage.decode(reader, reader.size(), $undefined, _depth + 1, message.historyPage);
                             message.body = "historyPage";
                             continue;
                         }
                     case 26: {
                             if (wireType !== 2)
                                 break;
-                            message.screenDetail = $root.mediflow.v3.ScreenDetail.decode(reader, reader.size(), $undefined, _depth + 1, message.screenDetail);
+                            message.screenDetail = $root.mediflow.v4.ScreenDetail.decode(reader, reader.size(), $undefined, _depth + 1, message.screenDetail);
                             message.body = "screenDetail";
                             continue;
                         }
                     case 27: {
                             if (wireType !== 2)
                                 break;
-                            message.overview = $root.mediflow.v3.Overview.decode(reader, reader.size(), $undefined, _depth + 1, message.overview);
+                            message.overview = $root.mediflow.v4.Overview.decode(reader, reader.size(), $undefined, _depth + 1, message.overview);
                             message.body = "overview";
                             continue;
                         }
                     case 28: {
                             if (wireType !== 2)
                                 break;
-                            message.archiveBundle = $root.mediflow.v3.ArchiveBundle.decode(reader, reader.size(), $undefined, _depth + 1, message.archiveBundle);
+                            message.archiveBundle = $root.mediflow.v4.ArchiveBundle.decode(reader, reader.size(), $undefined, _depth + 1, message.archiveBundle);
                             message.body = "archiveBundle";
                             continue;
                         }
                     case 30: {
                             if (wireType !== 2)
                                 break;
-                            message.login = $root.mediflow.v3.Login.decode(reader, reader.size(), $undefined, _depth + 1, message.login);
+                            message.login = $root.mediflow.v4.Login.decode(reader, reader.size(), $undefined, _depth + 1, message.login);
                             message.body = "login";
                             continue;
                         }
                     case 31: {
                             if (wireType !== 2)
                                 break;
-                            message.user = $root.mediflow.v3.User.decode(reader, reader.size(), $undefined, _depth + 1, message.user);
+                            message.user = $root.mediflow.v4.User.decode(reader, reader.size(), $undefined, _depth + 1, message.user);
                             message.body = "user";
                             continue;
                         }
                     case 32: {
                             if (wireType !== 2)
                                 break;
-                            message.publish = $root.mediflow.v3.Publish.decode(reader, reader.size(), $undefined, _depth + 1, message.publish);
+                            message.publish = $root.mediflow.v4.Publish.decode(reader, reader.size(), $undefined, _depth + 1, message.publish);
                             message.body = "publish";
                             continue;
                         }
                     case 33: {
                             if (wireType !== 2)
                                 break;
-                            message.consume = $root.mediflow.v3.Consume.decode(reader, reader.size(), $undefined, _depth + 1, message.consume);
+                            message.consume = $root.mediflow.v4.Consume.decode(reader, reader.size(), $undefined, _depth + 1, message.consume);
                             message.body = "consume";
                             continue;
                         }
                     case 34: {
                             if (wireType !== 2)
                                 break;
-                            message.playback = $root.mediflow.v3.Playback.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
+                            message.playback = $root.mediflow.v4.Playback.decode(reader, reader.size(), $undefined, _depth + 1, message.playback);
                             message.body = "playback";
                             continue;
                         }
                     case 35: {
                             if (wireType !== 2)
                                 break;
-                            message.playbackResult = $root.mediflow.v3.PlaybackResult.decode(reader, reader.size(), $undefined, _depth + 1, message.playbackResult);
+                            message.playbackResult = $root.mediflow.v4.PlaybackResult.decode(reader, reader.size(), $undefined, _depth + 1, message.playbackResult);
                             message.body = "playbackResult";
                             continue;
                         }
                     case 36: {
                             if (wireType !== 2)
                                 break;
-                            message.result = $root.mediflow.v3.Result.decode(reader, reader.size(), $undefined, _depth + 1, message.result);
+                            message.result = $root.mediflow.v4.Result.decode(reader, reader.size(), $undefined, _depth + 1, message.result);
                             message.body = "result";
                             continue;
                         }
                     case 37: {
                             if (wireType !== 2)
                                 break;
-                            message.problem = $root.mediflow.v3.Problem.decode(reader, reader.size(), $undefined, _depth + 1, message.problem);
+                            message.problem = $root.mediflow.v4.Problem.decode(reader, reader.size(), $undefined, _depth + 1, message.problem);
                             message.body = "problem";
                             continue;
                         }
                     case 38: {
                             if (wireType !== 2)
                                 break;
-                            message.health = $root.mediflow.v3.Health.decode(reader, reader.size(), $undefined, _depth + 1, message.health);
+                            message.health = $root.mediflow.v4.Health.decode(reader, reader.size(), $undefined, _depth + 1, message.health);
                             message.body = "health";
                             continue;
                         }
                     case 39: {
                             if (wireType !== 2)
                                 break;
-                            message.retain = $root.mediflow.v3.Retain.decode(reader, reader.size(), $undefined, _depth + 1, message.retain);
+                            message.retain = $root.mediflow.v4.Retain.decode(reader, reader.size(), $undefined, _depth + 1, message.retain);
                             message.body = "retain";
                             continue;
                         }
                     case 40: {
                             if (wireType !== 2)
                                 break;
-                            message.retained = $root.mediflow.v3.Retained.decode(reader, reader.size(), $undefined, _depth + 1, message.retained);
+                            message.retained = $root.mediflow.v4.Retained.decode(reader, reader.size(), $undefined, _depth + 1, message.retained);
                             message.body = "retained";
                             continue;
                         }
                     case 41: {
                             if (wireType !== 2)
                                 break;
-                            message.empty = $root.mediflow.v3.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.empty);
+                            message.empty = $root.mediflow.v4.Empty.decode(reader, reader.size(), $undefined, _depth + 1, message.empty);
                             message.body = "empty";
                             continue;
                         }
                     case 42: {
                             if (wireType !== 2)
                                 break;
-                            message.pendingCalls = $root.mediflow.v3.PendingCalls.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingCalls);
+                            message.pendingCalls = $root.mediflow.v4.PendingCalls.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingCalls);
                             message.body = "pendingCalls";
                             continue;
                         }
@@ -16100,7 +16211,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a Packet message.
              * @function verify
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16121,7 +16232,7 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.frame != null && $Object.hasOwnProperty.call(message, "frame")) {
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Frame.verify(message.frame, _depth + 1);
+                        let error = $root.mediflow.v4.Frame.verify(message.frame, _depth + 1);
                         if (error)
                             return "frame." + error;
                     }
@@ -16131,7 +16242,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Snapshot.verify(message.snapshot, _depth + 1);
+                        let error = $root.mediflow.v4.Snapshot.verify(message.snapshot, _depth + 1);
                         if (error)
                             return "snapshot." + error;
                     }
@@ -16141,7 +16252,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Screen.verify(message.screen, _depth + 1);
+                        let error = $root.mediflow.v4.Screen.verify(message.screen, _depth + 1);
                         if (error)
                             return "screen." + error;
                     }
@@ -16151,7 +16262,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Call.verify(message.call, _depth + 1);
+                        let error = $root.mediflow.v4.Call.verify(message.call, _depth + 1);
                         if (error)
                             return "call." + error;
                     }
@@ -16161,7 +16272,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Consumption.verify(message.consumption, _depth + 1);
+                        let error = $root.mediflow.v4.Consumption.verify(message.consumption, _depth + 1);
                         if (error)
                             return "consumption." + error;
                     }
@@ -16171,7 +16282,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Audit.verify(message.audit, _depth + 1);
+                        let error = $root.mediflow.v4.Audit.verify(message.audit, _depth + 1);
                         if (error)
                             return "audit." + error;
                     }
@@ -16181,7 +16292,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Archive.verify(message.archive, _depth + 1);
+                        let error = $root.mediflow.v4.Archive.verify(message.archive, _depth + 1);
                         if (error)
                             return "archive." + error;
                     }
@@ -16191,7 +16302,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.CallPage.verify(message.callPage, _depth + 1);
+                        let error = $root.mediflow.v4.CallPage.verify(message.callPage, _depth + 1);
                         if (error)
                             return "callPage." + error;
                     }
@@ -16201,7 +16312,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.ScreenPage.verify(message.screenPage, _depth + 1);
+                        let error = $root.mediflow.v4.ScreenPage.verify(message.screenPage, _depth + 1);
                         if (error)
                             return "screenPage." + error;
                     }
@@ -16211,7 +16322,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.ConsumptionPage.verify(message.consumptionPage, _depth + 1);
+                        let error = $root.mediflow.v4.ConsumptionPage.verify(message.consumptionPage, _depth + 1);
                         if (error)
                             return "consumptionPage." + error;
                     }
@@ -16221,7 +16332,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.AuditPage.verify(message.auditPage, _depth + 1);
+                        let error = $root.mediflow.v4.AuditPage.verify(message.auditPage, _depth + 1);
                         if (error)
                             return "auditPage." + error;
                     }
@@ -16231,7 +16342,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.ArchivePage.verify(message.archivePage, _depth + 1);
+                        let error = $root.mediflow.v4.ArchivePage.verify(message.archivePage, _depth + 1);
                         if (error)
                             return "archivePage." + error;
                     }
@@ -16241,7 +16352,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.HistoryPage.verify(message.historyPage, _depth + 1);
+                        let error = $root.mediflow.v4.HistoryPage.verify(message.historyPage, _depth + 1);
                         if (error)
                             return "historyPage." + error;
                     }
@@ -16251,7 +16362,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.ScreenDetail.verify(message.screenDetail, _depth + 1);
+                        let error = $root.mediflow.v4.ScreenDetail.verify(message.screenDetail, _depth + 1);
                         if (error)
                             return "screenDetail." + error;
                     }
@@ -16261,7 +16372,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Overview.verify(message.overview, _depth + 1);
+                        let error = $root.mediflow.v4.Overview.verify(message.overview, _depth + 1);
                         if (error)
                             return "overview." + error;
                     }
@@ -16271,7 +16382,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.ArchiveBundle.verify(message.archiveBundle, _depth + 1);
+                        let error = $root.mediflow.v4.ArchiveBundle.verify(message.archiveBundle, _depth + 1);
                         if (error)
                             return "archiveBundle." + error;
                     }
@@ -16281,7 +16392,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Login.verify(message.login, _depth + 1);
+                        let error = $root.mediflow.v4.Login.verify(message.login, _depth + 1);
                         if (error)
                             return "login." + error;
                     }
@@ -16291,7 +16402,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.User.verify(message.user, _depth + 1);
+                        let error = $root.mediflow.v4.User.verify(message.user, _depth + 1);
                         if (error)
                             return "user." + error;
                     }
@@ -16301,7 +16412,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Publish.verify(message.publish, _depth + 1);
+                        let error = $root.mediflow.v4.Publish.verify(message.publish, _depth + 1);
                         if (error)
                             return "publish." + error;
                     }
@@ -16311,7 +16422,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Consume.verify(message.consume, _depth + 1);
+                        let error = $root.mediflow.v4.Consume.verify(message.consume, _depth + 1);
                         if (error)
                             return "consume." + error;
                     }
@@ -16321,7 +16432,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Playback.verify(message.playback, _depth + 1);
+                        let error = $root.mediflow.v4.Playback.verify(message.playback, _depth + 1);
                         if (error)
                             return "playback." + error;
                     }
@@ -16331,7 +16442,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.PlaybackResult.verify(message.playbackResult, _depth + 1);
+                        let error = $root.mediflow.v4.PlaybackResult.verify(message.playbackResult, _depth + 1);
                         if (error)
                             return "playbackResult." + error;
                     }
@@ -16341,7 +16452,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Result.verify(message.result, _depth + 1);
+                        let error = $root.mediflow.v4.Result.verify(message.result, _depth + 1);
                         if (error)
                             return "result." + error;
                     }
@@ -16351,7 +16462,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Problem.verify(message.problem, _depth + 1);
+                        let error = $root.mediflow.v4.Problem.verify(message.problem, _depth + 1);
                         if (error)
                             return "problem." + error;
                     }
@@ -16361,7 +16472,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Health.verify(message.health, _depth + 1);
+                        let error = $root.mediflow.v4.Health.verify(message.health, _depth + 1);
                         if (error)
                             return "health." + error;
                     }
@@ -16371,7 +16482,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Retain.verify(message.retain, _depth + 1);
+                        let error = $root.mediflow.v4.Retain.verify(message.retain, _depth + 1);
                         if (error)
                             return "retain." + error;
                     }
@@ -16381,7 +16492,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Retained.verify(message.retained, _depth + 1);
+                        let error = $root.mediflow.v4.Retained.verify(message.retained, _depth + 1);
                         if (error)
                             return "retained." + error;
                     }
@@ -16391,7 +16502,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.Empty.verify(message.empty, _depth + 1);
+                        let error = $root.mediflow.v4.Empty.verify(message.empty, _depth + 1);
                         if (error)
                             return "empty." + error;
                     }
@@ -16401,7 +16512,7 @@ export const mediflow = $root.mediflow = (() => {
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        let error = $root.mediflow.v3.PendingCalls.verify(message.pendingCalls, _depth + 1);
+                        let error = $root.mediflow.v4.PendingCalls.verify(message.pendingCalls, _depth + 1);
                         if (error)
                             return "pendingCalls." + error;
                     }
@@ -16412,167 +16523,167 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a Packet message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.Packet} Packet
+             * @returns {mediflow.v4.Packet} Packet
              */
             Packet.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.Packet)
+                if (object instanceof $root.mediflow.v4.Packet)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.Packet: object expected");
+                    throw $TypeError(".mediflow.v4.Packet: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.Packet();
+                let message = new $root.mediflow.v4.Packet();
                 if (object.protocolVersion != null)
                     message.protocolVersion = object.protocolVersion >>> 0;
                 if (object.frame != null) {
                     if (!$util.isObject(object.frame))
-                        throw $TypeError(".mediflow.v3.Packet.frame: object expected");
-                    message.frame = $root.mediflow.v3.Frame.fromObject(object.frame, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.frame: object expected");
+                    message.frame = $root.mediflow.v4.Frame.fromObject(object.frame, _depth + 1);
                 }
                 if (object.snapshot != null) {
                     if (!$util.isObject(object.snapshot))
-                        throw $TypeError(".mediflow.v3.Packet.snapshot: object expected");
-                    message.snapshot = $root.mediflow.v3.Snapshot.fromObject(object.snapshot, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.snapshot: object expected");
+                    message.snapshot = $root.mediflow.v4.Snapshot.fromObject(object.snapshot, _depth + 1);
                 }
                 if (object.screen != null) {
                     if (!$util.isObject(object.screen))
-                        throw $TypeError(".mediflow.v3.Packet.screen: object expected");
-                    message.screen = $root.mediflow.v3.Screen.fromObject(object.screen, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.screen: object expected");
+                    message.screen = $root.mediflow.v4.Screen.fromObject(object.screen, _depth + 1);
                 }
                 if (object.call != null) {
                     if (!$util.isObject(object.call))
-                        throw $TypeError(".mediflow.v3.Packet.call: object expected");
-                    message.call = $root.mediflow.v3.Call.fromObject(object.call, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.call: object expected");
+                    message.call = $root.mediflow.v4.Call.fromObject(object.call, _depth + 1);
                 }
                 if (object.consumption != null) {
                     if (!$util.isObject(object.consumption))
-                        throw $TypeError(".mediflow.v3.Packet.consumption: object expected");
-                    message.consumption = $root.mediflow.v3.Consumption.fromObject(object.consumption, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.consumption: object expected");
+                    message.consumption = $root.mediflow.v4.Consumption.fromObject(object.consumption, _depth + 1);
                 }
                 if (object.audit != null) {
                     if (!$util.isObject(object.audit))
-                        throw $TypeError(".mediflow.v3.Packet.audit: object expected");
-                    message.audit = $root.mediflow.v3.Audit.fromObject(object.audit, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.audit: object expected");
+                    message.audit = $root.mediflow.v4.Audit.fromObject(object.audit, _depth + 1);
                 }
                 if (object.archive != null) {
                     if (!$util.isObject(object.archive))
-                        throw $TypeError(".mediflow.v3.Packet.archive: object expected");
-                    message.archive = $root.mediflow.v3.Archive.fromObject(object.archive, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.archive: object expected");
+                    message.archive = $root.mediflow.v4.Archive.fromObject(object.archive, _depth + 1);
                 }
                 if (object.callPage != null) {
                     if (!$util.isObject(object.callPage))
-                        throw $TypeError(".mediflow.v3.Packet.callPage: object expected");
-                    message.callPage = $root.mediflow.v3.CallPage.fromObject(object.callPage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.callPage: object expected");
+                    message.callPage = $root.mediflow.v4.CallPage.fromObject(object.callPage, _depth + 1);
                 }
                 if (object.screenPage != null) {
                     if (!$util.isObject(object.screenPage))
-                        throw $TypeError(".mediflow.v3.Packet.screenPage: object expected");
-                    message.screenPage = $root.mediflow.v3.ScreenPage.fromObject(object.screenPage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.screenPage: object expected");
+                    message.screenPage = $root.mediflow.v4.ScreenPage.fromObject(object.screenPage, _depth + 1);
                 }
                 if (object.consumptionPage != null) {
                     if (!$util.isObject(object.consumptionPage))
-                        throw $TypeError(".mediflow.v3.Packet.consumptionPage: object expected");
-                    message.consumptionPage = $root.mediflow.v3.ConsumptionPage.fromObject(object.consumptionPage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.consumptionPage: object expected");
+                    message.consumptionPage = $root.mediflow.v4.ConsumptionPage.fromObject(object.consumptionPage, _depth + 1);
                 }
                 if (object.auditPage != null) {
                     if (!$util.isObject(object.auditPage))
-                        throw $TypeError(".mediflow.v3.Packet.auditPage: object expected");
-                    message.auditPage = $root.mediflow.v3.AuditPage.fromObject(object.auditPage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.auditPage: object expected");
+                    message.auditPage = $root.mediflow.v4.AuditPage.fromObject(object.auditPage, _depth + 1);
                 }
                 if (object.archivePage != null) {
                     if (!$util.isObject(object.archivePage))
-                        throw $TypeError(".mediflow.v3.Packet.archivePage: object expected");
-                    message.archivePage = $root.mediflow.v3.ArchivePage.fromObject(object.archivePage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.archivePage: object expected");
+                    message.archivePage = $root.mediflow.v4.ArchivePage.fromObject(object.archivePage, _depth + 1);
                 }
                 if (object.historyPage != null) {
                     if (!$util.isObject(object.historyPage))
-                        throw $TypeError(".mediflow.v3.Packet.historyPage: object expected");
-                    message.historyPage = $root.mediflow.v3.HistoryPage.fromObject(object.historyPage, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.historyPage: object expected");
+                    message.historyPage = $root.mediflow.v4.HistoryPage.fromObject(object.historyPage, _depth + 1);
                 }
                 if (object.screenDetail != null) {
                     if (!$util.isObject(object.screenDetail))
-                        throw $TypeError(".mediflow.v3.Packet.screenDetail: object expected");
-                    message.screenDetail = $root.mediflow.v3.ScreenDetail.fromObject(object.screenDetail, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.screenDetail: object expected");
+                    message.screenDetail = $root.mediflow.v4.ScreenDetail.fromObject(object.screenDetail, _depth + 1);
                 }
                 if (object.overview != null) {
                     if (!$util.isObject(object.overview))
-                        throw $TypeError(".mediflow.v3.Packet.overview: object expected");
-                    message.overview = $root.mediflow.v3.Overview.fromObject(object.overview, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.overview: object expected");
+                    message.overview = $root.mediflow.v4.Overview.fromObject(object.overview, _depth + 1);
                 }
                 if (object.archiveBundle != null) {
                     if (!$util.isObject(object.archiveBundle))
-                        throw $TypeError(".mediflow.v3.Packet.archiveBundle: object expected");
-                    message.archiveBundle = $root.mediflow.v3.ArchiveBundle.fromObject(object.archiveBundle, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.archiveBundle: object expected");
+                    message.archiveBundle = $root.mediflow.v4.ArchiveBundle.fromObject(object.archiveBundle, _depth + 1);
                 }
                 if (object.login != null) {
                     if (!$util.isObject(object.login))
-                        throw $TypeError(".mediflow.v3.Packet.login: object expected");
-                    message.login = $root.mediflow.v3.Login.fromObject(object.login, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.login: object expected");
+                    message.login = $root.mediflow.v4.Login.fromObject(object.login, _depth + 1);
                 }
                 if (object.user != null) {
                     if (!$util.isObject(object.user))
-                        throw $TypeError(".mediflow.v3.Packet.user: object expected");
-                    message.user = $root.mediflow.v3.User.fromObject(object.user, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.user: object expected");
+                    message.user = $root.mediflow.v4.User.fromObject(object.user, _depth + 1);
                 }
                 if (object.publish != null) {
                     if (!$util.isObject(object.publish))
-                        throw $TypeError(".mediflow.v3.Packet.publish: object expected");
-                    message.publish = $root.mediflow.v3.Publish.fromObject(object.publish, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.publish: object expected");
+                    message.publish = $root.mediflow.v4.Publish.fromObject(object.publish, _depth + 1);
                 }
                 if (object.consume != null) {
                     if (!$util.isObject(object.consume))
-                        throw $TypeError(".mediflow.v3.Packet.consume: object expected");
-                    message.consume = $root.mediflow.v3.Consume.fromObject(object.consume, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.consume: object expected");
+                    message.consume = $root.mediflow.v4.Consume.fromObject(object.consume, _depth + 1);
                 }
                 if (object.playback != null) {
                     if (!$util.isObject(object.playback))
-                        throw $TypeError(".mediflow.v3.Packet.playback: object expected");
-                    message.playback = $root.mediflow.v3.Playback.fromObject(object.playback, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.playback: object expected");
+                    message.playback = $root.mediflow.v4.Playback.fromObject(object.playback, _depth + 1);
                 }
                 if (object.playbackResult != null) {
                     if (!$util.isObject(object.playbackResult))
-                        throw $TypeError(".mediflow.v3.Packet.playbackResult: object expected");
-                    message.playbackResult = $root.mediflow.v3.PlaybackResult.fromObject(object.playbackResult, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.playbackResult: object expected");
+                    message.playbackResult = $root.mediflow.v4.PlaybackResult.fromObject(object.playbackResult, _depth + 1);
                 }
                 if (object.result != null) {
                     if (!$util.isObject(object.result))
-                        throw $TypeError(".mediflow.v3.Packet.result: object expected");
-                    message.result = $root.mediflow.v3.Result.fromObject(object.result, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.result: object expected");
+                    message.result = $root.mediflow.v4.Result.fromObject(object.result, _depth + 1);
                 }
                 if (object.problem != null) {
                     if (!$util.isObject(object.problem))
-                        throw $TypeError(".mediflow.v3.Packet.problem: object expected");
-                    message.problem = $root.mediflow.v3.Problem.fromObject(object.problem, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.problem: object expected");
+                    message.problem = $root.mediflow.v4.Problem.fromObject(object.problem, _depth + 1);
                 }
                 if (object.health != null) {
                     if (!$util.isObject(object.health))
-                        throw $TypeError(".mediflow.v3.Packet.health: object expected");
-                    message.health = $root.mediflow.v3.Health.fromObject(object.health, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.health: object expected");
+                    message.health = $root.mediflow.v4.Health.fromObject(object.health, _depth + 1);
                 }
                 if (object.retain != null) {
                     if (!$util.isObject(object.retain))
-                        throw $TypeError(".mediflow.v3.Packet.retain: object expected");
-                    message.retain = $root.mediflow.v3.Retain.fromObject(object.retain, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.retain: object expected");
+                    message.retain = $root.mediflow.v4.Retain.fromObject(object.retain, _depth + 1);
                 }
                 if (object.retained != null) {
                     if (!$util.isObject(object.retained))
-                        throw $TypeError(".mediflow.v3.Packet.retained: object expected");
-                    message.retained = $root.mediflow.v3.Retained.fromObject(object.retained, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.retained: object expected");
+                    message.retained = $root.mediflow.v4.Retained.fromObject(object.retained, _depth + 1);
                 }
                 if (object.empty != null) {
                     if (!$util.isObject(object.empty))
-                        throw $TypeError(".mediflow.v3.Packet.empty: object expected");
-                    message.empty = $root.mediflow.v3.Empty.fromObject(object.empty, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.empty: object expected");
+                    message.empty = $root.mediflow.v4.Empty.fromObject(object.empty, _depth + 1);
                 }
                 if (object.pendingCalls != null) {
                     if (!$util.isObject(object.pendingCalls))
-                        throw $TypeError(".mediflow.v3.Packet.pendingCalls: object expected");
-                    message.pendingCalls = $root.mediflow.v3.PendingCalls.fromObject(object.pendingCalls, _depth + 1);
+                        throw $TypeError(".mediflow.v4.Packet.pendingCalls: object expected");
+                    message.pendingCalls = $root.mediflow.v4.PendingCalls.fromObject(object.pendingCalls, _depth + 1);
                 }
                 return message;
             };
@@ -16580,9 +16691,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a Packet message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
-             * @param {mediflow.v3.Packet} message Packet
+             * @param {mediflow.v4.Packet} message Packet
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16597,147 +16708,147 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.protocolVersion != null && $Object.hasOwnProperty.call(message, "protocolVersion"))
                     object.protocolVersion = message.protocolVersion;
                 if (message.frame != null && $Object.hasOwnProperty.call(message, "frame")) {
-                    object.frame = $root.mediflow.v3.Frame.toObject(message.frame, options, _depth + 1);
+                    object.frame = $root.mediflow.v4.Frame.toObject(message.frame, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "frame";
                 }
                 if (message.snapshot != null && $Object.hasOwnProperty.call(message, "snapshot")) {
-                    object.snapshot = $root.mediflow.v3.Snapshot.toObject(message.snapshot, options, _depth + 1);
+                    object.snapshot = $root.mediflow.v4.Snapshot.toObject(message.snapshot, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "snapshot";
                 }
                 if (message.screen != null && $Object.hasOwnProperty.call(message, "screen")) {
-                    object.screen = $root.mediflow.v3.Screen.toObject(message.screen, options, _depth + 1);
+                    object.screen = $root.mediflow.v4.Screen.toObject(message.screen, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "screen";
                 }
                 if (message.call != null && $Object.hasOwnProperty.call(message, "call")) {
-                    object.call = $root.mediflow.v3.Call.toObject(message.call, options, _depth + 1);
+                    object.call = $root.mediflow.v4.Call.toObject(message.call, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "call";
                 }
                 if (message.consumption != null && $Object.hasOwnProperty.call(message, "consumption")) {
-                    object.consumption = $root.mediflow.v3.Consumption.toObject(message.consumption, options, _depth + 1);
+                    object.consumption = $root.mediflow.v4.Consumption.toObject(message.consumption, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "consumption";
                 }
                 if (message.audit != null && $Object.hasOwnProperty.call(message, "audit")) {
-                    object.audit = $root.mediflow.v3.Audit.toObject(message.audit, options, _depth + 1);
+                    object.audit = $root.mediflow.v4.Audit.toObject(message.audit, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "audit";
                 }
                 if (message.archive != null && $Object.hasOwnProperty.call(message, "archive")) {
-                    object.archive = $root.mediflow.v3.Archive.toObject(message.archive, options, _depth + 1);
+                    object.archive = $root.mediflow.v4.Archive.toObject(message.archive, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "archive";
                 }
                 if (message.callPage != null && $Object.hasOwnProperty.call(message, "callPage")) {
-                    object.callPage = $root.mediflow.v3.CallPage.toObject(message.callPage, options, _depth + 1);
+                    object.callPage = $root.mediflow.v4.CallPage.toObject(message.callPage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "callPage";
                 }
                 if (message.screenPage != null && $Object.hasOwnProperty.call(message, "screenPage")) {
-                    object.screenPage = $root.mediflow.v3.ScreenPage.toObject(message.screenPage, options, _depth + 1);
+                    object.screenPage = $root.mediflow.v4.ScreenPage.toObject(message.screenPage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "screenPage";
                 }
                 if (message.consumptionPage != null && $Object.hasOwnProperty.call(message, "consumptionPage")) {
-                    object.consumptionPage = $root.mediflow.v3.ConsumptionPage.toObject(message.consumptionPage, options, _depth + 1);
+                    object.consumptionPage = $root.mediflow.v4.ConsumptionPage.toObject(message.consumptionPage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "consumptionPage";
                 }
                 if (message.auditPage != null && $Object.hasOwnProperty.call(message, "auditPage")) {
-                    object.auditPage = $root.mediflow.v3.AuditPage.toObject(message.auditPage, options, _depth + 1);
+                    object.auditPage = $root.mediflow.v4.AuditPage.toObject(message.auditPage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "auditPage";
                 }
                 if (message.archivePage != null && $Object.hasOwnProperty.call(message, "archivePage")) {
-                    object.archivePage = $root.mediflow.v3.ArchivePage.toObject(message.archivePage, options, _depth + 1);
+                    object.archivePage = $root.mediflow.v4.ArchivePage.toObject(message.archivePage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "archivePage";
                 }
                 if (message.historyPage != null && $Object.hasOwnProperty.call(message, "historyPage")) {
-                    object.historyPage = $root.mediflow.v3.HistoryPage.toObject(message.historyPage, options, _depth + 1);
+                    object.historyPage = $root.mediflow.v4.HistoryPage.toObject(message.historyPage, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "historyPage";
                 }
                 if (message.screenDetail != null && $Object.hasOwnProperty.call(message, "screenDetail")) {
-                    object.screenDetail = $root.mediflow.v3.ScreenDetail.toObject(message.screenDetail, options, _depth + 1);
+                    object.screenDetail = $root.mediflow.v4.ScreenDetail.toObject(message.screenDetail, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "screenDetail";
                 }
                 if (message.overview != null && $Object.hasOwnProperty.call(message, "overview")) {
-                    object.overview = $root.mediflow.v3.Overview.toObject(message.overview, options, _depth + 1);
+                    object.overview = $root.mediflow.v4.Overview.toObject(message.overview, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "overview";
                 }
                 if (message.archiveBundle != null && $Object.hasOwnProperty.call(message, "archiveBundle")) {
-                    object.archiveBundle = $root.mediflow.v3.ArchiveBundle.toObject(message.archiveBundle, options, _depth + 1);
+                    object.archiveBundle = $root.mediflow.v4.ArchiveBundle.toObject(message.archiveBundle, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "archiveBundle";
                 }
                 if (message.login != null && $Object.hasOwnProperty.call(message, "login")) {
-                    object.login = $root.mediflow.v3.Login.toObject(message.login, options, _depth + 1);
+                    object.login = $root.mediflow.v4.Login.toObject(message.login, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "login";
                 }
                 if (message.user != null && $Object.hasOwnProperty.call(message, "user")) {
-                    object.user = $root.mediflow.v3.User.toObject(message.user, options, _depth + 1);
+                    object.user = $root.mediflow.v4.User.toObject(message.user, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "user";
                 }
                 if (message.publish != null && $Object.hasOwnProperty.call(message, "publish")) {
-                    object.publish = $root.mediflow.v3.Publish.toObject(message.publish, options, _depth + 1);
+                    object.publish = $root.mediflow.v4.Publish.toObject(message.publish, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "publish";
                 }
                 if (message.consume != null && $Object.hasOwnProperty.call(message, "consume")) {
-                    object.consume = $root.mediflow.v3.Consume.toObject(message.consume, options, _depth + 1);
+                    object.consume = $root.mediflow.v4.Consume.toObject(message.consume, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "consume";
                 }
                 if (message.playback != null && $Object.hasOwnProperty.call(message, "playback")) {
-                    object.playback = $root.mediflow.v3.Playback.toObject(message.playback, options, _depth + 1);
+                    object.playback = $root.mediflow.v4.Playback.toObject(message.playback, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "playback";
                 }
                 if (message.playbackResult != null && $Object.hasOwnProperty.call(message, "playbackResult")) {
-                    object.playbackResult = $root.mediflow.v3.PlaybackResult.toObject(message.playbackResult, options, _depth + 1);
+                    object.playbackResult = $root.mediflow.v4.PlaybackResult.toObject(message.playbackResult, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "playbackResult";
                 }
                 if (message.result != null && $Object.hasOwnProperty.call(message, "result")) {
-                    object.result = $root.mediflow.v3.Result.toObject(message.result, options, _depth + 1);
+                    object.result = $root.mediflow.v4.Result.toObject(message.result, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "result";
                 }
                 if (message.problem != null && $Object.hasOwnProperty.call(message, "problem")) {
-                    object.problem = $root.mediflow.v3.Problem.toObject(message.problem, options, _depth + 1);
+                    object.problem = $root.mediflow.v4.Problem.toObject(message.problem, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "problem";
                 }
                 if (message.health != null && $Object.hasOwnProperty.call(message, "health")) {
-                    object.health = $root.mediflow.v3.Health.toObject(message.health, options, _depth + 1);
+                    object.health = $root.mediflow.v4.Health.toObject(message.health, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "health";
                 }
                 if (message.retain != null && $Object.hasOwnProperty.call(message, "retain")) {
-                    object.retain = $root.mediflow.v3.Retain.toObject(message.retain, options, _depth + 1);
+                    object.retain = $root.mediflow.v4.Retain.toObject(message.retain, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "retain";
                 }
                 if (message.retained != null && $Object.hasOwnProperty.call(message, "retained")) {
-                    object.retained = $root.mediflow.v3.Retained.toObject(message.retained, options, _depth + 1);
+                    object.retained = $root.mediflow.v4.Retained.toObject(message.retained, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "retained";
                 }
                 if (message.empty != null && $Object.hasOwnProperty.call(message, "empty")) {
-                    object.empty = $root.mediflow.v3.Empty.toObject(message.empty, options, _depth + 1);
+                    object.empty = $root.mediflow.v4.Empty.toObject(message.empty, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "empty";
                 }
                 if (message.pendingCalls != null && $Object.hasOwnProperty.call(message, "pendingCalls")) {
-                    object.pendingCalls = $root.mediflow.v3.PendingCalls.toObject(message.pendingCalls, options, _depth + 1);
+                    object.pendingCalls = $root.mediflow.v4.PendingCalls.toObject(message.pendingCalls, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "pendingCalls";
                 }
@@ -16747,7 +16858,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this Packet to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16758,7 +16869,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for Packet
              * @function getTypeUrl
-             * @memberof mediflow.v3.Packet
+             * @memberof mediflow.v4.Packet
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -16766,21 +16877,21 @@ export const mediflow = $root.mediflow = (() => {
             Packet.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.Packet";
+                return prefix + "/mediflow.v4.Packet";
             };
 
             return Packet;
         })();
 
-        v3.PlaybackEvent = (function() {
+        v4.PlaybackEvent = (function() {
 
             /**
              * Properties of a PlaybackEvent.
-             * @typedef {Object} mediflow.v3.PlaybackEvent.$Properties
-             * @property {string|null} [screenId] PlaybackEvent screenId
-             * @property {string|null} [eventId] PlaybackEvent eventId
-             * @property {string|null} [requestId] PlaybackEvent requestId
-             * @property {string|null} [callId] PlaybackEvent callId
+             * @typedef {Object} mediflow.v4.PlaybackEvent.$Properties
+             * @property {Uint8Array|null} [screenId] PlaybackEvent screenId
+             * @property {Uint8Array|null} [eventId] PlaybackEvent eventId
+             * @property {Uint8Array|null} [requestId] PlaybackEvent requestId
+             * @property {Uint8Array|null} [callId] PlaybackEvent callId
              * @property {string|null} [status] PlaybackEvent status
              * @property {string|null} [detail] PlaybackEvent detail
              * @property {string|null} [createdAt] PlaybackEvent createdAt
@@ -16789,23 +16900,23 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Properties of a PlaybackEvent.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @interface IPlaybackEvent
-             * @augments mediflow.v3.PlaybackEvent.$Properties
-             * @deprecated Use mediflow.v3.PlaybackEvent.$Properties instead.
+             * @augments mediflow.v4.PlaybackEvent.$Properties
+             * @deprecated Use mediflow.v4.PlaybackEvent.$Properties instead.
              */
 
             /**
              * Shape of a PlaybackEvent.
-             * @typedef {mediflow.v3.PlaybackEvent.$Properties} mediflow.v3.PlaybackEvent.$Shape
+             * @typedef {mediflow.v4.PlaybackEvent.$Properties} mediflow.v4.PlaybackEvent.$Shape
              */
 
             /**
              * Constructs a new PlaybackEvent.
-             * @memberof mediflow.v3
+             * @memberof mediflow.v4
              * @classdesc Represents a PlaybackEvent.
              * @constructor
-             * @param {mediflow.v3.PlaybackEvent.$Properties=} [properties] Properties to set
+             * @param {mediflow.v4.PlaybackEvent.$Properties=} [properties] Properties to set
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
             const PlaybackEvent = function (properties) {
@@ -16817,32 +16928,32 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * PlaybackEvent screenId.
-             * @member {string|null|undefined} screenId
-             * @memberof mediflow.v3.PlaybackEvent
+             * @member {Uint8Array|null|undefined} screenId
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.screenId = null;
 
             /**
              * PlaybackEvent eventId.
-             * @member {string|null|undefined} eventId
-             * @memberof mediflow.v3.PlaybackEvent
+             * @member {Uint8Array|null|undefined} eventId
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.eventId = null;
 
             /**
              * PlaybackEvent requestId.
-             * @member {string|null|undefined} requestId
-             * @memberof mediflow.v3.PlaybackEvent
+             * @member {Uint8Array|null|undefined} requestId
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.requestId = null;
 
             /**
              * PlaybackEvent callId.
-             * @member {string|null|undefined} callId
-             * @memberof mediflow.v3.PlaybackEvent
+             * @member {Uint8Array|null|undefined} callId
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.callId = null;
@@ -16850,7 +16961,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PlaybackEvent status.
              * @member {string|null|undefined} status
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.status = null;
@@ -16858,7 +16969,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PlaybackEvent detail.
              * @member {string|null|undefined} detail
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.detail = null;
@@ -16866,7 +16977,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * PlaybackEvent createdAt.
              * @member {string|null|undefined} createdAt
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              */
             PlaybackEvent.prototype.createdAt = null;
@@ -16919,13 +17030,13 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a new PlaybackEvent instance using the specified properties.
              * @function create
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
-             * @param {mediflow.v3.PlaybackEvent.$Properties=} [properties] Properties to set
-             * @returns {mediflow.v3.PlaybackEvent} PlaybackEvent instance
+             * @param {mediflow.v4.PlaybackEvent.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.PlaybackEvent} PlaybackEvent instance
              * @type {{
-             *   (properties: mediflow.v3.PlaybackEvent.$Shape): mediflow.v3.PlaybackEvent & mediflow.v3.PlaybackEvent.$Shape;
-             *   (properties?: mediflow.v3.PlaybackEvent.$Properties): mediflow.v3.PlaybackEvent;
+             *   (properties: mediflow.v4.PlaybackEvent.$Shape): mediflow.v4.PlaybackEvent & mediflow.v4.PlaybackEvent.$Shape;
+             *   (properties?: mediflow.v4.PlaybackEvent.$Properties): mediflow.v4.PlaybackEvent;
              * }}
              */
             PlaybackEvent.create = function(properties) {
@@ -16933,11 +17044,11 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             /**
-             * Encodes the specified PlaybackEvent message. Does not implicitly {@link mediflow.v3.PlaybackEvent.verify|verify} messages.
+             * Encodes the specified PlaybackEvent message. Does not implicitly {@link mediflow.v4.PlaybackEvent.verify|verify} messages.
              * @function encode
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
-             * @param {mediflow.v3.PlaybackEvent.$Properties} message PlaybackEvent message or plain object to encode
+             * @param {mediflow.v4.PlaybackEvent.$Properties} message PlaybackEvent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16949,13 +17060,13 @@ export const mediflow = $root.mediflow = (() => {
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.screenId);
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.screenId);
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.eventId);
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.eventId);
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.requestId);
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.requestId);
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.callId);
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.callId);
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.status);
                 if (message.detail != null && $Object.hasOwnProperty.call(message, "detail"))
@@ -16971,11 +17082,11 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Decodes a PlaybackEvent message from the specified reader or buffer.
              * @function decode
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {mediflow.v3.PlaybackEvent & mediflow.v3.PlaybackEvent.$Shape} PlaybackEvent
+             * @returns {mediflow.v4.PlaybackEvent & mediflow.v4.PlaybackEvent.$Shape} PlaybackEvent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16996,7 +17107,7 @@ export const mediflow = $root.mediflow = (() => {
                     length = reader.len;
                     reader.len = end;
                 }
-                message = _target || new $root.mediflow.v3.PlaybackEvent();
+                message = _target || new $root.mediflow.v4.PlaybackEvent();
                 while (reader.pos < end) {
                     let start = reader.pos;
                     let tag = reader.tag();
@@ -17009,28 +17120,28 @@ export const mediflow = $root.mediflow = (() => {
                     case 1: {
                             if (wireType !== 2)
                                 break;
-                            message.screenId = reader.stringVerify();
+                            message.screenId = reader.bytes();
                             message._screenId = "screenId";
                             continue;
                         }
                     case 2: {
                             if (wireType !== 2)
                                 break;
-                            message.eventId = reader.stringVerify();
+                            message.eventId = reader.bytes();
                             message._eventId = "eventId";
                             continue;
                         }
                     case 3: {
                             if (wireType !== 2)
                                 break;
-                            message.requestId = reader.stringVerify();
+                            message.requestId = reader.bytes();
                             message._requestId = "requestId";
                             continue;
                         }
                     case 4: {
                             if (wireType !== 2)
                                 break;
-                            message.callId = reader.stringVerify();
+                            message.callId = reader.bytes();
                             message._callId = "callId";
                             continue;
                         }
@@ -17075,7 +17186,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Verifies a PlaybackEvent message.
              * @function verify
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17090,23 +17201,23 @@ export const mediflow = $root.mediflow = (() => {
                 let properties = {};
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId")) {
                     properties._screenId = 1;
-                    if (!$util.isString(message.screenId))
-                        return "screenId: string expected";
+                    if (!(message.screenId && typeof message.screenId.length === "number" || $util.isString(message.screenId)))
+                        return "screenId: buffer expected";
                 }
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId")) {
                     properties._eventId = 1;
-                    if (!$util.isString(message.eventId))
-                        return "eventId: string expected";
+                    if (!(message.eventId && typeof message.eventId.length === "number" || $util.isString(message.eventId)))
+                        return "eventId: buffer expected";
                 }
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId")) {
                     properties._requestId = 1;
-                    if (!$util.isString(message.requestId))
-                        return "requestId: string expected";
+                    if (!(message.requestId && typeof message.requestId.length === "number" || $util.isString(message.requestId)))
+                        return "requestId: buffer expected";
                 }
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId")) {
                     properties._callId = 1;
-                    if (!$util.isString(message.callId))
-                        return "callId: string expected";
+                    if (!(message.callId && typeof message.callId.length === "number" || $util.isString(message.callId)))
+                        return "callId: buffer expected";
                 }
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status")) {
                     properties._status = 1;
@@ -17129,29 +17240,41 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a PlaybackEvent message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {mediflow.v3.PlaybackEvent} PlaybackEvent
+             * @returns {mediflow.v4.PlaybackEvent} PlaybackEvent
              */
             PlaybackEvent.fromObject = function (object, _depth) {
-                if (object instanceof $root.mediflow.v3.PlaybackEvent)
+                if (object instanceof $root.mediflow.v4.PlaybackEvent)
                     return object;
                 if (!$util.isObject(object))
-                    throw $TypeError(".mediflow.v3.PlaybackEvent: object expected");
+                    throw $TypeError(".mediflow.v4.PlaybackEvent: object expected");
                 if (_depth === $undefined)
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     throw $Error("max depth exceeded");
-                let message = new $root.mediflow.v3.PlaybackEvent();
+                let message = new $root.mediflow.v4.PlaybackEvent();
                 if (object.screenId != null)
-                    message.screenId = $String(object.screenId);
+                    if (typeof object.screenId === "string")
+                        $util.base64.decode(object.screenId, message.screenId = $util.newBuffer($util.base64.length(object.screenId)), 0);
+                    else if (object.screenId.length >= 0)
+                        message.screenId = object.screenId;
                 if (object.eventId != null)
-                    message.eventId = $String(object.eventId);
+                    if (typeof object.eventId === "string")
+                        $util.base64.decode(object.eventId, message.eventId = $util.newBuffer($util.base64.length(object.eventId)), 0);
+                    else if (object.eventId.length >= 0)
+                        message.eventId = object.eventId;
                 if (object.requestId != null)
-                    message.requestId = $String(object.requestId);
+                    if (typeof object.requestId === "string")
+                        $util.base64.decode(object.requestId, message.requestId = $util.newBuffer($util.base64.length(object.requestId)), 0);
+                    else if (object.requestId.length >= 0)
+                        message.requestId = object.requestId;
                 if (object.callId != null)
-                    message.callId = $String(object.callId);
+                    if (typeof object.callId === "string")
+                        $util.base64.decode(object.callId, message.callId = $util.newBuffer($util.base64.length(object.callId)), 0);
+                    else if (object.callId.length >= 0)
+                        message.callId = object.callId;
                 if (object.status != null)
                     message.status = $String(object.status);
                 if (object.detail != null)
@@ -17164,9 +17287,9 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Creates a plain object from a PlaybackEvent message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
-             * @param {mediflow.v3.PlaybackEvent} message PlaybackEvent
+             * @param {mediflow.v4.PlaybackEvent} message PlaybackEvent
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17179,13 +17302,13 @@ export const mediflow = $root.mediflow = (() => {
                     throw $Error("max depth exceeded");
                 let object = {};
                 if (message.screenId != null && $Object.hasOwnProperty.call(message, "screenId"))
-                    object.screenId = message.screenId;
+                    object.screenId = options.bytes === $String ? $util.base64.encode(message.screenId, 0, message.screenId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.screenId) : message.screenId;
                 if (message.eventId != null && $Object.hasOwnProperty.call(message, "eventId"))
-                    object.eventId = message.eventId;
+                    object.eventId = options.bytes === $String ? $util.base64.encode(message.eventId, 0, message.eventId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.eventId) : message.eventId;
                 if (message.requestId != null && $Object.hasOwnProperty.call(message, "requestId"))
-                    object.requestId = message.requestId;
+                    object.requestId = options.bytes === $String ? $util.base64.encode(message.requestId, 0, message.requestId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.requestId) : message.requestId;
                 if (message.callId != null && $Object.hasOwnProperty.call(message, "callId"))
-                    object.callId = message.callId;
+                    object.callId = options.bytes === $String ? $util.base64.encode(message.callId, 0, message.callId.length) : options.bytes === $Array ? $Array.prototype.slice.call(message.callId) : message.callId;
                 if (message.status != null && $Object.hasOwnProperty.call(message, "status"))
                     object.status = message.status;
                 if (message.detail != null && $Object.hasOwnProperty.call(message, "detail"))
@@ -17198,7 +17321,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Converts this PlaybackEvent to JSON.
              * @function toJSON
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17209,7 +17332,7 @@ export const mediflow = $root.mediflow = (() => {
             /**
              * Gets the type url for PlaybackEvent
              * @function getTypeUrl
-             * @memberof mediflow.v3.PlaybackEvent
+             * @memberof mediflow.v4.PlaybackEvent
              * @static
              * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
              * @returns {string} The type url
@@ -17217,13 +17340,13 @@ export const mediflow = $root.mediflow = (() => {
             PlaybackEvent.getTypeUrl = function(prefix) {
                 if (prefix === $undefined)
                     prefix = "type.googleapis.com";
-                return prefix + "/mediflow.v3.PlaybackEvent";
+                return prefix + "/mediflow.v4.PlaybackEvent";
             };
 
             return PlaybackEvent;
         })();
 
-        return v3;
+        return v4;
     })();
 
     return mediflow;

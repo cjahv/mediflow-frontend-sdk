@@ -4,14 +4,14 @@ import Long = require("long");
 /** Namespace mediflow. */
 export namespace mediflow {
 
-    /** Namespace v3. */
-    namespace v3 {
+    /** Namespace v4. */
+    namespace v4 {
 
         /**
          * Properties of a Person.
-         * @deprecated Use mediflow.v3.Person.$Properties instead.
+         * @deprecated Use mediflow.v4.Person.$Properties instead.
          */
-        interface IPerson extends mediflow.v3.Person.$Properties {
+        interface IPerson extends mediflow.v4.Person.$Properties {
         }
 
         /** Represents a Person. */
@@ -21,13 +21,13 @@ export namespace mediflow {
              * Constructs a new Person.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Person.$Properties);
+            constructor(properties?: mediflow.v4.Person.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Person id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Person name. */
             name?: (string|null);
@@ -43,26 +43,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Person instance
              */
-            static create(properties: mediflow.v3.Person.$Shape): mediflow.v3.Person & mediflow.v3.Person.$Shape;
-            static create(properties?: mediflow.v3.Person.$Properties): mediflow.v3.Person;
+            static create(properties: mediflow.v4.Person.$Shape): mediflow.v4.Person & mediflow.v4.Person.$Shape;
+            static create(properties?: mediflow.v4.Person.$Properties): mediflow.v4.Person;
 
             /**
-             * Encodes the specified Person message. Does not implicitly {@link mediflow.v3.Person.verify|verify} messages.
+             * Encodes the specified Person message. Does not implicitly {@link mediflow.v4.Person.verify|verify} messages.
              * @param message Person message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Person.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Person.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Person message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Person & mediflow.v3.Person.$Shape} Person
+             * @returns {mediflow.v4.Person & mediflow.v4.Person.$Shape} Person
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Person & mediflow.v3.Person.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Person & mediflow.v4.Person.$Shape;
 
             /**
              * Verifies a Person message.
@@ -76,7 +76,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Person
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Person;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Person;
 
             /**
              * Creates a plain object from a Person message. Also converts values to other types if specified.
@@ -84,7 +84,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Person, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Person, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Person to JSON.
@@ -106,7 +106,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Person id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Person name */
                 name?: (string|null);
@@ -122,14 +122,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Person. */
-            type $Shape = mediflow.v3.Person.$Properties;
+            type $Shape = mediflow.v4.Person.$Properties;
         }
 
         /**
          * Properties of a Section.
-         * @deprecated Use mediflow.v3.Section.$Properties instead.
+         * @deprecated Use mediflow.v4.Section.$Properties instead.
          */
-        interface ISection extends mediflow.v3.Section.$Properties {
+        interface ISection extends mediflow.v4.Section.$Properties {
         }
 
         /** Represents a Section. */
@@ -139,45 +139,45 @@ export namespace mediflow {
              * Constructs a new Section.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Section.$Properties);
+            constructor(properties?: mediflow.v4.Section.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Section id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Section name. */
             name?: (string|null);
 
             /** Section persons. */
-            persons: mediflow.v3.Person.$Properties[];
+            persons: mediflow.v4.Person.$Properties[];
 
             /**
              * Creates a new Section instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Section instance
              */
-            static create(properties: mediflow.v3.Section.$Shape): mediflow.v3.Section & mediflow.v3.Section.$Shape;
-            static create(properties?: mediflow.v3.Section.$Properties): mediflow.v3.Section;
+            static create(properties: mediflow.v4.Section.$Shape): mediflow.v4.Section & mediflow.v4.Section.$Shape;
+            static create(properties?: mediflow.v4.Section.$Properties): mediflow.v4.Section;
 
             /**
-             * Encodes the specified Section message. Does not implicitly {@link mediflow.v3.Section.verify|verify} messages.
+             * Encodes the specified Section message. Does not implicitly {@link mediflow.v4.Section.verify|verify} messages.
              * @param message Section message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Section.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Section.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Section message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Section & mediflow.v3.Section.$Shape} Section
+             * @returns {mediflow.v4.Section & mediflow.v4.Section.$Shape} Section
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Section & mediflow.v3.Section.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Section & mediflow.v4.Section.$Shape;
 
             /**
              * Verifies a Section message.
@@ -191,7 +191,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Section
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Section;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Section;
 
             /**
              * Creates a plain object from a Section message. Also converts values to other types if specified.
@@ -199,7 +199,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Section, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Section, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Section to JSON.
@@ -221,27 +221,27 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Section id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Section name */
                 name?: (string|null);
 
                 /** Section persons */
-                persons?: (mediflow.v3.Person.$Properties[]|null);
+                persons?: (mediflow.v4.Person.$Properties[]|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Section. */
-            type $Shape = mediflow.v3.Section.$Properties;
+            type $Shape = mediflow.v4.Section.$Properties;
         }
 
         /**
          * Properties of a Queue.
-         * @deprecated Use mediflow.v3.Queue.$Properties instead.
+         * @deprecated Use mediflow.v4.Queue.$Properties instead.
          */
-        interface IQueue extends mediflow.v3.Queue.$Properties {
+        interface IQueue extends mediflow.v4.Queue.$Properties {
         }
 
         /** Represents a Queue. */
@@ -251,45 +251,45 @@ export namespace mediflow {
              * Constructs a new Queue.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Queue.$Properties);
+            constructor(properties?: mediflow.v4.Queue.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Queue id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Queue name. */
             name?: (string|null);
 
             /** Queue sections. */
-            sections: mediflow.v3.Section.$Properties[];
+            sections: mediflow.v4.Section.$Properties[];
 
             /**
              * Creates a new Queue instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Queue instance
              */
-            static create(properties: mediflow.v3.Queue.$Shape): mediflow.v3.Queue & mediflow.v3.Queue.$Shape;
-            static create(properties?: mediflow.v3.Queue.$Properties): mediflow.v3.Queue;
+            static create(properties: mediflow.v4.Queue.$Shape): mediflow.v4.Queue & mediflow.v4.Queue.$Shape;
+            static create(properties?: mediflow.v4.Queue.$Properties): mediflow.v4.Queue;
 
             /**
-             * Encodes the specified Queue message. Does not implicitly {@link mediflow.v3.Queue.verify|verify} messages.
+             * Encodes the specified Queue message. Does not implicitly {@link mediflow.v4.Queue.verify|verify} messages.
              * @param message Queue message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Queue.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Queue.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Queue message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Queue & mediflow.v3.Queue.$Shape} Queue
+             * @returns {mediflow.v4.Queue & mediflow.v4.Queue.$Shape} Queue
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Queue & mediflow.v3.Queue.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Queue & mediflow.v4.Queue.$Shape;
 
             /**
              * Verifies a Queue message.
@@ -303,7 +303,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Queue
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Queue;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Queue;
 
             /**
              * Creates a plain object from a Queue message. Also converts values to other types if specified.
@@ -311,7 +311,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Queue, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Queue, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Queue to JSON.
@@ -333,27 +333,27 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Queue id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Queue name */
                 name?: (string|null);
 
                 /** Queue sections */
-                sections?: (mediflow.v3.Section.$Properties[]|null);
+                sections?: (mediflow.v4.Section.$Properties[]|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Queue. */
-            type $Shape = mediflow.v3.Queue.$Properties;
+            type $Shape = mediflow.v4.Queue.$Properties;
         }
 
         /**
          * Properties of a Template.
-         * @deprecated Use mediflow.v3.Template.$Properties instead.
+         * @deprecated Use mediflow.v4.Template.$Properties instead.
          */
-        interface ITemplate extends mediflow.v3.Template.$Properties {
+        interface ITemplate extends mediflow.v4.Template.$Properties {
         }
 
         /** Represents a Template. */
@@ -363,39 +363,39 @@ export namespace mediflow {
              * Constructs a new Template.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Template.$Properties);
+            constructor(properties?: mediflow.v4.Template.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Template queues. */
-            queues: mediflow.v3.Queue.$Properties[];
+            queues: mediflow.v4.Queue.$Properties[];
 
             /**
              * Creates a new Template instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Template instance
              */
-            static create(properties: mediflow.v3.Template.$Shape): mediflow.v3.Template & mediflow.v3.Template.$Shape;
-            static create(properties?: mediflow.v3.Template.$Properties): mediflow.v3.Template;
+            static create(properties: mediflow.v4.Template.$Shape): mediflow.v4.Template & mediflow.v4.Template.$Shape;
+            static create(properties?: mediflow.v4.Template.$Properties): mediflow.v4.Template;
 
             /**
-             * Encodes the specified Template message. Does not implicitly {@link mediflow.v3.Template.verify|verify} messages.
+             * Encodes the specified Template message. Does not implicitly {@link mediflow.v4.Template.verify|verify} messages.
              * @param message Template message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Template.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Template.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Template message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Template & mediflow.v3.Template.$Shape} Template
+             * @returns {mediflow.v4.Template & mediflow.v4.Template.$Shape} Template
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Template & mediflow.v3.Template.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Template & mediflow.v4.Template.$Shape;
 
             /**
              * Verifies a Template message.
@@ -409,7 +409,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Template
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Template;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Template;
 
             /**
              * Creates a plain object from a Template message. Also converts values to other types if specified.
@@ -417,7 +417,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Template, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Template, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Template to JSON.
@@ -439,21 +439,21 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Template queues */
-                queues?: (mediflow.v3.Queue.$Properties[]|null);
+                queues?: (mediflow.v4.Queue.$Properties[]|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Template. */
-            type $Shape = mediflow.v3.Template.$Properties;
+            type $Shape = mediflow.v4.Template.$Properties;
         }
 
         /**
          * Properties of a Snapshot.
-         * @deprecated Use mediflow.v3.Snapshot.$Properties instead.
+         * @deprecated Use mediflow.v4.Snapshot.$Properties instead.
          */
-        interface ISnapshot extends mediflow.v3.Snapshot.$Properties {
+        interface ISnapshot extends mediflow.v4.Snapshot.$Properties {
         }
 
         /** Represents a Snapshot. */
@@ -463,16 +463,16 @@ export namespace mediflow {
              * Constructs a new Snapshot.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Snapshot.$Properties);
+            constructor(properties?: mediflow.v4.Snapshot.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Snapshot epoch. */
-            epoch?: (string|null);
+            epoch?: (Uint8Array|null);
 
             /** Snapshot screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /** Snapshot version. */
             version?: (number|Long|null);
@@ -481,33 +481,33 @@ export namespace mediflow {
             templateVersion?: (string|null);
 
             /** Snapshot data. */
-            data?: (mediflow.v3.Template.$Properties|null);
+            data?: (mediflow.v4.Template.$Properties|null);
 
             /**
              * Creates a new Snapshot instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Snapshot instance
              */
-            static create(properties: mediflow.v3.Snapshot.$Shape): mediflow.v3.Snapshot & mediflow.v3.Snapshot.$Shape;
-            static create(properties?: mediflow.v3.Snapshot.$Properties): mediflow.v3.Snapshot;
+            static create(properties: mediflow.v4.Snapshot.$Shape): mediflow.v4.Snapshot & mediflow.v4.Snapshot.$Shape;
+            static create(properties?: mediflow.v4.Snapshot.$Properties): mediflow.v4.Snapshot;
 
             /**
-             * Encodes the specified Snapshot message. Does not implicitly {@link mediflow.v3.Snapshot.verify|verify} messages.
+             * Encodes the specified Snapshot message. Does not implicitly {@link mediflow.v4.Snapshot.verify|verify} messages.
              * @param message Snapshot message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Snapshot.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Snapshot.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Snapshot message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Snapshot & mediflow.v3.Snapshot.$Shape} Snapshot
+             * @returns {mediflow.v4.Snapshot & mediflow.v4.Snapshot.$Shape} Snapshot
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Snapshot & mediflow.v3.Snapshot.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Snapshot & mediflow.v4.Snapshot.$Shape;
 
             /**
              * Verifies a Snapshot message.
@@ -521,7 +521,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Snapshot
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Snapshot;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Snapshot;
 
             /**
              * Creates a plain object from a Snapshot message. Also converts values to other types if specified.
@@ -529,7 +529,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Snapshot, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Snapshot, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Snapshot to JSON.
@@ -551,10 +551,10 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Snapshot epoch */
-                epoch?: (string|null);
+                epoch?: (Uint8Array|null);
 
                 /** Snapshot screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** Snapshot version */
                 version?: (number|Long|null);
@@ -563,21 +563,21 @@ export namespace mediflow {
                 templateVersion?: (string|null);
 
                 /** Snapshot data */
-                data?: (mediflow.v3.Template.$Properties|null);
+                data?: (mediflow.v4.Template.$Properties|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Snapshot. */
-            type $Shape = mediflow.v3.Snapshot.$Properties;
+            type $Shape = mediflow.v4.Snapshot.$Properties;
         }
 
         /**
          * Properties of a Screen.
-         * @deprecated Use mediflow.v3.Screen.$Properties instead.
+         * @deprecated Use mediflow.v4.Screen.$Properties instead.
          */
-        interface IScreen extends mediflow.v3.Screen.$Properties {
+        interface IScreen extends mediflow.v4.Screen.$Properties {
         }
 
         /** Represents a Screen. */
@@ -587,19 +587,19 @@ export namespace mediflow {
              * Constructs a new Screen.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Screen.$Properties);
+            constructor(properties?: mediflow.v4.Screen.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Screen id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Screen name. */
             name?: (string|null);
 
             /** Screen token. */
-            token?: (string|null);
+            token?: (Uint8Array|null);
 
             /** Screen createdAt. */
             createdAt?: (string|null);
@@ -615,26 +615,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Screen instance
              */
-            static create(properties: mediflow.v3.Screen.$Shape): mediflow.v3.Screen & mediflow.v3.Screen.$Shape;
-            static create(properties?: mediflow.v3.Screen.$Properties): mediflow.v3.Screen;
+            static create(properties: mediflow.v4.Screen.$Shape): mediflow.v4.Screen & mediflow.v4.Screen.$Shape;
+            static create(properties?: mediflow.v4.Screen.$Properties): mediflow.v4.Screen;
 
             /**
-             * Encodes the specified Screen message. Does not implicitly {@link mediflow.v3.Screen.verify|verify} messages.
+             * Encodes the specified Screen message. Does not implicitly {@link mediflow.v4.Screen.verify|verify} messages.
              * @param message Screen message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Screen.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Screen.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Screen message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Screen & mediflow.v3.Screen.$Shape} Screen
+             * @returns {mediflow.v4.Screen & mediflow.v4.Screen.$Shape} Screen
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Screen & mediflow.v3.Screen.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Screen & mediflow.v4.Screen.$Shape;
 
             /**
              * Verifies a Screen message.
@@ -648,7 +648,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Screen
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Screen;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Screen;
 
             /**
              * Creates a plain object from a Screen message. Also converts values to other types if specified.
@@ -656,7 +656,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Screen, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Screen, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Screen to JSON.
@@ -678,13 +678,13 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Screen id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Screen name */
                 name?: (string|null);
 
                 /** Screen token */
-                token?: (string|null);
+                token?: (Uint8Array|null);
 
                 /** Screen createdAt */
                 createdAt?: (string|null);
@@ -700,14 +700,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Screen. */
-            type $Shape = mediflow.v3.Screen.$Properties;
+            type $Shape = mediflow.v4.Screen.$Properties;
         }
 
         /**
          * Properties of a Call.
-         * @deprecated Use mediflow.v3.Call.$Properties instead.
+         * @deprecated Use mediflow.v4.Call.$Properties instead.
          */
-        interface ICall extends mediflow.v3.Call.$Properties {
+        interface ICall extends mediflow.v4.Call.$Properties {
         }
 
         /** Represents a Call. */
@@ -717,19 +717,19 @@ export namespace mediflow {
              * Constructs a new Call.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Call.$Properties);
+            constructor(properties?: mediflow.v4.Call.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Call id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Call queueId. */
-            queueId?: (string|null);
+            queueId?: (Uint8Array|null);
 
             /** Call personId. */
-            personId?: (string|null);
+            personId?: (Uint8Array|null);
 
             /** Call text. */
             text?: (string|null);
@@ -744,7 +744,7 @@ export namespace mediflow {
             active?: (boolean|null);
 
             /** Call targets. */
-            targets: string[];
+            targets: Uint8Array[];
 
             /** Call createdAt. */
             createdAt?: (string|null);
@@ -763,26 +763,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Call instance
              */
-            static create(properties: mediflow.v3.Call.$Shape): mediflow.v3.Call & mediflow.v3.Call.$Shape;
-            static create(properties?: mediflow.v3.Call.$Properties): mediflow.v3.Call;
+            static create(properties: mediflow.v4.Call.$Shape): mediflow.v4.Call & mediflow.v4.Call.$Shape;
+            static create(properties?: mediflow.v4.Call.$Properties): mediflow.v4.Call;
 
             /**
-             * Encodes the specified Call message. Does not implicitly {@link mediflow.v3.Call.verify|verify} messages.
+             * Encodes the specified Call message. Does not implicitly {@link mediflow.v4.Call.verify|verify} messages.
              * @param message Call message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Call.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Call.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Call message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Call & mediflow.v3.Call.$Shape} Call
+             * @returns {mediflow.v4.Call & mediflow.v4.Call.$Shape} Call
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Call & mediflow.v3.Call.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Call & mediflow.v4.Call.$Shape;
 
             /**
              * Verifies a Call message.
@@ -796,7 +796,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Call
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Call;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Call;
 
             /**
              * Creates a plain object from a Call message. Also converts values to other types if specified.
@@ -804,7 +804,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Call, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Call, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Call to JSON.
@@ -826,13 +826,13 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Call id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Call queueId */
-                queueId?: (string|null);
+                queueId?: (Uint8Array|null);
 
                 /** Call personId */
-                personId?: (string|null);
+                personId?: (Uint8Array|null);
 
                 /** Call text */
                 text?: (string|null);
@@ -847,7 +847,7 @@ export namespace mediflow {
                 active?: (boolean|null);
 
                 /** Call targets */
-                targets?: (string[]|null);
+                targets?: (Uint8Array[]|null);
 
                 /** Call createdAt */
                 createdAt?: (string|null);
@@ -866,14 +866,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Call. */
-            type $Shape = mediflow.v3.Call.$Properties;
+            type $Shape = mediflow.v4.Call.$Properties;
         }
 
         /**
          * Properties of a Consumption.
-         * @deprecated Use mediflow.v3.Consumption.$Properties instead.
+         * @deprecated Use mediflow.v4.Consumption.$Properties instead.
          */
-        interface IConsumption extends mediflow.v3.Consumption.$Properties {
+        interface IConsumption extends mediflow.v4.Consumption.$Properties {
         }
 
         /** Represents a Consumption. */
@@ -883,19 +883,19 @@ export namespace mediflow {
              * Constructs a new Consumption.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Consumption.$Properties);
+            constructor(properties?: mediflow.v4.Consumption.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Consumption requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Consumption callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** Consumption screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /** Consumption granted. */
             granted?: (boolean|null);
@@ -920,26 +920,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Consumption instance
              */
-            static create(properties: mediflow.v3.Consumption.$Shape): mediflow.v3.Consumption & mediflow.v3.Consumption.$Shape;
-            static create(properties?: mediflow.v3.Consumption.$Properties): mediflow.v3.Consumption;
+            static create(properties: mediflow.v4.Consumption.$Shape): mediflow.v4.Consumption & mediflow.v4.Consumption.$Shape;
+            static create(properties?: mediflow.v4.Consumption.$Properties): mediflow.v4.Consumption;
 
             /**
-             * Encodes the specified Consumption message. Does not implicitly {@link mediflow.v3.Consumption.verify|verify} messages.
+             * Encodes the specified Consumption message. Does not implicitly {@link mediflow.v4.Consumption.verify|verify} messages.
              * @param message Consumption message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Consumption.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Consumption.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Consumption message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Consumption & mediflow.v3.Consumption.$Shape} Consumption
+             * @returns {mediflow.v4.Consumption & mediflow.v4.Consumption.$Shape} Consumption
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Consumption & mediflow.v3.Consumption.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Consumption & mediflow.v4.Consumption.$Shape;
 
             /**
              * Verifies a Consumption message.
@@ -953,7 +953,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Consumption
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Consumption;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Consumption;
 
             /**
              * Creates a plain object from a Consumption message. Also converts values to other types if specified.
@@ -961,7 +961,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Consumption, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Consumption, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Consumption to JSON.
@@ -983,13 +983,13 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Consumption requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Consumption callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** Consumption screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** Consumption granted */
                 granted?: (boolean|null);
@@ -1014,14 +1014,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Consumption. */
-            type $Shape = mediflow.v3.Consumption.$Properties;
+            type $Shape = mediflow.v4.Consumption.$Properties;
         }
 
         /**
          * Properties of an Audit.
-         * @deprecated Use mediflow.v3.Audit.$Properties instead.
+         * @deprecated Use mediflow.v4.Audit.$Properties instead.
          */
-        interface IAudit extends mediflow.v3.Audit.$Properties {
+        interface IAudit extends mediflow.v4.Audit.$Properties {
         }
 
         /** Represents an Audit. */
@@ -1031,7 +1031,7 @@ export namespace mediflow {
              * Constructs a new Audit.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Audit.$Properties);
+            constructor(properties?: mediflow.v4.Audit.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -1046,7 +1046,7 @@ export namespace mediflow {
             outcome?: (string|null);
 
             /** Audit id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Audit time. */
             time?: (string|null);
@@ -1055,13 +1055,13 @@ export namespace mediflow {
             action?: (string|null);
 
             /** Audit screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /** Audit callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** Audit requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Audit detail. */
             detail?: (string|null);
@@ -1074,26 +1074,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Audit instance
              */
-            static create(properties: mediflow.v3.Audit.$Shape): mediflow.v3.Audit & mediflow.v3.Audit.$Shape;
-            static create(properties?: mediflow.v3.Audit.$Properties): mediflow.v3.Audit;
+            static create(properties: mediflow.v4.Audit.$Shape): mediflow.v4.Audit & mediflow.v4.Audit.$Shape;
+            static create(properties?: mediflow.v4.Audit.$Properties): mediflow.v4.Audit;
 
             /**
-             * Encodes the specified Audit message. Does not implicitly {@link mediflow.v3.Audit.verify|verify} messages.
+             * Encodes the specified Audit message. Does not implicitly {@link mediflow.v4.Audit.verify|verify} messages.
              * @param message Audit message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Audit.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Audit.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an Audit message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Audit & mediflow.v3.Audit.$Shape} Audit
+             * @returns {mediflow.v4.Audit & mediflow.v4.Audit.$Shape} Audit
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Audit & mediflow.v3.Audit.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Audit & mediflow.v4.Audit.$Shape;
 
             /**
              * Verifies an Audit message.
@@ -1107,7 +1107,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Audit
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Audit;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Audit;
 
             /**
              * Creates a plain object from an Audit message. Also converts values to other types if specified.
@@ -1115,7 +1115,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Audit, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Audit, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Audit to JSON.
@@ -1146,7 +1146,7 @@ export namespace mediflow {
                 outcome?: (string|null);
 
                 /** Audit id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Audit time */
                 time?: (string|null);
@@ -1155,13 +1155,13 @@ export namespace mediflow {
                 action?: (string|null);
 
                 /** Audit screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** Audit callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** Audit requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Audit detail */
                 detail?: (string|null);
@@ -1174,14 +1174,14 @@ export namespace mediflow {
             }
 
             /** Shape of an Audit. */
-            type $Shape = mediflow.v3.Audit.$Properties;
+            type $Shape = mediflow.v4.Audit.$Properties;
         }
 
         /**
          * Properties of an Archive.
-         * @deprecated Use mediflow.v3.Archive.$Properties instead.
+         * @deprecated Use mediflow.v4.Archive.$Properties instead.
          */
-        interface IArchive extends mediflow.v3.Archive.$Properties {
+        interface IArchive extends mediflow.v4.Archive.$Properties {
         }
 
         /** Represents an Archive. */
@@ -1191,7 +1191,7 @@ export namespace mediflow {
              * Constructs a new Archive.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Archive.$Properties);
+            constructor(properties?: mediflow.v4.Archive.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -1200,7 +1200,7 @@ export namespace mediflow {
             sha256?: (string|null);
 
             /** Archive id. */
-            id?: (string|null);
+            id?: (Uint8Array|null);
 
             /** Archive createdAt. */
             createdAt?: (string|null);
@@ -1219,26 +1219,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Archive instance
              */
-            static create(properties: mediflow.v3.Archive.$Shape): mediflow.v3.Archive & mediflow.v3.Archive.$Shape;
-            static create(properties?: mediflow.v3.Archive.$Properties): mediflow.v3.Archive;
+            static create(properties: mediflow.v4.Archive.$Shape): mediflow.v4.Archive & mediflow.v4.Archive.$Shape;
+            static create(properties?: mediflow.v4.Archive.$Properties): mediflow.v4.Archive;
 
             /**
-             * Encodes the specified Archive message. Does not implicitly {@link mediflow.v3.Archive.verify|verify} messages.
+             * Encodes the specified Archive message. Does not implicitly {@link mediflow.v4.Archive.verify|verify} messages.
              * @param message Archive message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Archive.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Archive.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an Archive message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Archive & mediflow.v3.Archive.$Shape} Archive
+             * @returns {mediflow.v4.Archive & mediflow.v4.Archive.$Shape} Archive
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Archive & mediflow.v3.Archive.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Archive & mediflow.v4.Archive.$Shape;
 
             /**
              * Verifies an Archive message.
@@ -1252,7 +1252,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Archive
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Archive;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Archive;
 
             /**
              * Creates a plain object from an Archive message. Also converts values to other types if specified.
@@ -1260,7 +1260,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Archive, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Archive, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Archive to JSON.
@@ -1285,7 +1285,7 @@ export namespace mediflow {
                 sha256?: (string|null);
 
                 /** Archive id */
-                id?: (string|null);
+                id?: (Uint8Array|null);
 
                 /** Archive createdAt */
                 createdAt?: (string|null);
@@ -1304,14 +1304,14 @@ export namespace mediflow {
             }
 
             /** Shape of an Archive. */
-            type $Shape = mediflow.v3.Archive.$Properties;
+            type $Shape = mediflow.v4.Archive.$Properties;
         }
 
         /**
          * Properties of a Target.
-         * @deprecated Use mediflow.v3.Target.$Properties instead.
+         * @deprecated Use mediflow.v4.Target.$Properties instead.
          */
-        interface ITarget extends mediflow.v3.Target.$Properties {
+        interface ITarget extends mediflow.v4.Target.$Properties {
         }
 
         /** Represents a Target. */
@@ -1321,16 +1321,16 @@ export namespace mediflow {
              * Constructs a new Target.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Target.$Properties);
+            constructor(properties?: mediflow.v4.Target.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Target screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /** Target callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** Target consumed. */
             consumed?: (number|null);
@@ -1340,26 +1340,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Target instance
              */
-            static create(properties: mediflow.v3.Target.$Shape): mediflow.v3.Target & mediflow.v3.Target.$Shape;
-            static create(properties?: mediflow.v3.Target.$Properties): mediflow.v3.Target;
+            static create(properties: mediflow.v4.Target.$Shape): mediflow.v4.Target & mediflow.v4.Target.$Shape;
+            static create(properties?: mediflow.v4.Target.$Properties): mediflow.v4.Target;
 
             /**
-             * Encodes the specified Target message. Does not implicitly {@link mediflow.v3.Target.verify|verify} messages.
+             * Encodes the specified Target message. Does not implicitly {@link mediflow.v4.Target.verify|verify} messages.
              * @param message Target message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Target.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Target.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Target message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Target & mediflow.v3.Target.$Shape} Target
+             * @returns {mediflow.v4.Target & mediflow.v4.Target.$Shape} Target
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Target & mediflow.v3.Target.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Target & mediflow.v4.Target.$Shape;
 
             /**
              * Verifies a Target message.
@@ -1373,7 +1373,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Target
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Target;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Target;
 
             /**
              * Creates a plain object from a Target message. Also converts values to other types if specified.
@@ -1381,7 +1381,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Target, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Target, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Target to JSON.
@@ -1403,10 +1403,10 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Target screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** Target callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** Target consumed */
                 consumed?: (number|null);
@@ -1416,14 +1416,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Target. */
-            type $Shape = mediflow.v3.Target.$Properties;
+            type $Shape = mediflow.v4.Target.$Properties;
         }
 
         /**
          * Properties of a HistoryItem.
-         * @deprecated Use mediflow.v3.HistoryItem.$Properties instead.
+         * @deprecated Use mediflow.v4.HistoryItem.$Properties instead.
          */
-        interface IHistoryItem extends mediflow.v3.HistoryItem.$Properties {
+        interface IHistoryItem extends mediflow.v4.HistoryItem.$Properties {
         }
 
         /** Represents a HistoryItem. */
@@ -1433,7 +1433,7 @@ export namespace mediflow {
              * Constructs a new HistoryItem.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.HistoryItem.$Properties);
+            constructor(properties?: mediflow.v4.HistoryItem.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -1451,22 +1451,22 @@ export namespace mediflow {
             sha256?: (string|null);
 
             /** HistoryItem snapshot. */
-            snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+            snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
             /** HistoryItem consumption. */
-            consumption?: (mediflow.v3.Consumption.$Properties|null);
+            consumption?: (mediflow.v4.Consumption.$Properties|null);
 
             /** HistoryItem audit. */
-            audit?: (mediflow.v3.Audit.$Properties|null);
+            audit?: (mediflow.v4.Audit.$Properties|null);
 
             /** HistoryItem call. */
-            call?: (mediflow.v3.Call.$Properties|null);
+            call?: (mediflow.v4.Call.$Properties|null);
 
             /** HistoryItem target. */
-            target?: (mediflow.v3.Target.$Properties|null);
+            target?: (mediflow.v4.Target.$Properties|null);
 
             /** HistoryItem playback. */
-            playback?: (mediflow.v3.PlaybackEvent.$Properties|null);
+            playback?: (mediflow.v4.PlaybackEvent.$Properties|null);
 
             /** HistoryItem record. */
             record?: ("snapshot"|"consumption"|"audit"|"call"|"target"|"playback");
@@ -1476,26 +1476,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns HistoryItem instance
              */
-            static create(properties: mediflow.v3.HistoryItem.$Shape): mediflow.v3.HistoryItem & mediflow.v3.HistoryItem.$Shape;
-            static create(properties?: mediflow.v3.HistoryItem.$Properties): mediflow.v3.HistoryItem;
+            static create(properties: mediflow.v4.HistoryItem.$Shape): mediflow.v4.HistoryItem & mediflow.v4.HistoryItem.$Shape;
+            static create(properties?: mediflow.v4.HistoryItem.$Properties): mediflow.v4.HistoryItem;
 
             /**
-             * Encodes the specified HistoryItem message. Does not implicitly {@link mediflow.v3.HistoryItem.verify|verify} messages.
+             * Encodes the specified HistoryItem message. Does not implicitly {@link mediflow.v4.HistoryItem.verify|verify} messages.
              * @param message HistoryItem message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.HistoryItem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.HistoryItem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a HistoryItem message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.HistoryItem & mediflow.v3.HistoryItem.$Shape} HistoryItem
+             * @returns {mediflow.v4.HistoryItem & mediflow.v4.HistoryItem.$Shape} HistoryItem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.HistoryItem & mediflow.v3.HistoryItem.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.HistoryItem & mediflow.v4.HistoryItem.$Shape;
 
             /**
              * Verifies a HistoryItem message.
@@ -1509,7 +1509,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns HistoryItem
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.HistoryItem;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.HistoryItem;
 
             /**
              * Creates a plain object from a HistoryItem message. Also converts values to other types if specified.
@@ -1517,7 +1517,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.HistoryItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.HistoryItem, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this HistoryItem to JSON.
@@ -1551,22 +1551,22 @@ export namespace mediflow {
                 sha256?: (string|null);
 
                 /** HistoryItem snapshot */
-                snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+                snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
                 /** HistoryItem consumption */
-                consumption?: (mediflow.v3.Consumption.$Properties|null);
+                consumption?: (mediflow.v4.Consumption.$Properties|null);
 
                 /** HistoryItem audit */
-                audit?: (mediflow.v3.Audit.$Properties|null);
+                audit?: (mediflow.v4.Audit.$Properties|null);
 
                 /** HistoryItem call */
-                call?: (mediflow.v3.Call.$Properties|null);
+                call?: (mediflow.v4.Call.$Properties|null);
 
                 /** HistoryItem target */
-                target?: (mediflow.v3.Target.$Properties|null);
+                target?: (mediflow.v4.Target.$Properties|null);
 
                 /** HistoryItem playback */
-                playback?: (mediflow.v3.PlaybackEvent.$Properties|null);
+                playback?: (mediflow.v4.PlaybackEvent.$Properties|null);
 
                 /** HistoryItem record */
                 record?: ("snapshot"|"consumption"|"audit"|"call"|"target"|"playback");
@@ -1581,23 +1581,23 @@ export namespace mediflow {
               key?: string|null;
               time?: string|null;
               sha256?: string|null;
-              snapshot?: mediflow.v3.Snapshot.$Shape|null;
-              consumption?: mediflow.v3.Consumption.$Shape|null;
-              audit?: mediflow.v3.Audit.$Shape|null;
-              call?: mediflow.v3.Call.$Shape|null;
-              target?: mediflow.v3.Target.$Shape|null;
-              playback?: mediflow.v3.PlaybackEvent.$Shape|null;
+              snapshot?: mediflow.v4.Snapshot.$Shape|null;
+              consumption?: mediflow.v4.Consumption.$Shape|null;
+              audit?: mediflow.v4.Audit.$Shape|null;
+              call?: mediflow.v4.Call.$Shape|null;
+              target?: mediflow.v4.Target.$Shape|null;
+              playback?: mediflow.v4.PlaybackEvent.$Shape|null;
               $unknowns?: Uint8Array[];
             } & (
-              ({ record?: undefined; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "snapshot"; snapshot: mediflow.v3.Snapshot.$Shape; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "consumption"; snapshot?: null; consumption: mediflow.v3.Consumption.$Shape; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "audit"; snapshot?: null; consumption?: null; audit: mediflow.v3.Audit.$Shape; call?: null; target?: null; playback?: null }|{ record?: "call"; snapshot?: null; consumption?: null; audit?: null; call: mediflow.v3.Call.$Shape; target?: null; playback?: null }|{ record?: "target"; snapshot?: null; consumption?: null; audit?: null; call?: null; target: mediflow.v3.Target.$Shape; playback?: null }|{ record?: "playback"; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback: mediflow.v3.PlaybackEvent.$Shape })
+              ({ record?: undefined; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "snapshot"; snapshot: mediflow.v4.Snapshot.$Shape; consumption?: null; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "consumption"; snapshot?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; call?: null; target?: null; playback?: null }|{ record?: "audit"; snapshot?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; call?: null; target?: null; playback?: null }|{ record?: "call"; snapshot?: null; consumption?: null; audit?: null; call: mediflow.v4.Call.$Shape; target?: null; playback?: null }|{ record?: "target"; snapshot?: null; consumption?: null; audit?: null; call?: null; target: mediflow.v4.Target.$Shape; playback?: null }|{ record?: "playback"; snapshot?: null; consumption?: null; audit?: null; call?: null; target?: null; playback: mediflow.v4.PlaybackEvent.$Shape })
             );
         }
 
         /**
          * Properties of a CallPage.
-         * @deprecated Use mediflow.v3.CallPage.$Properties instead.
+         * @deprecated Use mediflow.v4.CallPage.$Properties instead.
          */
-        interface ICallPage extends mediflow.v3.CallPage.$Properties {
+        interface ICallPage extends mediflow.v4.CallPage.$Properties {
         }
 
         /** Represents a CallPage. */
@@ -1607,13 +1607,13 @@ export namespace mediflow {
              * Constructs a new CallPage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.CallPage.$Properties);
+            constructor(properties?: mediflow.v4.CallPage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** CallPage items. */
-            items: mediflow.v3.Call.$Properties[];
+            items: mediflow.v4.Call.$Properties[];
 
             /** CallPage total. */
             total?: (number|Long|null);
@@ -1629,26 +1629,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns CallPage instance
              */
-            static create(properties: mediflow.v3.CallPage.$Shape): mediflow.v3.CallPage & mediflow.v3.CallPage.$Shape;
-            static create(properties?: mediflow.v3.CallPage.$Properties): mediflow.v3.CallPage;
+            static create(properties: mediflow.v4.CallPage.$Shape): mediflow.v4.CallPage & mediflow.v4.CallPage.$Shape;
+            static create(properties?: mediflow.v4.CallPage.$Properties): mediflow.v4.CallPage;
 
             /**
-             * Encodes the specified CallPage message. Does not implicitly {@link mediflow.v3.CallPage.verify|verify} messages.
+             * Encodes the specified CallPage message. Does not implicitly {@link mediflow.v4.CallPage.verify|verify} messages.
              * @param message CallPage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.CallPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.CallPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a CallPage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.CallPage & mediflow.v3.CallPage.$Shape} CallPage
+             * @returns {mediflow.v4.CallPage & mediflow.v4.CallPage.$Shape} CallPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.CallPage & mediflow.v3.CallPage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.CallPage & mediflow.v4.CallPage.$Shape;
 
             /**
              * Verifies a CallPage message.
@@ -1662,7 +1662,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns CallPage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.CallPage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.CallPage;
 
             /**
              * Creates a plain object from a CallPage message. Also converts values to other types if specified.
@@ -1670,7 +1670,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.CallPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.CallPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this CallPage to JSON.
@@ -1692,7 +1692,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** CallPage items */
-                items?: (mediflow.v3.Call.$Properties[]|null);
+                items?: (mediflow.v4.Call.$Properties[]|null);
 
                 /** CallPage total */
                 total?: (number|Long|null);
@@ -1708,14 +1708,14 @@ export namespace mediflow {
             }
 
             /** Shape of a CallPage. */
-            type $Shape = mediflow.v3.CallPage.$Properties;
+            type $Shape = mediflow.v4.CallPage.$Properties;
         }
 
         /**
          * Properties of a ScreenPage.
-         * @deprecated Use mediflow.v3.ScreenPage.$Properties instead.
+         * @deprecated Use mediflow.v4.ScreenPage.$Properties instead.
          */
-        interface IScreenPage extends mediflow.v3.ScreenPage.$Properties {
+        interface IScreenPage extends mediflow.v4.ScreenPage.$Properties {
         }
 
         /** Represents a ScreenPage. */
@@ -1725,13 +1725,13 @@ export namespace mediflow {
              * Constructs a new ScreenPage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.ScreenPage.$Properties);
+            constructor(properties?: mediflow.v4.ScreenPage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** ScreenPage items. */
-            items: mediflow.v3.Screen.$Properties[];
+            items: mediflow.v4.Screen.$Properties[];
 
             /** ScreenPage total. */
             total?: (number|Long|null);
@@ -1747,26 +1747,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns ScreenPage instance
              */
-            static create(properties: mediflow.v3.ScreenPage.$Shape): mediflow.v3.ScreenPage & mediflow.v3.ScreenPage.$Shape;
-            static create(properties?: mediflow.v3.ScreenPage.$Properties): mediflow.v3.ScreenPage;
+            static create(properties: mediflow.v4.ScreenPage.$Shape): mediflow.v4.ScreenPage & mediflow.v4.ScreenPage.$Shape;
+            static create(properties?: mediflow.v4.ScreenPage.$Properties): mediflow.v4.ScreenPage;
 
             /**
-             * Encodes the specified ScreenPage message. Does not implicitly {@link mediflow.v3.ScreenPage.verify|verify} messages.
+             * Encodes the specified ScreenPage message. Does not implicitly {@link mediflow.v4.ScreenPage.verify|verify} messages.
              * @param message ScreenPage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.ScreenPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.ScreenPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a ScreenPage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.ScreenPage & mediflow.v3.ScreenPage.$Shape} ScreenPage
+             * @returns {mediflow.v4.ScreenPage & mediflow.v4.ScreenPage.$Shape} ScreenPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.ScreenPage & mediflow.v3.ScreenPage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.ScreenPage & mediflow.v4.ScreenPage.$Shape;
 
             /**
              * Verifies a ScreenPage message.
@@ -1780,7 +1780,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns ScreenPage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.ScreenPage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.ScreenPage;
 
             /**
              * Creates a plain object from a ScreenPage message. Also converts values to other types if specified.
@@ -1788,7 +1788,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.ScreenPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.ScreenPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this ScreenPage to JSON.
@@ -1810,7 +1810,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** ScreenPage items */
-                items?: (mediflow.v3.Screen.$Properties[]|null);
+                items?: (mediflow.v4.Screen.$Properties[]|null);
 
                 /** ScreenPage total */
                 total?: (number|Long|null);
@@ -1826,14 +1826,14 @@ export namespace mediflow {
             }
 
             /** Shape of a ScreenPage. */
-            type $Shape = mediflow.v3.ScreenPage.$Properties;
+            type $Shape = mediflow.v4.ScreenPage.$Properties;
         }
 
         /**
          * Properties of a ConsumptionPage.
-         * @deprecated Use mediflow.v3.ConsumptionPage.$Properties instead.
+         * @deprecated Use mediflow.v4.ConsumptionPage.$Properties instead.
          */
-        interface IConsumptionPage extends mediflow.v3.ConsumptionPage.$Properties {
+        interface IConsumptionPage extends mediflow.v4.ConsumptionPage.$Properties {
         }
 
         /** Represents a ConsumptionPage. */
@@ -1843,13 +1843,13 @@ export namespace mediflow {
              * Constructs a new ConsumptionPage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.ConsumptionPage.$Properties);
+            constructor(properties?: mediflow.v4.ConsumptionPage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** ConsumptionPage items. */
-            items: mediflow.v3.Consumption.$Properties[];
+            items: mediflow.v4.Consumption.$Properties[];
 
             /** ConsumptionPage total. */
             total?: (number|Long|null);
@@ -1865,26 +1865,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns ConsumptionPage instance
              */
-            static create(properties: mediflow.v3.ConsumptionPage.$Shape): mediflow.v3.ConsumptionPage & mediflow.v3.ConsumptionPage.$Shape;
-            static create(properties?: mediflow.v3.ConsumptionPage.$Properties): mediflow.v3.ConsumptionPage;
+            static create(properties: mediflow.v4.ConsumptionPage.$Shape): mediflow.v4.ConsumptionPage & mediflow.v4.ConsumptionPage.$Shape;
+            static create(properties?: mediflow.v4.ConsumptionPage.$Properties): mediflow.v4.ConsumptionPage;
 
             /**
-             * Encodes the specified ConsumptionPage message. Does not implicitly {@link mediflow.v3.ConsumptionPage.verify|verify} messages.
+             * Encodes the specified ConsumptionPage message. Does not implicitly {@link mediflow.v4.ConsumptionPage.verify|verify} messages.
              * @param message ConsumptionPage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.ConsumptionPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.ConsumptionPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a ConsumptionPage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.ConsumptionPage & mediflow.v3.ConsumptionPage.$Shape} ConsumptionPage
+             * @returns {mediflow.v4.ConsumptionPage & mediflow.v4.ConsumptionPage.$Shape} ConsumptionPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.ConsumptionPage & mediflow.v3.ConsumptionPage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.ConsumptionPage & mediflow.v4.ConsumptionPage.$Shape;
 
             /**
              * Verifies a ConsumptionPage message.
@@ -1898,7 +1898,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns ConsumptionPage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.ConsumptionPage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.ConsumptionPage;
 
             /**
              * Creates a plain object from a ConsumptionPage message. Also converts values to other types if specified.
@@ -1906,7 +1906,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.ConsumptionPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.ConsumptionPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this ConsumptionPage to JSON.
@@ -1928,7 +1928,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** ConsumptionPage items */
-                items?: (mediflow.v3.Consumption.$Properties[]|null);
+                items?: (mediflow.v4.Consumption.$Properties[]|null);
 
                 /** ConsumptionPage total */
                 total?: (number|Long|null);
@@ -1944,14 +1944,14 @@ export namespace mediflow {
             }
 
             /** Shape of a ConsumptionPage. */
-            type $Shape = mediflow.v3.ConsumptionPage.$Properties;
+            type $Shape = mediflow.v4.ConsumptionPage.$Properties;
         }
 
         /**
          * Properties of an AuditPage.
-         * @deprecated Use mediflow.v3.AuditPage.$Properties instead.
+         * @deprecated Use mediflow.v4.AuditPage.$Properties instead.
          */
-        interface IAuditPage extends mediflow.v3.AuditPage.$Properties {
+        interface IAuditPage extends mediflow.v4.AuditPage.$Properties {
         }
 
         /** Represents an AuditPage. */
@@ -1961,13 +1961,13 @@ export namespace mediflow {
              * Constructs a new AuditPage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.AuditPage.$Properties);
+            constructor(properties?: mediflow.v4.AuditPage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** AuditPage items. */
-            items: mediflow.v3.Audit.$Properties[];
+            items: mediflow.v4.Audit.$Properties[];
 
             /** AuditPage total. */
             total?: (number|Long|null);
@@ -1983,26 +1983,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns AuditPage instance
              */
-            static create(properties: mediflow.v3.AuditPage.$Shape): mediflow.v3.AuditPage & mediflow.v3.AuditPage.$Shape;
-            static create(properties?: mediflow.v3.AuditPage.$Properties): mediflow.v3.AuditPage;
+            static create(properties: mediflow.v4.AuditPage.$Shape): mediflow.v4.AuditPage & mediflow.v4.AuditPage.$Shape;
+            static create(properties?: mediflow.v4.AuditPage.$Properties): mediflow.v4.AuditPage;
 
             /**
-             * Encodes the specified AuditPage message. Does not implicitly {@link mediflow.v3.AuditPage.verify|verify} messages.
+             * Encodes the specified AuditPage message. Does not implicitly {@link mediflow.v4.AuditPage.verify|verify} messages.
              * @param message AuditPage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.AuditPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.AuditPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an AuditPage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.AuditPage & mediflow.v3.AuditPage.$Shape} AuditPage
+             * @returns {mediflow.v4.AuditPage & mediflow.v4.AuditPage.$Shape} AuditPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.AuditPage & mediflow.v3.AuditPage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.AuditPage & mediflow.v4.AuditPage.$Shape;
 
             /**
              * Verifies an AuditPage message.
@@ -2016,7 +2016,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns AuditPage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.AuditPage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.AuditPage;
 
             /**
              * Creates a plain object from an AuditPage message. Also converts values to other types if specified.
@@ -2024,7 +2024,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.AuditPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.AuditPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this AuditPage to JSON.
@@ -2046,7 +2046,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** AuditPage items */
-                items?: (mediflow.v3.Audit.$Properties[]|null);
+                items?: (mediflow.v4.Audit.$Properties[]|null);
 
                 /** AuditPage total */
                 total?: (number|Long|null);
@@ -2062,14 +2062,14 @@ export namespace mediflow {
             }
 
             /** Shape of an AuditPage. */
-            type $Shape = mediflow.v3.AuditPage.$Properties;
+            type $Shape = mediflow.v4.AuditPage.$Properties;
         }
 
         /**
          * Properties of an ArchivePage.
-         * @deprecated Use mediflow.v3.ArchivePage.$Properties instead.
+         * @deprecated Use mediflow.v4.ArchivePage.$Properties instead.
          */
-        interface IArchivePage extends mediflow.v3.ArchivePage.$Properties {
+        interface IArchivePage extends mediflow.v4.ArchivePage.$Properties {
         }
 
         /** Represents an ArchivePage. */
@@ -2079,13 +2079,13 @@ export namespace mediflow {
              * Constructs a new ArchivePage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.ArchivePage.$Properties);
+            constructor(properties?: mediflow.v4.ArchivePage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** ArchivePage items. */
-            items: mediflow.v3.Archive.$Properties[];
+            items: mediflow.v4.Archive.$Properties[];
 
             /** ArchivePage total. */
             total?: (number|Long|null);
@@ -2101,26 +2101,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns ArchivePage instance
              */
-            static create(properties: mediflow.v3.ArchivePage.$Shape): mediflow.v3.ArchivePage & mediflow.v3.ArchivePage.$Shape;
-            static create(properties?: mediflow.v3.ArchivePage.$Properties): mediflow.v3.ArchivePage;
+            static create(properties: mediflow.v4.ArchivePage.$Shape): mediflow.v4.ArchivePage & mediflow.v4.ArchivePage.$Shape;
+            static create(properties?: mediflow.v4.ArchivePage.$Properties): mediflow.v4.ArchivePage;
 
             /**
-             * Encodes the specified ArchivePage message. Does not implicitly {@link mediflow.v3.ArchivePage.verify|verify} messages.
+             * Encodes the specified ArchivePage message. Does not implicitly {@link mediflow.v4.ArchivePage.verify|verify} messages.
              * @param message ArchivePage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.ArchivePage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.ArchivePage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an ArchivePage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.ArchivePage & mediflow.v3.ArchivePage.$Shape} ArchivePage
+             * @returns {mediflow.v4.ArchivePage & mediflow.v4.ArchivePage.$Shape} ArchivePage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.ArchivePage & mediflow.v3.ArchivePage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.ArchivePage & mediflow.v4.ArchivePage.$Shape;
 
             /**
              * Verifies an ArchivePage message.
@@ -2134,7 +2134,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns ArchivePage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.ArchivePage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.ArchivePage;
 
             /**
              * Creates a plain object from an ArchivePage message. Also converts values to other types if specified.
@@ -2142,7 +2142,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.ArchivePage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.ArchivePage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this ArchivePage to JSON.
@@ -2164,7 +2164,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** ArchivePage items */
-                items?: (mediflow.v3.Archive.$Properties[]|null);
+                items?: (mediflow.v4.Archive.$Properties[]|null);
 
                 /** ArchivePage total */
                 total?: (number|Long|null);
@@ -2180,14 +2180,14 @@ export namespace mediflow {
             }
 
             /** Shape of an ArchivePage. */
-            type $Shape = mediflow.v3.ArchivePage.$Properties;
+            type $Shape = mediflow.v4.ArchivePage.$Properties;
         }
 
         /**
          * Properties of a HistoryPage.
-         * @deprecated Use mediflow.v3.HistoryPage.$Properties instead.
+         * @deprecated Use mediflow.v4.HistoryPage.$Properties instead.
          */
-        interface IHistoryPage extends mediflow.v3.HistoryPage.$Properties {
+        interface IHistoryPage extends mediflow.v4.HistoryPage.$Properties {
         }
 
         /** Represents a HistoryPage. */
@@ -2197,13 +2197,13 @@ export namespace mediflow {
              * Constructs a new HistoryPage.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.HistoryPage.$Properties);
+            constructor(properties?: mediflow.v4.HistoryPage.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** HistoryPage items. */
-            items: mediflow.v3.HistoryItem.$Properties[];
+            items: mediflow.v4.HistoryItem.$Properties[];
 
             /** HistoryPage total. */
             total?: (number|Long|null);
@@ -2219,26 +2219,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns HistoryPage instance
              */
-            static create(properties: mediflow.v3.HistoryPage.$Shape): mediflow.v3.HistoryPage & mediflow.v3.HistoryPage.$Shape;
-            static create(properties?: mediflow.v3.HistoryPage.$Properties): mediflow.v3.HistoryPage;
+            static create(properties: mediflow.v4.HistoryPage.$Shape): mediflow.v4.HistoryPage & mediflow.v4.HistoryPage.$Shape;
+            static create(properties?: mediflow.v4.HistoryPage.$Properties): mediflow.v4.HistoryPage;
 
             /**
-             * Encodes the specified HistoryPage message. Does not implicitly {@link mediflow.v3.HistoryPage.verify|verify} messages.
+             * Encodes the specified HistoryPage message. Does not implicitly {@link mediflow.v4.HistoryPage.verify|verify} messages.
              * @param message HistoryPage message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.HistoryPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.HistoryPage.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a HistoryPage message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.HistoryPage & mediflow.v3.HistoryPage.$Shape} HistoryPage
+             * @returns {mediflow.v4.HistoryPage & mediflow.v4.HistoryPage.$Shape} HistoryPage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.HistoryPage & mediflow.v3.HistoryPage.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.HistoryPage & mediflow.v4.HistoryPage.$Shape;
 
             /**
              * Verifies a HistoryPage message.
@@ -2252,7 +2252,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns HistoryPage
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.HistoryPage;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.HistoryPage;
 
             /**
              * Creates a plain object from a HistoryPage message. Also converts values to other types if specified.
@@ -2260,7 +2260,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.HistoryPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.HistoryPage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this HistoryPage to JSON.
@@ -2282,7 +2282,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** HistoryPage items */
-                items?: (mediflow.v3.HistoryItem.$Properties[]|null);
+                items?: (mediflow.v4.HistoryItem.$Properties[]|null);
 
                 /** HistoryPage total */
                 total?: (number|Long|null);
@@ -2299,7 +2299,7 @@ export namespace mediflow {
 
             /** Shape of a HistoryPage. */
             type $Shape = {
-              items?: mediflow.v3.HistoryItem.$Shape[]|null;
+              items?: mediflow.v4.HistoryItem.$Shape[]|null;
               total?: number|Long|null;
               page?: number|null;
               pageSize?: number|null;
@@ -2309,9 +2309,9 @@ export namespace mediflow {
 
         /**
          * Properties of a ScreenDetail.
-         * @deprecated Use mediflow.v3.ScreenDetail.$Properties instead.
+         * @deprecated Use mediflow.v4.ScreenDetail.$Properties instead.
          */
-        interface IScreenDetail extends mediflow.v3.ScreenDetail.$Properties {
+        interface IScreenDetail extends mediflow.v4.ScreenDetail.$Properties {
         }
 
         /** Represents a ScreenDetail. */
@@ -2321,45 +2321,45 @@ export namespace mediflow {
              * Constructs a new ScreenDetail.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.ScreenDetail.$Properties);
+            constructor(properties?: mediflow.v4.ScreenDetail.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** ScreenDetail screen. */
-            screen?: (mediflow.v3.Screen.$Properties|null);
+            screen?: (mediflow.v4.Screen.$Properties|null);
 
             /** ScreenDetail state. */
-            state?: (mediflow.v3.Snapshot.$Properties|null);
+            state?: (mediflow.v4.Snapshot.$Properties|null);
 
             /** ScreenDetail calls. */
-            calls?: (mediflow.v3.CallPage.$Properties|null);
+            calls?: (mediflow.v4.CallPage.$Properties|null);
 
             /**
              * Creates a new ScreenDetail instance using the specified properties.
              * @param [properties] Properties to set
              * @returns ScreenDetail instance
              */
-            static create(properties: mediflow.v3.ScreenDetail.$Shape): mediflow.v3.ScreenDetail & mediflow.v3.ScreenDetail.$Shape;
-            static create(properties?: mediflow.v3.ScreenDetail.$Properties): mediflow.v3.ScreenDetail;
+            static create(properties: mediflow.v4.ScreenDetail.$Shape): mediflow.v4.ScreenDetail & mediflow.v4.ScreenDetail.$Shape;
+            static create(properties?: mediflow.v4.ScreenDetail.$Properties): mediflow.v4.ScreenDetail;
 
             /**
-             * Encodes the specified ScreenDetail message. Does not implicitly {@link mediflow.v3.ScreenDetail.verify|verify} messages.
+             * Encodes the specified ScreenDetail message. Does not implicitly {@link mediflow.v4.ScreenDetail.verify|verify} messages.
              * @param message ScreenDetail message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.ScreenDetail.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.ScreenDetail.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a ScreenDetail message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.ScreenDetail & mediflow.v3.ScreenDetail.$Shape} ScreenDetail
+             * @returns {mediflow.v4.ScreenDetail & mediflow.v4.ScreenDetail.$Shape} ScreenDetail
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.ScreenDetail & mediflow.v3.ScreenDetail.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.ScreenDetail & mediflow.v4.ScreenDetail.$Shape;
 
             /**
              * Verifies a ScreenDetail message.
@@ -2373,7 +2373,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns ScreenDetail
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.ScreenDetail;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.ScreenDetail;
 
             /**
              * Creates a plain object from a ScreenDetail message. Also converts values to other types if specified.
@@ -2381,7 +2381,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.ScreenDetail, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.ScreenDetail, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this ScreenDetail to JSON.
@@ -2403,27 +2403,27 @@ export namespace mediflow {
             interface $Properties {
 
                 /** ScreenDetail screen */
-                screen?: (mediflow.v3.Screen.$Properties|null);
+                screen?: (mediflow.v4.Screen.$Properties|null);
 
                 /** ScreenDetail state */
-                state?: (mediflow.v3.Snapshot.$Properties|null);
+                state?: (mediflow.v4.Snapshot.$Properties|null);
 
                 /** ScreenDetail calls */
-                calls?: (mediflow.v3.CallPage.$Properties|null);
+                calls?: (mediflow.v4.CallPage.$Properties|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a ScreenDetail. */
-            type $Shape = mediflow.v3.ScreenDetail.$Properties;
+            type $Shape = mediflow.v4.ScreenDetail.$Properties;
         }
 
         /**
          * Properties of an Overview.
-         * @deprecated Use mediflow.v3.Overview.$Properties instead.
+         * @deprecated Use mediflow.v4.Overview.$Properties instead.
          */
-        interface IOverview extends mediflow.v3.Overview.$Properties {
+        interface IOverview extends mediflow.v4.Overview.$Properties {
         }
 
         /** Represents an Overview. */
@@ -2433,7 +2433,7 @@ export namespace mediflow {
              * Constructs a new Overview.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Overview.$Properties);
+            constructor(properties?: mediflow.v4.Overview.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -2458,26 +2458,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Overview instance
              */
-            static create(properties: mediflow.v3.Overview.$Shape): mediflow.v3.Overview & mediflow.v3.Overview.$Shape;
-            static create(properties?: mediflow.v3.Overview.$Properties): mediflow.v3.Overview;
+            static create(properties: mediflow.v4.Overview.$Shape): mediflow.v4.Overview & mediflow.v4.Overview.$Shape;
+            static create(properties?: mediflow.v4.Overview.$Properties): mediflow.v4.Overview;
 
             /**
-             * Encodes the specified Overview message. Does not implicitly {@link mediflow.v3.Overview.verify|verify} messages.
+             * Encodes the specified Overview message. Does not implicitly {@link mediflow.v4.Overview.verify|verify} messages.
              * @param message Overview message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Overview.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Overview.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an Overview message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Overview & mediflow.v3.Overview.$Shape} Overview
+             * @returns {mediflow.v4.Overview & mediflow.v4.Overview.$Shape} Overview
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Overview & mediflow.v3.Overview.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Overview & mediflow.v4.Overview.$Shape;
 
             /**
              * Verifies an Overview message.
@@ -2491,7 +2491,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Overview
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Overview;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Overview;
 
             /**
              * Creates a plain object from an Overview message. Also converts values to other types if specified.
@@ -2499,7 +2499,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Overview, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Overview, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Overview to JSON.
@@ -2540,14 +2540,14 @@ export namespace mediflow {
             }
 
             /** Shape of an Overview. */
-            type $Shape = mediflow.v3.Overview.$Properties;
+            type $Shape = mediflow.v4.Overview.$Properties;
         }
 
         /**
          * Properties of an ArchiveBundle.
-         * @deprecated Use mediflow.v3.ArchiveBundle.$Properties instead.
+         * @deprecated Use mediflow.v4.ArchiveBundle.$Properties instead.
          */
-        interface IArchiveBundle extends mediflow.v3.ArchiveBundle.$Properties {
+        interface IArchiveBundle extends mediflow.v4.ArchiveBundle.$Properties {
         }
 
         /** Represents an ArchiveBundle. */
@@ -2557,31 +2557,31 @@ export namespace mediflow {
              * Constructs a new ArchiveBundle.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.ArchiveBundle.$Properties);
+            constructor(properties?: mediflow.v4.ArchiveBundle.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** ArchiveBundle screens. */
-            screens: mediflow.v3.Screen.$Properties[];
+            screens: mediflow.v4.Screen.$Properties[];
 
             /** ArchiveBundle states. */
-            states: { [k: string]: mediflow.v3.Snapshot.$Properties };
+            states: { [k: string]: mediflow.v4.Snapshot.$Properties };
 
             /** ArchiveBundle snapshotHistory. */
-            snapshotHistory: { [k: string]: mediflow.v3.Snapshot.$Properties };
+            snapshotHistory: { [k: string]: mediflow.v4.Snapshot.$Properties };
 
             /** ArchiveBundle calls. */
-            calls: { [k: string]: mediflow.v3.Call.$Properties };
+            calls: { [k: string]: mediflow.v4.Call.$Properties };
 
             /** ArchiveBundle consumptions. */
-            consumptions: { [k: string]: mediflow.v3.Consumption.$Properties };
+            consumptions: { [k: string]: mediflow.v4.Consumption.$Properties };
 
             /** ArchiveBundle audit. */
-            audit: mediflow.v3.Audit.$Properties[];
+            audit: mediflow.v4.Audit.$Properties[];
 
             /** ArchiveBundle checkpoints. */
-            checkpoints: mediflow.v3.Archive.$Properties[];
+            checkpoints: mediflow.v4.Archive.$Properties[];
 
             /** ArchiveBundle from. */
             from?: (string|null);
@@ -2593,7 +2593,7 @@ export namespace mediflow {
             formatVersion?: (string|null);
 
             /** ArchiveBundle epoch. */
-            epoch?: (string|null);
+            epoch?: (Uint8Array|null);
 
             /** ArchiveBundle exportedAt. */
             exportedAt?: (string|null);
@@ -2603,26 +2603,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns ArchiveBundle instance
              */
-            static create(properties: mediflow.v3.ArchiveBundle.$Shape): mediflow.v3.ArchiveBundle & mediflow.v3.ArchiveBundle.$Shape;
-            static create(properties?: mediflow.v3.ArchiveBundle.$Properties): mediflow.v3.ArchiveBundle;
+            static create(properties: mediflow.v4.ArchiveBundle.$Shape): mediflow.v4.ArchiveBundle & mediflow.v4.ArchiveBundle.$Shape;
+            static create(properties?: mediflow.v4.ArchiveBundle.$Properties): mediflow.v4.ArchiveBundle;
 
             /**
-             * Encodes the specified ArchiveBundle message. Does not implicitly {@link mediflow.v3.ArchiveBundle.verify|verify} messages.
+             * Encodes the specified ArchiveBundle message. Does not implicitly {@link mediflow.v4.ArchiveBundle.verify|verify} messages.
              * @param message ArchiveBundle message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.ArchiveBundle.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.ArchiveBundle.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an ArchiveBundle message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.ArchiveBundle & mediflow.v3.ArchiveBundle.$Shape} ArchiveBundle
+             * @returns {mediflow.v4.ArchiveBundle & mediflow.v4.ArchiveBundle.$Shape} ArchiveBundle
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.ArchiveBundle & mediflow.v3.ArchiveBundle.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.ArchiveBundle & mediflow.v4.ArchiveBundle.$Shape;
 
             /**
              * Verifies an ArchiveBundle message.
@@ -2636,7 +2636,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns ArchiveBundle
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.ArchiveBundle;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.ArchiveBundle;
 
             /**
              * Creates a plain object from an ArchiveBundle message. Also converts values to other types if specified.
@@ -2644,7 +2644,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.ArchiveBundle, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.ArchiveBundle, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this ArchiveBundle to JSON.
@@ -2666,25 +2666,25 @@ export namespace mediflow {
             interface $Properties {
 
                 /** ArchiveBundle screens */
-                screens?: (mediflow.v3.Screen.$Properties[]|null);
+                screens?: (mediflow.v4.Screen.$Properties[]|null);
 
                 /** ArchiveBundle states */
-                states?: ({ [k: string]: mediflow.v3.Snapshot.$Properties }|null);
+                states?: ({ [k: string]: mediflow.v4.Snapshot.$Properties }|null);
 
                 /** ArchiveBundle snapshotHistory */
-                snapshotHistory?: ({ [k: string]: mediflow.v3.Snapshot.$Properties }|null);
+                snapshotHistory?: ({ [k: string]: mediflow.v4.Snapshot.$Properties }|null);
 
                 /** ArchiveBundle calls */
-                calls?: ({ [k: string]: mediflow.v3.Call.$Properties }|null);
+                calls?: ({ [k: string]: mediflow.v4.Call.$Properties }|null);
 
                 /** ArchiveBundle consumptions */
-                consumptions?: ({ [k: string]: mediflow.v3.Consumption.$Properties }|null);
+                consumptions?: ({ [k: string]: mediflow.v4.Consumption.$Properties }|null);
 
                 /** ArchiveBundle audit */
-                audit?: (mediflow.v3.Audit.$Properties[]|null);
+                audit?: (mediflow.v4.Audit.$Properties[]|null);
 
                 /** ArchiveBundle checkpoints */
-                checkpoints?: (mediflow.v3.Archive.$Properties[]|null);
+                checkpoints?: (mediflow.v4.Archive.$Properties[]|null);
 
                 /** ArchiveBundle from */
                 from?: (string|null);
@@ -2696,7 +2696,7 @@ export namespace mediflow {
                 formatVersion?: (string|null);
 
                 /** ArchiveBundle epoch */
-                epoch?: (string|null);
+                epoch?: (Uint8Array|null);
 
                 /** ArchiveBundle exportedAt */
                 exportedAt?: (string|null);
@@ -2706,14 +2706,14 @@ export namespace mediflow {
             }
 
             /** Shape of an ArchiveBundle. */
-            type $Shape = mediflow.v3.ArchiveBundle.$Properties;
+            type $Shape = mediflow.v4.ArchiveBundle.$Properties;
         }
 
         /**
          * Properties of a Login.
-         * @deprecated Use mediflow.v3.Login.$Properties instead.
+         * @deprecated Use mediflow.v4.Login.$Properties instead.
          */
-        interface ILogin extends mediflow.v3.Login.$Properties {
+        interface ILogin extends mediflow.v4.Login.$Properties {
         }
 
         /** Represents a Login. */
@@ -2723,7 +2723,7 @@ export namespace mediflow {
              * Constructs a new Login.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Login.$Properties);
+            constructor(properties?: mediflow.v4.Login.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -2739,26 +2739,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Login instance
              */
-            static create(properties: mediflow.v3.Login.$Shape): mediflow.v3.Login & mediflow.v3.Login.$Shape;
-            static create(properties?: mediflow.v3.Login.$Properties): mediflow.v3.Login;
+            static create(properties: mediflow.v4.Login.$Shape): mediflow.v4.Login & mediflow.v4.Login.$Shape;
+            static create(properties?: mediflow.v4.Login.$Properties): mediflow.v4.Login;
 
             /**
-             * Encodes the specified Login message. Does not implicitly {@link mediflow.v3.Login.verify|verify} messages.
+             * Encodes the specified Login message. Does not implicitly {@link mediflow.v4.Login.verify|verify} messages.
              * @param message Login message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Login.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Login.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Login message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Login & mediflow.v3.Login.$Shape} Login
+             * @returns {mediflow.v4.Login & mediflow.v4.Login.$Shape} Login
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Login & mediflow.v3.Login.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Login & mediflow.v4.Login.$Shape;
 
             /**
              * Verifies a Login message.
@@ -2772,7 +2772,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Login
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Login;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Login;
 
             /**
              * Creates a plain object from a Login message. Also converts values to other types if specified.
@@ -2780,7 +2780,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Login, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Login, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Login to JSON.
@@ -2812,14 +2812,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Login. */
-            type $Shape = mediflow.v3.Login.$Properties;
+            type $Shape = mediflow.v4.Login.$Properties;
         }
 
         /**
          * Properties of a User.
-         * @deprecated Use mediflow.v3.User.$Properties instead.
+         * @deprecated Use mediflow.v4.User.$Properties instead.
          */
-        interface IUser extends mediflow.v3.User.$Properties {
+        interface IUser extends mediflow.v4.User.$Properties {
         }
 
         /** Represents a User. */
@@ -2829,7 +2829,7 @@ export namespace mediflow {
              * Constructs a new User.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.User.$Properties);
+            constructor(properties?: mediflow.v4.User.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -2842,26 +2842,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns User instance
              */
-            static create(properties: mediflow.v3.User.$Shape): mediflow.v3.User & mediflow.v3.User.$Shape;
-            static create(properties?: mediflow.v3.User.$Properties): mediflow.v3.User;
+            static create(properties: mediflow.v4.User.$Shape): mediflow.v4.User & mediflow.v4.User.$Shape;
+            static create(properties?: mediflow.v4.User.$Properties): mediflow.v4.User;
 
             /**
-             * Encodes the specified User message. Does not implicitly {@link mediflow.v3.User.verify|verify} messages.
+             * Encodes the specified User message. Does not implicitly {@link mediflow.v4.User.verify|verify} messages.
              * @param message User message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.User.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.User.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a User message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.User & mediflow.v3.User.$Shape} User
+             * @returns {mediflow.v4.User & mediflow.v4.User.$Shape} User
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.User & mediflow.v3.User.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.User & mediflow.v4.User.$Shape;
 
             /**
              * Verifies a User message.
@@ -2875,7 +2875,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns User
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.User;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.User;
 
             /**
              * Creates a plain object from a User message. Also converts values to other types if specified.
@@ -2883,7 +2883,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.User, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.User, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this User to JSON.
@@ -2912,14 +2912,14 @@ export namespace mediflow {
             }
 
             /** Shape of a User. */
-            type $Shape = mediflow.v3.User.$Properties;
+            type $Shape = mediflow.v4.User.$Properties;
         }
 
         /**
          * Properties of a Publish.
-         * @deprecated Use mediflow.v3.Publish.$Properties instead.
+         * @deprecated Use mediflow.v4.Publish.$Properties instead.
          */
-        interface IPublish extends mediflow.v3.Publish.$Properties {
+        interface IPublish extends mediflow.v4.Publish.$Properties {
         }
 
         /** Represents a Publish. */
@@ -2929,42 +2929,42 @@ export namespace mediflow {
              * Constructs a new Publish.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Publish.$Properties);
+            constructor(properties?: mediflow.v4.Publish.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Publish requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Publish data. */
-            data?: (mediflow.v3.Template.$Properties|null);
+            data?: (mediflow.v4.Template.$Properties|null);
 
             /**
              * Creates a new Publish instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Publish instance
              */
-            static create(properties: mediflow.v3.Publish.$Shape): mediflow.v3.Publish & mediflow.v3.Publish.$Shape;
-            static create(properties?: mediflow.v3.Publish.$Properties): mediflow.v3.Publish;
+            static create(properties: mediflow.v4.Publish.$Shape): mediflow.v4.Publish & mediflow.v4.Publish.$Shape;
+            static create(properties?: mediflow.v4.Publish.$Properties): mediflow.v4.Publish;
 
             /**
-             * Encodes the specified Publish message. Does not implicitly {@link mediflow.v3.Publish.verify|verify} messages.
+             * Encodes the specified Publish message. Does not implicitly {@link mediflow.v4.Publish.verify|verify} messages.
              * @param message Publish message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Publish.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Publish.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Publish message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Publish & mediflow.v3.Publish.$Shape} Publish
+             * @returns {mediflow.v4.Publish & mediflow.v4.Publish.$Shape} Publish
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Publish & mediflow.v3.Publish.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Publish & mediflow.v4.Publish.$Shape;
 
             /**
              * Verifies a Publish message.
@@ -2978,7 +2978,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Publish
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Publish;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Publish;
 
             /**
              * Creates a plain object from a Publish message. Also converts values to other types if specified.
@@ -2986,7 +2986,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Publish, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Publish, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Publish to JSON.
@@ -3008,24 +3008,24 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Publish requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Publish data */
-                data?: (mediflow.v3.Template.$Properties|null);
+                data?: (mediflow.v4.Template.$Properties|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Publish. */
-            type $Shape = mediflow.v3.Publish.$Properties;
+            type $Shape = mediflow.v4.Publish.$Properties;
         }
 
         /**
          * Properties of a Consume.
-         * @deprecated Use mediflow.v3.Consume.$Properties instead.
+         * @deprecated Use mediflow.v4.Consume.$Properties instead.
          */
-        interface IConsume extends mediflow.v3.Consume.$Properties {
+        interface IConsume extends mediflow.v4.Consume.$Properties {
         }
 
         /** Represents a Consume. */
@@ -3035,42 +3035,42 @@ export namespace mediflow {
              * Constructs a new Consume.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Consume.$Properties);
+            constructor(properties?: mediflow.v4.Consume.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Consume requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Consume callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /**
              * Creates a new Consume instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Consume instance
              */
-            static create(properties: mediflow.v3.Consume.$Shape): mediflow.v3.Consume & mediflow.v3.Consume.$Shape;
-            static create(properties?: mediflow.v3.Consume.$Properties): mediflow.v3.Consume;
+            static create(properties: mediflow.v4.Consume.$Shape): mediflow.v4.Consume & mediflow.v4.Consume.$Shape;
+            static create(properties?: mediflow.v4.Consume.$Properties): mediflow.v4.Consume;
 
             /**
-             * Encodes the specified Consume message. Does not implicitly {@link mediflow.v3.Consume.verify|verify} messages.
+             * Encodes the specified Consume message. Does not implicitly {@link mediflow.v4.Consume.verify|verify} messages.
              * @param message Consume message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Consume.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Consume.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Consume message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Consume & mediflow.v3.Consume.$Shape} Consume
+             * @returns {mediflow.v4.Consume & mediflow.v4.Consume.$Shape} Consume
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Consume & mediflow.v3.Consume.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Consume & mediflow.v4.Consume.$Shape;
 
             /**
              * Verifies a Consume message.
@@ -3084,7 +3084,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Consume
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Consume;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Consume;
 
             /**
              * Creates a plain object from a Consume message. Also converts values to other types if specified.
@@ -3092,7 +3092,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Consume, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Consume, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Consume to JSON.
@@ -3114,24 +3114,24 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Consume requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Consume callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a Consume. */
-            type $Shape = mediflow.v3.Consume.$Properties;
+            type $Shape = mediflow.v4.Consume.$Properties;
         }
 
         /**
          * Properties of a Playback.
-         * @deprecated Use mediflow.v3.Playback.$Properties instead.
+         * @deprecated Use mediflow.v4.Playback.$Properties instead.
          */
-        interface IPlayback extends mediflow.v3.Playback.$Properties {
+        interface IPlayback extends mediflow.v4.Playback.$Properties {
         }
 
         /** Represents a Playback. */
@@ -3141,19 +3141,19 @@ export namespace mediflow {
              * Constructs a new Playback.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Playback.$Properties);
+            constructor(properties?: mediflow.v4.Playback.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Playback eventId. */
-            eventId?: (string|null);
+            eventId?: (Uint8Array|null);
 
             /** Playback requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Playback callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** Playback status. */
             status?: (string|null);
@@ -3166,26 +3166,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Playback instance
              */
-            static create(properties: mediflow.v3.Playback.$Shape): mediflow.v3.Playback & mediflow.v3.Playback.$Shape;
-            static create(properties?: mediflow.v3.Playback.$Properties): mediflow.v3.Playback;
+            static create(properties: mediflow.v4.Playback.$Shape): mediflow.v4.Playback & mediflow.v4.Playback.$Shape;
+            static create(properties?: mediflow.v4.Playback.$Properties): mediflow.v4.Playback;
 
             /**
-             * Encodes the specified Playback message. Does not implicitly {@link mediflow.v3.Playback.verify|verify} messages.
+             * Encodes the specified Playback message. Does not implicitly {@link mediflow.v4.Playback.verify|verify} messages.
              * @param message Playback message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Playback.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Playback.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Playback message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Playback & mediflow.v3.Playback.$Shape} Playback
+             * @returns {mediflow.v4.Playback & mediflow.v4.Playback.$Shape} Playback
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Playback & mediflow.v3.Playback.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Playback & mediflow.v4.Playback.$Shape;
 
             /**
              * Verifies a Playback message.
@@ -3199,7 +3199,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Playback
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Playback;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Playback;
 
             /**
              * Creates a plain object from a Playback message. Also converts values to other types if specified.
@@ -3207,7 +3207,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Playback, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Playback, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Playback to JSON.
@@ -3229,13 +3229,13 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Playback eventId */
-                eventId?: (string|null);
+                eventId?: (Uint8Array|null);
 
                 /** Playback requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Playback callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** Playback status */
                 status?: (string|null);
@@ -3248,14 +3248,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Playback. */
-            type $Shape = mediflow.v3.Playback.$Properties;
+            type $Shape = mediflow.v4.Playback.$Properties;
         }
 
         /**
          * Properties of a PlaybackResult.
-         * @deprecated Use mediflow.v3.PlaybackResult.$Properties instead.
+         * @deprecated Use mediflow.v4.PlaybackResult.$Properties instead.
          */
-        interface IPlaybackResult extends mediflow.v3.PlaybackResult.$Properties {
+        interface IPlaybackResult extends mediflow.v4.PlaybackResult.$Properties {
         }
 
         /** Represents a PlaybackResult. */
@@ -3265,19 +3265,19 @@ export namespace mediflow {
              * Constructs a new PlaybackResult.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.PlaybackResult.$Properties);
+            constructor(properties?: mediflow.v4.PlaybackResult.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** PlaybackResult eventId. */
-            eventId?: (string|null);
+            eventId?: (Uint8Array|null);
 
             /** PlaybackResult requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** PlaybackResult callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** PlaybackResult status. */
             status?: (string|null);
@@ -3290,26 +3290,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns PlaybackResult instance
              */
-            static create(properties: mediflow.v3.PlaybackResult.$Shape): mediflow.v3.PlaybackResult & mediflow.v3.PlaybackResult.$Shape;
-            static create(properties?: mediflow.v3.PlaybackResult.$Properties): mediflow.v3.PlaybackResult;
+            static create(properties: mediflow.v4.PlaybackResult.$Shape): mediflow.v4.PlaybackResult & mediflow.v4.PlaybackResult.$Shape;
+            static create(properties?: mediflow.v4.PlaybackResult.$Properties): mediflow.v4.PlaybackResult;
 
             /**
-             * Encodes the specified PlaybackResult message. Does not implicitly {@link mediflow.v3.PlaybackResult.verify|verify} messages.
+             * Encodes the specified PlaybackResult message. Does not implicitly {@link mediflow.v4.PlaybackResult.verify|verify} messages.
              * @param message PlaybackResult message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.PlaybackResult.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.PlaybackResult.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a PlaybackResult message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.PlaybackResult & mediflow.v3.PlaybackResult.$Shape} PlaybackResult
+             * @returns {mediflow.v4.PlaybackResult & mediflow.v4.PlaybackResult.$Shape} PlaybackResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.PlaybackResult & mediflow.v3.PlaybackResult.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.PlaybackResult & mediflow.v4.PlaybackResult.$Shape;
 
             /**
              * Verifies a PlaybackResult message.
@@ -3323,7 +3323,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns PlaybackResult
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.PlaybackResult;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.PlaybackResult;
 
             /**
              * Creates a plain object from a PlaybackResult message. Also converts values to other types if specified.
@@ -3331,7 +3331,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.PlaybackResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.PlaybackResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this PlaybackResult to JSON.
@@ -3353,13 +3353,13 @@ export namespace mediflow {
             interface $Properties {
 
                 /** PlaybackResult eventId */
-                eventId?: (string|null);
+                eventId?: (Uint8Array|null);
 
                 /** PlaybackResult requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** PlaybackResult callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** PlaybackResult status */
                 status?: (string|null);
@@ -3372,14 +3372,14 @@ export namespace mediflow {
             }
 
             /** Shape of a PlaybackResult. */
-            type $Shape = mediflow.v3.PlaybackResult.$Properties;
+            type $Shape = mediflow.v4.PlaybackResult.$Properties;
         }
 
         /**
          * Properties of a Result.
-         * @deprecated Use mediflow.v3.Result.$Properties instead.
+         * @deprecated Use mediflow.v4.Result.$Properties instead.
          */
-        interface IResult extends mediflow.v3.Result.$Properties {
+        interface IResult extends mediflow.v4.Result.$Properties {
         }
 
         /** Represents a Result. */
@@ -3389,7 +3389,7 @@ export namespace mediflow {
              * Constructs a new Result.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Result.$Properties);
+            constructor(properties?: mediflow.v4.Result.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -3402,26 +3402,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Result instance
              */
-            static create(properties: mediflow.v3.Result.$Shape): mediflow.v3.Result & mediflow.v3.Result.$Shape;
-            static create(properties?: mediflow.v3.Result.$Properties): mediflow.v3.Result;
+            static create(properties: mediflow.v4.Result.$Shape): mediflow.v4.Result & mediflow.v4.Result.$Shape;
+            static create(properties?: mediflow.v4.Result.$Properties): mediflow.v4.Result;
 
             /**
-             * Encodes the specified Result message. Does not implicitly {@link mediflow.v3.Result.verify|verify} messages.
+             * Encodes the specified Result message. Does not implicitly {@link mediflow.v4.Result.verify|verify} messages.
              * @param message Result message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Result.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Result.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Result message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Result & mediflow.v3.Result.$Shape} Result
+             * @returns {mediflow.v4.Result & mediflow.v4.Result.$Shape} Result
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Result & mediflow.v3.Result.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Result & mediflow.v4.Result.$Shape;
 
             /**
              * Verifies a Result message.
@@ -3435,7 +3435,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Result
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Result;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Result;
 
             /**
              * Creates a plain object from a Result message. Also converts values to other types if specified.
@@ -3443,7 +3443,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Result, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Result, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Result to JSON.
@@ -3472,14 +3472,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Result. */
-            type $Shape = mediflow.v3.Result.$Properties;
+            type $Shape = mediflow.v4.Result.$Properties;
         }
 
         /**
          * Properties of a Problem.
-         * @deprecated Use mediflow.v3.Problem.$Properties instead.
+         * @deprecated Use mediflow.v4.Problem.$Properties instead.
          */
-        interface IProblem extends mediflow.v3.Problem.$Properties {
+        interface IProblem extends mediflow.v4.Problem.$Properties {
         }
 
         /** Represents a Problem. */
@@ -3489,7 +3489,7 @@ export namespace mediflow {
              * Constructs a new Problem.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Problem.$Properties);
+            constructor(properties?: mediflow.v4.Problem.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -3502,26 +3502,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Problem instance
              */
-            static create(properties: mediflow.v3.Problem.$Shape): mediflow.v3.Problem & mediflow.v3.Problem.$Shape;
-            static create(properties?: mediflow.v3.Problem.$Properties): mediflow.v3.Problem;
+            static create(properties: mediflow.v4.Problem.$Shape): mediflow.v4.Problem & mediflow.v4.Problem.$Shape;
+            static create(properties?: mediflow.v4.Problem.$Properties): mediflow.v4.Problem;
 
             /**
-             * Encodes the specified Problem message. Does not implicitly {@link mediflow.v3.Problem.verify|verify} messages.
+             * Encodes the specified Problem message. Does not implicitly {@link mediflow.v4.Problem.verify|verify} messages.
              * @param message Problem message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Problem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Problem.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Problem message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Problem & mediflow.v3.Problem.$Shape} Problem
+             * @returns {mediflow.v4.Problem & mediflow.v4.Problem.$Shape} Problem
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Problem & mediflow.v3.Problem.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Problem & mediflow.v4.Problem.$Shape;
 
             /**
              * Verifies a Problem message.
@@ -3535,7 +3535,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Problem
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Problem;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Problem;
 
             /**
              * Creates a plain object from a Problem message. Also converts values to other types if specified.
@@ -3543,7 +3543,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Problem, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Problem, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Problem to JSON.
@@ -3572,14 +3572,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Problem. */
-            type $Shape = mediflow.v3.Problem.$Properties;
+            type $Shape = mediflow.v4.Problem.$Properties;
         }
 
         /**
          * Properties of a Health.
-         * @deprecated Use mediflow.v3.Health.$Properties instead.
+         * @deprecated Use mediflow.v4.Health.$Properties instead.
          */
-        interface IHealth extends mediflow.v3.Health.$Properties {
+        interface IHealth extends mediflow.v4.Health.$Properties {
         }
 
         /** Represents a Health. */
@@ -3589,7 +3589,7 @@ export namespace mediflow {
              * Constructs a new Health.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Health.$Properties);
+            constructor(properties?: mediflow.v4.Health.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -3602,26 +3602,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Health instance
              */
-            static create(properties: mediflow.v3.Health.$Shape): mediflow.v3.Health & mediflow.v3.Health.$Shape;
-            static create(properties?: mediflow.v3.Health.$Properties): mediflow.v3.Health;
+            static create(properties: mediflow.v4.Health.$Shape): mediflow.v4.Health & mediflow.v4.Health.$Shape;
+            static create(properties?: mediflow.v4.Health.$Properties): mediflow.v4.Health;
 
             /**
-             * Encodes the specified Health message. Does not implicitly {@link mediflow.v3.Health.verify|verify} messages.
+             * Encodes the specified Health message. Does not implicitly {@link mediflow.v4.Health.verify|verify} messages.
              * @param message Health message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Health.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Health.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Health message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Health & mediflow.v3.Health.$Shape} Health
+             * @returns {mediflow.v4.Health & mediflow.v4.Health.$Shape} Health
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Health & mediflow.v3.Health.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Health & mediflow.v4.Health.$Shape;
 
             /**
              * Verifies a Health message.
@@ -3635,7 +3635,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Health
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Health;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Health;
 
             /**
              * Creates a plain object from a Health message. Also converts values to other types if specified.
@@ -3643,7 +3643,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Health, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Health, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Health to JSON.
@@ -3672,14 +3672,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Health. */
-            type $Shape = mediflow.v3.Health.$Properties;
+            type $Shape = mediflow.v4.Health.$Properties;
         }
 
         /**
          * Properties of a Retain.
-         * @deprecated Use mediflow.v3.Retain.$Properties instead.
+         * @deprecated Use mediflow.v4.Retain.$Properties instead.
          */
-        interface IRetain extends mediflow.v3.Retain.$Properties {
+        interface IRetain extends mediflow.v4.Retain.$Properties {
         }
 
         /** Represents a Retain. */
@@ -3689,7 +3689,7 @@ export namespace mediflow {
              * Constructs a new Retain.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Retain.$Properties);
+            constructor(properties?: mediflow.v4.Retain.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -3702,26 +3702,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Retain instance
              */
-            static create(properties: mediflow.v3.Retain.$Shape): mediflow.v3.Retain & mediflow.v3.Retain.$Shape;
-            static create(properties?: mediflow.v3.Retain.$Properties): mediflow.v3.Retain;
+            static create(properties: mediflow.v4.Retain.$Shape): mediflow.v4.Retain & mediflow.v4.Retain.$Shape;
+            static create(properties?: mediflow.v4.Retain.$Properties): mediflow.v4.Retain;
 
             /**
-             * Encodes the specified Retain message. Does not implicitly {@link mediflow.v3.Retain.verify|verify} messages.
+             * Encodes the specified Retain message. Does not implicitly {@link mediflow.v4.Retain.verify|verify} messages.
              * @param message Retain message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Retain.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Retain.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Retain message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Retain & mediflow.v3.Retain.$Shape} Retain
+             * @returns {mediflow.v4.Retain & mediflow.v4.Retain.$Shape} Retain
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Retain & mediflow.v3.Retain.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Retain & mediflow.v4.Retain.$Shape;
 
             /**
              * Verifies a Retain message.
@@ -3735,7 +3735,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Retain
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Retain;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Retain;
 
             /**
              * Creates a plain object from a Retain message. Also converts values to other types if specified.
@@ -3743,7 +3743,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Retain, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Retain, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Retain to JSON.
@@ -3772,14 +3772,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Retain. */
-            type $Shape = mediflow.v3.Retain.$Properties;
+            type $Shape = mediflow.v4.Retain.$Properties;
         }
 
         /**
          * Properties of a Retained.
-         * @deprecated Use mediflow.v3.Retained.$Properties instead.
+         * @deprecated Use mediflow.v4.Retained.$Properties instead.
          */
-        interface IRetained extends mediflow.v3.Retained.$Properties {
+        interface IRetained extends mediflow.v4.Retained.$Properties {
         }
 
         /** Represents a Retained. */
@@ -3789,7 +3789,7 @@ export namespace mediflow {
              * Constructs a new Retained.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Retained.$Properties);
+            constructor(properties?: mediflow.v4.Retained.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -3814,26 +3814,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Retained instance
              */
-            static create(properties: mediflow.v3.Retained.$Shape): mediflow.v3.Retained & mediflow.v3.Retained.$Shape;
-            static create(properties?: mediflow.v3.Retained.$Properties): mediflow.v3.Retained;
+            static create(properties: mediflow.v4.Retained.$Shape): mediflow.v4.Retained & mediflow.v4.Retained.$Shape;
+            static create(properties?: mediflow.v4.Retained.$Properties): mediflow.v4.Retained;
 
             /**
-             * Encodes the specified Retained message. Does not implicitly {@link mediflow.v3.Retained.verify|verify} messages.
+             * Encodes the specified Retained message. Does not implicitly {@link mediflow.v4.Retained.verify|verify} messages.
              * @param message Retained message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Retained.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Retained.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Retained message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Retained & mediflow.v3.Retained.$Shape} Retained
+             * @returns {mediflow.v4.Retained & mediflow.v4.Retained.$Shape} Retained
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Retained & mediflow.v3.Retained.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Retained & mediflow.v4.Retained.$Shape;
 
             /**
              * Verifies a Retained message.
@@ -3847,7 +3847,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Retained
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Retained;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Retained;
 
             /**
              * Creates a plain object from a Retained message. Also converts values to other types if specified.
@@ -3855,7 +3855,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Retained, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Retained, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Retained to JSON.
@@ -3896,14 +3896,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Retained. */
-            type $Shape = mediflow.v3.Retained.$Properties;
+            type $Shape = mediflow.v4.Retained.$Properties;
         }
 
         /**
          * Properties of an Auth.
-         * @deprecated Use mediflow.v3.Auth.$Properties instead.
+         * @deprecated Use mediflow.v4.Auth.$Properties instead.
          */
-        interface IAuth extends mediflow.v3.Auth.$Properties {
+        interface IAuth extends mediflow.v4.Auth.$Properties {
         }
 
         /** Represents an Auth. */
@@ -3913,39 +3913,39 @@ export namespace mediflow {
              * Constructs a new Auth.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Auth.$Properties);
+            constructor(properties?: mediflow.v4.Auth.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Auth token. */
-            token?: (string|null);
+            token?: (Uint8Array|null);
 
             /**
              * Creates a new Auth instance using the specified properties.
              * @param [properties] Properties to set
              * @returns Auth instance
              */
-            static create(properties: mediflow.v3.Auth.$Shape): mediflow.v3.Auth & mediflow.v3.Auth.$Shape;
-            static create(properties?: mediflow.v3.Auth.$Properties): mediflow.v3.Auth;
+            static create(properties: mediflow.v4.Auth.$Shape): mediflow.v4.Auth & mediflow.v4.Auth.$Shape;
+            static create(properties?: mediflow.v4.Auth.$Properties): mediflow.v4.Auth;
 
             /**
-             * Encodes the specified Auth message. Does not implicitly {@link mediflow.v3.Auth.verify|verify} messages.
+             * Encodes the specified Auth message. Does not implicitly {@link mediflow.v4.Auth.verify|verify} messages.
              * @param message Auth message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Auth.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Auth.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an Auth message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Auth & mediflow.v3.Auth.$Shape} Auth
+             * @returns {mediflow.v4.Auth & mediflow.v4.Auth.$Shape} Auth
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Auth & mediflow.v3.Auth.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Auth & mediflow.v4.Auth.$Shape;
 
             /**
              * Verifies an Auth message.
@@ -3959,7 +3959,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Auth
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Auth;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Auth;
 
             /**
              * Creates a plain object from an Auth message. Also converts values to other types if specified.
@@ -3967,7 +3967,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Auth, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Auth, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Auth to JSON.
@@ -3989,21 +3989,21 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Auth token */
-                token?: (string|null);
+                token?: (Uint8Array|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of an Auth. */
-            type $Shape = mediflow.v3.Auth.$Properties;
+            type $Shape = mediflow.v4.Auth.$Properties;
         }
 
         /**
          * Properties of a Sync.
-         * @deprecated Use mediflow.v3.Sync.$Properties instead.
+         * @deprecated Use mediflow.v4.Sync.$Properties instead.
          */
-        interface ISync extends mediflow.v3.Sync.$Properties {
+        interface ISync extends mediflow.v4.Sync.$Properties {
         }
 
         /** Represents a Sync. */
@@ -4013,7 +4013,7 @@ export namespace mediflow {
              * Constructs a new Sync.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Sync.$Properties);
+            constructor(properties?: mediflow.v4.Sync.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -4029,26 +4029,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Sync instance
              */
-            static create(properties: mediflow.v3.Sync.$Shape): mediflow.v3.Sync & mediflow.v3.Sync.$Shape;
-            static create(properties?: mediflow.v3.Sync.$Properties): mediflow.v3.Sync;
+            static create(properties: mediflow.v4.Sync.$Shape): mediflow.v4.Sync & mediflow.v4.Sync.$Shape;
+            static create(properties?: mediflow.v4.Sync.$Properties): mediflow.v4.Sync;
 
             /**
-             * Encodes the specified Sync message. Does not implicitly {@link mediflow.v3.Sync.verify|verify} messages.
+             * Encodes the specified Sync message. Does not implicitly {@link mediflow.v4.Sync.verify|verify} messages.
              * @param message Sync message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Sync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Sync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Sync message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Sync & mediflow.v3.Sync.$Shape} Sync
+             * @returns {mediflow.v4.Sync & mediflow.v4.Sync.$Shape} Sync
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Sync & mediflow.v3.Sync.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Sync & mediflow.v4.Sync.$Shape;
 
             /**
              * Verifies a Sync message.
@@ -4062,7 +4062,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Sync
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Sync;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Sync;
 
             /**
              * Creates a plain object from a Sync message. Also converts values to other types if specified.
@@ -4070,7 +4070,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Sync, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Sync, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Sync to JSON.
@@ -4102,14 +4102,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Sync. */
-            type $Shape = mediflow.v3.Sync.$Properties;
+            type $Shape = mediflow.v4.Sync.$Properties;
         }
 
         /**
          * Properties of a PendingSync.
-         * @deprecated Use mediflow.v3.PendingSync.$Properties instead.
+         * @deprecated Use mediflow.v4.PendingSync.$Properties instead.
          */
-        interface IPendingSync extends mediflow.v3.PendingSync.$Properties {
+        interface IPendingSync extends mediflow.v4.PendingSync.$Properties {
         }
 
         /** Represents a PendingSync. */
@@ -4119,7 +4119,7 @@ export namespace mediflow {
              * Constructs a new PendingSync.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.PendingSync.$Properties);
+            constructor(properties?: mediflow.v4.PendingSync.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -4128,33 +4128,33 @@ export namespace mediflow {
             cursor?: (string|null);
 
             /** PendingSync requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /**
              * Creates a new PendingSync instance using the specified properties.
              * @param [properties] Properties to set
              * @returns PendingSync instance
              */
-            static create(properties: mediflow.v3.PendingSync.$Shape): mediflow.v3.PendingSync & mediflow.v3.PendingSync.$Shape;
-            static create(properties?: mediflow.v3.PendingSync.$Properties): mediflow.v3.PendingSync;
+            static create(properties: mediflow.v4.PendingSync.$Shape): mediflow.v4.PendingSync & mediflow.v4.PendingSync.$Shape;
+            static create(properties?: mediflow.v4.PendingSync.$Properties): mediflow.v4.PendingSync;
 
             /**
-             * Encodes the specified PendingSync message. Does not implicitly {@link mediflow.v3.PendingSync.verify|verify} messages.
+             * Encodes the specified PendingSync message. Does not implicitly {@link mediflow.v4.PendingSync.verify|verify} messages.
              * @param message PendingSync message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.PendingSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.PendingSync.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a PendingSync message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.PendingSync & mediflow.v3.PendingSync.$Shape} PendingSync
+             * @returns {mediflow.v4.PendingSync & mediflow.v4.PendingSync.$Shape} PendingSync
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.PendingSync & mediflow.v3.PendingSync.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.PendingSync & mediflow.v4.PendingSync.$Shape;
 
             /**
              * Verifies a PendingSync message.
@@ -4168,7 +4168,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns PendingSync
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.PendingSync;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.PendingSync;
 
             /**
              * Creates a plain object from a PendingSync message. Also converts values to other types if specified.
@@ -4176,7 +4176,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.PendingSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.PendingSync, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this PendingSync to JSON.
@@ -4201,21 +4201,21 @@ export namespace mediflow {
                 cursor?: (string|null);
 
                 /** PendingSync requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a PendingSync. */
-            type $Shape = mediflow.v3.PendingSync.$Properties;
+            type $Shape = mediflow.v4.PendingSync.$Properties;
         }
 
         /**
          * Properties of a PendingCalls.
-         * @deprecated Use mediflow.v3.PendingCalls.$Properties instead.
+         * @deprecated Use mediflow.v4.PendingCalls.$Properties instead.
          */
-        interface IPendingCalls extends mediflow.v3.PendingCalls.$Properties {
+        interface IPendingCalls extends mediflow.v4.PendingCalls.$Properties {
         }
 
         /** Represents a PendingCalls. */
@@ -4225,48 +4225,48 @@ export namespace mediflow {
              * Constructs a new PendingCalls.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.PendingCalls.$Properties);
+            constructor(properties?: mediflow.v4.PendingCalls.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** PendingCalls payload. */
-            payload: mediflow.v3.Call.$Properties[];
+            payload: mediflow.v4.Call.$Properties[];
 
             /** PendingCalls nextCursor. */
             nextCursor?: (string|null);
 
             /** PendingCalls requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** PendingCalls screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /**
              * Creates a new PendingCalls instance using the specified properties.
              * @param [properties] Properties to set
              * @returns PendingCalls instance
              */
-            static create(properties: mediflow.v3.PendingCalls.$Shape): mediflow.v3.PendingCalls & mediflow.v3.PendingCalls.$Shape;
-            static create(properties?: mediflow.v3.PendingCalls.$Properties): mediflow.v3.PendingCalls;
+            static create(properties: mediflow.v4.PendingCalls.$Shape): mediflow.v4.PendingCalls & mediflow.v4.PendingCalls.$Shape;
+            static create(properties?: mediflow.v4.PendingCalls.$Properties): mediflow.v4.PendingCalls;
 
             /**
-             * Encodes the specified PendingCalls message. Does not implicitly {@link mediflow.v3.PendingCalls.verify|verify} messages.
+             * Encodes the specified PendingCalls message. Does not implicitly {@link mediflow.v4.PendingCalls.verify|verify} messages.
              * @param message PendingCalls message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.PendingCalls.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.PendingCalls.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a PendingCalls message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.PendingCalls & mediflow.v3.PendingCalls.$Shape} PendingCalls
+             * @returns {mediflow.v4.PendingCalls & mediflow.v4.PendingCalls.$Shape} PendingCalls
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.PendingCalls & mediflow.v3.PendingCalls.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.PendingCalls & mediflow.v4.PendingCalls.$Shape;
 
             /**
              * Verifies a PendingCalls message.
@@ -4280,7 +4280,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns PendingCalls
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.PendingCalls;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.PendingCalls;
 
             /**
              * Creates a plain object from a PendingCalls message. Also converts values to other types if specified.
@@ -4288,7 +4288,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.PendingCalls, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.PendingCalls, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this PendingCalls to JSON.
@@ -4310,30 +4310,30 @@ export namespace mediflow {
             interface $Properties {
 
                 /** PendingCalls payload */
-                payload?: (mediflow.v3.Call.$Properties[]|null);
+                payload?: (mediflow.v4.Call.$Properties[]|null);
 
                 /** PendingCalls nextCursor */
                 nextCursor?: (string|null);
 
                 /** PendingCalls requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** PendingCalls screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** Unknown fields preserved while decoding when enabled */
                 $unknowns?: Uint8Array[];
             }
 
             /** Shape of a PendingCalls. */
-            type $Shape = mediflow.v3.PendingCalls.$Properties;
+            type $Shape = mediflow.v4.PendingCalls.$Properties;
         }
 
         /**
          * Properties of a CallFrame.
-         * @deprecated Use mediflow.v3.CallFrame.$Properties instead.
+         * @deprecated Use mediflow.v4.CallFrame.$Properties instead.
          */
-        interface ICallFrame extends mediflow.v3.CallFrame.$Properties {
+        interface ICallFrame extends mediflow.v4.CallFrame.$Properties {
         }
 
         /** Represents a CallFrame. */
@@ -4343,13 +4343,13 @@ export namespace mediflow {
              * Constructs a new CallFrame.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.CallFrame.$Properties);
+            constructor(properties?: mediflow.v4.CallFrame.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** CallFrame payload. */
-            payload: mediflow.v3.Call.$Properties[];
+            payload: mediflow.v4.Call.$Properties[];
 
             /** CallFrame page. */
             page?: (number|null);
@@ -4365,26 +4365,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns CallFrame instance
              */
-            static create(properties: mediflow.v3.CallFrame.$Shape): mediflow.v3.CallFrame & mediflow.v3.CallFrame.$Shape;
-            static create(properties?: mediflow.v3.CallFrame.$Properties): mediflow.v3.CallFrame;
+            static create(properties: mediflow.v4.CallFrame.$Shape): mediflow.v4.CallFrame & mediflow.v4.CallFrame.$Shape;
+            static create(properties?: mediflow.v4.CallFrame.$Properties): mediflow.v4.CallFrame;
 
             /**
-             * Encodes the specified CallFrame message. Does not implicitly {@link mediflow.v3.CallFrame.verify|verify} messages.
+             * Encodes the specified CallFrame message. Does not implicitly {@link mediflow.v4.CallFrame.verify|verify} messages.
              * @param message CallFrame message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.CallFrame.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.CallFrame.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a CallFrame message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.CallFrame & mediflow.v3.CallFrame.$Shape} CallFrame
+             * @returns {mediflow.v4.CallFrame & mediflow.v4.CallFrame.$Shape} CallFrame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.CallFrame & mediflow.v3.CallFrame.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.CallFrame & mediflow.v4.CallFrame.$Shape;
 
             /**
              * Verifies a CallFrame message.
@@ -4398,7 +4398,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns CallFrame
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.CallFrame;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.CallFrame;
 
             /**
              * Creates a plain object from a CallFrame message. Also converts values to other types if specified.
@@ -4406,7 +4406,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.CallFrame, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.CallFrame, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this CallFrame to JSON.
@@ -4428,7 +4428,7 @@ export namespace mediflow {
             interface $Properties {
 
                 /** CallFrame payload */
-                payload?: (mediflow.v3.Call.$Properties[]|null);
+                payload?: (mediflow.v4.Call.$Properties[]|null);
 
                 /** CallFrame page */
                 page?: (number|null);
@@ -4444,14 +4444,14 @@ export namespace mediflow {
             }
 
             /** Shape of a CallFrame. */
-            type $Shape = mediflow.v3.CallFrame.$Properties;
+            type $Shape = mediflow.v4.CallFrame.$Properties;
         }
 
         /**
          * Properties of a Failure.
-         * @deprecated Use mediflow.v3.Failure.$Properties instead.
+         * @deprecated Use mediflow.v4.Failure.$Properties instead.
          */
-        interface IFailure extends mediflow.v3.Failure.$Properties {
+        interface IFailure extends mediflow.v4.Failure.$Properties {
         }
 
         /** Represents a Failure. */
@@ -4461,16 +4461,16 @@ export namespace mediflow {
              * Constructs a new Failure.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Failure.$Properties);
+            constructor(properties?: mediflow.v4.Failure.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Failure requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** Failure eventId. */
-            eventId?: (string|null);
+            eventId?: (Uint8Array|null);
 
             /** Failure message. */
             message?: (string|null);
@@ -4480,26 +4480,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Failure instance
              */
-            static create(properties: mediflow.v3.Failure.$Shape): mediflow.v3.Failure & mediflow.v3.Failure.$Shape;
-            static create(properties?: mediflow.v3.Failure.$Properties): mediflow.v3.Failure;
+            static create(properties: mediflow.v4.Failure.$Shape): mediflow.v4.Failure & mediflow.v4.Failure.$Shape;
+            static create(properties?: mediflow.v4.Failure.$Properties): mediflow.v4.Failure;
 
             /**
-             * Encodes the specified Failure message. Does not implicitly {@link mediflow.v3.Failure.verify|verify} messages.
+             * Encodes the specified Failure message. Does not implicitly {@link mediflow.v4.Failure.verify|verify} messages.
              * @param message Failure message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Failure.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Failure.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Failure message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Failure & mediflow.v3.Failure.$Shape} Failure
+             * @returns {mediflow.v4.Failure & mediflow.v4.Failure.$Shape} Failure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Failure & mediflow.v3.Failure.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Failure & mediflow.v4.Failure.$Shape;
 
             /**
              * Verifies a Failure message.
@@ -4513,7 +4513,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Failure
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Failure;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Failure;
 
             /**
              * Creates a plain object from a Failure message. Also converts values to other types if specified.
@@ -4521,7 +4521,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Failure, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Failure, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Failure to JSON.
@@ -4543,10 +4543,10 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Failure requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** Failure eventId */
-                eventId?: (string|null);
+                eventId?: (Uint8Array|null);
 
                 /** Failure message */
                 message?: (string|null);
@@ -4556,14 +4556,14 @@ export namespace mediflow {
             }
 
             /** Shape of a Failure. */
-            type $Shape = mediflow.v3.Failure.$Properties;
+            type $Shape = mediflow.v4.Failure.$Properties;
         }
 
         /**
          * Properties of an Empty.
-         * @deprecated Use mediflow.v3.Empty.$Properties instead.
+         * @deprecated Use mediflow.v4.Empty.$Properties instead.
          */
-        interface IEmpty extends mediflow.v3.Empty.$Properties {
+        interface IEmpty extends mediflow.v4.Empty.$Properties {
         }
 
         /** Represents an Empty. */
@@ -4573,7 +4573,7 @@ export namespace mediflow {
              * Constructs a new Empty.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Empty.$Properties);
+            constructor(properties?: mediflow.v4.Empty.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -4583,26 +4583,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Empty instance
              */
-            static create(properties: mediflow.v3.Empty.$Shape): mediflow.v3.Empty & mediflow.v3.Empty.$Shape;
-            static create(properties?: mediflow.v3.Empty.$Properties): mediflow.v3.Empty;
+            static create(properties: mediflow.v4.Empty.$Shape): mediflow.v4.Empty & mediflow.v4.Empty.$Shape;
+            static create(properties?: mediflow.v4.Empty.$Properties): mediflow.v4.Empty;
 
             /**
-             * Encodes the specified Empty message. Does not implicitly {@link mediflow.v3.Empty.verify|verify} messages.
+             * Encodes the specified Empty message. Does not implicitly {@link mediflow.v4.Empty.verify|verify} messages.
              * @param message Empty message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Empty.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Empty.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes an Empty message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Empty & mediflow.v3.Empty.$Shape} Empty
+             * @returns {mediflow.v4.Empty & mediflow.v4.Empty.$Shape} Empty
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Empty & mediflow.v3.Empty.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Empty & mediflow.v4.Empty.$Shape;
 
             /**
              * Verifies an Empty message.
@@ -4616,7 +4616,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Empty
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Empty;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Empty;
 
             /**
              * Creates a plain object from an Empty message. Also converts values to other types if specified.
@@ -4624,7 +4624,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Empty, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Empty, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Empty to JSON.
@@ -4650,14 +4650,14 @@ export namespace mediflow {
             }
 
             /** Shape of an Empty. */
-            type $Shape = mediflow.v3.Empty.$Properties;
+            type $Shape = mediflow.v4.Empty.$Properties;
         }
 
         /**
          * Properties of a Frame.
-         * @deprecated Use mediflow.v3.Frame.$Properties instead.
+         * @deprecated Use mediflow.v4.Frame.$Properties instead.
          */
-        interface IFrame extends mediflow.v3.Frame.$Properties {
+        interface IFrame extends mediflow.v4.Frame.$Properties {
         }
 
         /** Represents a Frame. */
@@ -4667,49 +4667,49 @@ export namespace mediflow {
              * Constructs a new Frame.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Frame.$Properties);
+            constructor(properties?: mediflow.v4.Frame.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** Frame auth. */
-            auth?: (mediflow.v3.Auth.$Properties|null);
+            auth?: (mediflow.v4.Auth.$Properties|null);
 
             /** Frame sync. */
-            sync?: (mediflow.v3.Sync.$Properties|null);
+            sync?: (mediflow.v4.Sync.$Properties|null);
 
             /** Frame consume. */
-            consume?: (mediflow.v3.Consume.$Properties|null);
+            consume?: (mediflow.v4.Consume.$Properties|null);
 
             /** Frame playback. */
-            playback?: (mediflow.v3.Playback.$Properties|null);
+            playback?: (mediflow.v4.Playback.$Properties|null);
 
             /** Frame pendingSync. */
-            pendingSync?: (mediflow.v3.PendingSync.$Properties|null);
+            pendingSync?: (mediflow.v4.PendingSync.$Properties|null);
 
             /** Frame ping. */
-            ping?: (mediflow.v3.Empty.$Properties|null);
+            ping?: (mediflow.v4.Empty.$Properties|null);
 
             /** Frame snapshot. */
-            snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+            snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
             /** Frame calls. */
-            calls?: (mediflow.v3.CallFrame.$Properties|null);
+            calls?: (mediflow.v4.CallFrame.$Properties|null);
 
             /** Frame consumeResult. */
-            consumeResult?: (mediflow.v3.Consumption.$Properties|null);
+            consumeResult?: (mediflow.v4.Consumption.$Properties|null);
 
             /** Frame playbackResult. */
-            playbackResult?: (mediflow.v3.PlaybackResult.$Properties|null);
+            playbackResult?: (mediflow.v4.PlaybackResult.$Properties|null);
 
             /** Frame pendingCalls. */
-            pendingCalls?: (mediflow.v3.PendingCalls.$Properties|null);
+            pendingCalls?: (mediflow.v4.PendingCalls.$Properties|null);
 
             /** Frame error. */
-            error?: (mediflow.v3.Failure.$Properties|null);
+            error?: (mediflow.v4.Failure.$Properties|null);
 
             /** Frame pong. */
-            pong?: (mediflow.v3.Empty.$Properties|null);
+            pong?: (mediflow.v4.Empty.$Properties|null);
 
             /** Frame body. */
             body?: ("auth"|"sync"|"consume"|"playback"|"pendingSync"|"ping"|"snapshot"|"calls"|"consumeResult"|"playbackResult"|"pendingCalls"|"error"|"pong");
@@ -4719,26 +4719,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Frame instance
              */
-            static create(properties: mediflow.v3.Frame.$Shape): mediflow.v3.Frame & mediflow.v3.Frame.$Shape;
-            static create(properties?: mediflow.v3.Frame.$Properties): mediflow.v3.Frame;
+            static create(properties: mediflow.v4.Frame.$Shape): mediflow.v4.Frame & mediflow.v4.Frame.$Shape;
+            static create(properties?: mediflow.v4.Frame.$Properties): mediflow.v4.Frame;
 
             /**
-             * Encodes the specified Frame message. Does not implicitly {@link mediflow.v3.Frame.verify|verify} messages.
+             * Encodes the specified Frame message. Does not implicitly {@link mediflow.v4.Frame.verify|verify} messages.
              * @param message Frame message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Frame.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Frame.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Frame message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Frame & mediflow.v3.Frame.$Shape} Frame
+             * @returns {mediflow.v4.Frame & mediflow.v4.Frame.$Shape} Frame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Frame & mediflow.v3.Frame.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Frame & mediflow.v4.Frame.$Shape;
 
             /**
              * Verifies a Frame message.
@@ -4752,7 +4752,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Frame
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Frame;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Frame;
 
             /**
              * Creates a plain object from a Frame message. Also converts values to other types if specified.
@@ -4760,7 +4760,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Frame, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Frame, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Frame to JSON.
@@ -4782,43 +4782,43 @@ export namespace mediflow {
             interface $Properties {
 
                 /** Frame auth */
-                auth?: (mediflow.v3.Auth.$Properties|null);
+                auth?: (mediflow.v4.Auth.$Properties|null);
 
                 /** Frame sync */
-                sync?: (mediflow.v3.Sync.$Properties|null);
+                sync?: (mediflow.v4.Sync.$Properties|null);
 
                 /** Frame consume */
-                consume?: (mediflow.v3.Consume.$Properties|null);
+                consume?: (mediflow.v4.Consume.$Properties|null);
 
                 /** Frame playback */
-                playback?: (mediflow.v3.Playback.$Properties|null);
+                playback?: (mediflow.v4.Playback.$Properties|null);
 
                 /** Frame pendingSync */
-                pendingSync?: (mediflow.v3.PendingSync.$Properties|null);
+                pendingSync?: (mediflow.v4.PendingSync.$Properties|null);
 
                 /** Frame ping */
-                ping?: (mediflow.v3.Empty.$Properties|null);
+                ping?: (mediflow.v4.Empty.$Properties|null);
 
                 /** Frame snapshot */
-                snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+                snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
                 /** Frame calls */
-                calls?: (mediflow.v3.CallFrame.$Properties|null);
+                calls?: (mediflow.v4.CallFrame.$Properties|null);
 
                 /** Frame consumeResult */
-                consumeResult?: (mediflow.v3.Consumption.$Properties|null);
+                consumeResult?: (mediflow.v4.Consumption.$Properties|null);
 
                 /** Frame playbackResult */
-                playbackResult?: (mediflow.v3.PlaybackResult.$Properties|null);
+                playbackResult?: (mediflow.v4.PlaybackResult.$Properties|null);
 
                 /** Frame pendingCalls */
-                pendingCalls?: (mediflow.v3.PendingCalls.$Properties|null);
+                pendingCalls?: (mediflow.v4.PendingCalls.$Properties|null);
 
                 /** Frame error */
-                error?: (mediflow.v3.Failure.$Properties|null);
+                error?: (mediflow.v4.Failure.$Properties|null);
 
                 /** Frame pong */
-                pong?: (mediflow.v3.Empty.$Properties|null);
+                pong?: (mediflow.v4.Empty.$Properties|null);
 
                 /** Frame body */
                 body?: ("auth"|"sync"|"consume"|"playback"|"pendingSync"|"ping"|"snapshot"|"calls"|"consumeResult"|"playbackResult"|"pendingCalls"|"error"|"pong");
@@ -4829,30 +4829,30 @@ export namespace mediflow {
 
             /** Narrowed shape of a Frame. */
             type $Shape = {
-              auth?: mediflow.v3.Auth.$Shape|null;
-              sync?: mediflow.v3.Sync.$Shape|null;
-              consume?: mediflow.v3.Consume.$Shape|null;
-              playback?: mediflow.v3.Playback.$Shape|null;
-              pendingSync?: mediflow.v3.PendingSync.$Shape|null;
-              ping?: mediflow.v3.Empty.$Shape|null;
-              snapshot?: mediflow.v3.Snapshot.$Shape|null;
-              calls?: mediflow.v3.CallFrame.$Shape|null;
-              consumeResult?: mediflow.v3.Consumption.$Shape|null;
-              playbackResult?: mediflow.v3.PlaybackResult.$Shape|null;
-              pendingCalls?: mediflow.v3.PendingCalls.$Shape|null;
-              error?: mediflow.v3.Failure.$Shape|null;
-              pong?: mediflow.v3.Empty.$Shape|null;
+              auth?: mediflow.v4.Auth.$Shape|null;
+              sync?: mediflow.v4.Sync.$Shape|null;
+              consume?: mediflow.v4.Consume.$Shape|null;
+              playback?: mediflow.v4.Playback.$Shape|null;
+              pendingSync?: mediflow.v4.PendingSync.$Shape|null;
+              ping?: mediflow.v4.Empty.$Shape|null;
+              snapshot?: mediflow.v4.Snapshot.$Shape|null;
+              calls?: mediflow.v4.CallFrame.$Shape|null;
+              consumeResult?: mediflow.v4.Consumption.$Shape|null;
+              playbackResult?: mediflow.v4.PlaybackResult.$Shape|null;
+              pendingCalls?: mediflow.v4.PendingCalls.$Shape|null;
+              error?: mediflow.v4.Failure.$Shape|null;
+              pong?: mediflow.v4.Empty.$Shape|null;
               $unknowns?: Uint8Array[];
             } & (
-              ({ body?: undefined; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "auth"; auth: mediflow.v3.Auth.$Shape; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "sync"; auth?: null; sync: mediflow.v3.Sync.$Shape; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consume"; auth?: null; sync?: null; consume: mediflow.v3.Consume.$Shape; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playback"; auth?: null; sync?: null; consume?: null; playback: mediflow.v3.Playback.$Shape; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingSync"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync: mediflow.v3.PendingSync.$Shape; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "ping"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping: mediflow.v3.Empty.$Shape; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "snapshot"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot: mediflow.v3.Snapshot.$Shape; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "calls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls: mediflow.v3.CallFrame.$Shape; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consumeResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult: mediflow.v3.Consumption.$Shape; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playbackResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult: mediflow.v3.PlaybackResult.$Shape; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingCalls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls: mediflow.v3.PendingCalls.$Shape; error?: null; pong?: null }|{ body?: "error"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error: mediflow.v3.Failure.$Shape; pong?: null }|{ body?: "pong"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong: mediflow.v3.Empty.$Shape })
+              ({ body?: undefined; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "auth"; auth: mediflow.v4.Auth.$Shape; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "sync"; auth?: null; sync: mediflow.v4.Sync.$Shape; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consume"; auth?: null; sync?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playback"; auth?: null; sync?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingSync"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync: mediflow.v4.PendingSync.$Shape; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "ping"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping: mediflow.v4.Empty.$Shape; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "snapshot"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot: mediflow.v4.Snapshot.$Shape; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "calls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls: mediflow.v4.CallFrame.$Shape; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "consumeResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult: mediflow.v4.Consumption.$Shape; playbackResult?: null; pendingCalls?: null; error?: null; pong?: null }|{ body?: "playbackResult"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; pendingCalls?: null; error?: null; pong?: null }|{ body?: "pendingCalls"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape; error?: null; pong?: null }|{ body?: "error"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error: mediflow.v4.Failure.$Shape; pong?: null }|{ body?: "pong"; auth?: null; sync?: null; consume?: null; playback?: null; pendingSync?: null; ping?: null; snapshot?: null; calls?: null; consumeResult?: null; playbackResult?: null; pendingCalls?: null; error?: null; pong: mediflow.v4.Empty.$Shape })
             );
         }
 
         /**
          * Properties of a Packet.
-         * @deprecated Use mediflow.v3.Packet.$Properties instead.
+         * @deprecated Use mediflow.v4.Packet.$Properties instead.
          */
-        interface IPacket extends mediflow.v3.Packet.$Properties {
+        interface IPacket extends mediflow.v4.Packet.$Properties {
         }
 
         /** Represents a Packet. */
@@ -4862,7 +4862,7 @@ export namespace mediflow {
              * Constructs a new Packet.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.Packet.$Properties);
+            constructor(properties?: mediflow.v4.Packet.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
@@ -4871,91 +4871,91 @@ export namespace mediflow {
             protocolVersion?: (number|null);
 
             /** Packet frame. */
-            frame?: (mediflow.v3.Frame.$Properties|null);
+            frame?: (mediflow.v4.Frame.$Properties|null);
 
             /** Packet snapshot. */
-            snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+            snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
             /** Packet screen. */
-            screen?: (mediflow.v3.Screen.$Properties|null);
+            screen?: (mediflow.v4.Screen.$Properties|null);
 
             /** Packet call. */
-            call?: (mediflow.v3.Call.$Properties|null);
+            call?: (mediflow.v4.Call.$Properties|null);
 
             /** Packet consumption. */
-            consumption?: (mediflow.v3.Consumption.$Properties|null);
+            consumption?: (mediflow.v4.Consumption.$Properties|null);
 
             /** Packet audit. */
-            audit?: (mediflow.v3.Audit.$Properties|null);
+            audit?: (mediflow.v4.Audit.$Properties|null);
 
             /** Packet archive. */
-            archive?: (mediflow.v3.Archive.$Properties|null);
+            archive?: (mediflow.v4.Archive.$Properties|null);
 
             /** Packet callPage. */
-            callPage?: (mediflow.v3.CallPage.$Properties|null);
+            callPage?: (mediflow.v4.CallPage.$Properties|null);
 
             /** Packet screenPage. */
-            screenPage?: (mediflow.v3.ScreenPage.$Properties|null);
+            screenPage?: (mediflow.v4.ScreenPage.$Properties|null);
 
             /** Packet consumptionPage. */
-            consumptionPage?: (mediflow.v3.ConsumptionPage.$Properties|null);
+            consumptionPage?: (mediflow.v4.ConsumptionPage.$Properties|null);
 
             /** Packet auditPage. */
-            auditPage?: (mediflow.v3.AuditPage.$Properties|null);
+            auditPage?: (mediflow.v4.AuditPage.$Properties|null);
 
             /** Packet archivePage. */
-            archivePage?: (mediflow.v3.ArchivePage.$Properties|null);
+            archivePage?: (mediflow.v4.ArchivePage.$Properties|null);
 
             /** Packet historyPage. */
-            historyPage?: (mediflow.v3.HistoryPage.$Properties|null);
+            historyPage?: (mediflow.v4.HistoryPage.$Properties|null);
 
             /** Packet screenDetail. */
-            screenDetail?: (mediflow.v3.ScreenDetail.$Properties|null);
+            screenDetail?: (mediflow.v4.ScreenDetail.$Properties|null);
 
             /** Packet overview. */
-            overview?: (mediflow.v3.Overview.$Properties|null);
+            overview?: (mediflow.v4.Overview.$Properties|null);
 
             /** Packet archiveBundle. */
-            archiveBundle?: (mediflow.v3.ArchiveBundle.$Properties|null);
+            archiveBundle?: (mediflow.v4.ArchiveBundle.$Properties|null);
 
             /** Packet login. */
-            login?: (mediflow.v3.Login.$Properties|null);
+            login?: (mediflow.v4.Login.$Properties|null);
 
             /** Packet user. */
-            user?: (mediflow.v3.User.$Properties|null);
+            user?: (mediflow.v4.User.$Properties|null);
 
             /** Packet publish. */
-            publish?: (mediflow.v3.Publish.$Properties|null);
+            publish?: (mediflow.v4.Publish.$Properties|null);
 
             /** Packet consume. */
-            consume?: (mediflow.v3.Consume.$Properties|null);
+            consume?: (mediflow.v4.Consume.$Properties|null);
 
             /** Packet playback. */
-            playback?: (mediflow.v3.Playback.$Properties|null);
+            playback?: (mediflow.v4.Playback.$Properties|null);
 
             /** Packet playbackResult. */
-            playbackResult?: (mediflow.v3.PlaybackResult.$Properties|null);
+            playbackResult?: (mediflow.v4.PlaybackResult.$Properties|null);
 
             /** Packet result. */
-            result?: (mediflow.v3.Result.$Properties|null);
+            result?: (mediflow.v4.Result.$Properties|null);
 
             /** Packet problem. */
-            problem?: (mediflow.v3.Problem.$Properties|null);
+            problem?: (mediflow.v4.Problem.$Properties|null);
 
             /** Packet health. */
-            health?: (mediflow.v3.Health.$Properties|null);
+            health?: (mediflow.v4.Health.$Properties|null);
 
             /** Packet retain. */
-            retain?: (mediflow.v3.Retain.$Properties|null);
+            retain?: (mediflow.v4.Retain.$Properties|null);
 
             /** Packet retained. */
-            retained?: (mediflow.v3.Retained.$Properties|null);
+            retained?: (mediflow.v4.Retained.$Properties|null);
 
             /** Packet empty. */
-            empty?: (mediflow.v3.Empty.$Properties|null);
+            empty?: (mediflow.v4.Empty.$Properties|null);
 
             /** Packet pendingCalls. */
-            pendingCalls?: (mediflow.v3.PendingCalls.$Properties|null);
+            pendingCalls?: (mediflow.v4.PendingCalls.$Properties|null);
 
             /** Packet body. */
             body?: ("frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls");
@@ -4965,26 +4965,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns Packet instance
              */
-            static create(properties: mediflow.v3.Packet.$Shape): mediflow.v3.Packet & mediflow.v3.Packet.$Shape;
-            static create(properties?: mediflow.v3.Packet.$Properties): mediflow.v3.Packet;
+            static create(properties: mediflow.v4.Packet.$Shape): mediflow.v4.Packet & mediflow.v4.Packet.$Shape;
+            static create(properties?: mediflow.v4.Packet.$Properties): mediflow.v4.Packet;
 
             /**
-             * Encodes the specified Packet message. Does not implicitly {@link mediflow.v3.Packet.verify|verify} messages.
+             * Encodes the specified Packet message. Does not implicitly {@link mediflow.v4.Packet.verify|verify} messages.
              * @param message Packet message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.Packet.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.Packet.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Packet message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.Packet & mediflow.v3.Packet.$Shape} Packet
+             * @returns {mediflow.v4.Packet & mediflow.v4.Packet.$Shape} Packet
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.Packet & mediflow.v3.Packet.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.Packet & mediflow.v4.Packet.$Shape;
 
             /**
              * Verifies a Packet message.
@@ -4998,7 +4998,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns Packet
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.Packet;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.Packet;
 
             /**
              * Creates a plain object from a Packet message. Also converts values to other types if specified.
@@ -5006,7 +5006,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.Packet, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.Packet, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this Packet to JSON.
@@ -5031,91 +5031,91 @@ export namespace mediflow {
                 protocolVersion?: (number|null);
 
                 /** Packet frame */
-                frame?: (mediflow.v3.Frame.$Properties|null);
+                frame?: (mediflow.v4.Frame.$Properties|null);
 
                 /** Packet snapshot */
-                snapshot?: (mediflow.v3.Snapshot.$Properties|null);
+                snapshot?: (mediflow.v4.Snapshot.$Properties|null);
 
                 /** Packet screen */
-                screen?: (mediflow.v3.Screen.$Properties|null);
+                screen?: (mediflow.v4.Screen.$Properties|null);
 
                 /** Packet call */
-                call?: (mediflow.v3.Call.$Properties|null);
+                call?: (mediflow.v4.Call.$Properties|null);
 
                 /** Packet consumption */
-                consumption?: (mediflow.v3.Consumption.$Properties|null);
+                consumption?: (mediflow.v4.Consumption.$Properties|null);
 
                 /** Packet audit */
-                audit?: (mediflow.v3.Audit.$Properties|null);
+                audit?: (mediflow.v4.Audit.$Properties|null);
 
                 /** Packet archive */
-                archive?: (mediflow.v3.Archive.$Properties|null);
+                archive?: (mediflow.v4.Archive.$Properties|null);
 
                 /** Packet callPage */
-                callPage?: (mediflow.v3.CallPage.$Properties|null);
+                callPage?: (mediflow.v4.CallPage.$Properties|null);
 
                 /** Packet screenPage */
-                screenPage?: (mediflow.v3.ScreenPage.$Properties|null);
+                screenPage?: (mediflow.v4.ScreenPage.$Properties|null);
 
                 /** Packet consumptionPage */
-                consumptionPage?: (mediflow.v3.ConsumptionPage.$Properties|null);
+                consumptionPage?: (mediflow.v4.ConsumptionPage.$Properties|null);
 
                 /** Packet auditPage */
-                auditPage?: (mediflow.v3.AuditPage.$Properties|null);
+                auditPage?: (mediflow.v4.AuditPage.$Properties|null);
 
                 /** Packet archivePage */
-                archivePage?: (mediflow.v3.ArchivePage.$Properties|null);
+                archivePage?: (mediflow.v4.ArchivePage.$Properties|null);
 
                 /** Packet historyPage */
-                historyPage?: (mediflow.v3.HistoryPage.$Properties|null);
+                historyPage?: (mediflow.v4.HistoryPage.$Properties|null);
 
                 /** Packet screenDetail */
-                screenDetail?: (mediflow.v3.ScreenDetail.$Properties|null);
+                screenDetail?: (mediflow.v4.ScreenDetail.$Properties|null);
 
                 /** Packet overview */
-                overview?: (mediflow.v3.Overview.$Properties|null);
+                overview?: (mediflow.v4.Overview.$Properties|null);
 
                 /** Packet archiveBundle */
-                archiveBundle?: (mediflow.v3.ArchiveBundle.$Properties|null);
+                archiveBundle?: (mediflow.v4.ArchiveBundle.$Properties|null);
 
                 /** Packet login */
-                login?: (mediflow.v3.Login.$Properties|null);
+                login?: (mediflow.v4.Login.$Properties|null);
 
                 /** Packet user */
-                user?: (mediflow.v3.User.$Properties|null);
+                user?: (mediflow.v4.User.$Properties|null);
 
                 /** Packet publish */
-                publish?: (mediflow.v3.Publish.$Properties|null);
+                publish?: (mediflow.v4.Publish.$Properties|null);
 
                 /** Packet consume */
-                consume?: (mediflow.v3.Consume.$Properties|null);
+                consume?: (mediflow.v4.Consume.$Properties|null);
 
                 /** Packet playback */
-                playback?: (mediflow.v3.Playback.$Properties|null);
+                playback?: (mediflow.v4.Playback.$Properties|null);
 
                 /** Packet playbackResult */
-                playbackResult?: (mediflow.v3.PlaybackResult.$Properties|null);
+                playbackResult?: (mediflow.v4.PlaybackResult.$Properties|null);
 
                 /** Packet result */
-                result?: (mediflow.v3.Result.$Properties|null);
+                result?: (mediflow.v4.Result.$Properties|null);
 
                 /** Packet problem */
-                problem?: (mediflow.v3.Problem.$Properties|null);
+                problem?: (mediflow.v4.Problem.$Properties|null);
 
                 /** Packet health */
-                health?: (mediflow.v3.Health.$Properties|null);
+                health?: (mediflow.v4.Health.$Properties|null);
 
                 /** Packet retain */
-                retain?: (mediflow.v3.Retain.$Properties|null);
+                retain?: (mediflow.v4.Retain.$Properties|null);
 
                 /** Packet retained */
-                retained?: (mediflow.v3.Retained.$Properties|null);
+                retained?: (mediflow.v4.Retained.$Properties|null);
 
                 /** Packet empty */
-                empty?: (mediflow.v3.Empty.$Properties|null);
+                empty?: (mediflow.v4.Empty.$Properties|null);
 
                 /** Packet pendingCalls */
-                pendingCalls?: (mediflow.v3.PendingCalls.$Properties|null);
+                pendingCalls?: (mediflow.v4.PendingCalls.$Properties|null);
 
                 /** Packet body */
                 body?: ("frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls");
@@ -5127,46 +5127,46 @@ export namespace mediflow {
             /** Narrowed shape of a Packet. */
             type $Shape = {
               protocolVersion?: number|null;
-              frame?: mediflow.v3.Frame.$Shape|null;
-              snapshot?: mediflow.v3.Snapshot.$Shape|null;
-              screen?: mediflow.v3.Screen.$Shape|null;
-              call?: mediflow.v3.Call.$Shape|null;
-              consumption?: mediflow.v3.Consumption.$Shape|null;
-              audit?: mediflow.v3.Audit.$Shape|null;
-              archive?: mediflow.v3.Archive.$Shape|null;
-              callPage?: mediflow.v3.CallPage.$Shape|null;
-              screenPage?: mediflow.v3.ScreenPage.$Shape|null;
-              consumptionPage?: mediflow.v3.ConsumptionPage.$Shape|null;
-              auditPage?: mediflow.v3.AuditPage.$Shape|null;
-              archivePage?: mediflow.v3.ArchivePage.$Shape|null;
-              historyPage?: mediflow.v3.HistoryPage.$Shape|null;
-              screenDetail?: mediflow.v3.ScreenDetail.$Shape|null;
-              overview?: mediflow.v3.Overview.$Shape|null;
-              archiveBundle?: mediflow.v3.ArchiveBundle.$Shape|null;
-              login?: mediflow.v3.Login.$Shape|null;
-              user?: mediflow.v3.User.$Shape|null;
-              publish?: mediflow.v3.Publish.$Shape|null;
-              consume?: mediflow.v3.Consume.$Shape|null;
-              playback?: mediflow.v3.Playback.$Shape|null;
-              playbackResult?: mediflow.v3.PlaybackResult.$Shape|null;
-              result?: mediflow.v3.Result.$Shape|null;
-              problem?: mediflow.v3.Problem.$Shape|null;
-              health?: mediflow.v3.Health.$Shape|null;
-              retain?: mediflow.v3.Retain.$Shape|null;
-              retained?: mediflow.v3.Retained.$Shape|null;
-              empty?: mediflow.v3.Empty.$Shape|null;
-              pendingCalls?: mediflow.v3.PendingCalls.$Shape|null;
+              frame?: mediflow.v4.Frame.$Shape|null;
+              snapshot?: mediflow.v4.Snapshot.$Shape|null;
+              screen?: mediflow.v4.Screen.$Shape|null;
+              call?: mediflow.v4.Call.$Shape|null;
+              consumption?: mediflow.v4.Consumption.$Shape|null;
+              audit?: mediflow.v4.Audit.$Shape|null;
+              archive?: mediflow.v4.Archive.$Shape|null;
+              callPage?: mediflow.v4.CallPage.$Shape|null;
+              screenPage?: mediflow.v4.ScreenPage.$Shape|null;
+              consumptionPage?: mediflow.v4.ConsumptionPage.$Shape|null;
+              auditPage?: mediflow.v4.AuditPage.$Shape|null;
+              archivePage?: mediflow.v4.ArchivePage.$Shape|null;
+              historyPage?: mediflow.v4.HistoryPage.$Shape|null;
+              screenDetail?: mediflow.v4.ScreenDetail.$Shape|null;
+              overview?: mediflow.v4.Overview.$Shape|null;
+              archiveBundle?: mediflow.v4.ArchiveBundle.$Shape|null;
+              login?: mediflow.v4.Login.$Shape|null;
+              user?: mediflow.v4.User.$Shape|null;
+              publish?: mediflow.v4.Publish.$Shape|null;
+              consume?: mediflow.v4.Consume.$Shape|null;
+              playback?: mediflow.v4.Playback.$Shape|null;
+              playbackResult?: mediflow.v4.PlaybackResult.$Shape|null;
+              result?: mediflow.v4.Result.$Shape|null;
+              problem?: mediflow.v4.Problem.$Shape|null;
+              health?: mediflow.v4.Health.$Shape|null;
+              retain?: mediflow.v4.Retain.$Shape|null;
+              retained?: mediflow.v4.Retained.$Shape|null;
+              empty?: mediflow.v4.Empty.$Shape|null;
+              pendingCalls?: mediflow.v4.PendingCalls.$Shape|null;
               $unknowns?: Uint8Array[];
             } & (
-              ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "frame"; frame: mediflow.v3.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v3.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v3.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v3.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v3.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v3.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v3.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v3.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v3.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v3.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v3.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v3.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v3.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v3.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v3.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v3.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v3.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v3.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v3.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v3.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v3.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v3.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v3.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v3.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v3.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v3.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v3.Retained.$Shape; empty?: null; pendingCalls?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v3.Empty.$Shape; pendingCalls?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v3.PendingCalls.$Shape })
+              ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "frame"; frame: mediflow.v4.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v4.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v4.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v4.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v4.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v4.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v4.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v4.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v4.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v4.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v4.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v4.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v4.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v4.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v4.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v4.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v4.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v4.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v4.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v4.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v4.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v4.Retained.$Shape; empty?: null; pendingCalls?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v4.Empty.$Shape; pendingCalls?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape })
             );
         }
 
         /**
          * Properties of a PlaybackEvent.
-         * @deprecated Use mediflow.v3.PlaybackEvent.$Properties instead.
+         * @deprecated Use mediflow.v4.PlaybackEvent.$Properties instead.
          */
-        interface IPlaybackEvent extends mediflow.v3.PlaybackEvent.$Properties {
+        interface IPlaybackEvent extends mediflow.v4.PlaybackEvent.$Properties {
         }
 
         /** Represents a PlaybackEvent. */
@@ -5176,22 +5176,22 @@ export namespace mediflow {
              * Constructs a new PlaybackEvent.
              * @param [properties] Properties to set
              */
-            constructor(properties?: mediflow.v3.PlaybackEvent.$Properties);
+            constructor(properties?: mediflow.v4.PlaybackEvent.$Properties);
 
             /** Unknown fields preserved while decoding when enabled */
             $unknowns?: Uint8Array[];
 
             /** PlaybackEvent screenId. */
-            screenId?: (string|null);
+            screenId?: (Uint8Array|null);
 
             /** PlaybackEvent eventId. */
-            eventId?: (string|null);
+            eventId?: (Uint8Array|null);
 
             /** PlaybackEvent requestId. */
-            requestId?: (string|null);
+            requestId?: (Uint8Array|null);
 
             /** PlaybackEvent callId. */
-            callId?: (string|null);
+            callId?: (Uint8Array|null);
 
             /** PlaybackEvent status. */
             status?: (string|null);
@@ -5207,26 +5207,26 @@ export namespace mediflow {
              * @param [properties] Properties to set
              * @returns PlaybackEvent instance
              */
-            static create(properties: mediflow.v3.PlaybackEvent.$Shape): mediflow.v3.PlaybackEvent & mediflow.v3.PlaybackEvent.$Shape;
-            static create(properties?: mediflow.v3.PlaybackEvent.$Properties): mediflow.v3.PlaybackEvent;
+            static create(properties: mediflow.v4.PlaybackEvent.$Shape): mediflow.v4.PlaybackEvent & mediflow.v4.PlaybackEvent.$Shape;
+            static create(properties?: mediflow.v4.PlaybackEvent.$Properties): mediflow.v4.PlaybackEvent;
 
             /**
-             * Encodes the specified PlaybackEvent message. Does not implicitly {@link mediflow.v3.PlaybackEvent.verify|verify} messages.
+             * Encodes the specified PlaybackEvent message. Does not implicitly {@link mediflow.v4.PlaybackEvent.verify|verify} messages.
              * @param message PlaybackEvent message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            static encode(message: mediflow.v3.PlaybackEvent.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
+            static encode(message: mediflow.v4.PlaybackEvent.$Properties, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a PlaybackEvent message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns {mediflow.v3.PlaybackEvent & mediflow.v3.PlaybackEvent.$Shape} PlaybackEvent
+             * @returns {mediflow.v4.PlaybackEvent & mediflow.v4.PlaybackEvent.$Shape} PlaybackEvent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v3.PlaybackEvent & mediflow.v3.PlaybackEvent.$Shape;
+            static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): mediflow.v4.PlaybackEvent & mediflow.v4.PlaybackEvent.$Shape;
 
             /**
              * Verifies a PlaybackEvent message.
@@ -5240,7 +5240,7 @@ export namespace mediflow {
              * @param object Plain object
              * @returns PlaybackEvent
              */
-            static fromObject(object: { [k: string]: any }): mediflow.v3.PlaybackEvent;
+            static fromObject(object: { [k: string]: any }): mediflow.v4.PlaybackEvent;
 
             /**
              * Creates a plain object from a PlaybackEvent message. Also converts values to other types if specified.
@@ -5248,7 +5248,7 @@ export namespace mediflow {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            static toObject(message: mediflow.v3.PlaybackEvent, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            static toObject(message: mediflow.v4.PlaybackEvent, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this PlaybackEvent to JSON.
@@ -5270,16 +5270,16 @@ export namespace mediflow {
             interface $Properties {
 
                 /** PlaybackEvent screenId */
-                screenId?: (string|null);
+                screenId?: (Uint8Array|null);
 
                 /** PlaybackEvent eventId */
-                eventId?: (string|null);
+                eventId?: (Uint8Array|null);
 
                 /** PlaybackEvent requestId */
-                requestId?: (string|null);
+                requestId?: (Uint8Array|null);
 
                 /** PlaybackEvent callId */
-                callId?: (string|null);
+                callId?: (Uint8Array|null);
 
                 /** PlaybackEvent status */
                 status?: (string|null);
@@ -5295,7 +5295,7 @@ export namespace mediflow {
             }
 
             /** Shape of a PlaybackEvent. */
-            type $Shape = mediflow.v3.PlaybackEvent.$Properties;
+            type $Shape = mediflow.v4.PlaybackEvent.$Properties;
         }
     }
 }

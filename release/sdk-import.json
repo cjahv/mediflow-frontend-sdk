@@ -40,11 +40,30 @@
     "mediflow-frontend-sdk/test/protobuf.test.mjs": "1f15b41da1a5fd6d6f066ecef9b91514babffa01494c4ad41eee70a13122552a",
     "mediflow-frontend-sdk/test/screen-example.mjs": "d8ab4ad9d5f0f12ac0f804b37735bdd84939e765272339ca489bdd4093979685",
     "mediflow-frontend-sdk/tsconfig.examples.json": "a9a14e2e1476fd753f177ff58ff1271a28e66a80d4563e6caeb6ae0600283717",
-    "mediflow-frontend-sdk/tsconfig.json": "60e7ade25454a00ab693ce4832abffecc567ca46a308887fa9c0042c649d0c1d"
+    "mediflow-frontend-sdk/tsconfig.json": "60e7ade25454a00ab693ce4832abffecc567ca46a308887fa9c0042c649d0c1d",
+    "mediflow-backend-sdk/src/main/java/com/cjahv/mediflow/Identifiers.java": "df9862d3864defa348c7ed07bba6cff5b50458ce836a300ff6832527961c958e",
+    "mediflow-backend-sdk/src/test/java/com/cjahv/mediflow/IdentifiersTest.java": "ffa71bb8c47899c9eeb2c279cad601320ed50007f3e264a4b5b6236fde7cbb6f",
+    "mediflow-frontend-sdk/test/compact.test.mjs": "f0cd30db202909d2ac2ecd42aaf65bc0a07abae7223cb55659579522f9c75666"
   },
   "adjustedFiles": {
-    "mediflow-backend-sdk/README.md": "3618069eea94a15f05a2f02d1a3049eefac6cc368b214277307d667ca14d96a2",
-    "mediflow-backend-sdk/pom.xml": "2d424cf088396e17560ef85187d82afb7a39adfe0718dfe312dd9f7089457b28",
-    "mediflow-frontend-sdk/test/package-install.mjs": "d32a27fa93d3a9403fcaa14af8886e69c995e836f5684207bfee325f7fcc20cb"
+    "mediflow-backend-sdk/README.md": "e53a2fcb5355a95cd9a556105fd2c8420c214e3bfed47c310de49983d1d33cf9",
+    "mediflow-backend-sdk/pom.xml": "64db7de874eaaead0ab1875e3b3f7ef65e3d95a1ff6a8ce3ac68d6aee71656a3",
+    "mediflow-frontend-sdk/test/package-install.mjs": "d32a27fa93d3a9403fcaa14af8886e69c995e836f5684207bfee325f7fcc20cb",
+    "mediflow-backend-sdk/examples/ProducerExample.java": "4047f2832bdc6b30044bd74c7283a60767a286bf7f370b285f14ee01a7b1a2cc",
+    "mediflow-backend-sdk/proto/mediflow.proto": "624dded92083ceddbb1fb44e1cc439b177d1e6159c705e0fd4a86a3c84392d50",
+    "mediflow-backend-sdk/src/main/java/com/cjahv/mediflow/MediflowClient.java": "846a9b8cf448e5487dcd8ab52e934a0e3ebdb6474d5ddf8c22800c476cc0e1bd",
+    "mediflow-backend-sdk/src/test/java/com/cjahv/mediflow/GrpcBridge.java": "8f5330dcf3bb00261f366780b799076db69ef801e910673c2a8323193d1bf149",
+    "mediflow-backend-sdk/src/test/java/com/cjahv/mediflow/LiveIntegrationTest.java": "6bf2ff217e4d695e5df8bcdf9ec92d0abc58d9f11ff586e2fb25fa253d309e46",
+    "mediflow-backend-sdk/src/test/java/com/cjahv/mediflow/MediflowClientTest.java": "f1512372c10c882a0dfa6c383498164a892391ebfb5ee0df7d6eb13d5734b4ec",
+    "mediflow-frontend-sdk/README.md": "d176c7b709474925356147d1bc56ce0e79e536e140e11539b10655ff67c8bafa",
+    "mediflow-frontend-sdk/package-lock.json": "26612ef83ab66085be7e5cc2b0edc36c7512c8d7cd00e71b301bcd847daf8a1b",
+    "mediflow-frontend-sdk/package.json": "26a388e38d37f8793e0e5e61aabd62465780a86a27619603a6a0e256b9edd690",
+    "mediflow-frontend-sdk/proto/mediflow.proto": "624dded92083ceddbb1fb44e1cc439b177d1e6159c705e0fd4a86a3c84392d50",
+    "mediflow-frontend-sdk/src/generated/mediflow.d.ts": "977978fdaf4d5c238bde062146ba49c2700d5a03ae262576db3b94876fb4b011",
+    "mediflow-frontend-sdk/src/generated/mediflow.js": "bf8a60ed9e8a3f2b1e1fdef128bd74301b1597daae036f61438a11f49d48648e",
+    "mediflow-frontend-sdk/src/protobuf.ts": "943416c614ecb2c3b2fb7c32e527fbfc2b92f55af6fb98e3fa2f519395eb814e",
+    "mediflow-frontend-sdk/test/protobuf.test.mjs": "a9e3f1e9b9fc0cbc36eedf30f4f0e933b3de5580ca460d46d3ff48ed46135a46",
+    "mediflow-backend-sdk/scripts/check-consumer.sh": "0d65cecaf396ec78e652ad59d4bee7757cf51914ea9c4884300da8b26c51c106",
+    "mediflow-frontend-sdk/test/compact.test.mjs": "4663b6330b9661f0267919c4b9214681b3599fc390004a82eb4d37dd75841ee4"
   }
 }
