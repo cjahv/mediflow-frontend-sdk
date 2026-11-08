@@ -1,5 +1,6 @@
 name: Public SDK CI
 on:
+  workflow_call:
   pull_request:
   push:
     branches: [main]
@@ -16,7 +17,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+      - run: python3 -m pip install PyYAML==6.0.3
       - run: python3 scripts/test-boundary.py
+      - run: python3 scripts/test-release-boundary.py
+      - run: python3 scripts/test-image-audit.py
       - run: python3 scripts/check-boundary.py
   screen:
     runs-on: ubuntu-24.04

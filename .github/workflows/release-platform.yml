@@ -1,0 +1,298 @@
+name: Release platform from reviewed private source
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        type: string
+        default: latest
+        required: true
+      publish:
+        description: 'Publish the exact tested native candidates after all gates pass.'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: platform-release
+  cancel-in-progress: false
+jobs:
+  preflight:
+    if: github.repository == 'cjahv/mediflow-frontend-sdk' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/release-plan.py
+      - if: inputs.publish
+        env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/registry.py destination "$IMAGE_TAG"
+  sdk-quality:
+    needs: preflight
+    uses: ./.github/workflows/sdk-ci.yml
+  source-quality:
+    needs: [preflight, sdk-quality]
+    environment: platform-release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: mediflow
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: mediflow_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U mediflow -d mediflow_test"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Fetch only reviewed private commit
+        env:
+          PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+        run: python3 scripts/private-source.py --checkout
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version-file: ${{ runner.temp }}/private-source/mediflow-platform/go.mod
+          cache: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Verify exact integrated source without exposing private output
+        env:
+          MEDIFLOW_TEST_POSTGRES_URL: postgres://mediflow:ci-only-password@localhost:5432/mediflow_test?sslmode=disable
+          MEDIFLOW_TEST_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
+        run: python3 scripts/run-private.py quality
+      - name: Remove private checkout and logs even after failure
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/private-source" "$RUNNER_TEMP/private-logs"
+  source-java21:
+    needs: [preflight, sdk-quality]
+    environment: platform-release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - env:
+          PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+        run: python3 scripts/private-source.py --checkout
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: python3 scripts/run-private.py java21
+      - if: always()
+        run: rm -rf "$RUNNER_TEMP/private-source" "$RUNNER_TEMP/private-logs"
+  candidate:
+    needs: [source-quality, source-java21]
+    environment: platform-release
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+            machine: x86_64
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+            machine: aarch64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - env:
+          EXPECTED_MACHINE: ${{ matrix.machine }}
+        run: test "$(uname -m)" = "$EXPECTED_MACHINE"
+      - name: Fetch only reviewed private commit
+        env:
+          PLATFORM_READ_TOKEN: ${{ secrets.PLATFORM_READ_TOKEN }}
+        run: python3 scripts/private-source.py --checkout
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Build and exercise native candidate with no private log export
+        env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/run-private.py candidate
+      - name: Remove private checkout before scanner or any upload
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/private-source" "$RUNNER_TEMP/private-logs"
+      - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+        with:
+          image-ref: mediflow:ci
+          format: json
+          output: ${{ runner.temp }}/runtime-scan.json
+          exit-code: '1'
+          severity: HIGH,CRITICAL
+          ignore-unfixed: false
+          hide-progress: true
+          cache: false
+          cache-dir: ${{ runner.temp }}/trivy-cache
+      - name: Audit every final runtime layer and export only exact tested bytes
+        env:
+          ARCH: ${{ matrix.arch }}
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/export-candidate.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: runtime-${{ github.run_id }}-${{ matrix.arch }}
+          path: |
+            ${{ runner.temp }}/public-candidate/image.tar
+            ${{ runner.temp }}/public-candidate/candidate.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Remove ephemeral reports
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/runtime-scan.json" "$RUNNER_TEMP/trivy-cache"
+  push-architecture:
+    if: inputs.publish
+    needs: candidate
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: runtime-${{ github.run_id }}-${{ matrix.arch }}
+          path: ${{ runner.temp }}/public-candidate
+      - env:
+          ARCH: ${{ matrix.arch }}
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/import-candidate.py
+      - env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: python3 scripts/registry.py destination "$IMAGE_TAG"
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - name: Push tested bytes and verify anonymous digest
+        env:
+          ARCH: ${{ matrix.arch }}
+        run: |
+          tag="candidate-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$ARCH"
+          docker tag mediflow:ci "ghcr.io/cjahv/mediflow:$tag"
+          docker push "ghcr.io/cjahv/mediflow:$tag"
+          mkdir -p "$RUNNER_TEMP/digest"
+          python3 scripts/registry.py digest "$tag" > "$RUNNER_TEMP/digest/$ARCH.txt"
+          cp "$RUNNER_TEMP/public-candidate/candidate.json" "$RUNNER_TEMP/digest/$ARCH.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: digest-${{ github.run_id }}-${{ matrix.arch }}
+          path: |
+            ${{ runner.temp }}/digest/${{ matrix.arch }}.txt
+            ${{ runner.temp }}/digest/${{ matrix.arch }}.json
+          if-no-files-found: error
+          retention-days: 7
+  publish-index:
+    needs: push-architecture
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      digest: ${{ steps.index.outputs.digest }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: digest-${{ github.run_id }}-*
+          path: ${{ runner.temp }}/digests
+          merge-multiple: true
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - id: index
+        env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: |
+          python3 scripts/registry.py destination "$IMAGE_TAG"
+          amd=$(cat "$RUNNER_TEMP/digests/amd64.txt")
+          arm=$(cat "$RUNNER_TEMP/digests/arm64.txt")
+          [[ "$amd" =~ ^sha256:[0-9a-f]{64}$ && "$arm" =~ ^sha256:[0-9a-f]{64}$ ]]
+          docker buildx imagetools create -t "ghcr.io/cjahv/mediflow:$IMAGE_TAG" "ghcr.io/cjahv/mediflow@$amd" "ghcr.io/cjahv/mediflow@$arm"
+          digest=$(python3 scripts/registry.py index "$IMAGE_TAG" --amd64 "$amd" --arm64 "$arm")
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
+  verify-public:
+    needs: publish-index
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+            machine: x86_64
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+            machine: aarch64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: digest-${{ github.run_id }}-${{ matrix.arch }}
+          path: ${{ runner.temp }}/digest
+      - name: Pull final index anonymously and run native HTTP 9999, Java and persistence checks
+        env:
+          ARCH: ${{ matrix.arch }}
+          EXPECTED_MACHINE: ${{ matrix.machine }}
+          INDEX_DIGEST: ${{ needs.publish-index.outputs.digest }}
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: |
+          test "$(uname -m)" = "$EXPECTED_MACHINE"
+          export DOCKER_CONFIG="$(mktemp -d)"
+          expected=$(python3 -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/digest/"+os.environ["ARCH"]+".json"))["configId"])')
+          for ref in "ghcr.io/cjahv/mediflow:$IMAGE_TAG" "ghcr.io/cjahv/mediflow@$INDEX_DIGEST"; do
+            docker pull --platform "linux/$ARCH" "$ref"
+            test "$(docker image inspect "$ref" --format '{{.Id}}')" = "$expected"
+            test "$(docker image inspect "$ref" --format '{{.Architecture}}')" = "$ARCH"
+          done
+          docker tag "ghcr.io/cjahv/mediflow@$INDEX_DIGEST" mediflow:ci
+          npm ci --prefix mediflow-frontend-sdk --ignore-scripts
+          bash scripts/container-smoke.sh > "$RUNNER_TEMP/runtime-check.log" 2>&1 || { echo 'Published runtime verification failed; logs are not uploaded.'; exit 1; }
+          echo "Verified linux/$ARCH $INDEX_DIGEST" >> "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        run: rm -f "$RUNNER_TEMP/runtime-check.log"
