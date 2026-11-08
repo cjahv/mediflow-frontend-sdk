@@ -136,8 +136,27 @@ jobs:
       - name: Remove private checkout before scanner or any upload
         if: always()
         run: rm -rf "$RUNNER_TEMP/private-source" "$RUNNER_TEMP/private-logs"
+      - name: Install checksum-pinned Trivy from official release
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$(uname -m)" in
+            x86_64) asset=trivy_0.70.0_Linux-64bit.tar.gz; checksum=8b4376d5d6befe5c24d503f10ff136d9e0c49f9127a4279fd110b727929a5aa9 ;;
+            aarch64) asset=trivy_0.70.0_Linux-ARM64.tar.gz; checksum=2f6bb988b553a1bbac6bdd1ce890f5e412439564e17522b88a4541b4f364fc8d ;;
+            *) echo 'Unsupported scanner architecture'; exit 1 ;;
+          esac
+          directory=$(mktemp -d "$RUNNER_TEMP/trivy-install.XXXXXX")
+          curl --fail --location --retry 3 --connect-timeout 15 --max-time 180 \
+            "https://github.com/aquasecurity/trivy/releases/download/v0.70.0/$asset" -o "$directory/$asset"
+          (cd "$directory" && printf '%s  %s\n' "$checksum" "$asset" | sha256sum --check --strict)
+          tar -xzf "$directory/$asset" -C "$directory" trivy
+          rm "$directory/$asset"
+          "$directory/trivy" --version
+          echo "$directory" >> "$GITHUB_PATH"
       - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
+          skip-setup-trivy: true
+          version: v0.70.0
           image-ref: mediflow:ci
           format: json
           output: ${{ runner.temp }}/runtime-scan.json
