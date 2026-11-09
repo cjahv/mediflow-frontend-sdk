@@ -120,6 +120,45 @@ class ReleaseBoundary(unittest.TestCase):
                     runner.execute(['bash', str(runner.PUBLIC / 'scripts/quality-platform.sh')])
             self.assertEqual(output.getvalue(), 'Browser check location: live:188\n')
 
+    def test_shell_diagnostic_is_bounded_and_prefers_browser_location(self):
+        import tempfile
+        runner = module('run-private')
+        with tempfile.TemporaryDirectory() as directory:
+            log = Path(directory) / 'output.log'
+            for category in ['harness', 'java-build']:
+                log.write_text(f'Browser shell check location: {category}:17\n')
+                self.assertEqual(runner.browser_failure_location(log), f'Browser check location: shell-{category}:17')
+            for value in ['private-path:2', 'harness:0', 'harness:999999', 'harness:17 secret', 'harness:-1', 'harness:1\nSECRET']:
+                log.write_text('Browser shell check location: ' + value)
+                if value.endswith('\nSECRET'):
+                    self.assertEqual(runner.browser_failure_location(log), 'Browser check location: shell-harness:1')
+                else:
+                    self.assertIsNone(runner.browser_failure_location(log))
+            location = (runner.SOURCE / 'mediflow-platform/web/test/browser-live.mjs').as_uri()
+            log.write_text(f'    at {location}:188:17\nBrowser shell check location: harness:52\n')
+            self.assertEqual(runner.browser_failure_location(log), 'Browser check location: live:188')
+
+    def test_shell_trap_preserves_failure_status_and_does_not_trace(self):
+        import tempfile
+        import subprocess
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'scripts').mkdir()
+            script = root / 'scripts/browser-test.sh'
+            env = dict(os.environ, BASH_ENV=str(ROOT / 'scripts/browser-phase-trap.sh'))
+            script.write_text('#!/bin/bash\nset -euo pipefail\nSECRET=never-print-this\n(exit 19)\necho SHOULD_NOT_RUN\n')
+            result = subprocess.run(['bash','scripts/browser-test.sh'], cwd=root, env=env, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 19)
+            self.assertEqual(result.stdout, '')
+            self.assertEqual(result.stderr, 'Browser shell check location: harness:4\n')
+            script.write_text('#!/bin/bash\nset -euo pipefail\ntrue\n')
+            result = subprocess.run(['bash','scripts/browser-test.sh'], cwd=root, env=env, capture_output=True, text=True)
+            self.assertEqual((result.returncode,result.stdout,result.stderr), (0,'',''))
+            (root / 'scripts/unknown.sh').write_text('set -e\nfalse\n')
+            result = subprocess.run(['bash','scripts/unknown.sh'], cwd=root, env=env, capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertEqual(result.stderr, '')
+
     def test_candidate_uses_reproducible_helper_and_keeps_smoke_gates(self):
         runner = module('run-private')
         import json
@@ -153,3 +192,4 @@ class ReleaseBoundary(unittest.TestCase):
         self.flow['jobs']['candidate']['strategy']['matrix']['include'][1]['runner'] = 'ubuntu-24.04'
         with self.assertRaises(ValueError): audit(self.flow)
 if __name__ == '__main__': unittest.main()
+
