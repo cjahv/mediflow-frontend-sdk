@@ -11,7 +11,7 @@ CONTROL = {
  'README.md', '.gitignore', '.github/workflows/sdk-ci.yml', '.github/workflows/verify-private-source.yml',
  'release/sdk-import.json', 'release/platform-source.json', 'release/MIGRATION.md',
  'scripts/test-registry.py', 'scripts/audit-image.py', 'scripts/test-image-audit.py', 'scripts/run-private.py',
- 'scripts/quality-platform.sh', 'scripts/registry.py', 'scripts/export-candidate.py',
+ 'scripts/browser-phase-trap.sh', 'scripts/quality-platform.sh', 'scripts/registry.py', 'scripts/export-candidate.py',
  'scripts/import-candidate.py', 'scripts/release-plan.py', 'scripts/container-smoke.sh',
  'scripts/container-fixture.mjs', 'scripts/test-release-boundary.py',
  'scripts/release/export-git-sdk.py', 'scripts/release/publish-git-sdk.py',
@@ -66,3 +66,4 @@ def main():
 
 
 if __name__ == '__main__': main()
+

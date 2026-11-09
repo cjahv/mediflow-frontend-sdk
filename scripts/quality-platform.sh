@@ -49,4 +49,5 @@ python3 scripts/bootstrap-sdks.py --check
 git diff --exit-code -- protocol mediflow-platform/internal/pb mediflow-platform/internal/wire mediflow-platform/proto mediflow-platform/web/src/api mediflow-backend-sdk/proto mediflow-frontend-sdk/src/protobuf.ts mediflow-frontend-sdk/src/generated mediflow-frontend-sdk/proto
 bash scripts/integration.sh
 (cd mediflow-platform/web && npx playwright install --with-deps chromium)
-bash scripts/browser-test.sh
+BASH_ENV="$(dirname "${BASH_SOURCE[0]}")/browser-phase-trap.sh" bash scripts/browser-test.sh
+

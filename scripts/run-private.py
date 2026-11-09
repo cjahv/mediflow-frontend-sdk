@@ -38,6 +38,11 @@ def browser_failure_location(log_path):
             pattern = r'^ +at (?:[^()\r\n]* \()?' + exact_location + r':([1-9][0-9]{0,4}):[1-9][0-9]{0,4}\)?$'
             for match in re.finditer(pattern, tail, flags=re.MULTILINE):
                 locations.append((match.start(), category, int(match.group(1))))
+        # Accept only our fixed shell marker, never raw commands or paths.
+        if not locations:
+            match = re.search(r'^Browser shell check location: (harness|java-build):([1-9][0-9]{0,4})$', tail, flags=re.MULTILINE)
+            if match:
+                locations.append((match.start(), 'shell-' + match.group(1), int(match.group(2))))
         if locations:
             _, category, line = max(locations)
             return f'Browser check location: {category}:{line}'
@@ -111,3 +116,4 @@ if __name__ == '__main__':
     try: main()
     except Exception:
         raise SystemExit('Private build or validation failed. Source and failure logs remain ephemeral and are not published.') from None
+
