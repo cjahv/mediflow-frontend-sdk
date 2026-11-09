@@ -33,8 +33,9 @@ def browser_failure_location(log_path):
             tail = log.read(131072).decode('utf-8', errors='replace')
         locations = []
         for category, filename in [('live', 'browser-live.mjs'), ('deployment', 'browser-deployment.mjs')]:
-            source_url = (SOURCE / 'mediflow-platform/web/test' / filename).as_uri()
-            pattern = r'^ +at (?:[^()\r\n]* \()?' + re.escape(source_url) + r':([1-9][0-9]{0,4}):[1-9][0-9]{0,4}\)?$'
+            source_path = SOURCE / 'mediflow-platform/web/test' / filename
+            exact_location = '(?:' + '|'.join(re.escape(value) for value in (source_path.as_uri(), str(source_path))) + ')'
+            pattern = r'^ +at (?:[^()\r\n]* \()?' + exact_location + r':([1-9][0-9]{0,4}):[1-9][0-9]{0,4}\)?$'
             for match in re.finditer(pattern, tail, flags=re.MULTILINE):
                 locations.append((match.start(), category, int(match.group(1))))
         if locations:

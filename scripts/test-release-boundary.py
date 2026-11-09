@@ -80,6 +80,9 @@ class ReleaseBoundary(unittest.TestCase):
             log.write_text('private URL https://secret.invalid/?token=hidden\n'
                            '    at verify (file:///private/check-out/mediflow-platform/web/test/browser-deployment.mjs:42:3)\n')
             self.assertEqual(runner.browser_failure_location(log), 'Browser check location: deployment:42')
+            log.write_text('TimeoutError: SECRET locator details\n'
+                           '    at /private/check-out/mediflow-platform/web/test/browser-live.mjs:188:17\n')
+            self.assertEqual(runner.browser_failure_location(log), 'Browser check location: live:188')
     def test_browser_diagnostic_rejects_unknown_or_unbounded_locations(self):
         import tempfile
         runner = module('run-private')
