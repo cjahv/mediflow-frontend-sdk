@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -19,6 +20,32 @@ def sanitized_env():
             and not any(word in key.upper() for word in ('TOKEN', 'SECRET', 'CREDENTIAL'))}
 
 
+def browser_failure_location(log_path):
+    """Return only a reviewed browser category and bounded numeric source location.
+
+    Never relay exception messages, function names, paths, URLs, or raw log lines.
+    Read a bounded tail; unknown formats fail closed with no extra diagnostic.
+    """
+    try:
+        with log_path.open('rb') as log:
+            log.seek(0, os.SEEK_END)
+            log.seek(max(0, log.tell() - 131072))
+            tail = log.read(131072).decode('utf-8', errors='replace')
+        locations = []
+        for category, filename in [('live', 'browser-live.mjs'), ('deployment', 'browser-deployment.mjs')]:
+            source_path = SOURCE / 'mediflow-platform/web/test' / filename
+            exact_location = '(?:' + '|'.join(re.escape(value) for value in (source_path.as_uri(), str(source_path))) + ')'
+            pattern = r'^ +at (?:[^()\r\n]* \()?' + exact_location + r':([1-9][0-9]{0,4}):[1-9][0-9]{0,4}\)?$'
+            for match in re.finditer(pattern, tail, flags=re.MULTILINE):
+                locations.append((match.start(), category, int(match.group(1))))
+        if locations:
+            _, category, line = max(locations)
+            return f'Browser check location: {category}:{line}'
+    except (OSError, ValueError):
+        pass
+    return None
+
+
 def execute(command, *, cwd=SOURCE, env=None):
     log_dir = TEMP / 'private-logs'; log_dir.mkdir(exist_ok=True)
     with (log_dir / 'output.log').open('ab') as log:
@@ -28,6 +55,10 @@ def execute(command, *, cwd=SOURCE, env=None):
         stage=stage_path.read_text().strip() if stage_path.is_file() else ''
         if stage.isdigit() and 0 < int(stage) < 200:
             print('Private validation failed at public quality script line '+stage, flush=True)
+        if command == ['bash', str(PUBLIC / 'scripts/quality-platform.sh')]:
+            location = browser_failure_location(log_dir / 'output.log')
+            if location:
+                print(location, flush=True)
         raise RuntimeError('Private validation failed; no private diagnostics are uploaded.')
 
 

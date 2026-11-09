@@ -69,6 +69,57 @@ class ReleaseBoundary(unittest.TestCase):
         runner = module('run-private')
         with patch.dict(os.environ, {'PLATFORM_READ_TOKEN':'hidden','GITHUB_TOKEN':'hidden','ACTIONS_RUNTIME_TOKEN':'hidden','SDK_GIT_TOKEN':'hidden','PATH':'/bin'}, clear=True):
             self.assertEqual(runner.sanitized_env(), {'PATH':'/bin'})
+    def test_browser_diagnostic_only_returns_category_and_line(self):
+        import tempfile
+        runner = module('run-private')
+        with tempfile.TemporaryDirectory() as directory, patch.object(runner, 'SOURCE', Path('/private/check-out')):
+            log = Path(directory) / 'output.log'
+            log.write_text('SECRET_EXCEPTION: patient payload and bearer token\n'
+                           '    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:188:17\n')
+            self.assertEqual(runner.browser_failure_location(log), 'Browser check location: live:188')
+            log.write_text('private URL https://secret.invalid/?token=hidden\n'
+                           '    at verify (file:///private/check-out/mediflow-platform/web/test/browser-deployment.mjs:42:3)\n')
+            self.assertEqual(runner.browser_failure_location(log), 'Browser check location: deployment:42')
+            log.write_text('TimeoutError: SECRET locator details\n'
+                           '    at /private/check-out/mediflow-platform/web/test/browser-live.mjs:188:17\n')
+            self.assertEqual(runner.browser_failure_location(log), 'Browser check location: live:188')
+    def test_browser_diagnostic_rejects_unknown_or_unbounded_locations(self):
+        import tempfile
+        runner = module('run-private')
+        with tempfile.TemporaryDirectory() as directory, patch.object(runner, 'SOURCE', Path('/private/check-out')):
+            log = Path(directory) / 'output.log'
+            for value in [
+                '    at file:///other/mediflow-platform/web/test/browser-live.mjs:12:3',
+                '    at file:///private/check-out/mediflow-platform/web/test/secret.mjs:12:3',
+                '    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:123456:3',
+                '    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:0:3',
+                '    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:12:3 SECRET',
+                '    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:12:3\x1b[31m',
+                'SECRET_EXCEPTION and private stack without reviewed location',
+            ]:
+                log.write_text(value + '\n')
+                self.assertIsNone(runner.browser_failure_location(log))
+            log.write_text('    at file:///private/check-out/mediflow-platform/web/test/browser-live.mjs:12:3\n' + 'x' * 131072)
+            self.assertIsNone(runner.browser_failure_location(log))
+            self.assertIsNone(runner.browser_failure_location(Path(directory) / 'missing'))
+    def test_failed_browser_gate_still_raises_without_logging_private_output(self):
+        import contextlib
+        import io
+        import tempfile
+        from types import SimpleNamespace
+        runner = module('run-private')
+        with tempfile.TemporaryDirectory() as directory, patch.object(runner, 'TEMP', Path(directory)):
+            def fail(command, **kwargs):
+                kwargs['stderr'].write(b'SECRET_EXCEPTION bearer private-data\n')
+                location = (runner.SOURCE / 'mediflow-platform/web/test/browser-live.mjs').as_uri()
+                kwargs['stderr'].write(f'    at {location}:188:17\n'.encode())
+                return SimpleNamespace(returncode=1)
+            output = io.StringIO()
+            with patch.object(runner.subprocess, 'run', side_effect=fail), contextlib.redirect_stdout(output):
+                with self.assertRaises(RuntimeError):
+                    runner.execute(['bash', str(runner.PUBLIC / 'scripts/quality-platform.sh')])
+            self.assertEqual(output.getvalue(), 'Browser check location: live:188\n')
+
     def test_candidate_uses_reproducible_helper_and_keeps_smoke_gates(self):
         runner = module('run-private')
         import json
