@@ -1,0 +1,32 @@
+{
+  "name": "@cjahv/mediflow-screen-sdk",
+  "version": "0.7.1-rc.1",
+  "type": "module",
+  "description": "橡树医序平台 screen WebSocket mirror and consumption SDK",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "protobufjs": "8.8.1"
+  },
+  "files": [
+    "dist",
+    "proto",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjahv/mediflow-frontend-sdk.git"
+  },
+  "homepage": "https://github.com/cjahv/mediflow-frontend-sdk"
+}
