@@ -108,4 +108,4 @@ Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadat
 同一 callId 时必须一致。原有五/六参数构造方法保留，不提供这两个值的旧调用继续工作。
 `text`、消费和播放契约不变；最终模板展开及播音由前端应用负责。平台不从可能变化或含歧义的队列反查姓名/编号。
 
-The call-text template extension described below is available in the source revision containing it; existing release tags do not acquire it automatically.
+The call-text template extension is available in the source revision containing it; existing release tags do not acquire it automatically.
