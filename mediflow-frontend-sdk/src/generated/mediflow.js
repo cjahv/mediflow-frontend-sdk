@@ -1059,6 +1059,7 @@ export const mediflow = $root.mediflow = (() => {
              * Properties of a Template.
              * @typedef {Object} mediflow.v4.Template.$Properties
              * @property {Array.<mediflow.v4.Queue.$Properties>|null} [queues] Template queues
+             * @property {string|null} [callTextTemplate] Template callTextTemplate
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -1100,6 +1101,23 @@ export const mediflow = $root.mediflow = (() => {
             Template.prototype.queues = $util.emptyArray;
 
             /**
+             * Template callTextTemplate.
+             * @member {string|null|undefined} callTextTemplate
+             * @memberof mediflow.v4.Template
+             * @instance
+             */
+            Template.prototype.callTextTemplate = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(Template.prototype, "_callTextTemplate", {
+                get: $util.oneOfGetter($oneOfFields = ["callTextTemplate"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
              * Creates a new Template instance using the specified properties.
              * @function create
              * @memberof mediflow.v4.Template
@@ -1134,6 +1152,8 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.queues != null && message.queues.length)
                     for (let i = 0; i < message.queues.length; ++i)
                         $root.mediflow.v4.Queue.encode(message.queues[i], writer.uint32(/* id 1, wireType 2 =*/10).fork(), _depth + 1).ldelim();
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.callTextTemplate);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -1186,6 +1206,13 @@ export const mediflow = $root.mediflow = (() => {
                             message.queues.push($root.mediflow.v4.Queue.decode(reader, reader.size(), $undefined, _depth + 1));
                             continue;
                         }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.callTextTemplate = reader.stringVerify();
+                            message._callTextTemplate = "callTextTemplate";
+                            continue;
+                        }
                     }
                     reader.skipType(wireType, _depth, tag);
                     if (!reader.discardUnknown) {
@@ -1218,6 +1245,7 @@ export const mediflow = $root.mediflow = (() => {
                     _depth = 0;
                 if (_depth > $util.recursionLimit)
                     return "max depth exceeded";
+                let properties = {};
                 if (message.queues != null && $Object.hasOwnProperty.call(message, "queues")) {
                     if (!$Array.isArray(message.queues))
                         return "queues: array expected";
@@ -1226,6 +1254,11 @@ export const mediflow = $root.mediflow = (() => {
                         if (error)
                             return "queues." + error;
                     }
+                }
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate")) {
+                    properties._callTextTemplate = 1;
+                    if (!$util.isString(message.callTextTemplate))
+                        return "callTextTemplate: string expected";
                 }
                 return null;
             };
@@ -1258,6 +1291,8 @@ export const mediflow = $root.mediflow = (() => {
                         message.queues[i] = $root.mediflow.v4.Queue.fromObject(object.queues[i], _depth + 1);
                     }
                 }
+                if (object.callTextTemplate != null)
+                    message.callTextTemplate = $String(object.callTextTemplate);
                 return message;
             };
 
@@ -1285,6 +1320,8 @@ export const mediflow = $root.mediflow = (() => {
                     for (let j = 0; j < message.queues.length; ++j)
                         object.queues[j] = $root.mediflow.v4.Queue.toObject(message.queues[j], options, _depth + 1);
                 }
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate"))
+                    object.callTextTemplate = message.callTextTemplate;
                 return object;
             };
 
@@ -1326,6 +1363,7 @@ export const mediflow = $root.mediflow = (() => {
              * @property {number|Long|null} [version] Snapshot version
              * @property {string|null} [templateVersion] Snapshot templateVersion
              * @property {mediflow.v4.Template.$Properties|null} [data] Snapshot data
+             * @property {string|null} [screenName] Snapshot screenName
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -1397,6 +1435,14 @@ export const mediflow = $root.mediflow = (() => {
              */
             Snapshot.prototype.data = null;
 
+            /**
+             * Snapshot screenName.
+             * @member {string|null|undefined} screenName
+             * @memberof mediflow.v4.Snapshot
+             * @instance
+             */
+            Snapshot.prototype.screenName = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -1421,6 +1467,12 @@ export const mediflow = $root.mediflow = (() => {
             // Virtual OneOf for proto3 optional field
             $Object.defineProperty(Snapshot.prototype, "_templateVersion", {
                 get: $util.oneOfGetter($oneOfFields = ["templateVersion"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(Snapshot.prototype, "_screenName", {
+                get: $util.oneOfGetter($oneOfFields = ["screenName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -1466,6 +1518,8 @@ export const mediflow = $root.mediflow = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.templateVersion);
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
                     $root.mediflow.v4.Template.encode(message.data, writer.uint32(/* id 5, wireType 2 =*/42).fork(), _depth + 1).ldelim();
+                if (message.screenName != null && $Object.hasOwnProperty.call(message, "screenName"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.screenName);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -1544,6 +1598,13 @@ export const mediflow = $root.mediflow = (() => {
                             message.data = $root.mediflow.v4.Template.decode(reader, reader.size(), $undefined, _depth + 1, message.data);
                             continue;
                         }
+                    case 6: {
+                            if (wireType !== 2)
+                                break;
+                            message.screenName = reader.stringVerify();
+                            message._screenName = "screenName";
+                            continue;
+                        }
                     }
                     reader.skipType(wireType, _depth, tag);
                     if (!reader.discardUnknown) {
@@ -1602,6 +1663,11 @@ export const mediflow = $root.mediflow = (() => {
                     if (error)
                         return "data." + error;
                 }
+                if (message.screenName != null && $Object.hasOwnProperty.call(message, "screenName")) {
+                    properties._screenName = 1;
+                    if (!$util.isString(message.screenName))
+                        return "screenName: string expected";
+                }
                 return null;
             };
 
@@ -1649,6 +1715,8 @@ export const mediflow = $root.mediflow = (() => {
                         throw $TypeError(".mediflow.v4.Snapshot.data: object expected");
                     message.data = $root.mediflow.v4.Template.fromObject(object.data, _depth + 1);
                 }
+                if (object.screenName != null)
+                    message.screenName = $String(object.screenName);
                 return message;
             };
 
@@ -1686,6 +1754,8 @@ export const mediflow = $root.mediflow = (() => {
                     object.templateVersion = message.templateVersion;
                 if (message.data != null && $Object.hasOwnProperty.call(message, "data"))
                     object.data = $root.mediflow.v4.Template.toObject(message.data, options, _depth + 1);
+                if (message.screenName != null && $Object.hasOwnProperty.call(message, "screenName"))
+                    object.screenName = message.screenName;
                 return object;
             };
 
@@ -2170,6 +2240,8 @@ export const mediflow = $root.mediflow = (() => {
              * @property {number|null} [consumed] Call consumed
              * @property {number|null} [remaining] Call remaining
              * @property {Object.<string,string>|null} [targetNames] Call targetNames
+             * @property {string|null} [personName] Call personName
+             * @property {string|null} [displayNumber] Call displayNumber
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -2299,6 +2371,22 @@ export const mediflow = $root.mediflow = (() => {
              */
             Call.prototype.targetNames = $util.emptyObject;
 
+            /**
+             * Call personName.
+             * @member {string|null|undefined} personName
+             * @memberof mediflow.v4.Call
+             * @instance
+             */
+            Call.prototype.personName = null;
+
+            /**
+             * Call displayNumber.
+             * @member {string|null|undefined} displayNumber
+             * @memberof mediflow.v4.Call
+             * @instance
+             */
+            Call.prototype.displayNumber = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -2362,6 +2450,18 @@ export const mediflow = $root.mediflow = (() => {
                 set: $util.oneOfSetter($oneOfFields)
             });
 
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(Call.prototype, "_personName", {
+                get: $util.oneOfGetter($oneOfFields = ["personName"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(Call.prototype, "_displayNumber", {
+                get: $util.oneOfGetter($oneOfFields = ["displayNumber"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
             /**
              * Creates a new Call instance using the specified properties.
              * @function create
@@ -2420,6 +2520,10 @@ export const mediflow = $root.mediflow = (() => {
                 if (message.targetNames != null && $Object.hasOwnProperty.call(message, "targetNames"))
                     for (let keys = $Object.keys(message.targetNames), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 12, wireType 2 =*/98).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.targetNames[keys[i]]).ldelim();
+                if (message.personName != null && $Object.hasOwnProperty.call(message, "personName"))
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.personName);
+                if (message.displayNumber != null && $Object.hasOwnProperty.call(message, "displayNumber"))
+                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.displayNumber);
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -2578,6 +2682,20 @@ export const mediflow = $root.mediflow = (() => {
                             message.targetNames[key] = value;
                             continue;
                         }
+                    case 13: {
+                            if (wireType !== 2)
+                                break;
+                            message.personName = reader.stringVerify();
+                            message._personName = "personName";
+                            continue;
+                        }
+                    case 14: {
+                            if (wireType !== 2)
+                                break;
+                            message.displayNumber = reader.stringVerify();
+                            message._displayNumber = "displayNumber";
+                            continue;
+                        }
                     }
                     reader.skipType(wireType, _depth, tag);
                     if (!reader.discardUnknown) {
@@ -2676,6 +2794,16 @@ export const mediflow = $root.mediflow = (() => {
                         if (!$util.isString(message.targetNames[key[i]]))
                             return "targetNames: string{k:string} expected";
                 }
+                if (message.personName != null && $Object.hasOwnProperty.call(message, "personName")) {
+                    properties._personName = 1;
+                    if (!$util.isString(message.personName))
+                        return "personName: string expected";
+                }
+                if (message.displayNumber != null && $Object.hasOwnProperty.call(message, "displayNumber")) {
+                    properties._displayNumber = 1;
+                    if (!$util.isString(message.displayNumber))
+                        return "displayNumber: string expected";
+                }
                 return null;
             };
 
@@ -2746,6 +2874,10 @@ export const mediflow = $root.mediflow = (() => {
                         message.targetNames[keys[i]] = $String(object.targetNames[keys[i]]);
                     }
                 }
+                if (object.personName != null)
+                    message.personName = $String(object.personName);
+                if (object.displayNumber != null)
+                    message.displayNumber = $String(object.displayNumber);
                 return message;
             };
 
@@ -2804,6 +2936,10 @@ export const mediflow = $root.mediflow = (() => {
                         object.targetNames[keys2[j]] = message.targetNames[keys2[j]];
                     }
                 }
+                if (message.personName != null && $Object.hasOwnProperty.call(message, "personName"))
+                    object.personName = message.personName;
+                if (message.displayNumber != null && $Object.hasOwnProperty.call(message, "displayNumber"))
+                    object.displayNumber = message.displayNumber;
                 return object;
             };
 
@@ -15519,7 +15655,8 @@ export const mediflow = $root.mediflow = (() => {
              * @property {mediflow.v4.Retained.$Properties|null} [retained] Packet retained
              * @property {mediflow.v4.Empty.$Properties|null} [empty] Packet empty
              * @property {mediflow.v4.PendingCalls.$Properties|null} [pendingCalls] Packet pendingCalls
-             * @property {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"} [body] Packet body
+             * @property {mediflow.v4.CallTextSettings.$Properties|null} [callTextSettings] Packet callTextSettings
+             * @property {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"|"callTextSettings"} [body] Packet body
              * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
              */
 
@@ -15564,9 +15701,10 @@ export const mediflow = $root.mediflow = (() => {
              *   retained?: mediflow.v4.Retained.$Shape|null;
              *   empty?: mediflow.v4.Empty.$Shape|null;
              *   pendingCalls?: mediflow.v4.PendingCalls.$Shape|null;
+             *   callTextSettings?: mediflow.v4.CallTextSettings.$Shape|null;
              *   $unknowns?: Array.<Uint8Array>;
              * } & (
-             *   ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "frame"; frame: mediflow.v4.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v4.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v4.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v4.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v4.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v4.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v4.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v4.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v4.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v4.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v4.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v4.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v4.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v4.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v4.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v4.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v4.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v4.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v4.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v4.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v4.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v4.Retained.$Shape; empty?: null; pendingCalls?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v4.Empty.$Shape; pendingCalls?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape })
+             *   ({ body?: undefined; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "frame"; frame: mediflow.v4.Frame.$Shape; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "snapshot"; frame?: null; snapshot: mediflow.v4.Snapshot.$Shape; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "screen"; frame?: null; snapshot?: null; screen: mediflow.v4.Screen.$Shape; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "call"; frame?: null; snapshot?: null; screen?: null; call: mediflow.v4.Call.$Shape; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "consumption"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption: mediflow.v4.Consumption.$Shape; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "audit"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit: mediflow.v4.Audit.$Shape; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "archive"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive: mediflow.v4.Archive.$Shape; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "callPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage: mediflow.v4.CallPage.$Shape; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "screenPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage: mediflow.v4.ScreenPage.$Shape; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "consumptionPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage: mediflow.v4.ConsumptionPage.$Shape; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "auditPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage: mediflow.v4.AuditPage.$Shape; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "archivePage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage: mediflow.v4.ArchivePage.$Shape; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "historyPage"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage: mediflow.v4.HistoryPage.$Shape; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "screenDetail"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail: mediflow.v4.ScreenDetail.$Shape; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "overview"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview: mediflow.v4.Overview.$Shape; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "archiveBundle"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle: mediflow.v4.ArchiveBundle.$Shape; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "login"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login: mediflow.v4.Login.$Shape; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "user"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user: mediflow.v4.User.$Shape; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "publish"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish: mediflow.v4.Publish.$Shape; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "consume"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume: mediflow.v4.Consume.$Shape; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "playback"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback: mediflow.v4.Playback.$Shape; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "playbackResult"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult: mediflow.v4.PlaybackResult.$Shape; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "result"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result: mediflow.v4.Result.$Shape; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "problem"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem: mediflow.v4.Problem.$Shape; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "health"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health: mediflow.v4.Health.$Shape; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "retain"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain: mediflow.v4.Retain.$Shape; retained?: null; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "retained"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained: mediflow.v4.Retained.$Shape; empty?: null; pendingCalls?: null; callTextSettings?: null }|{ body?: "empty"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty: mediflow.v4.Empty.$Shape; pendingCalls?: null; callTextSettings?: null }|{ body?: "pendingCalls"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls: mediflow.v4.PendingCalls.$Shape; callTextSettings?: null }|{ body?: "callTextSettings"; frame?: null; snapshot?: null; screen?: null; call?: null; consumption?: null; audit?: null; archive?: null; callPage?: null; screenPage?: null; consumptionPage?: null; auditPage?: null; archivePage?: null; historyPage?: null; screenDetail?: null; overview?: null; archiveBundle?: null; login?: null; user?: null; publish?: null; consume?: null; playback?: null; playbackResult?: null; result?: null; problem?: null; health?: null; retain?: null; retained?: null; empty?: null; pendingCalls?: null; callTextSettings: mediflow.v4.CallTextSettings.$Shape })
              * )} mediflow.v4.Packet.$Shape
              */
 
@@ -15825,6 +15963,14 @@ export const mediflow = $root.mediflow = (() => {
              */
             Packet.prototype.pendingCalls = null;
 
+            /**
+             * Packet callTextSettings.
+             * @member {mediflow.v4.CallTextSettings.$Properties|null|undefined} callTextSettings
+             * @memberof mediflow.v4.Packet
+             * @instance
+             */
+            Packet.prototype.callTextSettings = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -15836,12 +15982,12 @@ export const mediflow = $root.mediflow = (() => {
 
             /**
              * Packet body.
-             * @member {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"|undefined} body
+             * @member {"frame"|"snapshot"|"screen"|"call"|"consumption"|"audit"|"archive"|"callPage"|"screenPage"|"consumptionPage"|"auditPage"|"archivePage"|"historyPage"|"screenDetail"|"overview"|"archiveBundle"|"login"|"user"|"publish"|"consume"|"playback"|"playbackResult"|"result"|"problem"|"health"|"retain"|"retained"|"empty"|"pendingCalls"|"callTextSettings"|undefined} body
              * @memberof mediflow.v4.Packet
              * @instance
              */
             $Object.defineProperty(Packet.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["frame", "snapshot", "screen", "call", "consumption", "audit", "archive", "callPage", "screenPage", "consumptionPage", "auditPage", "archivePage", "historyPage", "screenDetail", "overview", "archiveBundle", "login", "user", "publish", "consume", "playback", "playbackResult", "result", "problem", "health", "retain", "retained", "empty", "pendingCalls"]),
+                get: $util.oneOfGetter($oneOfFields = ["frame", "snapshot", "screen", "call", "consumption", "audit", "archive", "callPage", "screenPage", "consumptionPage", "auditPage", "archivePage", "historyPage", "screenDetail", "overview", "archiveBundle", "login", "user", "publish", "consume", "playback", "playbackResult", "result", "problem", "health", "retain", "retained", "empty", "pendingCalls", "callTextSettings"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -15937,6 +16083,8 @@ export const mediflow = $root.mediflow = (() => {
                     $root.mediflow.v4.Empty.encode(message.empty, writer.uint32(/* id 41, wireType 2 =*/330).fork(), _depth + 1).ldelim();
                 if (message.pendingCalls != null && $Object.hasOwnProperty.call(message, "pendingCalls"))
                     $root.mediflow.v4.PendingCalls.encode(message.pendingCalls, writer.uint32(/* id 42, wireType 2 =*/338).fork(), _depth + 1).ldelim();
+                if (message.callTextSettings != null && $Object.hasOwnProperty.call(message, "callTextSettings"))
+                    $root.mediflow.v4.CallTextSettings.encode(message.callTextSettings, writer.uint32(/* id 43, wireType 2 =*/346).fork(), _depth + 1).ldelim();
                 if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
                     for (let i = 0; i < message.$unknowns.length; ++i)
                         writer.raw(message.$unknowns[i]);
@@ -16189,6 +16337,13 @@ export const mediflow = $root.mediflow = (() => {
                                 break;
                             message.pendingCalls = $root.mediflow.v4.PendingCalls.decode(reader, reader.size(), $undefined, _depth + 1, message.pendingCalls);
                             message.body = "pendingCalls";
+                            continue;
+                        }
+                    case 43: {
+                            if (wireType !== 2)
+                                break;
+                            message.callTextSettings = $root.mediflow.v4.CallTextSettings.decode(reader, reader.size(), $undefined, _depth + 1, message.callTextSettings);
+                            message.body = "callTextSettings";
                             continue;
                         }
                     }
@@ -16517,6 +16672,16 @@ export const mediflow = $root.mediflow = (() => {
                             return "pendingCalls." + error;
                     }
                 }
+                if (message.callTextSettings != null && $Object.hasOwnProperty.call(message, "callTextSettings")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        let error = $root.mediflow.v4.CallTextSettings.verify(message.callTextSettings, _depth + 1);
+                        if (error)
+                            return "callTextSettings." + error;
+                    }
+                }
                 return null;
             };
 
@@ -16685,6 +16850,11 @@ export const mediflow = $root.mediflow = (() => {
                         throw $TypeError(".mediflow.v4.Packet.pendingCalls: object expected");
                     message.pendingCalls = $root.mediflow.v4.PendingCalls.fromObject(object.pendingCalls, _depth + 1);
                 }
+                if (object.callTextSettings != null) {
+                    if (!$util.isObject(object.callTextSettings))
+                        throw $TypeError(".mediflow.v4.Packet.callTextSettings: object expected");
+                    message.callTextSettings = $root.mediflow.v4.CallTextSettings.fromObject(object.callTextSettings, _depth + 1);
+                }
                 return message;
             };
 
@@ -16851,6 +17021,11 @@ export const mediflow = $root.mediflow = (() => {
                     object.pendingCalls = $root.mediflow.v4.PendingCalls.toObject(message.pendingCalls, options, _depth + 1);
                     if (options.oneofs)
                         object.body = "pendingCalls";
+                }
+                if (message.callTextSettings != null && $Object.hasOwnProperty.call(message, "callTextSettings")) {
+                    object.callTextSettings = $root.mediflow.v4.CallTextSettings.toObject(message.callTextSettings, options, _depth + 1);
+                    if (options.oneofs)
+                        object.body = "callTextSettings";
                 }
                 return object;
             };
@@ -17344,6 +17519,292 @@ export const mediflow = $root.mediflow = (() => {
             };
 
             return PlaybackEvent;
+        })();
+
+        v4.CallTextSettings = (function() {
+
+            /**
+             * Properties of a CallTextSettings.
+             * @typedef {Object} mediflow.v4.CallTextSettings.$Properties
+             * @property {string|null} [callTextTemplate] CallTextSettings callTextTemplate
+             * @property {string|null} [expectedCallTextTemplate] CallTextSettings expectedCallTextTemplate
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+
+            /**
+             * Properties of a CallTextSettings.
+             * @memberof mediflow.v4
+             * @interface ICallTextSettings
+             * @augments mediflow.v4.CallTextSettings.$Properties
+             * @deprecated Use mediflow.v4.CallTextSettings.$Properties instead.
+             */
+
+            /**
+             * Shape of a CallTextSettings.
+             * @typedef {mediflow.v4.CallTextSettings.$Properties} mediflow.v4.CallTextSettings.$Shape
+             */
+
+            /**
+             * Constructs a new CallTextSettings.
+             * @memberof mediflow.v4
+             * @classdesc Represents a CallTextSettings.
+             * @constructor
+             * @param {mediflow.v4.CallTextSettings.$Properties=} [properties] Properties to set
+             * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding when enabled
+             */
+            const CallTextSettings = function (properties) {
+                if (properties)
+                    for (let keys = $Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                            this[keys[i]] = properties[keys[i]];
+            };
+
+            /**
+             * CallTextSettings callTextTemplate.
+             * @member {string|null|undefined} callTextTemplate
+             * @memberof mediflow.v4.CallTextSettings
+             * @instance
+             */
+            CallTextSettings.prototype.callTextTemplate = null;
+
+            /**
+             * CallTextSettings expectedCallTextTemplate.
+             * @member {string|null|undefined} expectedCallTextTemplate
+             * @memberof mediflow.v4.CallTextSettings
+             * @instance
+             */
+            CallTextSettings.prototype.expectedCallTextTemplate = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(CallTextSettings.prototype, "_callTextTemplate", {
+                get: $util.oneOfGetter($oneOfFields = ["callTextTemplate"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            $Object.defineProperty(CallTextSettings.prototype, "_expectedCallTextTemplate", {
+                get: $util.oneOfGetter($oneOfFields = ["expectedCallTextTemplate"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new CallTextSettings instance using the specified properties.
+             * @function create
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {mediflow.v4.CallTextSettings.$Properties=} [properties] Properties to set
+             * @returns {mediflow.v4.CallTextSettings} CallTextSettings instance
+             * @type {{
+             *   (properties: mediflow.v4.CallTextSettings.$Shape): mediflow.v4.CallTextSettings & mediflow.v4.CallTextSettings.$Shape;
+             *   (properties?: mediflow.v4.CallTextSettings.$Properties): mediflow.v4.CallTextSettings;
+             * }}
+             */
+            CallTextSettings.create = function(properties) {
+                return new CallTextSettings(properties);
+            };
+
+            /**
+             * Encodes the specified CallTextSettings message. Does not implicitly {@link mediflow.v4.CallTextSettings.verify|verify} messages.
+             * @function encode
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {mediflow.v4.CallTextSettings.$Properties} message CallTextSettings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CallTextSettings.encode = function (message, writer, _depth) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.callTextTemplate);
+                if (message.expectedCallTextTemplate != null && $Object.hasOwnProperty.call(message, "expectedCallTextTemplate"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.expectedCallTextTemplate);
+                if (message.$unknowns != null && $Object.hasOwnProperty.call(message, "$unknowns"))
+                    for (let i = 0; i < message.$unknowns.length; ++i)
+                        writer.raw(message.$unknowns[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a CallTextSettings message from the specified reader or buffer.
+             * @function decode
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {mediflow.v4.CallTextSettings & mediflow.v4.CallTextSettings.$Shape} CallTextSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CallTextSettings.decode = function (reader, length, _end, _depth, _target) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $Reader.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let end, message;
+                if (length === $undefined)
+                    end = reader.len;
+                else {
+                    end = reader.pos + length;
+                    if (end > reader.len)
+                        throw $RangeError("index out of range");
+                    length = reader.len;
+                    reader.len = end;
+                }
+                message = _target || new $root.mediflow.v4.CallTextSettings();
+                while (reader.pos < end) {
+                    let start = reader.pos;
+                    let tag = reader.tag();
+                    if (tag === _end) {
+                        _end = $undefined;
+                        break;
+                    }
+                    let wireType = tag & 7;
+                    switch (tag >>>= 3) {
+                    case 1: {
+                            if (wireType !== 2)
+                                break;
+                            message.callTextTemplate = reader.stringVerify();
+                            message._callTextTemplate = "callTextTemplate";
+                            continue;
+                        }
+                    case 2: {
+                            if (wireType !== 2)
+                                break;
+                            message.expectedCallTextTemplate = reader.stringVerify();
+                            message._expectedCallTextTemplate = "expectedCallTextTemplate";
+                            continue;
+                        }
+                    }
+                    reader.skipType(wireType, _depth, tag);
+                    if (!reader.discardUnknown) {
+                        $util.makeProp(message, "$unknowns", false);
+                        (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+                    }
+                }
+                if (length !== $undefined) {
+                    if (reader.pos !== end)
+                        throw $RangeError("index out of range");
+                    reader.len = length;
+                }
+                if (_end !== $undefined)
+                    throw $Error("missing end group");
+                return message;
+            };
+
+            /**
+             * Verifies a CallTextSettings message.
+             * @function verify
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CallTextSettings.verify = function (message, _depth) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    return "max depth exceeded";
+                let properties = {};
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate")) {
+                    properties._callTextTemplate = 1;
+                    if (!$util.isString(message.callTextTemplate))
+                        return "callTextTemplate: string expected";
+                }
+                if (message.expectedCallTextTemplate != null && $Object.hasOwnProperty.call(message, "expectedCallTextTemplate")) {
+                    properties._expectedCallTextTemplate = 1;
+                    if (!$util.isString(message.expectedCallTextTemplate))
+                        return "expectedCallTextTemplate: string expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a CallTextSettings message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {mediflow.v4.CallTextSettings} CallTextSettings
+             */
+            CallTextSettings.fromObject = function (object, _depth) {
+                if (object instanceof $root.mediflow.v4.CallTextSettings)
+                    return object;
+                if (!$util.isObject(object))
+                    throw $TypeError(".mediflow.v4.CallTextSettings: object expected");
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let message = new $root.mediflow.v4.CallTextSettings();
+                if (object.callTextTemplate != null)
+                    message.callTextTemplate = $String(object.callTextTemplate);
+                if (object.expectedCallTextTemplate != null)
+                    message.expectedCallTextTemplate = $String(object.expectedCallTextTemplate);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a CallTextSettings message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {mediflow.v4.CallTextSettings} message CallTextSettings
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CallTextSettings.toObject = function (message, options, _depth) {
+                if (!options)
+                    options = {};
+                if (_depth === $undefined)
+                    _depth = 0;
+                if (_depth > $util.recursionLimit)
+                    throw $Error("max depth exceeded");
+                let object = {};
+                if (message.callTextTemplate != null && $Object.hasOwnProperty.call(message, "callTextTemplate"))
+                    object.callTextTemplate = message.callTextTemplate;
+                if (message.expectedCallTextTemplate != null && $Object.hasOwnProperty.call(message, "expectedCallTextTemplate"))
+                    object.expectedCallTextTemplate = message.expectedCallTextTemplate;
+                return object;
+            };
+
+            /**
+             * Converts this CallTextSettings to JSON.
+             * @function toJSON
+             * @memberof mediflow.v4.CallTextSettings
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CallTextSettings.prototype.toJSON = function() {
+                return CallTextSettings.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the type url for CallTextSettings
+             * @function getTypeUrl
+             * @memberof mediflow.v4.CallTextSettings
+             * @static
+             * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+             * @returns {string} The type url
+             */
+            CallTextSettings.getTypeUrl = function(prefix) {
+                if (prefix === $undefined)
+                    prefix = "type.googleapis.com";
+                return prefix + "/mediflow.v4.CallTextSettings";
+            };
+
+            return CallTextSettings;
         })();
 
         return v4;

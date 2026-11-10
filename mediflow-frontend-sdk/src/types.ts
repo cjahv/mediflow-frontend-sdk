@@ -17,9 +17,12 @@ export interface Queue {
   sections: Section[];
 }
 export interface Template {
+  /** Screen-admin setting. Missing on legacy servers; the SDK retains omitted WS updates. */
+  callTextTemplate?: string;
   queues: Queue[];
 }
 export interface Snapshot {
+  screenName?: string;
   epoch: string;
   screenId: string;
   version: number;
@@ -27,6 +30,9 @@ export interface Snapshot {
   data: Template;
 }
 export interface Call {
+  /** Immutable producer values; absent together on legacy calls. Never inferred from queues. */
+  personName?: string;
+  displayNumber?: string;
   id: string;
   queueId: string;
   personId: string;

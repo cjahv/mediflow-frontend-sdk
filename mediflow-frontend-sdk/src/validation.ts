@@ -27,7 +27,13 @@ export function validateSnapshot(value: unknown): Snapshot {
   integer(value.version);
   if (value.templateVersion !== "1")
     throw new Error("Unsupported snapshot template");
+  if (value.screenName !== undefined) text(value.screenName, false);
   object(value.data);
+  if (Object.hasOwn(value.data, "callTextTemplate")) {
+    text(value.data.callTextTemplate, false);
+    if (new TextEncoder().encode(value.data.callTextTemplate).length > 4096)
+      throw new Error("Call text template too large");
+  }
   if (!Array.isArray(value.data.queues)) throw new Error("Invalid queues");
   for (const queue of value.data.queues) {
     object(queue);
@@ -57,6 +63,17 @@ export function validateCall(value: unknown): Call {
   text(value.queueId, false);
   text(value.personId, false);
   text(value.text);
+  if (
+    Object.hasOwn(value, "personName") ||
+    Object.hasOwn(value, "displayNumber")
+  ) {
+    text(value.personName);
+    text(value.displayNumber);
+    for (const field of [value.personName, value.displayNumber]) {
+      if (new TextEncoder().encode(field).length > 256 || field.includes("\0"))
+        throw new Error("Invalid call text values");
+    }
+  }
   integer(value.totalQuota);
   integer(value.consumed);
   integer(value.remaining);

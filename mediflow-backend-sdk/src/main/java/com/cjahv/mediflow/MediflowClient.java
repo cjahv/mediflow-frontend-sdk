@@ -147,6 +147,12 @@ public final class MediflowClient implements AutoCloseable {
             throw new IllegalArgumentException("Call text must be <=16384 UTF-8 bytes and totalQuota must be 1..100");
         var builder = Mediflow.Call.newBuilder().setId(Identifiers.encode(input.id())).setQueueId(Identifiers.encode(input.queueId()))
                 .setPersonId(Identifiers.encode(input.personId())).setText(input.text()).setTotalQuota(input.totalQuota());
+        if (input.personName() != null || input.displayNumber() != null) {
+            required(input.personName(), "personName"); required(input.displayNumber(), "displayNumber");
+            for (String value : new String[]{input.personName(), input.displayNumber()})
+                if (value.getBytes(StandardCharsets.UTF_8).length > 256 || value.indexOf(0) >= 0) throw new IllegalArgumentException("Call text values exceed limits");
+            builder.setPersonName(input.personName()).setDisplayNumber(input.displayNumber());
+        }
         if (input.expiresAt() != null) builder.setExpiresAt(input.expiresAt().toInstant().toString());
         var request = builder.build(); requestSize(request);
         var result = await(deadlineStub().createCall(request)); validateCall(result, false);

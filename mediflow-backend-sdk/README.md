@@ -99,3 +99,11 @@ Upgrade the platform, Java SDK 0.9.0-rc.1 and frontend SDK 0.7.0-rc.1 together. 
 Each ID/token byte field begins with a one-byte discriminator: 0 means the exact UTF-8 text; 1 means 16 UUID bytes (canonical lowercase hyphenated text); 2 means 24 random bytes (canonical lowercase 48-character hexadecimal text). Noncanonical encodings, malformed UTF-8, invalid fixed lengths and text exceeding 4096 UTF-8 bytes are rejected. Mixed case, leading zeros, Unicode and external business identifiers retain their original spelling. Arbitrary text costs one extra byte; canonical UUIDs save 19 bytes and platform random IDs/tokens save 23 bytes per field. No entropy is removed. Empty text is encoded as tag 0 only; absent optional fields remain absent.
 
 Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadata is rejected. HTTP/2 base64-encodes binary metadata and HPACK may compress repeated headers, so raw token savings are not a claim about total per-RPC network bytes. Management HTTP and WebSocket packets use protocolVersion 4; WebSocket frames remain binary Protobuf. Message size measurements exclude transport headers, TLS and compression.
+
+## 管理员模板与呼叫参数
+
+`Template.callTextTemplate` 为管理员只读配置；`publish` 只替换队列，回传或省略该字段均不修改配置。
+新 `CallRequest(id, queueId, personId, text, totalQuota, expiresAt, personName, displayNumber)` 可提供呼叫当时的
+姓名与显示编号。两者必须同时非空、无 NUL，各不超过 256 UTF-8 字节，并属于不可变呼叫定义；跨目标屏复用
+同一 callId 时必须一致。原有五/六参数构造方法保留，不提供这两个值的旧调用继续工作。
+`text`、消费和播放契约不变；最终模板展开及播音由前端应用负责。平台不从可能变化或含歧义的队列反查姓名/编号。

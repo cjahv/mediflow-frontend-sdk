@@ -124,3 +124,15 @@ Every gRPC call uses binary metadata `mediflow-token-bin`; legacy Bearer metadat
 ### Snapshot ordering
 
 `ScreenClient.snapshot` and `onSnapshot` return persons in ascending numeric `order` within each section. Equal values retain wire order. Queue/section order, IDs and original numeric order values are preserved. `orderedSnapshot(snapshot)` applies the same stable ordering to an independent copy. The admin editor renumbers its edited section to consecutive values when rows are moved, inserted or removed; external producers may continue to use arbitrary finite order values. Protocol v4 and Java APIs are unchanged.
+
+## 屏幕呼叫文本配置
+
+`onSnapshot` / `snapshot` 的 `data.callTextTemplate` 是管理员配置的原文，SDK 会补回同一连接后续省略的字段。
+空字符串是显式空配置，`undefined` 表示旧服务端未提供；每次重连重新建立基线。
+`snapshot.screenName` 是当前认证屏幕名称。`Call.personName` 与 `displayNumber` 是生产方提供的不可变参数，
+历史呼叫可能两者都缺失；不要用最新队列查找来猜测它们。模板支持字面量 `${人名}`、`${显示编号}`、`${屏幕名称}`。
+
+应用自行比较模板和数据、预热并生成最终文本；SDK 不执行替换、不决定空模板或缺少参数时的播报策略。
+既有 `playback.play` 仍接收原消费结果文本，本扩展不自动改变该接口。应用自行拥有模板播报流程时使用既有
+类型化候选/消费接口，并自行保存对应呼叫参数；不要把模板原文当作可执行表达式或 HTML。
+`onSnapshot` 的异步处理不会阻塞连接就绪或后续候选通知；应用自行协调异步预热与渲染顺序。
