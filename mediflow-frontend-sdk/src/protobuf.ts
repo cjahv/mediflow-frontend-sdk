@@ -112,6 +112,7 @@ const bodyKinds = new Set([
   "retained",
   "empty",
   "pendingCalls",
+  "callTextSettings",
 ]);
 function explicitBody(kind: string, value: ObjectValue): ObjectValue {
   if (!bodyKinds.has(kind)) throw new Error(`Unknown protobuf body ${kind}`);
@@ -341,6 +342,7 @@ const wireSchema: Record<string, Record<string, [string, string]>> = {
     retained: ["Retained", "one"],
     empty: ["Empty", "one"],
     pendingCalls: ["PendingCalls", "one"],
+    callTextSettings: ["CallTextSettings", "one"],
   },
   PlaybackEvent: {
     screenId: ["bytes", "one"],
@@ -348,6 +350,7 @@ const wireSchema: Record<string, Record<string, [string, string]>> = {
     requestId: ["bytes", "one"],
     callId: ["bytes", "one"],
   },
+  CallTextSettings: {},
 };
 const uuidPattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;

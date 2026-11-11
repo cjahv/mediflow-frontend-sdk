@@ -246,6 +246,15 @@ export class ScreenClient {
             state.screenId !== this.last.screenId ||
             state.version > this.last.version
           ) {
+            // Only accepted snapshots may update the connection-local template baseline.
+            if (
+              this.ready &&
+              this.last?.epoch === state.epoch &&
+              !Object.hasOwn(state.data, "callTextTemplate") &&
+              Object.hasOwn(this.last.data, "callTextTemplate")
+            ) {
+              state.data.callTextTemplate = this.last.data.callTextTemplate;
+            }
             this.last = structuredClone(state);
             this.notify(() =>
               this.options.onSnapshot?.(structuredClone(state)),

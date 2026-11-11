@@ -930,3 +930,98 @@ test("snapshot callback and stored SDK state share stable business ordering", ()
   );
   client.close();
 });
+
+test("call text template presence reconstructs complete snapshots without stale updates", () => {
+  const { client, socket, states } = setup();
+  const send = (version, value, present = true) => {
+    const snapshot = state(version);
+    snapshot.screenName = "急诊儿科二诊室";
+    if (present) snapshot.data.callTextTemplate = value;
+    const bytes = encode({ type: "snapshot", payload: snapshot });
+    assert.equal(
+      Object.hasOwn(decode(bytes).payload.data, "callTextTemplate"),
+      present,
+    );
+    socket.onmessage({ data: bytes });
+  };
+  send(2, "请${显示编号}${人名}到${屏幕名称}就诊");
+  send(3, undefined, false);
+  assert.equal(
+    client.snapshot.data.callTextTemplate,
+    states.at(-2).data.callTextTemplate,
+  );
+  assert.equal(client.snapshot.screenName, "急诊儿科二诊室");
+  send(2, "stale");
+  send(4, undefined, false);
+  assert.notEqual(client.snapshot.data.callTextTemplate, "stale");
+  send(5, "");
+  send(6, undefined, false);
+  assert.equal(client.snapshot.data.callTextTemplate, "");
+  assert(Object.hasOwn(client.snapshot.data, "callTextTemplate"));
+  const epoch = state(1, "new-epoch");
+  socket.frame({ type: "snapshot", payload: epoch });
+  assert.equal(Object.hasOwn(client.snapshot.data, "callTextTemplate"), false);
+  client.close();
+});
+
+test("call text template reconnect establishes a fresh baseline, including legacy absence", () => {
+  const sockets = [];
+  const client = new ScreenClient({
+    baseURL: "http://localhost",
+    token: "test",
+    webSocketFactory: () => {
+      const socket = new FakeSocket();
+      sockets.push(socket);
+      return socket;
+    },
+  });
+  client.connect();
+  sockets[0].onopen();
+  const first = state(10);
+  first.data.callTextTemplate = "old";
+  sockets[0].frame({ type: "snapshot", payload: first });
+  client.close();
+  client.connect();
+  sockets[1].onopen();
+  sockets[1].frame({ type: "snapshot", payload: state(1) });
+  assert.equal(Object.hasOwn(client.snapshot.data, "callTextTemplate"), false);
+  client.close();
+  client.connect();
+  sockets[2].onopen();
+  const next = state(1);
+  next.data.callTextTemplate = "";
+  sockets[2].frame({ type: "snapshot", payload: next });
+  assert.equal(client.snapshot.data.callTextTemplate, "");
+  client.close();
+});
+
+test("call text values reach applications immutably without a matching queue person", () => {
+  const { client, socket } = setup();
+  let received;
+  client.options.onCalls = (calls) => {
+    received = calls;
+  };
+  socket.frame({
+    type: "calls",
+    page: 1,
+    pageSize: 20,
+    total: 1,
+    payload: [{ id: "structured", personName: "李四", displayNumber: "A011" }],
+  });
+  assert.equal(received[0].personName, "李四");
+  assert.equal(received[0].displayNumber, "A011");
+  let failure;
+  client.options.onError = (error) => {
+    failure = error;
+  };
+  socket.frame({
+    type: "calls",
+    page: 1,
+    pageSize: 20,
+    total: 1,
+    payload: [{ id: "partial", personName: "李四" }],
+  });
+  assert(failure);
+  assert.equal(received[0].id, "structured");
+  client.close();
+});

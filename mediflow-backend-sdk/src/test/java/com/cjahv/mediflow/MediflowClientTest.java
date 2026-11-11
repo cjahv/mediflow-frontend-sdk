@@ -118,4 +118,14 @@ class MediflowClientTest {
         assertThrows(IllegalArgumentException.class, () -> client.publish("id", template));
         assertEquals(0, attempts.get());
     }
+
+    @Test void callTextValuesAreExplicitAndLegacyConstructorsStayCompatible() throws Exception {
+        client.createCall(new CallRequest("structured", "q", "p", "legacy text", 1, null, "李四", "A011"));
+        assertEquals("李四", definition.getPersonName());
+        assertEquals("A011", definition.getDisplayNumber());
+        client.createCall(new CallRequest("legacy", "q", "p", "unchanged", 1));
+        assertFalse(definition.hasPersonName());
+        assertFalse(definition.hasDisplayNumber());
+        assertThrows(IllegalArgumentException.class, () -> client.createCall(new CallRequest("partial", "q", "p", "text", 1, null, "李四", null)));
+    }
 }

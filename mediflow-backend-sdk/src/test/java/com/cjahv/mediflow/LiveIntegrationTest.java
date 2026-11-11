@@ -36,7 +36,9 @@ class LiveIntegrationTest {
             .addQueues(Mediflow.Queue.newBuilder().setId(Identifiers.encode("expert")).setName("专家门诊").addSections(Mediflow.Section.newBuilder().setId(Identifiers.encode("custom")).setName("自定义分区"))).build();
         var first = client.publish(id, template);
         assertEquals(first.getVersion(), client.publish(id, template).getVersion(), "Same request ID must not increase version");
-        assertEquals(template, client.state().getData());
+        var current = client.state().getData();
+        assertEquals(template.getQueuesList(), current.getQueuesList());
+        assertTrue(current.hasCallTextTemplate(), "Full state must include the screen template");
         var pool = java.util.concurrent.Executors.newFixedThreadPool(4);
         try {
             var jobs = new java.util.ArrayList<java.util.concurrent.Callable<Long>>();
@@ -52,6 +54,10 @@ class LiveIntegrationTest {
             for (int i = 0; i < 8; i++) jobs.add(() -> Identifiers.decode(client.createCall(definition).getId()));
             for (var future : callsPool.invokeAll(jobs)) assertEquals(id, future.get());
         } finally { callsPool.shutdownNow(); }
+        var contextual = new CallRequest(id + "-context", "general", "synthetic-p1", "L001", 1, null, "李四", "A11");
+        var contextualCall = client.createCall(contextual);
+        assertEquals("李四", contextualCall.getPersonName());
+        assertEquals("A11", contextualCall.getDisplayNumber());
         var page = client.callsPage(1, 100);
         assertTrue(page.getItemsList().stream().anyMatch(c -> Identifiers.decode(c.getId()).equals(id) && c.getRemaining() == 2));
         assertThrows(ApiException.class, () -> client.publish(id, Mediflow.Template.getDefaultInstance()));
